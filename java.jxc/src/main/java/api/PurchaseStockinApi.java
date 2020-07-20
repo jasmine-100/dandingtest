@@ -58,7 +58,6 @@ public class PurchaseStockinApi {
 
     }
 
-
     //创建采购单关联的入库单
     public void createStockinOrder(String purchaseId,List<StoOrderItem> stoOrderItems) throws IOException {
         //创建入库单

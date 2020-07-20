@@ -27,7 +27,10 @@ public class ExcelUtils {
             String procode = row.getCell(0).toString();
             String name = row.getCell(1).toString();
             String isbatch = row.getCell(2).toString();
-            String exdate = row.getCell(3).toString();
+            String exdate = null;
+            if(isbatch.equals("1")){
+                exdate = row.getCell(3).toString();
+            }
             String reprice = row.getCell(4).toString();
             String brand = row.getCell(5).toString();
             good = new Good(procode,name,isbatch,exdate,reprice,brand);

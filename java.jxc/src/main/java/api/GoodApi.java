@@ -21,7 +21,7 @@ public class GoodApi {
         Good good = new Good("JO"+System.currentTimeMillis(),"红豆"+System.currentTimeMillis(),"0","100","12.6","AAA");
 
         //接口：创建商品
-        ApiClient client = new ApiClient("http://logistics-api-dev.yang800.com/xhr/pro/upsert");
+        ApiClient client = new ApiClient("http://logistics-api-fat.yang800.com/xhr/pro/upsert");
         client.doPostJson(JSON.toJSON(good));
 
     }
