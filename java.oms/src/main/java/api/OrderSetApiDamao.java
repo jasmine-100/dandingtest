@@ -18,6 +18,7 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiDamao {
+    String orderNo = "JO1234560";
 
     // 大贸订单
     @Test
@@ -28,7 +29,7 @@ public class OrderSetApiDamao {
         items.add(new Item("SPC1595216228153",5,10));
 
         //组装订单项
-        String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+//        String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         Order order = new Order(orderNo,"869",items,10,20,5);
 
         //接口推送订单
@@ -36,8 +37,10 @@ public class OrderSetApiDamao {
         client.doPostJson(JSON.toJSON(order));
     }
 
-    public void payOrder(){
-
+    //推送运单回执
+    @Test
+    public void pushShipBack() throws IOException {
+        new OrderUtils().shipBackPush(orderNo);
     }
 
 }

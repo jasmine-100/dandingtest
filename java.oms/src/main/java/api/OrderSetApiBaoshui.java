@@ -7,9 +7,7 @@ import domain.Order;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,15 +16,15 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiBaoshui {
-    String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    String orderNo = "JOS0011136";
 
     // 保税订单
     @Test
     public void orderSet() throws IOException {
+//        String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("SPC1594975991833",1,12));
-        items.add(new Item("SPC1595216228153",5,10));
+        items.add(new Item("SPC1583123976043",1,12));
 
         //组装订单项
         Order order = new Order(orderNo,"869",items,10,20,5);
@@ -39,6 +37,23 @@ public class OrderSetApiBaoshui {
         new OrderUtils().payInfoPush(orderNo);
     }
 
+    //推送订单回执
+    @Test
+    public void pushDeclareBack() throws IOException {
+        new OrderUtils().declareOrderPush(orderNo);
+    }
+
+    //推送清单回执
+    @Test
+    public void pushListBack() throws IOException {
+        new OrderUtils().listBackPush(orderNo);
+    }
+
+    //推送运单回执
+    @Test
+    public void pushShipBack() throws IOException {
+        new OrderUtils().shipBackPush(orderNo);
+    }
 
 
 }
