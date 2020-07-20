@@ -22,7 +22,7 @@ public class OrderSetApi {
     public void orderSet() throws IOException {
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("SPC1594975991833",10,12));
+        items.add(new Item("SPC1594975991833",1,12));
         items.add(new Item("SPC1595216228153",5,10));
 
         //组装订单项
