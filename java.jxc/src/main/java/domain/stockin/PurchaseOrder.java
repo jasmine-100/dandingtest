@@ -1,4 +1,4 @@
-package domain;
+package domain.stockin;
 
 import lombok.Data;
 
