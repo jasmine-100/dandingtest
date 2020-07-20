@@ -1,4 +1,4 @@
-package api;
+package outapi;
 
 import client.ApiClient;
 
@@ -6,7 +6,7 @@ import java.io.IOException;
 
 /**
  * @Author： jasmine
- * @Description : 清单回执报文
+ * @Description : 清单回执报文，未完成
  * @Date : Created in 2020/7/20 13:11
  */
 public class BackApi {

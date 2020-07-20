@@ -61,7 +61,6 @@ public class ApiClient {
             entity.setContentEncoding("UTF-8");
             entity.setContentType("application/json");
             post.setEntity(entity);
-            System.out.println(entity);
 
             response = client.execute(post);
             responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
@@ -76,9 +75,8 @@ public class ApiClient {
     public String doPostForm(Object data) throws IOException {
         String responseStr = null;
         try{
+            System.out.println(data);
             post.setHeader("Content-Type", "application/x-www-form-urlencoded");
-//            post.setHeader("Connection", "Keep-Alive");
-//            log.info("请求数据:{}",data);
             Map<String,Object> map = JavaBeanUtils.convertBeanToMap(data);
             List<NameValuePair> paramList = new ArrayList<NameValuePair>();
             for (String key : map.keySet()) {
@@ -86,6 +84,7 @@ public class ApiClient {
             }
             // 模拟表单
             UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList,"utf-8");
+
             post.setEntity(entity);
             response = client.execute(post);
             responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
