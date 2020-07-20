@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : OMS 订单商品list类
  * @Date : Created in 2020/7/20 11:18
  */
 @Data

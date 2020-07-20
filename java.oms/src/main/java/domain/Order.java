@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : OMS订单类
  * @Date : Created in 2020/7/20 11:19
  */
 @Data
