@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 添加商品
  * @Date : Created in 2020/7/20 12:30
  */
 public class GoodApi {
