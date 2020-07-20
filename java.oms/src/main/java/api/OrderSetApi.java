@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : OMS接口--推送订单
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApi {

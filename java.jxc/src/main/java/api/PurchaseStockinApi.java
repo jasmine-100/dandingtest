@@ -45,7 +45,7 @@ public class PurchaseStockinApi {
         PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems);
 
         //创建采购单
-        ApiClient client = new ApiClient("http://logistics-api-dev.yang800.com/xhr/purchase/upsert");
+        ApiClient client = new ApiClient("http://logistics-api-fat.yang800.com/xhr/purchase/upsert");
         String response = client.doPostJson(JSON.toJSON(purchaseOrder));
         String purchaseId = JsonUtils.getJsonStr(response,"purOrderId").toString();
         Thread.sleep(5000);
@@ -63,7 +63,7 @@ public class PurchaseStockinApi {
     public void createStockinOrder(String purchaseId,List<StoOrderItem> stoOrderItems) throws IOException {
         //创建入库单
         StockinOrder stockinOrder = new StockinOrder(purchaseId,stoOrderItems);
-        ApiClient client = new ApiClient("http://logistics-api-dev.yang800.com/xhr/stockin/upsert");
+        ApiClient client = new ApiClient("http://logistics-api-fat.yang800.com/xhr/stockin/upsert");
         client.doPostJson(JSON.toJSON(stockinOrder));
     }
 
