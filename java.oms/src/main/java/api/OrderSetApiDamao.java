@@ -17,9 +17,11 @@ import java.util.List;
  * @Description : OMS接口--推送订单
  * @Date : Created in 2020/7/20 11:20
  */
-public class OrderSetApi {
+public class OrderSetApiDamao {
+
+    // 大贸订单
     @Test
-    public void orderSet() throws IOException {
+    public void orderSet2() throws IOException {
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("SPC1594975991833",1,12));
@@ -32,6 +34,10 @@ public class OrderSetApi {
         //接口推送订单
         ApiClient client = new ApiClient("http://pangu.admintest.yang800.cn/docking/api/order/push");
         client.doPostJson(JSON.toJSON(order));
+    }
+
+    public void payOrder(){
+
     }
 
 }
