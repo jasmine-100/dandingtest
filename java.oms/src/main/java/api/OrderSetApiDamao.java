@@ -4,6 +4,7 @@ import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import domain.Item;
 import domain.Order;
+import orderutils.ShipOrder;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class OrderSetApiDamao {
     //推送运单回执
     @Test
     public void pushShipBack() throws IOException {
-        new OrderUtils().shipBackPush(orderNo);
+        ShipOrder.shipBackPush(orderNo);
     }
 
 }
