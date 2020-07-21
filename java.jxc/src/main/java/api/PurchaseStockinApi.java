@@ -36,7 +36,7 @@ public class PurchaseStockinApi {
             e.printStackTrace();
         }
         for (Good good:goods){
-            int num = 100;
+            int num = 10000;
             //组装采购商品项
             PurOrderItem purOrderItem = new PurOrderItem(good.getProCode(),10.1,num);
             purOrderItems.add(purOrderItem);

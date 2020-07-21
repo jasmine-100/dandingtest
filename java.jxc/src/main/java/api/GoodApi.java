@@ -21,7 +21,7 @@ public class GoodApi {
         String str = new SimpleDateFormat("yyyyMMddHHmm").format(new Date());
 
         //组装商品
-            Good good = new Good("JO"+str,"红豆"+str,"0","100","12.6","AAA");
+        Good good = new Good("JO"+str,"红豆"+str,"0","100","12.6","AAA");
 
         //接口：创建商品
         ApiClient client = new ApiClient("http://logistics-api-fat.yang800.com/xhr/pro/upsert");
