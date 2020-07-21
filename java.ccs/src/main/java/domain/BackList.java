@@ -1,5 +1,6 @@
 package domain;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import lombok.Data;
 
 import java.text.SimpleDateFormat;
@@ -7,11 +8,11 @@ import java.util.Date;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 清单回执
  * @Date : Created in 2020/7/20 13:50
  */
 @Data
-public class Back {
+public class BackList {
 
     private String declareOrderNo;
     private String customsDetail;
@@ -22,7 +23,7 @@ public class Back {
     //清单编号
     private String invtNo;
 
-    public Back(String declareOrderNo, String customsStatus, String ebpCode) {
+    public BackList(String declareOrderNo, String customsStatus, String ebpCode) {
         String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
         this.declareOrderNo = declareOrderNo;
         this.customsTime = System.currentTimeMillis();

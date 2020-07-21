@@ -2,7 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.Back;
+import domain.BackList;
 import domain.Item;
 import domain.Order;
 import org.junit.jupiter.api.Test;
@@ -46,7 +46,7 @@ public class OrderSetApi {
     //回执放行报文
     public void backReceive(String orderno) throws IOException {
         ApiClient client = new ApiClient("http://ccs.backend.daily.yang800.com/xhr/order/mockReceive");
-        Back back = new Back(orderno,"800" ,"1230111111");
+        BackList back = new BackList(orderno,"800" ,"1230111111");
         client.doPostForm(back);
     }
 
