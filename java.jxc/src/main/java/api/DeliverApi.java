@@ -23,7 +23,7 @@ public class DeliverApi {
     public void deliverOrder() throws IOException {
         //组装商品项
         List<OrderSku> orderSkus = new ArrayList<>();
-        orderSkus.add(new OrderSku("L070721",10));
+        orderSkus.add(new OrderSku("JO202007211120",10));
 //        orderSkus.add(new OrderSku("",50));
 
         //组装发货单

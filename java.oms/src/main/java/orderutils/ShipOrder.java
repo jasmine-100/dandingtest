@@ -9,17 +9,16 @@ import java.io.IOException;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 推送运单回执
  * @Date : Created in 2020/7/21 9:10
  */
 public class ShipOrder {
+    public static  String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
+    public static  ApiClient client = new ApiClient(url);
 
     //模拟运单回执
     public static void shipBackPush(String orderno) throws IOException {
-        String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
         ShipBack shipBack = new ShipBack(orderno);
-
-        ApiClient client = new ApiClient(url);
         client.doPostForm(shipBack);
     }
 

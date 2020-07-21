@@ -9,18 +9,17 @@ import java.io.IOException;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 推送海关支付信息
  * @Date : Created in 2020/7/21 9:39
  */
 public class Pay {
+    public static String url = "http://pangu.admintest.yang800.cn/docking/api/customs/pay/info/upload";
+    public static ApiClient client = new ApiClient(url);
 
     //模拟推送海关支付信息
     public static void payInfoPush(String orderNo) throws IOException {
-        String url = "http://pangu.admintest.yang800.cn/docking/api/customs/pay/info/upload";
         PayInfo pay = new PayInfo(orderNo);
-        ApiClient client = new ApiClient(url);
         client.doPostJson(JSON.toJSON(pay));
     }
-
 
 }
