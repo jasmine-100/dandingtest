@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description : OMS接口--推送订单
+ * @Description : OMS接口：大贸订单推送--发货
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiDamao {

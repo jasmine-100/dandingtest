@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description : OMS接口--推送订单
+ * @Description : OMS接口：保税订单推送--推送支付单--订单回执--清单回执--运单回执
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiBaoshui {
