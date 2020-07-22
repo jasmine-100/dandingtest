@@ -20,7 +20,7 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiBaoshui {
-    String orderNo = "JOS20200722145047";
+    String orderNo = "JOS202007221724";
 
     // 保税订单
     @Test
@@ -56,6 +56,10 @@ public class OrderSetApiBaoshui {
         ListOrder.listAddSuccess(orderNo);
         ListOrder.listSuccess(orderNo);
     }
+//    @Test
+//    public void pushListBack() throws IOException {
+//        ListOrder.listPayinfoNotExist(orderNo);
+//    }
 
     //推送运单回执
     @Test

@@ -17,8 +17,8 @@ public class Pay {
 
     //模拟推送海关支付信息
     public static void payInfoPush(String orderNo) throws IOException {
-        PayInfo pay = new PayInfo(orderNo);
-        client.doPostJson(JSON.toJSON(pay));
+        PayInfo payInfo = new PayInfo(orderNo);
+        client.doPostJson(JSON.toJSON(payInfo));
     }
 
 }

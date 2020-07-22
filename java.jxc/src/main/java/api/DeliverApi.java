@@ -23,7 +23,7 @@ public class DeliverApi {
     public void deliverOrder() throws IOException {
         //组装商品项
         List<OrderSku> orderSkus = new ArrayList<>();
-        orderSkus.add(new OrderSku("JO202007211120",10));
+        orderSkus.add(new OrderSku("DTS2236220",10));
 //        orderSkus.add(new OrderSku("",50));
 
         //组装发货单
@@ -33,6 +33,7 @@ public class DeliverApi {
         ApiClient client = new ApiClient("http://logistics-api-fat.yang800.com/xhr/dealorder/submit");
         String response = client.doPostJson(JSON.toJSON(deliver));
 
+        //从返回值提取发货单的平台单号
         String orderStr = JsonUtils.getJsonStr(response,"orderNo").toString();
 
         //审核通过
