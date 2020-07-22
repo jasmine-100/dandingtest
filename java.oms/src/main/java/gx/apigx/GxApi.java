@@ -6,7 +6,6 @@ import gx.domain.GoodList;
 import gx.domain.GoodUp;
 import gx.domain.Order;
 import oms.api.OrderSet;
-import oms.api.OrderSetApiBaoshui;
 import oms.domain.Item;
 import org.junit.jupiter.api.Test;
 
@@ -23,10 +22,16 @@ import java.util.List;
  */
 public class GxApi {
 
+    //小B账户：jasmineb
+    String bUserId = "162";
+
+    //大B账户：jasmine10
+    String BUserId = "144";
+
     //第一步：获取供销平台大B商品
     @Test
     public void searchGood() throws IOException {
-        String url = "http://npc.daily.yang800.com/backend/docking/api/item/queryItems?userId=144&pageSize=10&currentPage=1";
+        String url = "http://npc.daily.yang800.com/backend/docking/api/item/queryItems?userId="+ BUserId +"&pageSize=1000&currentPage=1";
 
         ApiClient client = new ApiClient(url);
         client.doGetUrl();
@@ -36,7 +41,7 @@ public class GxApi {
     @Test
     public void selectGoodUp() throws IOException {
         //sku取上一步查询出来的sku
-        GoodUp good = new GoodUp("好喝的奶粉","144","SKU1594975802146");
+        GoodUp good = new GoodUp("关节修复片", BUserId,"SKU1585193552149");
 
         String url = "http://npc.daily.yang800.com/backend/docking/api/item/add";
         ApiClient client = new ApiClient(url);
@@ -48,7 +53,7 @@ public class GxApi {
     @Test
     public void addList() throws IOException {
         // outeItemCode取第二步生成的外部商品编码（OMS大B的商品界面）
-        GoodList goodList = new GoodList("好喝的奶粉","161","GX20200722123316");
+        GoodList goodList = new GoodList("修复片关节",bUserId,"GX20200722142406");
 
         String url = "http://npc.daily.yang800.com/backend/docking/api/item/insItem";
         ApiClient client = new ApiClient(url);
@@ -63,10 +68,10 @@ public class GxApi {
 
         //组装商品项：下单之前小B需要映射和上架商品、补足库存
         List<Item> items = new ArrayList<>();
-        items.add(new Item("","FX10002",10,50));
+        items.add(new Item("","FX1001",10,50));
 
         //组装并推送订单
-        OrderSet.orderSet(orderno,"1008",items);
+        OrderSet.orderSet(orderno,"1009",items);
     }
 
 
@@ -75,15 +80,11 @@ public class GxApi {
     public void orderSetB() throws IOException {
         //组装商品
         List<gx.domain.Item> items = new ArrayList<>();
-        items.add(new gx.domain.Item("GX20200722123316",50,10));
+        items.add(new gx.domain.Item("GX20200722142406",50,10));
 
-        /**
-         * 组装订单
-         * 订单号:取小B订单的订单号
-         * userId:取大B的用户id
-         */
+        // 组装订单:订单号 取小B订单的订单号
         String outOrderSn = "BY"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        Order order = new Order("DO2007221342514461440",outOrderSn,"144",items);
+        Order order = new Order("DO2007221429440351444",outOrderSn, BUserId,items);
 
         String url = "http://npc.daily.yang800.com/backend/docking/api/order/receive2bOrder";
         ApiClient client = new ApiClient(url);
