@@ -20,7 +20,7 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiBaoshui {
-    String orderNo = "JOS202007211020";
+    String orderNo = "JOS20200722145047";
 
     // 保税订单
     @Test
@@ -32,10 +32,13 @@ public class OrderSetApiBaoshui {
 
         OrderSet.orderSet(orderNo,"869",items);
 
-        //推送海关支付单
-        Pay.payInfoPush(orderNo);
-
     }
+    //推送海关支付信息
+    @Test
+    public void pushPayInfo() throws IOException {
+        Pay.payInfoPush(orderNo);
+    }
+
 
     //推送订单回执
     @Test

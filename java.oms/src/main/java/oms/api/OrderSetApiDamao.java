@@ -17,7 +17,7 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiDamao {
-    String orderNo = "JO1234560";
+    String orderNo = "JOS20200722150356";
 
     // 大贸订单
     @Test
