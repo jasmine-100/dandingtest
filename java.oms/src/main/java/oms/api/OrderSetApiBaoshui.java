@@ -1,9 +1,9 @@
-package api;
+package oms.api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.Item;
-import domain.Order;
+import oms.domain.Item;
+import oms.domain.Order;
 import orderutils.DeclareOrder;
 import orderutils.ListOrder;
 import orderutils.Pay;

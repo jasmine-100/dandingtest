@@ -1,9 +1,7 @@
 package orderutils;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
-import domain.DeclareBack;
-import domain.ShipBack;
+import oms.domain.ShipBack;
 
 import java.io.IOException;
 

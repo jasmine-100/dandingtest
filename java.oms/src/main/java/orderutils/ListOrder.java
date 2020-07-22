@@ -1,7 +1,7 @@
 package orderutils;
 
 import client.ApiClient;
-import domain.ListBack;
+import oms.domain.ListBack;
 
 import java.io.IOException;
 

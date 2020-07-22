@@ -1,16 +1,14 @@
-package api;
+package oms.api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.Item;
-import domain.Order;
+import oms.domain.Item;
+import oms.domain.Order;
 import orderutils.ShipOrder;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

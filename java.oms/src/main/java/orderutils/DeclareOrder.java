@@ -1,7 +1,7 @@
 package orderutils;
 
 import client.ApiClient;
-import domain.DeclareBack;
+import oms.domain.DeclareBack;
 
 import java.io.IOException;
 

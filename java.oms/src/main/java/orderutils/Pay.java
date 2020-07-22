@@ -2,8 +2,7 @@ package orderutils;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.DeclareBack;
-import domain.PayInfo;
+import oms.domain.PayInfo;
 
 import java.io.IOException;
 
