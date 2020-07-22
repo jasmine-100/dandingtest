@@ -20,7 +20,7 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiBaoshui {
-    String orderNo = "JOS202007211010";
+    String orderNo = "JOS202007211012";
 
     // 保税订单
     @Test
