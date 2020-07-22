@@ -24,8 +24,8 @@ public class OrderSetApiDamao {
     public void orderSet2() throws IOException {
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("SPC1594975991833",1,12));
-        items.add(new Item("SPC1595216228153",5,10));
+        items.add(new Item("SPC1594975991833","",1,12));
+        items.add(new Item("SPC1595216228153","",5,10));
 
         //组装订单项
 //        String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());

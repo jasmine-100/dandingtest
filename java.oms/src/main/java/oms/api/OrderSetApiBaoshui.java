@@ -20,7 +20,7 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiBaoshui {
-    String orderNo = "JOS202007211012";
+    String orderNo = "JOS2020072201";
 
     // 保税订单
     @Test
@@ -28,17 +28,17 @@ public class OrderSetApiBaoshui {
 //        String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("SPC1583123976043",1,12));
+        items.add(new Item("SPC1595387335462","",1,12));
 
         //组装订单项
-        Order order = new Order(orderNo,"869",items,10,20,5);
+        Order order = new Order(orderNo,"1008",items,10,20,5);
 
         //接口推送订单
         ApiClient client = new ApiClient("http://pangu.admintest.yang800.cn/docking/api/order/push");
         client.doPostJson(JSON.toJSON(order));
 
         //推送海关支付单
-        Pay.payInfoPush(orderNo);
+//        Pay.payInfoPush(orderNo);
 
     }
 
