@@ -1,10 +1,10 @@
-package websc.api;
+package outchannel.websc.api;
 
 import client.ApiClient;
 import org.junit.jupiter.api.Test;
-import websc.domain.Item;
-import websc.domain.Order;
-import websc.domain.Params;
+import outchannel.websc.domain.Params;
+import outchannel.websc.domain.Item;
+import outchannel.websc.domain.Order;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -24,7 +24,7 @@ public class OrderSetApi {
         //店铺code
         String accesscode = "49C9ADB18E44BE0711A94E827042F630";
         //订单编号
-        String orderno = "websc"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String orderno = "outchannel/websc" +new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         //组装商品项
         List<Item> itemList = new ArrayList<>();

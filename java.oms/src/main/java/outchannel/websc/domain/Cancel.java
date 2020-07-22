@@ -1,4 +1,4 @@
-package websc.domain;
+package outchannel.websc.domain;
 
 import lombok.Data;
 

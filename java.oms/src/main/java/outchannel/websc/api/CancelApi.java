@@ -1,9 +1,9 @@
-package websc.api;
+package outchannel.websc.api;
 
 import client.ApiClient;
 import org.junit.jupiter.api.Test;
-import websc.domain.Cancel;
-import websc.domain.Params;
+import outchannel.websc.domain.Cancel;
+import outchannel.websc.domain.Params;
 
 import java.io.IOException;
 
