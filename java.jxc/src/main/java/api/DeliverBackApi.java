@@ -22,10 +22,10 @@ public class DeliverBackApi {
     public void orderBack() throws IOException {
         //组装商品项
         List<Product> productList = new ArrayList<>();
-        productList.add(new Product("DTS2236220","",2,"ZP"));
+        productList.add(new Product("NF07061102","",10,"ZP"));
 
         //组装bizdata
-        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot("OB20200722182941420255","LSVUACUHBM","SF",productList);
+        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot("OB20200722183931349259","LSVUACUHBM","SF",productList);
 //        System.out.println(XmlUtil.objToXml(wmsRequestRoot));
 
         Params params = new Params("1.0","wms.saleorderinfo.update",XmlUtil.objToXml(wmsRequestRoot).toString());

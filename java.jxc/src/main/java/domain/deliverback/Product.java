@@ -28,12 +28,16 @@ public class Product {
     private String InventoryType;
 
     public Product(String sku, String batchCode, int qty, String inventoryType) {
-        OrderLineNo = "";
-        Sku = sku;
-        BatchCode = batchCode;
-        Qty = qty;
-        Memo = "你好备注";
-        BatchValue1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        InventoryType = inventoryType;
+        this.OrderLineNo = "";
+        this.Sku = sku;
+        this.BatchCode = batchCode;
+        this.Qty = qty;
+        this.Memo = "你好备注";
+        this.BatchValue1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.BatchValue2 = "";
+        this.BatchValue3 = "";
+        this.BatchValue4 = "";
+        this.BatchValue5 = "";
+        this.InventoryType = inventoryType;
     }
 }
