@@ -17,7 +17,6 @@ public class Item {
     public Item(String shopItemCode,String outItemCode, int count, double unitPrice) {
         this.outItemCode = outItemCode;
         this.shopItemCode = shopItemCode;
-        this.outItemCode = "";
         this.count = count;
         this.unitPrice = unitPrice;
     }
