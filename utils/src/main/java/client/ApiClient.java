@@ -74,25 +74,37 @@ public class ApiClient {
 
     public String doPostForm(Object data) throws IOException {
         String responseStr = null;
-        try{
-            System.out.println(data);
-            post.setHeader("Content-Type", "application/x-www-form-urlencoded");
-            Map<String,Object> map = JavaBeanUtils.convertBeanToMap(data);
-            List<NameValuePair> paramList = new ArrayList<NameValuePair>();
-            for (String key : map.keySet()) {
-                paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
-            }
-            // 模拟表单
-            UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList,"utf-8");
-
-            post.setEntity(entity);
-            response = client.execute(post);
-            responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
-            System.out.println(responseStr);
-        }catch (Exception e){
+        if(data!=null){
+            try{
+                System.out.println(data);
+                post.setHeader("Content-Type", "application/x-www-form-urlencoded");
+                Map<String,Object> map = JavaBeanUtils.convertBeanToMap(data);
+                List<NameValuePair> paramList = new ArrayList<NameValuePair>();
+                for (String key : map.keySet()) {
+                    paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
+                }
+                // 模拟表单
+                UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList,"utf-8");
+                post.setEntity(entity);
+            }catch (Exception e){
 //            log.error("出错了");
-            e.printStackTrace();
+                e.printStackTrace();
+            }
         }
+        response = client.execute(post);
+        responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
+        System.out.println(responseStr);
+        return responseStr;
+    }
+
+    public String doGetUrl() throws IOException {
+        String responseStr = null;
+
+        get.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        response = client.execute(get);
+
+        responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
+        System.out.println(responseStr);
         return responseStr;
     }
 

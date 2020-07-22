@@ -17,20 +17,23 @@ import java.util.Map;
 public class JavaBeanUtils {
 
     public static Map<String,Object> convertBeanToMap(Object bean) throws IntrospectionException,IllegalAccessException, InvocationTargetException {
-        Class type = bean.getClass();
-        Map<String,Object> returnMap = new HashMap<String, Object>();
-        BeanInfo beanInfo = Introspector.getBeanInfo(type);
-        PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
-        for (int i = 0; i < propertyDescriptors.length; i++) {
-            PropertyDescriptor descriptor = propertyDescriptors[i];
-            String propertyName = descriptor.getName();
-            if (!propertyName.equals("class")) {
-                Method readMethod = descriptor.getReadMethod();
-                Object result = readMethod.invoke(bean, new Object[0]);
-                if (result != null) {
-                    returnMap.put(propertyName, result);
-                } else {
-                    returnMap.put(propertyName, "");
+        Map<String,Object> returnMap = null;
+        if(bean!=null){
+            Class type = bean.getClass();
+            returnMap = new HashMap<String, Object>();
+            BeanInfo beanInfo = Introspector.getBeanInfo(type);
+            PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+            for (int i = 0; i < propertyDescriptors.length; i++) {
+                PropertyDescriptor descriptor = propertyDescriptors[i];
+                String propertyName = descriptor.getName();
+                if (!propertyName.equals("class")) {
+                    Method readMethod = descriptor.getReadMethod();
+                    Object result = readMethod.invoke(bean, new Object[0]);
+                    if (result != null) {
+                        returnMap.put(propertyName, result);
+                    } else {
+                        returnMap.put(propertyName, "");
+                    }
                 }
             }
         }
