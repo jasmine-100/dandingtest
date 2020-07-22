@@ -3,6 +3,7 @@ package api;
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import domain.*;
+import domain.deliverback.Product;
 import domain.good.Good;
 import domain.stockin.PurOrderItem;
 import domain.stockin.PurchaseOrder;
@@ -45,7 +46,7 @@ public class PurchaseStockinApi {
             stoOrderItems.add(new StoOrderItem(good.getProCode(),String.valueOf(num)));
 
             //入库单回执商品列表
-            products.add(new Product(good.getProCode(),good.getIsbatch(),String.valueOf(num),"ZP"));
+            products.add(new Product(good.getProCode(),good.getIsbatch(),num,"ZP"));
         }
         PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems);
 
