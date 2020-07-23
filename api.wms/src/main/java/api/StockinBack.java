@@ -1,11 +1,11 @@
 package api;
 
 import client.ApiClient;
-import domain.ServiceName;
-import domain.wmsback.BillType;
-import domain.wmsback.ParamsWms;
-import domain.wmsback.Product;
-import domain.wmsback.WmsRequestRoot;
+import domain.ParamsWms;
+import domain.ServiceType;
+import domain.stockin.BillType;
+import domain.stockin.Product;
+import domain.stockin.WmsRequestRoot;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 
@@ -16,9 +16,9 @@ import java.util.List;
 /**
  * @Author： jasmine
  * @Description :
- * @Date : Created in 2020/7/23 17:12
+ * @Date : Created in 2020/7/23 17:35
  */
-public class StockinWmsBackApi {
+public class StockinBack {
     String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
     ApiClient client = new ApiClient(url);
 
@@ -34,7 +34,7 @@ public class StockinWmsBackApi {
 
         WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(orderno,whCode,hzid, BillType.CAIGOU,products);
 
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceName.STOCKIN_BACK,"1.0");
+        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
         client.doPostForm(paramsWms);
     }
@@ -48,7 +48,7 @@ public class StockinWmsBackApi {
 
         WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(orderno,whCode,hzid, BillType.HUANHUO,products);
 
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceName.STOCKIN_BACK,"1.0");
+        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
         client.doPostForm(paramsWms);
     }
@@ -61,9 +61,8 @@ public class StockinWmsBackApi {
 
         WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(orderno,whCode,hzid, BillType.OTHER,products);
 
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceName.STOCKIN_BACK,"1.0");
+        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
         client.doPostForm(paramsWms);
     }
-
 }

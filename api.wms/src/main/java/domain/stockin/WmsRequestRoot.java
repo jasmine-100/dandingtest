@@ -1,4 +1,4 @@
-package domain.wmsback;
+package domain.stockin;
 
 import javax.xml.bind.annotation.*;
 import java.text.SimpleDateFormat;

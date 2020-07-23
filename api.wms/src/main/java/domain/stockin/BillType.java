@@ -1,4 +1,4 @@
-package domain.wmsback;
+package domain.stockin;
 
 /**
  * @Author： jasmine

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api.qimen" />
+        <module name="api.wms" />
         <module name="java.jxc" />
         <module name="java.ccs" />
         <module name="api.v3" />
