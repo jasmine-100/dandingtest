@@ -27,10 +27,10 @@ public class StockinApi {
         List<Sku> skuList = new ArrayList<>();
         skuList.add(new Sku("JHK000123",100));
         //组装originJson
-        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.CAIGOU,skuList);
-//        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.DIAOBO,skuList);
-//        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.PFTUIHUO,skuList);
-//        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.SOTUIHUO,skuList);
+        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.CAIGOU,skuList); //采购单
+//        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.DIAOBO,skuList); //调拨单
+//        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.PFTUIHUO,skuList); //批发退货单
+//        Stockin stockin = new Stockin("TESTDEPOT001","DS15628267317912", OrderType.SOTUIHUO,skuList); //销售退货单
 
         //组装接口参数params
         Params params = new Params(JSON.toJSON(stockin).toString(), ServiceName.STOCKIN_CREATE,"WMSV3");
