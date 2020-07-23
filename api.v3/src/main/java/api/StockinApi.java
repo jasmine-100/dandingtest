@@ -33,7 +33,7 @@ public class StockinApi {
         List<Sku> skuList = new ArrayList<>();
         skuList.add(new Sku("JHK000123",100));
         //组装originJson
-        Stockin stockin = new Stockin(orderno,whCode,accessCode, OrderType.CAIGOU,skuList); //采购单
+        Order stockin = new Order(orderno,whCode,accessCode, OrderType.CAIGOU,skuList); //采购单
 
         //组装接口参数params
         Params params = new Params(JSON.toJSON(stockin).toString(), ServiceName.STOCKIN_CREATE, AppId.WMSV3);
