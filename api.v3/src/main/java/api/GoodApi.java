@@ -2,7 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.ParamsV3;
+import domain.Params;
 import domain.ServiceName;
 import domain.good.Good;
 import domain.good.Search;
@@ -33,7 +33,7 @@ public class GoodApi {
         Good good = new Good("TESTDEPOT001","DS15628267317912",skuList);
 
         //组装params
-        ParamsV3 params = new ParamsV3(JSON.toJSON(good).toString(), ServiceName.GOOD_CREATE,"WMSV3");
+        Params params = new Params(JSON.toJSON(good).toString(), ServiceName.GOOD_CREATE,"WMSV3");
 
         //接口推送
         client.doPostForm(params);
@@ -46,7 +46,7 @@ public class GoodApi {
         //组装originJson
         Search search = new Search("TESTDEPOT001","DS15628267317912","1","10");
         //组装params
-        ParamsV3 params = new ParamsV3(JSON.toJSON(search).toString(),ServiceName.GOOD_QUERY,"WMSV3");
+        Params params = new Params(JSON.toJSON(search).toString(),ServiceName.GOOD_QUERY,"WMSV3");
 
         //接口推送
         client.doPostForm(params);

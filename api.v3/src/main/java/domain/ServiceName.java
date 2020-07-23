@@ -13,4 +13,6 @@ public class ServiceName {
 
     public static final String STOCKIN_CREATE = "stockin.create";
 
+    public static final String DELIVER_CREATE = "delivery.create";
+
 }

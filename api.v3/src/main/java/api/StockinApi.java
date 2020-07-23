@@ -3,7 +3,7 @@ package api;
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import domain.AppId;
-import domain.ParamsV3;
+import domain.Params;
 import domain.ServiceName;
 import domain.stockin.*;
 import org.junit.jupiter.api.Test;
@@ -36,7 +36,7 @@ public class StockinApi {
         Stockin stockin = new Stockin(orderno,whCode,accessCode, OrderType.CAIGOU,skuList); //采购单
 
         //组装接口参数params
-        ParamsV3 params = new ParamsV3(JSON.toJSON(stockin).toString(), ServiceName.STOCKIN_CREATE, AppId.WMSV3);
+        Params params = new Params(JSON.toJSON(stockin).toString(), ServiceName.STOCKIN_CREATE, AppId.WMSV3);
 
         //接口推送
         client.doPostForm(params);

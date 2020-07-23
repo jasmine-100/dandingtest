@@ -13,14 +13,11 @@ import java.util.List;
  */
 @Data
 public class Stockin {
+    //发货单和入库单共同的属性
     private String accessCode;
     private String whCode;
     private String thirdNo;
-
-    //CGRKD采购单，DBRKD调拨入库单，PFTHRKD批发退货入库单，SOTHRKD销售退货入库单
-    private String type;
-    private String shippingCode;
-    private String  receiverName;
+    private String receiverName;
     private String receiverMobile;
     private String receiverProvince;
     private String receiverCity;
@@ -28,6 +25,19 @@ public class Stockin {
     private String receiverDetailAddress;
     private String sourcePlatform;
     private List<Sku> skuList;
+
+    //入库单属性
+    private String type; //CGRKD采购单，DBRKD调拨入库单，PFTHRKD批发退货入库单，SOTHRKD销售退货入库单
+    private String shippingCode;
+
+    //发货单属性
+    private String bondType;
+    private String senderName;
+    private String senderMobile;
+    private String senderProvince;
+    private String senderCity;
+    private String senderDistrict;
+    private String senderDetailAddress;
 
     public Stockin(String thirdNo,String whCode,String accessCode, String type,List<Sku> skuList) {
         this.accessCode = accessCode;
