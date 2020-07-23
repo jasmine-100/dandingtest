@@ -40,7 +40,4 @@ public class StockinApi {
         ApiClient client = new ApiClient(url);
         client.doPostForm(params);
     }
-
-
-
 }
