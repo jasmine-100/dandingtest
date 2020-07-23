@@ -13,6 +13,8 @@
         <module>java.oms</module>
         <module>java.ccs</module>
         <module>java.jxc</module>
+        <module>java.apiv3</module>
+        <module>api.qimen</module>
     </modules>
 
     <dependencies>
