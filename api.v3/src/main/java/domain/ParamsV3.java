@@ -8,12 +8,12 @@ import lombok.Data;
  * @Date : Created in 2020/7/23 15:27
  */
 @Data
-public class Params {
+public class ParamsV3 {
     private String originJson;
     private String serviceName;
     private String appId;
 
-    public Params(String originJson, String serviceName, String appId) {
+    public ParamsV3(String originJson, String serviceName, String appId) {
         this.originJson = originJson;
         this.serviceName = serviceName;
         this.appId = appId;

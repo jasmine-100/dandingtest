@@ -13,9 +13,8 @@ public class ServiceName {
 
     public static final String STOCKIN_CREATE = "stockin.create";
 
-    public static final String STOCKIN_CONFIRM = "stockin.confirm";
+    public static final String STOCKIN_BACK = "wms.purchaseorderinfo.update";
 
-    public static final String STOCKIN_DETAIL = "stockin.getDetail";
 
 
 }

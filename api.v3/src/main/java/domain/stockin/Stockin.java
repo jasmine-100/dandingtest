@@ -29,10 +29,10 @@ public class Stockin {
     private String sourcePlatform;
     private List<Sku> skuList;
 
-    public Stockin(String whCode,String accessCode, String type,List<Sku> skuList) {
+    public Stockin(String thirdNo,String whCode,String accessCode, String type,List<Sku> skuList) {
         this.accessCode = accessCode;
         this.whCode = whCode;
-        this.thirdNo = "JP"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        this.thirdNo = thirdNo;
         this.type = type;
         this.shippingCode = "Y" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.receiverName = "滴滴";
