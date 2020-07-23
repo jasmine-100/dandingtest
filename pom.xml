@@ -15,6 +15,7 @@
         <module>java.jxc</module>
         <module>java.apiv3</module>
         <module>api.qimen</module>
+        <module>api.v3</module>
     </modules>
 
     <dependencies>
