@@ -15,4 +15,6 @@ public class ServiceName {
 
     public static final String DELIVER_CREATE = "delivery.create";
 
+    public static final String STOCKOUT_CREATE = "stockout.create";
+
 }

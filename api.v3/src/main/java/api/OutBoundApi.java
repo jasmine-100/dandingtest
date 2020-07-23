@@ -6,6 +6,8 @@ import domain.AppId;
 import domain.Params;
 import domain.ServiceName;
 import domain.deliver.DeliverOrder;
+import domain.deliver.DeliverType;
+import domain.outbound.OutboundOrder;
 import domain.stockin.Sku;
 import org.junit.jupiter.api.Test;
 
@@ -16,9 +18,9 @@ import java.util.List;
 /**
  * @Author： jasmine
  * @Description :
- * @Date : Created in 2020/7/23 17:40
+ * @Date : Created in 2020/7/23 18:29
  */
-public class DeliverApi {
+public class OutBoundApi {
 
     String url = "http://outtest.order.yang800.cn/open/testV3";
     ApiClient client = new ApiClient(url);
@@ -26,18 +28,19 @@ public class DeliverApi {
     String whCode = "TESTDEPOT001";
     String accessCode = "DS15628267317912";
 
-    String orderno = "JY100237";
+    String orderno = "JY100238";
 
-    //推送发货单
+    //推送出库单
     @Test
     public void deliverPush() throws IOException {
         List<Sku> skuList = new ArrayList<>();
         skuList.add(new Sku("JHK000123",100));
 
-        DeliverOrder deliver = new DeliverOrder(accessCode,whCode,"JD123000",skuList);
-        Params params = new Params(JSON.toJSON(deliver).toString(), ServiceName.DELIVER_CREATE, AppId.WMSV3);
+        OutboundOrder outboundOrder = new OutboundOrder(DeliverType.CAIGOU,accessCode,whCode,orderno,skuList);
+        Params params = new Params(JSON.toJSON(outboundOrder).toString(), ServiceName.STOCKOUT_CREATE, AppId.WMSV3);
 
         client.doPostForm(params);
+
     }
 
 }

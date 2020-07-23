@@ -1,21 +1,21 @@
-package domain.stockin;
+package domain.outbound;
 
+import domain.stockin.Sku;
 import lombok.Data;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
  * @Author： jasmine
  * @Description :
- * @Date : Created in 2020/7/23 15:45
+ * @Date : Created in 2020/7/23 18:29
  */
 @Data
-public class Order {
+public class OutboundOrder {
     private String accessCode;
     private String whCode;
     private String thirdNo;
+    private String type;
     private String receiverName;
     private String receiverMobile;
     private String receiverProvince;
@@ -24,15 +24,17 @@ public class Order {
     private String receiverDetailAddress;
     private String sourcePlatform;
     private List<Sku> skuList;
-    private String type; //CGRKD采购单，DBRKD调拨入库单，PFTHRKD批发退货入库单，SOTHRKD销售退货入库单
-    private String shippingCode;
+    private String senderName;
+    private String senderMobile;
+    private String senderProvince;
+    private String senderCity;
+    private String senderDistrict;
+    private String senderDetailAddress;
 
-    public Order(String thirdNo, String whCode, String accessCode, String type, List<Sku> skuList) {
+    public OutboundOrder(String type,String accessCode, String whCode, String thirdNo, List<Sku> skuList) {
         this.accessCode = accessCode;
         this.whCode = whCode;
         this.thirdNo = thirdNo;
-        this.type = type;
-        this.shippingCode = "Y" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.receiverName = "滴滴";
         this.receiverMobile = "15966663333";
         this.receiverProvince = "浙江省";
@@ -41,5 +43,13 @@ public class Order {
         this.receiverDetailAddress = "九堡街道科技园";
         this.sourcePlatform = "";
         this.skuList = skuList;
+        this.type = type;
+        this.senderName = "哈哈";
+        this.senderMobile = "15566669999";
+        this.senderProvince = "北京";
+        this.senderCity = "北京市";
+        this.senderDistrict = "朝阳区";
+        this.senderDetailAddress = "长安街101号";
     }
+
 }
