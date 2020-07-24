@@ -1,5 +1,7 @@
 package domain.stockin;
 
+import domain.deliver.Product;
+
 import javax.xml.bind.annotation.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,6 +18,7 @@ public class StockinData {
     private String BillId;
     private String OrigSystem;
     private String SyncBillId;
+    private String HZID;
     private String WarehouseCode;
     private String BillType;
     private String Operator;
@@ -23,8 +26,7 @@ public class StockinData {
     private String Memo;
     private String BillDate;
     private String IsConfirm;
-    private String BatchNo;
-    private String HZID;
+
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
@@ -44,7 +46,6 @@ public class StockinData {
         Memo = "你好备注";
         BillDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         IsConfirm = "";
-        BatchNo = "1234560";
         this.HZID = HZID;
         Products = products;
     }

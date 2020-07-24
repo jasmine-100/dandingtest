@@ -24,7 +24,7 @@ public class StockinApi {
     String whCode = "TESTDEPOT001";
     String accessCode = "DS15628267317912";
 
-    String orderno = "JY100237";
+    String orderno = "PS1002399099";
 
     //推送入库单
     @Test

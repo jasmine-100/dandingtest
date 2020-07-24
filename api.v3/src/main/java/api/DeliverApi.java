@@ -26,7 +26,7 @@ public class DeliverApi {
     String whCode = "TESTDEPOT001";
     String accessCode = "DS15628267317912";
 
-    String orderno = "JY100237";
+    String orderno = "DE1002630096";
 
     //推送发货单
     @Test
@@ -34,7 +34,7 @@ public class DeliverApi {
         List<Sku> skuList = new ArrayList<>();
         skuList.add(new Sku("JHK000123",100));
 
-        DeliverOrder deliver = new DeliverOrder(accessCode,whCode,"JD123000",skuList);
+        DeliverOrder deliver = new DeliverOrder(accessCode,whCode,orderno,skuList);
         Params params = new Params(JSON.toJSON(deliver).toString(), ServiceName.DELIVER_CREATE, AppId.WMSV3);
 
         client.doPostForm(params);

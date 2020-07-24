@@ -1,5 +1,6 @@
 package domain.outbound;
 
+import domain.deliver.Product;
 import javax.xml.bind.annotation.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;

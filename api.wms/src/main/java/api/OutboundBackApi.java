@@ -3,8 +3,8 @@ package api;
 import client.ApiClient;
 import domain.ParamsWms;
 import domain.ServiceType;
+import domain.deliver.Product;
 import domain.outbound.OutboundData;
-import domain.outbound.Product;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 
@@ -17,14 +17,14 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/24 10:59
  */
-public class BStockoutBackApi {
+public class OutboundBackApi {
 
     String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
     ApiClient client = new ApiClient(url);
 
-    String whCode = "TESTDEPOT001";
+    String whCode = "01";
     String hzid = "GL01";
-    String orderno = "JOB2020072401";
+    String orderno = "JOB2020072409";
 
     //出库单回执
     @Test
