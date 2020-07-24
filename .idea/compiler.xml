@@ -7,7 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api.qimen" />
         <module name="api.wms" />
         <module name="java.jxc" />
         <module name="java.ccs" />
@@ -16,5 +15,8 @@
         <module name="java.oms" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api.qimen" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
