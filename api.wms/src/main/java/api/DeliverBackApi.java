@@ -17,7 +17,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/24 9:01
  */
-public class DeliverBackaPI {
+public class DeliverBackApi {
     String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
     ApiClient client = new ApiClient(url);
 
