@@ -36,7 +36,7 @@ public class StockinData {
     }
 
     public StockinData(String syncBillId, String warehouseCode, String HZID, String billType, List<Product> products) {
-        BillId = "ASN"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        BillId = "RELBRJ20012000950392";
         OrigSystem = "Y800OMS";
         SyncBillId = syncBillId;
         WarehouseCode = warehouseCode;
@@ -45,7 +45,7 @@ public class StockinData {
         OpertatorTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         Memo = "你好备注";
         BillDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        IsConfirm = "";
+        IsConfirm = "0";
         this.HZID = HZID;
         Products = products;
     }

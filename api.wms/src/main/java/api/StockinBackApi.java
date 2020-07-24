@@ -25,7 +25,7 @@ public class StockinBackApi {
 
     String whCode = "01";
     String hzid = "GL01";
-    String orderno = "PS100239901010";
+    String orderno = "PS1002399010950";
 
     //采购入库单回执
     @Test
@@ -34,11 +34,6 @@ public class StockinBackApi {
         products.add(new Product("JHK000123","000123",100,"2020-1-1","2023-6-6","ZP"));
 
         StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.CAIGOU,products);
-
-//
-//        List<domain.deliver.Product> products = new ArrayList<>();
-//        products.add(new domain.deliver.Product("JHK000123","100236",10,"2020-1-2","2020-9-1","ZP"));
-//        DeliverData deliverData = new DeliverData(orderno,whCode,"ZTO",1.68,hzid,products);
 
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
