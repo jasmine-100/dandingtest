@@ -1,12 +1,9 @@
-package domain.deliver;
+package domain.outbound;
 
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import java.util.List;
 
 /**
  * @Author： jasmine
@@ -16,20 +13,21 @@ import java.util.List;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
-    private String OrderLineNo;
+    private String ItemId;
     private String Sku;
     private String BatchCode;
     private int Qty;
-    private String InventoryType;
     private String Memo;
+    private String InventoryType;
     private String BatchValue1;
     private String BatchValue2;
     private String BatchValue3;
     private String BatchValue4;
     private String BatchValue5;
 
-    public Product(String sku, String batchCode, int qty, String batchValue1,String batchValue2, String inventoryType) {
-        OrderLineNo = "";
+
+    public Product(String sku, String batchCode, int qty, String batchValue1, String batchValue2, String inventoryType) {
+        ItemId = "";
         Sku = sku;
         BatchCode = batchCode;
         Qty = qty;

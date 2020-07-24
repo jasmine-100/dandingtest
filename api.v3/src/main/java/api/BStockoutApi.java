@@ -20,7 +20,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/23 18:29
  */
-public class OutBoundApi {
+public class BStockoutApi {
 
     String url = "http://outtest.order.yang800.cn/open/testV3";
     ApiClient client = new ApiClient(url);
@@ -28,7 +28,7 @@ public class OutBoundApi {
     String whCode = "TESTDEPOT001";
     String accessCode = "DS15628267317912";
 
-    String orderno = "JY100238";
+    String orderno = "JOB2020072401";
 
     //推送出库单
     @Test

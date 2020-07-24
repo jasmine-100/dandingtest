@@ -34,9 +34,9 @@ public class StockinBackApi {
 
         StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.CAIGOU,products);
 
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
-        client.doPostForm(paramsWms);
+        client.doPostForm(param);
     }
 
 
@@ -48,9 +48,9 @@ public class StockinBackApi {
 
         StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.HUANHUO,products);
 
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
-        client.doPostForm(paramsWms);
+        client.doPostForm(param);
     }
 
     //退货和其他入库单回执
@@ -61,8 +61,8 @@ public class StockinBackApi {
 
         StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.OTHER,products);
 
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
-        client.doPostForm(paramsWms);
+        client.doPostForm(param);
     }
 }

@@ -7,4 +7,6 @@ package domain;
  */
 public class ServiceType {
     public static final String STOCKIN_BACK = "wms.purchaseorderinfo.update";
+
+    public static final String OUTBOUND_BACK = "wms.issueorderinfo.update";
 }

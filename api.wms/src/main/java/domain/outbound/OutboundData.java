@@ -1,19 +1,55 @@
 package domain.outbound;
 
+import javax.xml.bind.annotation.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
 /**
  * @Author： jasmine
  * @Description :
  * @Date : Created in 2020/7/24 9:36
  */
+@XmlRootElement(name = "wmsRequestRoot")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class OutboundData {
+    private String BillId;
+    private String SyncBillId;
+    private String WarehouseCode;
+    private String HZID;
+    private String BusinessType;
+    private String Operator;
+    private String OperatorTime;
 
-        <wmsRequestRoot><ShippingCode>20200120</ShippingCode>
-    <ShippingCompany>YUNDA</ShippingCompany>
-    <OrigSystem>Y800OMS</OrigSystem>
-    <OrderType>QTCK</OrderType><Weight>0</Weight>
-    <Memo /><BillId>RELBRJ20012000950392</BillId>
-    <SyncBillId>142966082989-WOO197376838548</SyncBillId>
-<WarehouseCode>KJC</WarehouseCode>
-    <HZID>GL01</HZID><BusinessType /><Operator>03906</Operator>
-    <OperatorTime>2020-01-20 11:10:02</OperatorTime><Products>
+    private String ShippingCode;
+    private String ShippingCompany;
+    private String OrigSystem;
+    private String OrderType;
+    private double Weight;
+    private String Memo;
+
+    @XmlElementWrapper(name = "Products")
+    @XmlElement(name = "Product")
+    private List<Product> Products;
+
+    public OutboundData() {
+    }
+
+    public OutboundData( String syncBillId, String warehouseCode, String HZID, String shippingCompany,String orderType, double weight, List<Product> products) {
+        BillId = "RELBRJ20012000950392";
+        SyncBillId = syncBillId;
+        WarehouseCode = warehouseCode;
+        this.HZID = HZID;
+        BusinessType = "";
+        Operator = "咖宝";
+        OperatorTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        ShippingCode = "Y"+new Random().nextInt(99999999);
+        ShippingCompany = shippingCompany;
+        OrigSystem = "Y800OMS";
+        OrderType = orderType;
+        Weight = weight;
+        Memo = "你好出库单";
+        Products = products;
+    }
 }
