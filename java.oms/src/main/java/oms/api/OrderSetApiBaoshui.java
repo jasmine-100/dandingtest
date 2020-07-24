@@ -20,11 +20,11 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiBaoshui {
-    String orderNo = "JOS202007221724";
+    String orderNo = "JOS202007221725";
 
     // 保税订单
     @Test
-    public void orderSet() throws IOException {
+    public void orderSet() throws Exception {
 //        String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         //组装商品列表
         List<Item> items = new ArrayList<Item>();

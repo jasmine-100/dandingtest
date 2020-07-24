@@ -61,7 +61,7 @@ public class GxApi {
 
     //第四步：小B下单，调用OMS内部下单接口
     @Test
-    public void orderSet() throws IOException {
+    public void orderSet() throws Exception {
         //订单号
         String orderno = "JOS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 

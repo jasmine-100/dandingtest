@@ -59,27 +59,27 @@ public class ApiClient {
             post = new HttpPost(url+"?"+str);
         }
 
-//        //组装head参数
-//        if(head!=null) {
-//            System.out.println(head);
+        //组装head参数
+        if(head!=null) {
+            System.out.println(head);
 //            post.setHeader("Content-Type", "application/x-www-form-urlencoded");
-//            Map<String, Object> map = JavaBeanUtils.convertBeanToMap(head);
-//            List<NameValuePair> paramList = new ArrayList<NameValuePair>();
-//            for (String key : map.keySet()) {
-//                paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
-//            }
-//            // 模拟表单
-//            UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList, "utf-8");
-//            post.setEntity(entity);
-//        }
-//
-//        //组装body参数
-//        if (body != null){
-//            System.out.println(body);
-//            //组装xml参数
-//            StringEntity entity2 = new StringEntity(body.toString(), "utf-8");// 解决中文乱码问题
-//            post.setEntity(entity2);
-//        }
+            Map<String, Object> map = JavaBeanUtils.convertBeanToMap(head);
+            List<NameValuePair> paramList = new ArrayList<NameValuePair>();
+            for (String key : map.keySet()) {
+                paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
+            }
+            // 模拟表单
+            UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList, "utf-8");
+            post.setEntity(entity);
+        }
+
+        //组装body参数(xml格式)
+        if (body != null){
+            System.out.println(body);
+            //组装xml参数
+            StringEntity entity2 = new StringEntity(body.toString(), "utf-8");// 解决中文乱码问题
+            post.setEntity(entity2);
+        }
 
         response = client.execute(post);
         responseStr = EntityUtils.toString(response.getEntity(),"utf-8");

@@ -22,8 +22,8 @@ public class StockinApi {
     String url = "http://outtest.order.yang800.cn/qimen/api";
 
     String whCode = "01";
-    String ownerCode = "DS15888212243276";
-    String orderno = "oop1130000";
+    String ownerCode = "DS15712047230632";
+    String orderno = "STI030000";
 
     @Test
     public void orderSet() throws Exception {

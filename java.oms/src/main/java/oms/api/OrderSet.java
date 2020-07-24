@@ -17,7 +17,8 @@ import java.util.List;
  */
 public class OrderSet {
 
-    public static void orderSet(String orderNo,String shopId,List<Item> items) throws IOException {
+    public static void orderSet(String orderNo,String shopId,List<Item> items) throws Exception {
+        String url = "http://pangu.admintest.yang800.cn/docking/api/order/push";
 
         //组装订单项
         Order order = new Order(orderNo,shopId,items,10,20,5);
