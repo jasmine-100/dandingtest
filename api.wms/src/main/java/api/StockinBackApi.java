@@ -18,7 +18,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/23 17:35
  */
-public class StockinBack {
+public class StockinBackApi {
     String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
     ApiClient client = new ApiClient(url);
 
