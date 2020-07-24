@@ -4,7 +4,7 @@ import client.ApiClient;
 import domain.ParamsWms;
 import domain.ServiceType;
 import domain.deliver.Product;
-import domain.deliver.WmsRequestRoot;
+import domain.deliver.DeliverData;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 
@@ -32,7 +32,7 @@ public class DeliverBackaPI {
         products.add(new Product("sku123","100236",10,"2020-1-2","2020-9-1","ZP"));
 
         //组装bizdata
-        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(orderno,whCode,"ZTO",1.68,hzid,products);
+        DeliverData wmsRequestRoot = new DeliverData(orderno,whCode,"ZTO",1.68,hzid,products);
 
         //组装请求参数
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");

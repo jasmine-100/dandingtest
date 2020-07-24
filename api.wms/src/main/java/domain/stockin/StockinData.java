@@ -12,7 +12,7 @@ import java.util.List;
  */
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class WmsRequestRoot {
+public class StockinData {
     private String BillId;
     private String OrigSystem;
     private String SyncBillId;
@@ -30,10 +30,10 @@ public class WmsRequestRoot {
     @XmlElement(name = "Product")
     private List<Product> Products;
 
-    public WmsRequestRoot() {
+    public StockinData() {
     }
 
-    public WmsRequestRoot(String syncBillId, String warehouseCode, String HZID, String billType, List<Product> products) {
+    public StockinData(String syncBillId, String warehouseCode, String HZID, String billType, List<Product> products) {
         BillId = "ASN"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         OrigSystem = "Y800OMS";
         SyncBillId = syncBillId;

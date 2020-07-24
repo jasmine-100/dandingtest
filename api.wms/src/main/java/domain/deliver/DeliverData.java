@@ -16,7 +16,7 @@ import java.util.Random;
 @Data
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class WmsRequestRoot {
+public class DeliverData {
     private String BillId;
     private String SyncBillId;
     private String DealCode;
@@ -36,7 +36,7 @@ public class WmsRequestRoot {
     @XmlElement(name = "Product")
     private List<Product> Products;
 
-    public WmsRequestRoot(String syncBillId, String warehouseCode, String shippingCompany,double weight, String HZID, List<Product> products) {
+    public DeliverData(String syncBillId, String warehouseCode, String shippingCompany, double weight, String HZID, List<Product> products) {
         BillId = "RELHXY20021100953752";
         SyncBillId = syncBillId;
         DealCode = "420000050620200210473068849300";
@@ -54,6 +54,6 @@ public class WmsRequestRoot {
         Products = products;
     }
 
-    public WmsRequestRoot() {
+    public DeliverData() {
     }
 }

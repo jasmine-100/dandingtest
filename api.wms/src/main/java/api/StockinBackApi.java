@@ -5,7 +5,7 @@ import domain.ParamsWms;
 import domain.ServiceType;
 import domain.stockin.BillType;
 import domain.stockin.Product;
-import domain.stockin.WmsRequestRoot;
+import domain.stockin.StockinData;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 
@@ -32,7 +32,7 @@ public class StockinBackApi {
         List<Product> products = new ArrayList<>();
         products.add(new Product("JHK000123","000123",100,"ZP"));
 
-        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(orderno,whCode,hzid, BillType.CAIGOU,products);
+        StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.CAIGOU,products);
 
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
@@ -46,7 +46,7 @@ public class StockinBackApi {
         List<Product> products = new ArrayList<>();
         products.add(new Product("JHK000123","000123",100,"ZP"));
 
-        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(orderno,whCode,hzid, BillType.HUANHUO,products);
+        StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.HUANHUO,products);
 
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
@@ -59,7 +59,7 @@ public class StockinBackApi {
         List<Product> products = new ArrayList<>();
         products.add(new Product("JHK000123","000123",100,"ZP"));
 
-        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(orderno,whCode,hzid, BillType.OTHER,products);
+        StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.OTHER,products);
 
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK,"1.0");
 
