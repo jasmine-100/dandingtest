@@ -24,7 +24,7 @@ public class SnBackApi {
 
     String whCode = "01";
     String hzid = "GL01";
-    String orderno = "DE1002630096";
+    String orderno = "DE1002630001";
 
     @Test
     public void snBack() throws IOException {

@@ -23,7 +23,7 @@ public class DeliverBackaPI {
 
     String whCode = "01";
     String hzid = "GL01";
-    String orderno = "DE1002630096";
+    String orderno = "DE1002630001";
 
     //发货单回执
     @Test

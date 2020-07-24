@@ -24,7 +24,7 @@ public class OutboundBackApi {
 
     String whCode = "01";
     String hzid = "GL01";
-    String orderno = "JOB2020072409";
+    String orderno = "JOB2020001";
 
     //出库单回执
     @Test

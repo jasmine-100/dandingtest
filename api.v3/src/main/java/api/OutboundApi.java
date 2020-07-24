@@ -28,7 +28,7 @@ public class OutboundApi {
     String whCode = "TESTDEPOT001";
     String accessCode = "DS15628267317912";
 
-    String orderno = "JOB2020072409";
+    String orderno = "JOB2020001";
 
     //推送出库单
     @Test

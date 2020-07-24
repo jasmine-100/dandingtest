@@ -17,6 +17,7 @@
         <module>api.qimen</module>
         <module>api.v3</module>
         <module>api.wms</module>
+        <module>api.qimen</module>
     </modules>
 
     <dependencies>

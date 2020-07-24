@@ -26,7 +26,7 @@ public class DeliverApi {
     String whCode = "TESTDEPOT001";
     String accessCode = "DS15628267317912";
 
-    String orderno = "DE1002630096";
+    String orderno = "DE1002630001";
 
     //推送发货单
     @Test

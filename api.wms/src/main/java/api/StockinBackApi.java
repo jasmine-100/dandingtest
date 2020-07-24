@@ -25,7 +25,7 @@ public class StockinBackApi {
 
     String whCode = "01";
     String hzid = "GL01";
-    String orderno = "PS1002399010950";
+    String orderno = "PS100239901";
 
     //采购入库单回执
     @Test
