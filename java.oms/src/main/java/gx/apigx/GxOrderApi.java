@@ -19,7 +19,7 @@ import java.util.List;
 public class GxOrderApi {
 
     //订单号
-    String orderno = "JOS2020072702";
+    String orderno = "JOS2020072703";
     String shopId = "1021";
 
     //小B下单，调用OMS内部下单接口
