@@ -17,14 +17,13 @@ import java.util.List;
  * @Date : Created in 2020/7/27 14:51
  */
 public class GxOrderApi {
-    String orderno = "JOS000123465";
+
+    //订单号
+    String orderno = "JOS2020072701";
 
     //小B下单，调用OMS内部下单接口
     @Test
     public void orderSet() throws Exception {
-        //订单号
-
-
         //组装商品项：下单之前小B需要映射和上架商品、补足库存
         List<Item> items = new ArrayList<>();
         items.add(new Item("","JO00001",1,50));
