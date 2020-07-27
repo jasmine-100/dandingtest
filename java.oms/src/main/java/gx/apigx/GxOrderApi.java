@@ -19,7 +19,8 @@ import java.util.List;
 public class GxOrderApi {
 
     //订单号
-    String orderno = "JOS2020072701";
+    String orderno = "JOS2020072702";
+    String shopId = "1021";
 
     //小B下单，调用OMS内部下单接口
     @Test
@@ -30,13 +31,13 @@ public class GxOrderApi {
 //        items.add(new Item("SPC1595404032469","XS001",2,50));
 
         //组装并推送订单
-        OrderSet.orderSet(orderno,"1021",items);
+        OrderSet.orderSet(orderno,shopId,items);
     }
 
     //推送运单回执
     @Test
     public void pushShipBack() throws IOException {
-        ShipOrder.shipBackPush("JOS20200727144809");
+        ShipOrder.shipBackPush(orderno);
     }
 
 }
