@@ -16,13 +16,13 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 接口处理供销平台和OMS的订单流程
  * @Date : Created in 2020/7/22 12:11
  */
 public class GxApi {
 
     //小B账户：jasmineb
-    String bUserId = "162";
+    String bUserId = "167";
 
     //大B账户：jasmine10
     String BUserId = "144";
@@ -40,7 +40,7 @@ public class GxApi {
     @Test
     public void selectGoodUp() throws IOException {
         //sku取上一步查询出来的sku
-        GoodUp good = new GoodUp("珍珠锁水保湿丝薄面膜", BUserId,"SKU1594975800912");
+        GoodUp good = new GoodUp("", BUserId,"SKU1595668920235");
 
         String url = "http://npc.daily.yang800.com/backend/docking/api/item/add";
         ApiClient client = new ApiClient(url);
@@ -67,11 +67,11 @@ public class GxApi {
 
         //组装商品项：下单之前小B需要映射和上架商品、补足库存
         List<Item> items = new ArrayList<>();
-        items.add(new Item("","FX1005",1,50));
+        items.add(new Item("","JO00001",1,50));
 //        items.add(new Item("SPC1595404032469","XS001",2,50));
 
         //组装并推送订单
-        OrderSet.orderSet(orderno,"1009",items);
+        OrderSet.orderSet(orderno,"1021",items);
     }
 
 
