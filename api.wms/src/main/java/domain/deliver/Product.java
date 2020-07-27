@@ -4,18 +4,16 @@ import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import java.util.List;
 
 /**
  * @Author： jasmine
  * @Description :
- * @Date : Created in 2020/7/24 9:07
+ * @Date : Created in 2020/7/27 18:08
  */
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
+
     private String OrderLineNo;
     private String Sku;
     private String BatchCode;
@@ -41,5 +39,6 @@ public class Product {
         BatchValue5 = "";
         InventoryType = inventoryType;
     }
+
 
 }

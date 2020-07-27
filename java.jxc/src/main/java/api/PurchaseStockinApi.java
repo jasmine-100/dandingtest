@@ -2,15 +2,17 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.deliverback.Product;
+import domain.ParamsWms;
+import domain.ServiceType;
+import domain.deliver.DeliverData;
+import domain.deliver.Product;
+import domain.deliverback.WmsRequestRoot;
 import domain.good.Good;
-import domain.stockin.PurOrderItem;
-import domain.stockin.PurchaseOrder;
-import domain.stockin.StoOrderItem;
-import domain.stockin.StockinOrder;
+import domain.stockin.*;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import utils.ExcelUtils;
 import utils.JsonUtils;
+import utils.XmlUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,18 +24,21 @@ import java.util.List;
  * @Date : Created in 2020/7/20 12:32
  */
 public class PurchaseStockinApi {
+    static List<Good> goods = new ArrayList<Good>();
+
+    @BeforeAll
+    public static void setUp() {
+        String str = "202007271724";
+        goods.add(new Good(str + 1, "小西瓜", "0", "100", "12.6", "AAA"));
+        goods.add(new Good(str + 2, "小西瓜", "0", "100", "12.6", "AAA"));
+        goods.add(new Good(str + 3, "小西瓜", "0", "100", "12.6", "AAA"));
+    }
 
     @Test
     public void createPurchaseStockinOrder() throws Exception{
-        List<Good> goods = new ArrayList<Good>();
-        List<Product> products = new ArrayList<Product>();
         List<PurOrderItem> purOrderItems = new ArrayList<PurOrderItem>();
         List<StoOrderItem> stoOrderItems = new ArrayList<StoOrderItem>();
 
-        String str= "202007271724";
-        goods.add(new Good(str+1,"小西瓜","0","100","12.6","AAA"));
-        goods.add(new Good(str+2,"小西瓜","0","100","12.6","AAA"));
-        goods.add(new Good(str+3,"小西瓜","0","100","12.6","AAA"));
         for (Good good:goods){
             int num = 10000;
             //组装采购商品项
@@ -42,9 +47,6 @@ public class PurchaseStockinApi {
 
             //入库单商品列表
             stoOrderItems.add(new StoOrderItem(good.getProCode(),String.valueOf(num)));
-
-            //入库单回执商品列表
-            products.add(new Product(good.getProCode(),good.getIsbatch(),num,"ZP"));
         }
         PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems);
 
@@ -57,9 +59,32 @@ public class PurchaseStockinApi {
         //创建入库单
         this.createStockinOrder(purchaseId,stoOrderItems);
 
-        // WMS回执
-//        this.back(products);
+    }
 
+    @Test
+    public void deliverBack() throws Exception {
+        String stockinOrderNo = "ET20200727175206898938";
+        String url = "http://hwms-notify-fat.yang800.com/dt/notify";
+
+        List<Product> products = new ArrayList<>();
+        for (Good good:goods){
+            int num = 10000;
+            //入库单回执商品列表
+            String i = good.getIsbatch();
+            if(i.equals("1")){
+                products.add(new Product(good.getProCode(),"201010",num,"2020-1-1","2022-1-1","ZP"));
+            }else{
+                products.add(new Product(good.getProCode(),"",num,"2020-1-1","2022-1-1","ZP"));
+            }
+        }
+
+        //组装bizdata
+        StockinData stockinData = new StockinData(stockinOrderNo,"01","GL01",BillType.CAIGOU,products);
+
+        //组装请求参数
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(stockinData), ServiceType.PURCHASE,"1.0");
+
+        ApiClient.doPostXml(url,null,null,param);
     }
 
     //创建采购单关联的入库单
@@ -70,15 +95,4 @@ public class PurchaseStockinApi {
         client.doPostJson(JSON.toJSON(stockinOrder));
     }
 
-//    public void back(List<Product> products) throws IOException {
-//        //入库单回执
-//        String stockinOrderNo = "ET20200713175057516371";
-//        String url1 = "http://192.168.20.201:8000/dt/notify";
-//        String url2 = "http://hwms-notify-fat.yang800.com/dt/notify";
-//        ApiHttpClient client = new ApiHttpClient(url2);
-//        List<Product> productList = products;
-//        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot(stockinOrderNo,"1",productList);
-//        WmsData wmsData = new WmsData(XmlUtils.objectToXml(wmsRequestRoot));
-//        client.doPostJson(JSON.toJSON(wmsData));
-//    }
 }

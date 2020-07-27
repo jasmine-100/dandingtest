@@ -13,4 +13,8 @@ public class ServiceType {
     public static final String OUTBOUND_BACK = "wms.bstockout.update";
 
     public static final String SN_BACK = "wms.sn.update";
+
+    public static final String SALEORDER ="wms.saleorderinfo.update";
+
+    public static final String PURCHASE = "wms.purchaseorderinfo.update";
 }
