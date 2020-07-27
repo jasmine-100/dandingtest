@@ -2,11 +2,17 @@ package domain.deliver;
 
 import domain.stockin.SenderInfo;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @Author： jasmine
  * @Description :
  * @Date : Created in 2020/7/24 18:25
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DeliveryOrder {
     String deliveryOrderCode;
     String preDeliveryOrderCode;
@@ -43,5 +49,38 @@ public class DeliveryOrder {
 
     String remark;
 
-
+    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode,String shopNick,double itemAmount,String logisticsCode,SenderInfo senderInfo, ReceiverInfo receiverInfo) {
+        this.deliveryOrderCode = deliveryOrderCode;
+        this.preDeliveryOrderCode = "20200701";
+        this.preDeliveryOrderId = "";
+        this.orderType = orderType;
+        this.warehouseCode = warehouseCode;
+        this.orderFlag = "";
+        this.sourcePlatformCode = "PDD";
+        this.sourcePlatformName = "拼多多";
+        this.buyerMessage = "快点儿发货咯";
+        this.sellerMessage = "发货咯";
+        this.createTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.placeOrderTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.payTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.payNo = "4200000594202006309194038449";
+        this.shopNick = shopNick;
+        this.sellerNick = "小仓库";
+        this.buyerNick = "大买家";
+        this.operatorName = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.arAmount = 0;
+        this.itemAmount = itemAmount;
+        this.discountAmount = 0;
+        this.freight = 0;
+        this.totalAmount = this.itemAmount+this.freight+this.arAmount-this.discountAmount;
+        this.logisticsCode = logisticsCode;
+        this.logisticsName = "";
+        this.expressCode = "";
+        this.operateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.isUrgency = "N";
+        this.invoiceFlag = "N";
+        this.senderInfo = senderInfo;
+        this.receiverInfo = receiverInfo;
+        this.remark = "你好备注";
+    }
 }

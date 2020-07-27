@@ -19,5 +19,12 @@ public class DeliverData {
 
     private ExtendProps extendProps;
 
+    public DeliverData() {
+    }
 
+    public DeliverData(DeliveryOrder deliveryOrder, List<OrderLine> orderLines, ExtendProps extendProps) {
+        this.deliveryOrder = deliveryOrder;
+        this.orderLines = orderLines;
+        this.extendProps = extendProps;
+    }
 }

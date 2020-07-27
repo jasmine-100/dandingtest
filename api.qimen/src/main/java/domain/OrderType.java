@@ -7,8 +7,10 @@ package domain;
  */
 public class OrderType {
 
+    //发货单
     public static final String DELIVER = "deliveryorder.create";
 
+    //出库单
     public static final String OUTBOUND = "stockout.create";
 
     //采购入库单
