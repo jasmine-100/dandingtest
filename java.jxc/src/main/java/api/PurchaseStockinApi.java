@@ -2,7 +2,6 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.*;
 import domain.deliverback.Product;
 import domain.good.Good;
 import domain.stockin.PurOrderItem;
@@ -31,11 +30,10 @@ public class PurchaseStockinApi {
         List<PurOrderItem> purOrderItems = new ArrayList<PurOrderItem>();
         List<StoOrderItem> stoOrderItems = new ArrayList<StoOrderItem>();
 
-        try {
-            goods = ExcelUtils.readGoods();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String str= "202007271724";
+        goods.add(new Good(str+1,"小西瓜","0","100","12.6","AAA"));
+        goods.add(new Good(str+2,"小西瓜","0","100","12.6","AAA"));
+        goods.add(new Good(str+3,"小西瓜","0","100","12.6","AAA"));
         for (Good good:goods){
             int num = 10000;
             //组装采购商品项
@@ -54,7 +52,7 @@ public class PurchaseStockinApi {
         ApiClient client = new ApiClient("http://logistics-api-fat.yang800.com/xhr/purchase/upsert");
         String response = client.doPostJson(JSON.toJSON(purchaseOrder));
         String purchaseId = JsonUtils.getJsonStr(response,"purOrderId").toString();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         //创建入库单
         this.createStockinOrder(purchaseId,stoOrderItems);
