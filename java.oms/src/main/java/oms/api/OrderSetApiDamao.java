@@ -17,19 +17,19 @@ import java.util.List;
  * @Date : Created in 2020/7/20 11:20
  */
 public class OrderSetApiDamao {
-    String orderNo = "JOS20200722150356";
+    String orderNo = "JOS20200728150903";
 
     // 大贸订单
     @Test
     public void orderSet2() throws IOException {
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("SPC1594975991833","",1,12));
-        items.add(new Item("SPC1595216228153","",5,10));
+        items.add(new Item("SPC1595921421330","",20,12));
+//        items.add(new Item("SPC1595216228153","",5,10));
 
         //组装订单项
 //        String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        Order order = new Order(orderNo,"869",items,10,20,5);
+        Order order = new Order(orderNo,"1026",items,10,20,5);
 
         //接口推送订单
         ApiClient client = new ApiClient("http://pangu.admintest.yang800.cn/docking/api/order/push");
