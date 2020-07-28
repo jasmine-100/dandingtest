@@ -11,13 +11,13 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description : 模拟OMS小B下单（大贸）
+ * @Description : 模拟OMS小B下单（保税）
  * @Date : Created in 2020/7/27 14:51
  */
-public class GxOrderApi {
+public class GxOrderTaxApi {
 
     //订单号
-    String orderno = "JOS2020072802";
+    String orderno = "JOS2020072703";
     String shopId = "1021";
 
     //小B下单，调用OMS内部下单接口

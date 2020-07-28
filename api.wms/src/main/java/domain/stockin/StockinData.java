@@ -1,6 +1,7 @@
 package domain.stockin;
 
 import domain.deliver.Product;
+import lombok.Data;
 
 import javax.xml.bind.annotation.*;
 import java.text.SimpleDateFormat;
@@ -12,6 +13,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/23 16:40
  */
+@Data
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class StockinData {
@@ -26,7 +28,6 @@ public class StockinData {
     private String Memo;
     private String BillDate;
     private String IsConfirm;
-
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")

@@ -11,6 +11,7 @@ import domain.good.Good;
 import domain.stockin.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeClass;
 import utils.JsonUtils;
 import utils.XmlUtil;
 
@@ -26,7 +27,7 @@ import java.util.List;
 public class PurchaseStockinApi {
     static List<Good> goods = new ArrayList<Good>();
 
-    @BeforeAll
+    @BeforeClass
     public static void setUp() {
         String str = "202007271724";
         goods.add(new Good(str + 1, "小西瓜", "0", "100", "12.6", "AAA"));
@@ -62,11 +63,11 @@ public class PurchaseStockinApi {
     }
 
     @Test
-    public void deliverBack() throws Exception {
-        String stockinOrderNo = "ET20200727175206898938";
+    public void orderBack() throws Exception {
+        String stockinOrderNo = "ET20200728140915928315";
         String url = "http://hwms-notify-fat.yang800.com/dt/notify";
 
-        List<Product> products = new ArrayList<>();
+        List<Product> products = new ArrayList<Product>();
         for (Good good:goods){
             int num = 10000;
             //入库单回执商品列表
@@ -80,12 +81,15 @@ public class PurchaseStockinApi {
 
         //组装bizdata
         StockinData stockinData = new StockinData(stockinOrderNo,"01","GL01",BillType.CAIGOU,products);
+        System.out.println(XmlUtil.objToXml(stockinData));
 
         //组装请求参数
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(stockinData), ServiceType.PURCHASE,"1.0");
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(stockinData), ServiceType.STOCKIN_BACK,"1.0");
 
-        ApiClient.doPostXml(url,null,null,param);
+        ApiClient client = new ApiClient(url);
+        client.doPostForm(param);
     }
+
 
     //创建采购单关联的入库单
     public void createStockinOrder(String purchaseId,List<StoOrderItem> stoOrderItems) throws IOException {
