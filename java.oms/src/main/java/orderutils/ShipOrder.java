@@ -20,4 +20,10 @@ public class ShipOrder {
         client.doPostForm(shipBack);
     }
 
+    //模拟运单回执
+    public static void shipBackPush(String orderno,String shipCompany,String shipCode) throws IOException {
+        ShipBack shipBack = new ShipBack(orderno,shipCompany,shipCode);
+        client.doPostForm(shipBack);
+    }
+
 }
