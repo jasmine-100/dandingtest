@@ -26,6 +26,6 @@ public class OrderSet {
         //接口推送订单
         ApiClient client = new ApiClient("http://pangu.admintest.yang800.cn/docking/api/order/push");
         client.doPostJson(JSON.toJSON(order));
-
     }
+
 }
