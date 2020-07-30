@@ -22,14 +22,14 @@ public class EntryOrder {
     private SenderInfo senderInfo;
 
 
-    public EntryOrder(String entryOrderCode, String ownerCode, String warehouseCode, String orderType, String supplierCode) {
+    public EntryOrder(String entryOrderCode, String ownerCode, String warehouseCode, String orderType, String supplierName) {
         this.entryOrderCode = entryOrderCode;
         this.ownerCode = ownerCode;
         this.warehouseCode = warehouseCode;
         this.orderType = orderType;
         this.expectStartTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        this.supplierCode = supplierCode;
-        this.supplierName = "";
+        this.supplierCode = "";
+        this.supplierName = supplierName;
         this.senderInfo = new SenderInfo("浙江省","杭州市","江干区");;
     }
 }
