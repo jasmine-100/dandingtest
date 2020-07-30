@@ -1,5 +1,7 @@
 package domain.deliver;
 
+import lombok.Data;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
@@ -8,8 +10,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
  * @Description :
  * @Date : Created in 2020/7/24 18:48
  */
+@Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ReceiverInfo {
+    String company;
     String name;
     String zipCode;
     String tel;
@@ -39,11 +43,12 @@ public class ReceiverInfo {
     }
 
     public ReceiverInfo() {
+        this.company = "";
         this.name = "陈小姐";
         this.zipCode = "";
         this.tel = "";
         this.mobile = "15818521909";
-        this.countryCode = "CN";
+        this.countryCode = "中国";
         this.province = "浙江省";
         this.city = "杭州市";
         this.area = "江干区";

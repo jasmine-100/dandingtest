@@ -25,6 +25,19 @@ public class SenderInfo {
     String town;
     String detailAddress;
 
+    public SenderInfo() {
+        this.company = "旗舰店";
+        this.name = "jasmine";
+        this.tel = "15522223333";
+        this.mobile = "15522223333";
+        this.countryCode = "中国";
+        this.province = "浙江省";
+        this.city = "杭州市";
+        this.area = "江干区";
+        this.town = "彩虹小镇";
+        this.detailAddress = "理想大道101号A座5楼";
+    }
+
     public SenderInfo(String province, String city, String area) {
         this.name = "jasmine";
         this.tel = "15522223333";

@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author： jasmine
@@ -49,7 +50,7 @@ public class DeliveryOrder {
 
     String remark;
 
-    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode,String shopNick,double itemAmount,String logisticsCode,SenderInfo senderInfo, ReceiverInfo receiverInfo) {
+    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode, String shopNick, List<OrderLine> orderLines,String logisticsCode, SenderInfo senderInfo, ReceiverInfo receiverInfo) {
         this.deliveryOrderCode = deliveryOrderCode;
         this.preDeliveryOrderCode = "20200701";
         this.preDeliveryOrderId = "";
@@ -69,7 +70,7 @@ public class DeliveryOrder {
         this.buyerNick = "大买家";
         this.operatorName = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.arAmount = 0;
-        this.itemAmount = itemAmount;
+        this.itemAmount = orderLines.stream().reduce(0.0,(x,y)->x+(y.getPlanQty()*y.getActualPrice()),Double::sum);
         this.discountAmount = 0;
         this.freight = 0;
         this.totalAmount = this.itemAmount+this.freight+this.arAmount-this.discountAmount;

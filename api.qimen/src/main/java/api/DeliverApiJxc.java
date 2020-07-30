@@ -1,0 +1,56 @@
+package api;
+
+import client.ApiClient;
+import domain.Method;
+import domain.Param;
+import domain.deliver.DeliverData;
+import domain.deliver.DeliveryOrder;
+import domain.deliver.OrderLine;
+import domain.deliver.ReceiverInfo;
+import domain.stockin.SenderInfo;
+import org.junit.Test;
+import utils.XmlUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @Author： jasmine
+ * @Description :
+ * @Date : Created in 2020/7/27 9:54
+ */
+public class DeliverApiJxc {
+    String url = "http://outtest.order.yang800.cn/qimen/api";
+
+    //仓库编码：取经销存系统的逻辑仓编码
+    String whCode = "LSXKOGSI7E";
+    //用不上，可以不填
+    String ownerCode = "";
+    //外部订单号，相同货主内唯一
+    String orderno = "JOS202007301732";
+    //yang-test的外部店铺的outkey（去掉QM）
+    String customerId = "C1590459235731";
+
+    //进销存存在的店铺名称
+    String shopName = "小店";
+
+    @Test
+    public void deliverOrder() throws Exception {
+
+        //组装body的商品项
+        List<OrderLine> orderLines = new ArrayList<>();
+        orderLines.add(new OrderLine(orderno,ownerCode,"sku07301047","",100,10));
+
+        // 组装body的订单项
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",whCode,shopName,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+
+        //组装body消息体
+        DeliverData deliverData = new DeliverData(deliveryOrder,orderLines);
+
+        // 组装接口参数
+        Param param = new Param(Method.DELIVER,customerId);
+
+        ApiClient.doPostXml(url,param,null, XmlUtil.objToXml(deliverData));
+        
+    }
+}

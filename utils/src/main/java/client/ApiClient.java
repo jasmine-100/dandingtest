@@ -52,7 +52,7 @@ public class ApiClient {
             List<NameValuePair> paramList = new ArrayList<NameValuePair>();
             for (String key : map.keySet()) {
                 paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
-                System.out.println(key+":"+map.get(key).toString());
+//                System.out.println(key+":"+map.get(key).toString());
             }
             String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
             System.out.println(str);

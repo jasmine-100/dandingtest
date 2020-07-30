@@ -5,7 +5,7 @@ package domain;
  * @Description :
  * @Date : Created in 2020/7/24 13:49
  */
-public class OrderType {
+public class Method {
 
     //发货单
     public static final String DELIVER = "deliveryorder.create";
