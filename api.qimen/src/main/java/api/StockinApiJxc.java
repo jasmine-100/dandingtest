@@ -20,8 +20,11 @@ import java.util.List;
 public class StockinApiJxc {
     String url = "http://outtest.order.yang800.cn/qimen/api";
 
+    //仓库编码：取经销存系统的逻辑仓编码
     String whCode = "LSXKOGSI7E";
+    //用不上，可以不填
     String ownerCode = "";
+    //外部订单号，相同货主内唯一
     String orderno = "SI2020073001";
 
     @Test
@@ -35,6 +38,7 @@ public class StockinApiJxc {
 
         //组装请求body
         OrderData orderData = new OrderData(entryOrder,orderLines);
+
 
         //组装接口头信息
         Param param = new Param(OrderType.STOCKIN,"C1590459235731");

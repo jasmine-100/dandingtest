@@ -17,14 +17,11 @@ public class DeliverData {
     @XmlElement(name = "orderLine")
     private List<OrderLine> orderLines;
 
-    private ExtendProps extendProps;
-
     public DeliverData() {
     }
 
-    public DeliverData(DeliveryOrder deliveryOrder, List<OrderLine> orderLines, ExtendProps extendProps) {
+    public DeliverData(DeliveryOrder deliveryOrder, List<OrderLine> orderLines) {
         this.deliveryOrder = deliveryOrder;
         this.orderLines = orderLines;
-        this.extendProps = extendProps;
     }
 }
