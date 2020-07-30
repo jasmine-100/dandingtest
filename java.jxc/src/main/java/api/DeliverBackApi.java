@@ -28,12 +28,12 @@ public class DeliverBackApi {
         WmsRequestRoot wmsRequestRoot = new WmsRequestRoot("OB20200722183931349259","LSVUACUHBM","SF",productList);
 //        System.out.println(XmlUtil.objToXml(wmsRequestRoot));
 
-        Params params = new Params("1.0","wms.saleorderinfo.update",XmlUtil.objToXml(wmsRequestRoot).toString());
+        Params params = new Params("1.0","wms.saleorderinfo.update",XmlUtil.objToXml(wmsRequestRoot));
 
         String url = "http://hwms-notify-fat.yang800.com/dt/notify";
         ApiClient client = new ApiClient(url);
         client.doPostForm(params);
-    }
 
+    }
 
 }

@@ -6,9 +6,12 @@ import domain.Param;
 import domain.stockin.EntryOrder;
 import domain.stockin.OrderData;
 import domain.stockin.OrderLine;
+import lombok.Data;
 import org.junit.Test;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import utils.XmlUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +27,7 @@ public class StockinApiJxc {
     //用不上，可以不填
     String ownerCode = "";
     //外部订单号，相同货主内唯一
-    String orderno = "SI2020073001";
+    String orderno = "SI2020073002";
     //yang-test的外部店铺的outkey（去掉QM）
     String customerId = "C1590459235731";
 
@@ -47,5 +50,22 @@ public class StockinApiJxc {
         ApiClient.doPostXml(url,param,null, XmlUtil.objToXml(orderData));
 
     }
+
+//    @Test
+//    public void orderBack() throws IOException {
+//        //组装商品项
+//        List<Product> productList = new ArrayList<>();
+//        productList.add(new Product("NF07061102","",10,"ZP"));
+//
+//        //组装bizdata
+//        WmsRequestRoot wmsRequestRoot = new WmsRequestRoot("OB20200722183931349259","LSVUACUHBM","SF",productList);
+////        System.out.println(XmlUtil.objToXml(wmsRequestRoot));
+//
+//        Params params = new Params("1.0","wms.saleorderinfo.update",XmlUtil.objToXml(wmsRequestRoot).toString());
+//
+//        String url = "http://hwms-notify-fat.yang800.com/dt/notify";
+//        ApiClient client = new ApiClient(url);
+//        client.doPostForm(params);
+//    }
 
 }
