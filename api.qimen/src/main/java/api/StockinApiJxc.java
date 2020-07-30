@@ -32,7 +32,7 @@ public class StockinApiJxc {
     public void orderSet() throws Exception {
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(ownerCode,"SKU073002",10,"ZP"));
+        orderLines.add(new OrderLine(ownerCode,"sku07301047",10,"ZP"));
 
         //组装订单项
         EntryOrder entryOrder = new EntryOrder(orderno,ownerCode,whCode,"CGRK","");
