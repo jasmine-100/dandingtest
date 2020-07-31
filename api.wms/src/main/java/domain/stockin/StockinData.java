@@ -28,6 +28,7 @@ public class StockinData {
     private String Memo;
     private String BillDate;
     private String IsConfirm;
+    private String BatchNo;
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
@@ -36,7 +37,7 @@ public class StockinData {
     public StockinData() {
     }
 
-    public StockinData(String syncBillId, String warehouseCode, String HZID, String billType, List<Product> products) {
+    public StockinData(String syncBillId, String warehouseCode, String HZID, String billType,String batchNo, List<Product> products) {
         BillId = "RELBRJ20012000950392";
         OrigSystem = "Y800OMS";
         SyncBillId = syncBillId;
@@ -49,5 +50,6 @@ public class StockinData {
         IsConfirm = "0";
         this.HZID = HZID;
         Products = products;
+        BatchNo = batchNo;
     }
 }

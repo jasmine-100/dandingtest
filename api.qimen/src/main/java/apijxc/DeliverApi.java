@@ -3,21 +3,21 @@ package apijxc;
 import client.ApiClient;
 import domain.Method;
 import domain.Param;
+import domain.ParamsWms;
+import domain.ServiceType;
 import domain.deliver.*;
 import domain.stockin.SenderInfo;
 import org.junit.Test;
 import utils.XmlUtil;
-
-import java.security.acl.Owner;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 奇门接口推送订单到jxc系统
  * @Date : Created in 2020/7/27 9:54
  */
-public class DeliverSetApi {
+public class DeliverApi {
     String url = "http://outtest.order.yang800.cn/qimen/api";
 
     //仓库编码：取经销存系统的逻辑仓编码
@@ -25,7 +25,7 @@ public class DeliverSetApi {
     //用不上，可以不填
     String ownerCode = "GL01";
     //外部订单号，相同货主内唯一
-    String orderno = "JOS2020073102";
+    String orderno = "JOS2020073104";
     //yang-test的外部店铺的outkey（去掉QM）
     String customerId = "C1590459235731";
 
@@ -51,6 +51,10 @@ public class DeliverSetApi {
         
     }
 
+    /**
+     * @Author jasmine
+     * @Desc 奇门接口--取消进销存订单
+     */
     @Test
     public void orderCancel () throws Exception {
         // 接口参数
@@ -60,4 +64,6 @@ public class DeliverSetApi {
 
         ApiClient.doPostXml(url,param,null,XmlUtil.objToXml(cancel));
     }
+
+
 }
