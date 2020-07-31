@@ -1,4 +1,4 @@
-package api;
+package apijxc;
 
 import client.ApiClient;
 import domain.Method;
@@ -20,7 +20,7 @@ import java.util.List;
  * @Description :  奇门接口推送采购入库单
  * @Date : Created in 2020/7/24 13:43
  */
-public class StockinApiJxc {
+public class StockinSetApi {
     String url = "http://outtest.order.yang800.cn/qimen/api";
     //仓库编码：取经销存系统的逻辑仓编码
     String whCode = "LSXKOGSI7E";
