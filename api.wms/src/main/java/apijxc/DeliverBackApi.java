@@ -1,14 +1,13 @@
-package api;
+package apijxc;
 
 import client.ApiClient;
 import domain.ParamsWms;
 import domain.ServiceType;
-import domain.deliver.Product;
 import domain.deliver.DeliverData;
+import domain.deliver.Product;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,18 +18,17 @@ import java.util.List;
  */
 public class DeliverBackApi {
 
-    //发货单回执--奇门接口
+    //发货单回执--进销存
     @Test
-    public void deliverBack() throws Exception {
-        String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
-        ApiClient client = new ApiClient(url);
-
+    public void deliverBack2() throws Exception {
+        String url = "http://hwms-notify-fat.yang800.com/dt/notify";
         String whCode = "01";
         String hzid = "GL01";
-        String orderno = "DE1002630001";
+        //系统自动生成的出库单号
+        String orderno = "OB20200731181007036592";
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product("JHK000123","100236",10,"2020-1-2","2020-9-1","ZP"));
+        products.add(new Product("sku07301047","",10,"2020-1-2","2020-9-1","ZP"));
 
         //组装bizdata
         DeliverData deliverData = new DeliverData(orderno,whCode,"ZTO",1.68,hzid,products);
@@ -41,5 +39,7 @@ public class DeliverBackApi {
         System.out.println(param);
         ApiClient.doPostXml(url,param,null,null);
     }
+
+
 
 }
