@@ -30,10 +30,10 @@ public class StockinBackApi {
         String whCode = "01";
         String hzid = "GL01";
         // 进销存自动生成的出库单号
-        String orderno = "ET20200731173437498699";
+        String orderno = "ET20200731181121382392";
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product("xhs950001","",100,"2020-1-1","2023-6-6","ZP"));
+        products.add(new Product("sku07301047","",100,"2020-1-1","2023-6-6","ZP"));
 
         StockinData wmsRequestRoot = new StockinData(orderno,whCode,hzid, BillType.CAIGOU,"0",products);
 
