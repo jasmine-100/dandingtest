@@ -21,8 +21,8 @@ public class ShipOrder {
     }
 
     //模拟运单回执
-    public static void shipBackPush(String orderno,String shipCompany,String shipCode) throws IOException {
-        ShipBack shipBack = new ShipBack(orderno,shipCompany,shipCode);
+    public static void shipBackPush(String orderno,String shipCompany,String shipCode,String operateDate) throws IOException {
+        ShipBack shipBack = new ShipBack(orderno,shipCompany,shipCode,operateDate);
         client.doPostForm(shipBack);
     }
 

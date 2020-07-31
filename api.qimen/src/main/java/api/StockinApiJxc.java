@@ -27,7 +27,7 @@ public class StockinApiJxc {
     //用不上，可以不填
     String ownerCode = "";
     //外部订单号，相同货主内唯一
-    String orderno = "SI2020073002";
+    String orderno = "SI2020073008";
     //yang-test的外部店铺的outkey（去掉QM）
     String customerId = "C1590459235731";
 
@@ -35,7 +35,7 @@ public class StockinApiJxc {
     public void orderSet() throws Exception {
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(ownerCode,"sku07301047",10,"ZP"));
+        orderLines.add(new OrderLine(ownerCode,"xhs950001",100,"ZP"));
 
         //组装订单项
         EntryOrder entryOrder = new EntryOrder(orderno,ownerCode,whCode,"CGRK","");

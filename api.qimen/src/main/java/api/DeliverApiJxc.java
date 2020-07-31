@@ -27,7 +27,7 @@ public class DeliverApiJxc {
     //用不上，可以不填
     String ownerCode = "";
     //外部订单号，相同货主内唯一
-    String orderno = "JOS202007301732";
+    String orderno = "JOS2020073101";
     //yang-test的外部店铺的outkey（去掉QM）
     String customerId = "C1590459235731";
 
@@ -36,15 +36,14 @@ public class DeliverApiJxc {
 
     @Test
     public void deliverOrder() throws Exception {
-
-        //组装body的商品项
+        // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,ownerCode,"sku07301047","",100,10));
+        orderLines.add(new OrderLine(orderno,ownerCode,"xhs950001","",100,10));
 
         // 组装body的订单项
         DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",whCode,shopName,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
 
-        //组装body消息体
+        // 组装body消息体
         DeliverData deliverData = new DeliverData(deliveryOrder,orderLines);
 
         // 组装接口参数
