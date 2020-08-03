@@ -24,11 +24,11 @@ public class OrderSetApi {
         //店铺code
         String accesscode = "49C9ADB18E44BE0711A94E827042F630";
         //订单编号
-        String orderno = "outchannel/websc" +new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String orderno = "fx" +new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         //组装商品项
         List<Item> itemList = new ArrayList<>();
-        itemList.add(new Item("SPC1583123976043","小苹果","xpg001",10,12));
+        itemList.add(new Item("SPC1596438357513","小苹果","xpg001",1,12));
         //组装订单项
         Order order = new Order(accesscode,orderno,itemList);
         //组装接口参数
