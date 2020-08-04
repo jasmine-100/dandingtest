@@ -1,4 +1,4 @@
-package apiout;
+package api;
 
 import domainout.BackTuiHuo;
 import org.junit.jupiter.api.Test;

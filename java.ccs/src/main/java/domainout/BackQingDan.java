@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import orderutils.Param;
 
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * @Author： jasmine
@@ -31,7 +32,7 @@ public class BackQingDan {
                 "        <agentCode>"+agentCode+"</agentCode>" +
                 "        <copNo>"+orderNo+"</copNo>" +
                 "        <preNo>B20200615494000227</preNo>" +
-                "        <invtNo>29242020I439440284</invtNo>" +
+                "        <invtNo>QD"+new Random(99999999) +"</invtNo>" +
                 "        <returnStatus>120</returnStatus>" +
                 "        <returnTime>20200615171556605</returnTime>" +
                 "        <returnInfo>[Code:1800;Desc:逻辑校验通过]</returnInfo>" +

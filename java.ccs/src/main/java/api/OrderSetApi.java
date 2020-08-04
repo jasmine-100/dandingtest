@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description : CCS内部接口--推送申报单、回执放行报文
+ * @Description : CCS 下单-申报订单-申报清单流程
  * @Date : Created in 2020/7/20 12:23
  */
 public class OrderSetApi {
@@ -45,6 +45,10 @@ public class OrderSetApi {
 
     }
 
+    /**
+     * 订单申报回执
+     * @throws IOException
+     */
     @Test
     public void qingdanBack() throws IOException {
         // 取申报单的数据库id
