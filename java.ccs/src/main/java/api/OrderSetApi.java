@@ -42,8 +42,6 @@ public class OrderSetApi {
 
         ApiClient client = new ApiClient("http://ccs.backend.daily.yang800.com/xhr/order/submit");
         client.doPostJson(JSON.toJSON(order));
-        Thread.sleep(2000);
-
     }
 
     /**
