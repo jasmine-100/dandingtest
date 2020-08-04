@@ -30,7 +30,7 @@ public class OrderSetApiBaoshui {
     public void orderSet() throws Exception {
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("SPC1596445882497","",2,1));
+        items.add(new Item("SPC1596433033872","",2,1));
 
         OrderSet.orderSet(orderNo,"869",items);
 
