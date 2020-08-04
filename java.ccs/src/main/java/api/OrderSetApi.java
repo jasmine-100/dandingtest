@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @Author： jasmine
@@ -21,9 +22,15 @@ import java.util.List;
  */
 public class OrderSetApi {
 
+    String orderno = "JS"+new SimpleDateFormat("MMddHHmmss").format(new Date());
+
+    /**
+     * 步骤一：推送申报单
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @Test
     public void pushOrder() throws IOException, InterruptedException {
-
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("NO0715J01",2,10));
@@ -31,22 +38,26 @@ public class OrderSetApi {
         items.add(new Item("NO0715J03",5,12));
 
         // 组装申报单
-        String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
-        String orderno = "JS"+str;
-        Order order = new Order(orderno,"ZTO","Z"+str,"jasRoute", items);
+        Order order = new Order(orderno,"ZTO","Z"+new Random(999999),"jasRoute", items);
 
         ApiClient client = new ApiClient("http://ccs.backend.daily.yang800.com/xhr/order/submit");
         client.doPostJson(JSON.toJSON(order));
         Thread.sleep(2000);
 
-        //订单回执成功
-        BackDingdan.declareSuccess(orderno);
-        BackDingdan.logicSuccess(orderno);
-
     }
 
     /**
-     * 订单申报回执
+     * 步骤二：订单申报回执
+     */
+    @Test
+    public void dingdanBack() throws IOException {
+        //订单回执成功
+        BackDingdan.declareSuccess(orderno);
+        BackDingdan.logicSuccess(orderno);
+    }
+
+    /**
+     * 步骤三：清单申报回执
      * @throws IOException
      */
     @Test
