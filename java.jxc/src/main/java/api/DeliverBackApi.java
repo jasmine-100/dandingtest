@@ -1,9 +1,9 @@
 package api;
 
 import client.ApiClient;
-import domain.deliverback.Params;
-import domain.deliverback.Product;
-import domain.deliverback.WmsRequestRoot;
+import domainout.deliverback.Params;
+import domainout.deliverback.Product;
+import domainout.deliverback.WmsRequestRoot;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 

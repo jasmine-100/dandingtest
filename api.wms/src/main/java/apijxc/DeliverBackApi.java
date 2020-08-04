@@ -1,10 +1,10 @@
 package apijxc;
 
 import client.ApiClient;
-import domain.ParamsWms;
-import domain.ServiceType;
-import domain.deliver.DeliverData;
-import domain.deliver.Product;
+import domainout.ParamsWms;
+import domainout.ServiceType;
+import domainout.deliver.DeliverData;
+import domainout.deliver.Product;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 

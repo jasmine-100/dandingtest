@@ -2,11 +2,11 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.AppId;
-import domain.Params;
-import domain.ServiceName;
-import domain.deliver.DeliverOrder;
-import domain.stockin.Sku;
+import domainout.AppId;
+import domainout.Params;
+import domainout.ServiceName;
+import domainout.deliver.DeliverOrder;
+import domainout.stockin.Sku;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

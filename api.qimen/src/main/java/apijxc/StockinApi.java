@@ -1,18 +1,12 @@
 package apijxc;
 
 import client.ApiClient;
-import domain.Method;
-import domain.Param;
-import domain.ParamsWms;
-import domain.ServiceType;
-import domain.deliver.Product;
-import domain.stockin.*;
-import lombok.Data;
+import domainout.Method;
+import domainout.Param;
+import domainout.stockin.*;
 import org.junit.Test;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import utils.XmlUtil;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

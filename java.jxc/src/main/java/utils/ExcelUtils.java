@@ -1,6 +1,6 @@
 package utils;
 
-import domain.good.Good;
+import domainout.good.Good;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;

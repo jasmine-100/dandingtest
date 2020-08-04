@@ -1,14 +1,13 @@
 package api;
 
 import client.ApiClient;
-import domain.ParamsWms;
-import domain.ServiceType;
-import domain.deliver.Product;
-import domain.deliver.DeliverData;
+import domainout.ParamsWms;
+import domainout.ServiceType;
+import domainout.deliver.Product;
+import domainout.deliver.DeliverData;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

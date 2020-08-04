@@ -2,7 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.good.Good;
+import domainout.good.Good;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

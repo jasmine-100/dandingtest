@@ -1,12 +1,10 @@
 package apijxc;
 
 import client.ApiClient;
-import domain.Method;
-import domain.Param;
-import domain.ParamsWms;
-import domain.ServiceType;
-import domain.deliver.*;
-import domain.stockin.SenderInfo;
+import domainout.Method;
+import domainout.Param;
+import domainout.deliver.*;
+import domainout.stockin.SenderInfo;
 import org.junit.Test;
 import utils.XmlUtil;
 import java.util.ArrayList;

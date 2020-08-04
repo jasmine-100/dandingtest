@@ -2,9 +2,9 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import domain.deliver.Deliver;
-import domain.deliver.Order;
-import domain.deliver.OrderSku;
+import domainout.deliver.Deliver;
+import domainout.deliver.Order;
+import domainout.deliver.OrderSku;
 import org.junit.jupiter.api.Test;
 import utils.JsonUtils;
 

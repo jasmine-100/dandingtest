@@ -1,11 +1,11 @@
 package api;
 
 import client.ApiClient;
-import domain.ParamsWms;
-import domain.ServiceType;
-import domain.sn.OrderType;
-import domain.sn.Product;
-import domain.sn.SnData;
+import domainout.ParamsWms;
+import domainout.ServiceType;
+import domainout.sn.OrderType;
+import domainout.sn.Product;
+import domainout.sn.SnData;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 

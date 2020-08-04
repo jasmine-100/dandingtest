@@ -1,11 +1,11 @@
 package api;
 
 import client.ApiClient;
-import domain.Method;
-import domain.Param;
-import domain.stockin.EntryOrder;
-import domain.stockin.OrderData;
-import domain.stockin.OrderLine;
+import domainout.Method;
+import domainout.Param;
+import domainout.stockin.EntryOrder;
+import domainout.stockin.OrderData;
+import domainout.stockin.OrderLine;
 import org.junit.Test;
 import utils.XmlUtil;
 
