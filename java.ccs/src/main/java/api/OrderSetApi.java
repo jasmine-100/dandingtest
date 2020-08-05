@@ -71,7 +71,6 @@ public class OrderSetApi {
      */
     @Test
     public void qingdanBack() throws IOException {
-
         // 取申报单的数据库id
         String orderno = "497778069298216961";
 
