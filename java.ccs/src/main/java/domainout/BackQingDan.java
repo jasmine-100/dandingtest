@@ -84,7 +84,7 @@ public class BackQingDan {
     }
 
     //总署回执：税费
-    public static void backTaxrd(String orderNo,String invtNo,String ebcCode,String agentCode,double valueAddedTax,double consumptionTax) throws IOException {
+    public static void backTaxrd(String invtNo,String ebcCode,String agentCode,double valueAddedTax,double consumptionTax) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB816Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"e98878cc-48ef-4ce5-968d-dddc3d47a304\">" +
@@ -105,7 +105,7 @@ public class BackQingDan {
                 "            <logisticsCode>"+ebcCode+"</logisticsCode>" +
                 "            <agentCode>"+agentCode+"</agentCode>" +
                 "            <customsCode>2924</customsCode>" +
-                "            <orderNo>"+orderNo+"</orderNo>" +
+                "            <orderNo>Jos123</orderNo>" +
                 "            <logisticsNo>JD0018734413066</logisticsNo>" +
                 "        </TaxHeadRd>" +
                 "        <TaxListRd>" +
