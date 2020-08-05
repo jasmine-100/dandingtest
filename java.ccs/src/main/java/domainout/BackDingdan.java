@@ -13,17 +13,13 @@ import java.io.IOException;
 public class BackDingdan {
     static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
     static String data = null;
-    // 电商平台编码
-    static String ebpCode = "1234650123";
-    // 电商企业编码
-    static String ebcCode= "1234650123";
 
     /**
      * 回执新增申报成功
      * @param orderno
      * @throws IOException
      */
-    public static void declareSuccess(String orderno) throws IOException {
+    public static void declareSuccess(String orderno,String ebpCode,String ebcCode) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB312Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"C9C9AD3E-1F8D-4583-B62B-07A5FD3E02FB\">" +
                 "    <OrderReturn>" +
@@ -44,7 +40,7 @@ public class BackDingdan {
      * @param orderno
      * @throws IOException
      */
-    public static void logicSuccess(String orderno) throws IOException {
+    public static void logicSuccess(String orderno,String ebpCode,String ebcCode) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB312Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"479237c3-ec79-4d05-bced-3f3299e64c57\">" +
                 "    <OrderReturn>" +
