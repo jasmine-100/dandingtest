@@ -19,7 +19,7 @@ public class BackQingDan {
     static String data = null;
 
     //总署回执：逻辑校验通过
-    public static void backLogicPass(String orderNo,String ebcCode,String ebpCode,String agentCode) throws IOException {
+    public static void backLogicPass(String orderNo,String ebcCode,String ebpCode,String agentCode,String invtNo) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"c988cb9e-ea4b-463a-87c4-36e3d24aa7d9\">" +
@@ -31,7 +31,7 @@ public class BackQingDan {
                 "        <agentCode>"+agentCode+"</agentCode>" +
                 "        <copNo>"+orderNo+"</copNo>" +
                 "        <preNo>B20200615494000227</preNo>" +
-                "        <invtNo>QD"+new SimpleDateFormat("yyMMddHHmmss").format(new Date()) +"</invtNo>" +
+                "        <invtNo>"+invtNo+"</invtNo>" +
                 "        <returnStatus>120</returnStatus>" +
                 "        <returnTime>20200615171556605</returnTime>" +
                 "        <returnInfo>[Code:1800;Desc:逻辑校验通过]</returnInfo>" +
@@ -84,7 +84,7 @@ public class BackQingDan {
     }
 
     //总署回执：税费
-    public static void backTaxrd(String invtNo,String ebcCode,String agentCode,double valueAddedTax,double consumptionTax) throws IOException {
+    public static void backTaxrd(String invtNo,String ebcCode,double valueAddedTax,double consumptionTax) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB816Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"e98878cc-48ef-4ce5-968d-dddc3d47a304\">" +
@@ -103,7 +103,7 @@ public class BackQingDan {
                 "            <assureCode>330766K00Q</assureCode>" +
                 "            <ebcCode>"+ebcCode+"</ebcCode>" +
                 "            <logisticsCode>"+ebcCode+"</logisticsCode>" +
-                "            <agentCode>"+agentCode+"</agentCode>" +
+                "            <agentCode>12300056</agentCode>" +
                 "            <customsCode>2924</customsCode>" +
                 "            <orderNo>Jos123</orderNo>" +
                 "            <logisticsNo>JD0018734413066</logisticsNo>" +

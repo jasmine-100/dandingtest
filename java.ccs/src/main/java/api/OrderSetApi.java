@@ -27,8 +27,6 @@ public class OrderSetApi {
     static String ebcCode= "1234650123";
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
-    //回执清单号
-    String invtNo = "QD202008051412";
 
     /**
      * 步骤一：推送申报单
@@ -37,7 +35,7 @@ public class OrderSetApi {
     public void pushOrder() throws IOException, InterruptedException {
 
         // 渠道订单号和申报单号:随机生成
-        String orderno = "JS"+new SimpleDateFormat("MMddHHmmss").format(new Date());
+        String orderno = "JIS"+new SimpleDateFormat("MMddHHmmss").format(new Date());
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
@@ -72,10 +70,12 @@ public class OrderSetApi {
     @Test
     public void qingdanBack() throws IOException {
         // 取申报单的数据库id
-        String orderno = "497778069298216961";
+        String orderno = "497783505871175680";
+        //回执清单号
+        String invtNo = "QD202008051454";
 
         //回执逻辑校验通过报文
-//        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode);
+//        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo);
 
         //回执新增申报成功报文
 //        BackQingDan.backDeclareSuccess(orderno,ebcCode,ebpCode);
@@ -85,7 +85,7 @@ public class OrderSetApi {
 //        BackQingDan.backPass(orderno,ebcCode,ebpCode,invtNo);
 
         //回执税费报文
-        BackQingDan.backTaxrd(invtNo,ebcCode,agentCode,10.2,23.6);
+        BackQingDan.backTaxrd(invtNo,ebcCode,10.2,50.6);
 
     }
 
