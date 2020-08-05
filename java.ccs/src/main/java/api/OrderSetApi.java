@@ -68,14 +68,15 @@ public class OrderSetApi {
      * @throws IOException
      */
     @Test
-    public void qingdanBack() throws IOException {
+    public void qingdanBack() throws IOException, InterruptedException {
         // 取申报单的数据库id
-        String orderno = "497783505871175680";
+        String orderno = "497788744103886848";
         //回执清单号
-        String invtNo = "QD202008051454";
+        String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         //回执逻辑校验通过报文
-//        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo);
+        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo);
+        Thread.sleep(2000);
 
         //回执新增申报成功报文
 //        BackQingDan.backDeclareSuccess(orderno,ebcCode,ebpCode);
@@ -85,7 +86,7 @@ public class OrderSetApi {
 //        BackQingDan.backPass(orderno,ebcCode,ebpCode,invtNo);
 
         //回执税费报文
-        BackQingDan.backTaxrd(invtNo,ebcCode,10.2,50.6);
+        BackQingDan.backTaxrd(invtNo,10.2,15);
 
     }
 

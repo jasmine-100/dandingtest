@@ -83,8 +83,9 @@ public class BackQingDan {
         new ApiClient(url).doPostForm(new Param(data));
     }
 
-    //总署回执：税费
-    public static void backTaxrd(String invtNo,String ebcCode,double valueAddedTax,double consumptionTax) throws IOException {
+    // 总署回执：税费
+    // 回执报文报文中，清单号必须正确，其他信息取CCS系统中的信息，不校验
+    public static void backTaxrd(String invtNo,double valueAddedTax,double consumptionTax) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB816Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"e98878cc-48ef-4ce5-968d-dddc3d47a304\">" +
@@ -101,9 +102,9 @@ public class BackQingDan {
                 "            <entDutyNo></entDutyNo>" +
                 "            <note></note>" +
                 "            <assureCode>330766K00Q</assureCode>" +
-                "            <ebcCode>"+ebcCode+"</ebcCode>" +
-                "            <logisticsCode>"+ebcCode+"</logisticsCode>" +
-                "            <agentCode>12300056</agentCode>" +
+                "            <ebcCode>123</ebcCode>" +
+                "            <logisticsCode>123</logisticsCode>" +
+                "            <agentCode>123</agentCode>" +
                 "            <customsCode>2924</customsCode>" +
                 "            <orderNo>Jos123</orderNo>" +
                 "            <logisticsNo>JD0018734413066</logisticsNo>" +
