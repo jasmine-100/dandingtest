@@ -12,6 +12,7 @@ import java.util.Random;
 /**
  * @Author： jasmine
  * @Description : 清单回执报文，未完成
+ * 税费回执：只校验清单编号，其他信息随意填；其他回执必须填写完整正确的企业编号和订单清单信息。
  * @Date : Created in 2020/7/20 13:11
  */
 public class BackQingDan {
