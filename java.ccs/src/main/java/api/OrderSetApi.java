@@ -36,6 +36,7 @@ public class OrderSetApi {
     @Test
     public void pushOrder() throws IOException, InterruptedException {
 
+        // 渠道订单号和申报单号:随机生成
         String orderno = "JS"+new SimpleDateFormat("MMddHHmmss").format(new Date());
 
         // 添加商品项
@@ -47,6 +48,7 @@ public class OrderSetApi {
         // 组装申报单
         Order order = new Order(orderno,"ZTO","Z"+new Random(999999),"jasRoute", items);
 
+        //接口：推送申报单
         ApiClient client = new ApiClient("http://ccs.backend.daily.yang800.com/xhr/order/submit");
         client.doPostJson(JSON.toJSON(order));
 
