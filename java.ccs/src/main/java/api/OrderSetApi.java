@@ -43,7 +43,8 @@ public class OrderSetApi {
 //        items.add(new Item("NO0715J03",5,12));
 
         // 组装申报单
-        Order order = new Order(orderno,"ZTO","Z"+new Random(999999),"jasRoute", items);
+//        Order order = new Order(orderno,"ZTO","Z"+new Random(999999),"jasRoute", items);
+        Order order = new Order("zh-abc","租户abc",orderno,"ZTO","Z"+new Random(999999),"jasRoute", items);
 
         //接口：推送申报单
         ApiClient client = new ApiClient("http://ccs.backend.daily.yang800.com/xhr/order/submit");
@@ -69,7 +70,7 @@ public class OrderSetApi {
     @Test
     public void qingdanBack() throws IOException, InterruptedException {
         // 取申报单的数据库id
-        String orderno = "497801246946623488";
+        String orderno = "497803022471004161";
         //回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 //        String invtNo = "QD20200805151953";
