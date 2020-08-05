@@ -12,15 +12,11 @@ import orderutils.Param;
 public class BackTuiHuo {
     static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
     static String data = null;
-    // 电商平台编码
-    static String ebpCode = "1234650123";
-    // 电商企业编码
-    static String ebcCode= "1234650123";
 
     /**
      * 推送待人工审核报文
      */
-    public static void backWaitExamine(String orderno) throws Exception {
+    public static void backWaitExamine(String orderno,String ebpCode,String ebcCode) throws Exception {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB626Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"9d8b9ae4-b07b-42b3-bdac-afa918c432f6\">" +
                 "<InvtRefundReturn>" +
@@ -36,14 +32,14 @@ public class BackTuiHuo {
                 "<returnTime>20200804140052906</returnTime>" +
                 "<returnInfo>[Code:1200;Desc:待人工审核]</returnInfo>" +
                 "</InvtRefundReturn></CEB626Message>";
-        new ApiClient(url).doPostJson(JSON.toJSON(new Param(data)));
+        new ApiClient(url).doPostForm(new Param(data));
     }
 
     /**
      * 推送地址不详报文
      * @return
      */
-    public static void backAddressError(String orderno) throws Exception {
+    public static void backAddressError(String orderno,String ebpCode,String ebcCode) throws Exception {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB626Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"d55547cc-8d99-4841-af9f-6b9651cfe1ae\">" +
                 "<InvtRefundReturn" +
@@ -59,20 +55,20 @@ public class BackTuiHuo {
                 "<returnTime>20200804140052906</returnTime>" +
                 "<returnInfo>收件地址不详</returnInfo>" +
                 "</InvtRefundReturn></CEB626Message>";
-        new ApiClient(url).doPostJson(JSON.toJSON(new Param(data)));
+        new ApiClient(url).doPostForm(new Param(data));
     }
 
     /**
      * 推送放行报文
      * @return
      */
-    public static void backPass(String orderno) throws Exception {
+    public static void backPass(String orderno,String ebpCode,String ebcCode,String agentCode) throws Exception {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB626Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"d0cdf79f-0ab5-4322-b6ab-1045a9ccf6fa\">" +
                 "<InvtRefundReturn>" +
                 "<guid>43e6e694-84e5-4e82-af23-2104f9c1d8b4</guid>" +
                 "<customsCode>2924</customsCode>" +
-                "<agentCode>330766K00Q</agentCode>" +
+                "<agentCode>"+agentCode+"</agentCode>" +
                 "<ebpCode>"+ebpCode+"</ebpCode>" +
                 "<ebcCode>"+ebcCode+"</ebcCode>" +
                 "<copNo>"+orderno+"</copNo>" +
@@ -80,10 +76,10 @@ public class BackTuiHuo {
                 "<invtNo>29242020I416941614</invtNo>" +
                 "<returnStatus>800</returnStatus>" +
                 "<returnTime>20200622162402291</returnTime>" +
-                "<returnInfo>[Code:2600;Desc:放行]null</returnInfo>" +
+                "<returnInfo>[Code:2600;Desc:放行]</returnInfo>" +
                 "</InvtRefundReturn>" +
                 "</CEB626Message>";
-        new ApiClient(url).doPostJson(JSON.toJSON(new Param(data)));
+        new ApiClient(url).doPostForm(new Param(data));
     }
 
 }
