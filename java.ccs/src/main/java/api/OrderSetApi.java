@@ -73,14 +73,15 @@ public class OrderSetApi {
         // 取申报单的数据库id
         String orderno = "497778069298216961";
 
-        //回执放行报文
-//        BackQingDan.backPass(orderno,ebcCode,ebpCode,invtNo);
+        //回执逻辑校验通过报文
+//        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode);
 
         //回执新增申报成功报文
 //        BackQingDan.backDeclareSuccess(orderno,ebcCode,ebpCode);
 
-        //回执逻辑校验通过报文
-//        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode);
+
+        //回执放行报文
+//        BackQingDan.backPass(orderno,ebcCode,ebpCode,invtNo);
 
         //回执税费报文
         BackQingDan.backTaxrd(invtNo,ebcCode,agentCode,10.2,23.6);
