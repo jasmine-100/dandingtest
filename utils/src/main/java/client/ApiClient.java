@@ -28,11 +28,11 @@ import java.util.Map;
  * @Date : Created in 2020/7/20 11:15
  */
 public class ApiClient {
-    private static String url;
-    private static CloseableHttpClient client = null;
-    private static HttpGet get =null;
-    private static HttpPost post = null;
-    private static HttpResponse response= null;
+     static String url;
+     static CloseableHttpClient client = null;
+     static HttpGet get =null;
+     static HttpPost post = null;
+     static HttpResponse response= null;
 
     public ApiClient(String url){
         client = HttpClients.createDefault();

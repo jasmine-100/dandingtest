@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class OrderSku {
-    private String skuCode;
-    private int skuCount;
+     String skuCode;
+     int skuCount;
 
     public OrderSku(String skuCode, int skuCount) {
         this.skuCode = skuCode;

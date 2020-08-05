@@ -9,9 +9,9 @@ import lombok.Data;
  */
 @Data
 public class ParamsWms {
-    private String bizData;
-    private String serviceVersion;
-    private String serviceType;
+     String bizData;
+     String serviceVersion;
+     String serviceType;
 
     public ParamsWms(String bizData, String serviceType, String serviceVersion) {
         this.bizData = bizData;

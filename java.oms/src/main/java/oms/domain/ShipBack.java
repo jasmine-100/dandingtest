@@ -11,10 +11,10 @@ import java.util.Random;
  */
 @Data
 public class ShipBack {
-    private String bizData;
-    private String serviceType;
-    private String sign;
-    private String serviceVersion;
+     String bizData;
+     String serviceType;
+     String sign;
+     String serviceVersion;
 
     public ShipBack(String orderno) {
         this.bizData = "<?xml version=\"1.0\" encoding=\"utf-8\"?><wmsRequestRoot><BillId>SOKJCMS00123620200228</BillId>" +

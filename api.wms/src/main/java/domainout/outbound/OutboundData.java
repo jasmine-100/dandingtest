@@ -15,24 +15,24 @@ import java.util.Random;
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OutboundData {
-    private String BillId;
-    private String SyncBillId;
-    private String WarehouseCode;
-    private String HZID;
-    private String BusinessType;
-    private String Operator;
-    private String OperatorTime;
+     String BillId;
+     String SyncBillId;
+     String WarehouseCode;
+     String HZID;
+     String BusinessType;
+     String Operator;
+     String OperatorTime;
 
-    private String ShippingCode;
-    private String ShippingCompany;
-    private String OrigSystem;
-    private String OrderType;
-    private double Weight;
-    private String Memo;
+     String ShippingCode;
+     String ShippingCompany;
+     String OrigSystem;
+     String OrderType;
+     double Weight;
+     String Memo;
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
-    private List<Product> Products;
+     List<Product> Products;
 
     public OutboundData() {
     }

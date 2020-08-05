@@ -12,17 +12,17 @@ import java.util.stream.Collectors;
  */
 @Data
 public class PurchaseOrder {
-    private String purId; //采购单号
-    private List<PurOrderItem> orderItemList;//采购商品列表
-    private long arrivalTime;//预计到货时间
-    private long deliveryTime;//预计发货时间
-    private int payMethod; //付款方式
-    private String supplierCode;//供应商编码
-    private int totalNum;//总数量
-    private double totalMoney;//总额
-    private int transport;//运输方式
-    private int type;//采购类型：
-    private String remark;//注释
+     String purId; //采购单号
+     List<PurOrderItem> orderItemList;//采购商品列表
+     long arrivalTime;//预计到货时间
+     long deliveryTime;//预计发货时间
+     int payMethod; //付款方式
+     String supplierCode;//供应商编码
+     int totalNum;//总数量
+     double totalMoney;//总额
+     int transport;//运输方式
+     int type;//采购类型：
+     String remark;//注释
 
     public PurchaseOrder(List<PurOrderItem> orderItemList) {
         this.orderItemList = orderItemList;

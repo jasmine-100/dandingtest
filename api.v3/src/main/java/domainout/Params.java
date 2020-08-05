@@ -9,9 +9,9 @@ import lombok.Data;
  */
 @Data
 public class Params {
-    private String originJson;
-    private String serviceName;
-    private String appId;
+     String originJson;
+     String serviceName;
+     String appId;
 
     public Params(String originJson, String serviceName, String appId) {
         this.originJson = originJson;

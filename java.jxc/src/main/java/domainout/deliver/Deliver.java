@@ -11,17 +11,17 @@ import java.util.List;
  */
 @Data
 public class Deliver {
-    private String originOrderNo;
-    private String shopCode;
-    private long payTime;
-    private long submitTime;
-    private long fetchTime;
-    private String logicStoreCode;
-    private String logisticsCode;
-    private String buyerName;
-    private String buyerMobile;
-    private String buyerAddress;
-    private List<OrderSku> orderSkuDetails;
+     String originOrderNo;
+     String shopCode;
+     long payTime;
+     long submitTime;
+     long fetchTime;
+     String logicStoreCode;
+     String logisticsCode;
+     String buyerName;
+     String buyerMobile;
+     String buyerAddress;
+     List<OrderSku> orderSkuDetails;
 
     public Deliver( String shopCode,List<OrderSku> orderSkuDetails) {
         this.originOrderNo = "JS"+System.currentTimeMillis();

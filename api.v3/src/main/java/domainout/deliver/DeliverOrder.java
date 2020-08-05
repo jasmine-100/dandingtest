@@ -12,24 +12,24 @@ import java.util.List;
  */
 @Data
 public class DeliverOrder {
-    private String accessCode;
-    private String whCode;
-    private String thirdNo;
-    private String receiverName;
-    private String receiverMobile;
-    private String receiverProvince;
-    private String receiverCity;
-    private String receiverDistrict;
-    private String receiverDetailAddress;
-    private String sourcePlatform;
-    private List<Sku> skuList;
-    private String bondType;
-    private String senderName;
-    private String senderMobile;
-    private String senderProvince;
-    private String senderCity;
-    private String senderDistrict;
-    private String senderDetailAddress;
+     String accessCode;
+     String whCode;
+     String thirdNo;
+     String receiverName;
+     String receiverMobile;
+     String receiverProvince;
+     String receiverCity;
+     String receiverDistrict;
+     String receiverDetailAddress;
+     String sourcePlatform;
+     List<Sku> skuList;
+     String bondType;
+     String senderName;
+     String senderMobile;
+     String senderProvince;
+     String senderCity;
+     String senderDistrict;
+     String senderDetailAddress;
 
     public DeliverOrder(String accessCode, String whCode, String thirdNo, List<Sku> skuList) {
         this.accessCode = accessCode;

@@ -11,17 +11,17 @@ import java.util.List;
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SnData {
-    private String BillId;
-    private String SyncBillId;
-    private String WarehouseCode;
-    private String HZID;
-    private String OrderType;
-    private int PageSize;
-    private int CurrentPage;
-    private int TotalPage;
+     String BillId;
+     String SyncBillId;
+     String WarehouseCode;
+     String HZID;
+     String OrderType;
+     int PageSize;
+     int CurrentPage;
+     int TotalPage;
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
-    private List<Product> Products;
+     List<Product> Products;
 
     public SnData() {
     }

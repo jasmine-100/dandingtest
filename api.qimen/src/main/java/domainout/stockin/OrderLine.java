@@ -11,18 +11,18 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderLine {
 
-    private String orderLineNo;
-    private String ownerCode;
-    private String itemCode;
-    private String itemId;
-    private String itemName;
-    private int planQty;
-    private int actualQty;
-    private double purchasePrice;
-    private double retailPrice;
-    private String inventoryType;
-    private String batchCode;
-    private String unit;
+     String orderLineNo;
+     String ownerCode;
+     String itemCode;
+     String itemId;
+     String itemName;
+     int planQty;
+     int actualQty;
+     double purchasePrice;
+     double retailPrice;
+     String inventoryType;
+     String batchCode;
+     String unit;
 
     public OrderLine(String ownerCode, String itemCode,int qty, String inventoryType) {
         this.orderLineNo = "";

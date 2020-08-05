@@ -1,4 +1,4 @@
-package domainInner;
+package domain;
 
 import client.ApiClient;
 

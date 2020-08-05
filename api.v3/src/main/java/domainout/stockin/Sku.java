@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class Sku {
-    private String skuNo;
-    private int num;
+     String skuNo;
+     int num;
 
     public Sku(String skuNo, int num) {
         this.skuNo = skuNo;

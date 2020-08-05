@@ -12,14 +12,14 @@ import java.util.Date;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class EntryOrder {
-    private String entryOrderCode;
-    private String ownerCode;
-    private String warehouseCode;
-    private String orderType;
-    private String expectStartTime;
-    private String supplierCode;
-    private String supplierName;
-    private SenderInfo senderInfo;
+     String entryOrderCode;
+     String ownerCode;
+     String warehouseCode;
+     String orderType;
+     String expectStartTime;
+     String supplierCode;
+     String supplierName;
+     SenderInfo senderInfo;
 
 
     public EntryOrder(String entryOrderCode, String ownerCode, String warehouseCode, String orderType, String supplierName) {

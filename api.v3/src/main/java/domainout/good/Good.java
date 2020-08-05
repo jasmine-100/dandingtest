@@ -12,9 +12,9 @@ import java.util.List;
 @Data
 public class Good {
 
-    private String  whCode;
-    private String  accessCode;
-    private List<Sku> skuList;
+     String  whCode;
+     String  accessCode;
+     List<Sku> skuList;
 
     public Good(String whCode, String accessCode, List<Sku> skuList) {
         this.whCode = whCode;

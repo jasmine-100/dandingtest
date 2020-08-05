@@ -13,7 +13,7 @@ import java.util.Random;
  */
 @Data
 public class BackDeclare {
-    private static String data = null;
+     static String data = null;
 
     /**
      * 申报单--口岸回执报文

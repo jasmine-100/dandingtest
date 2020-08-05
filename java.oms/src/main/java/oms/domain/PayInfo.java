@@ -12,20 +12,20 @@ import java.util.List;
  */
 @Data
 public class PayInfo {
-    private String declareOrderSn;
-    private String payChannel;
-    private String payNo;
-    private long payTime;
-    private String payWay;
-    private String verDept;
-    private String payTransactionId;
-    private double payTransactionAmount;
-    private String payRequestMessage;
-    private String payResponseMessage;
-    private String recpAccount;
-    private String recpCode;
-    private String recpName;
-    private List<GoodInfo> goodsInfoList;
+     String declareOrderSn;
+     String payChannel;
+     String payNo;
+     long payTime;
+     String payWay;
+     String verDept;
+     String payTransactionId;
+     double payTransactionAmount;
+     String payRequestMessage;
+     String payResponseMessage;
+     String recpAccount;
+     String recpCode;
+     String recpName;
+     List<GoodInfo> goodsInfoList;
 
     public PayInfo(String declareOrderSn) {
         this.declareOrderSn = declareOrderSn;

@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class GoodInfo {
-    private String gname;
-    private String itemLink;
+     String gname;
+     String itemLink;
 
     public GoodInfo(String gname, String itemLink) {
         this.gname = gname;

@@ -12,11 +12,11 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderData {
 
-    private EntryOrder entryOrder;
+     EntryOrder entryOrder;
 
     @XmlElementWrapper(name = "orderLines")
     @XmlElement(name = "orderLine")
-    private List<OrderLine> orderLines;
+     List<OrderLine> orderLines;
 
     public OrderData() {
     }

@@ -6,7 +6,7 @@ package orderutils;
  * @Date : Created in 2020/8/4 13:28
  */
 public class OrderCancel {
-    private static String data;
+     static String data;
 
     public static String createOrder(){
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +

@@ -12,21 +12,21 @@ import java.util.List;
 @Data
 public class Order {
 
-    private String linkOrderSn;
-    private String outOrderSn;
-    private double itemPrice;
-    private double taxPrice;
-    private double totalPrice;
-    private long  orderTime;
-    private String userId;
-    private String consigneeProvince;
-    private String consigneeCity;
-    private String consigneeDistrict;
-    private String consigneeDetailAddress;
-    private String consigneeName;
-    private String consigneeTel;
-    private List<Item> itemList;
-    private String remark;
+     String linkOrderSn;
+     String outOrderSn;
+     double itemPrice;
+     double taxPrice;
+     double totalPrice;
+     long  orderTime;
+     String userId;
+     String consigneeProvince;
+     String consigneeCity;
+     String consigneeDistrict;
+     String consigneeDetailAddress;
+     String consigneeName;
+     String consigneeTel;
+     List<Item> itemList;
+     String remark;
 
     public Order(String linkOrderSn, String outOrderSn,String userId, List<Item> itemList) {
         this.linkOrderSn = linkOrderSn;

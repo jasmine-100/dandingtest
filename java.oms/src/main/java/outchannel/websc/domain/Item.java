@@ -10,14 +10,14 @@ import lombok.Data;
 @Data
 public class Item {
 
-    private String skuCode;
-    private String goodsName;
-    private String outCode;
-    private int num;
-    private double price;
-    private double tax;
-    private double discount;
-    private double shipFee;
+     String skuCode;
+     String goodsName;
+     String outCode;
+     int num;
+     double price;
+     double tax;
+     double discount;
+     double shipFee;
 
     public Item(String skuCode, String goodsName, String outCode, int num, double price) {
         this.skuCode = skuCode;

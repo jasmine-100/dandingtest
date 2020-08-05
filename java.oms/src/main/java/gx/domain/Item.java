@@ -9,9 +9,9 @@ import lombok.Data;
  */
 @Data
 public class Item {
-    private String outItemCode;
-    private double unitPrice;
-    private int count;
+     String outItemCode;
+     double unitPrice;
+     int count;
 
     public Item(String outItemCode, double unitPrice, int count) {
         this.outItemCode = outItemCode;

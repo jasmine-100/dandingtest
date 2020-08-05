@@ -12,13 +12,13 @@ import java.util.Date;
  */
 @Data
 public class GoodUp {
-    private String  shopItemName;
+     String  shopItemName;
     //大B用户id
-    private String userId;
+     String userId;
     //外部商品编码，自定义
-    private String outerItemCode;
+     String outerItemCode;
     //洋800SKU商品编码
-    private String itemCode;
+     String itemCode;
 
     public GoodUp(String shopItemName, String userId, String itemCode) {
         this.shopItemName = shopItemName;

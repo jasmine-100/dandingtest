@@ -17,22 +17,22 @@ import java.util.List;
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class StockinData {
-    private String BillId;
-    private String OrigSystem;
-    private String SyncBillId;
-    private String HZID;
-    private String WarehouseCode;
-    private String BillType;
-    private String Operator;
-    private String OpertatorTime;
-    private String Memo;
-    private String BillDate;
-    private String IsConfirm;
-    private String BatchNo;
+     String BillId;
+     String OrigSystem;
+     String SyncBillId;
+     String HZID;
+     String WarehouseCode;
+     String BillType;
+     String Operator;
+     String OpertatorTime;
+     String Memo;
+     String BillDate;
+     String IsConfirm;
+     String BatchNo;
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
-    private List<Product> Products;
+     List<Product> Products;
 
     public StockinData() {
     }

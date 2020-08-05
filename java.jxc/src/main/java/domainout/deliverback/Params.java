@@ -9,9 +9,9 @@ import lombok.Data;
  */
 @Data
 public class Params {
-    private String serviceVersion;
-    private String serviceType;
-    private String bizData;
+     String serviceVersion;
+     String serviceType;
+     String bizData;
 
     public Params(String serviceVersion, String serviceType, String bizData) {
         this.serviceVersion = serviceVersion;

@@ -15,17 +15,17 @@ import java.util.Date;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
-    private String OrderLineNo;
-    private String Sku;
-    private String BatchCode;
-    private int Qty;
-    private String Memo;
-    private String BatchValue1;
-    private String BatchValue2;
-    private String BatchValue3;
-    private String BatchValue4;
-    private String BatchValue5;
-    private String InventoryType;
+     String OrderLineNo;
+     String Sku;
+     String BatchCode;
+     int Qty;
+     String Memo;
+     String BatchValue1;
+     String BatchValue2;
+     String BatchValue3;
+     String BatchValue4;
+     String BatchValue5;
+     String InventoryType;
 
     public Product(String sku, String batchCode, int qty, String inventoryType) {
         this.OrderLineNo = "";

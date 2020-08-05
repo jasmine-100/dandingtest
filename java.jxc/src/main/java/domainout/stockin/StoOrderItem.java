@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class StoOrderItem {
-    private String proCode;
-    private String predictNum;
+     String proCode;
+     String predictNum;
 
     public StoOrderItem(String proCode, String purchaseNum) {
         this.proCode = proCode;

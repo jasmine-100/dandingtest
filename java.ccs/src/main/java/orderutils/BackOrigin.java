@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 public class BackOrigin {
-    private String oriStr;
+     String oriStr;
 
     public BackOrigin(String orderNo,String desc){
         if ("逻辑校验通过".equals(desc)) {

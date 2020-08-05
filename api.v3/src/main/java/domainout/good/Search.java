@@ -9,10 +9,10 @@ import lombok.Data;
  */
 @Data
 public class Search {
-    private String whCode;
-    private String accessCode;
-    private String page;
-    private String size;
+     String whCode;
+     String accessCode;
+     String page;
+     String size;
 
     public Search(String whCode, String accessCode, String page, String size) {
         this.whCode = whCode;

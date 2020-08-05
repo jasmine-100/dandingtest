@@ -11,49 +11,49 @@ import java.util.List;
  */
 @Data
 public class Order {
-    private String outOrderSn;
-    private String declareOrderSn;
-    private String customsDeclarationCode;
-    private long orderTime;
-    private String payChannel;
-    private String payNo;
-    private long payTime;
+     String outOrderSn;
+     String declareOrderSn;
+     String customsDeclarationCode;
+     long orderTime;
+     String payChannel;
+     String payNo;
+     long payTime;
 
-    private String payerIdNumber;
-    private String payerName;
+     String payerIdNumber;
+     String payerName;
 
-    private String shopId;
-    private String sourceChannel;
-    private String customsPayNo;
-    private long customsPayTime;
+     String shopId;
+     String sourceChannel;
+     String customsPayNo;
+     long customsPayTime;
 
-    private String consigneeProvince;
-    private String consigneeCity;
-    private String consigneeDistrict;
-    private String consigneeDetailAddress;
-    private String consigneeName;
-    private String consigneeIdNumber;
-    private String consigneeTel;
+     String consigneeProvince;
+     String consigneeCity;
+     String consigneeDistrict;
+     String consigneeDetailAddress;
+     String consigneeName;
+     String consigneeIdNumber;
+     String consigneeTel;
 
-    private List<Item> itemList;
-    private double itemPrice;
-    private double shipmentPrice;
-    private double taxPrice;
-    private double discountPrice;
-    private double totalPrice;
+     List<Item> itemList;
+     double itemPrice;
+     double shipmentPrice;
+     double taxPrice;
+     double discountPrice;
+     double totalPrice;
 
 
-    private String senderProvince;
-    private String senderCity;
-    private String senderDistrict;
-    private String senderStreet;
-    private String senderName;
-    private String senderMobile;
+     String senderProvince;
+     String senderCity;
+     String senderDistrict;
+     String senderStreet;
+     String senderName;
+     String senderMobile;
 
-    private String merchantCode;
-    private String packingMaterials;
-    private String version;
-    private String remark;
+     String merchantCode;
+     String packingMaterials;
+     String version;
+     String remark;
 
     public Order(String outOrderSn, String shopId, List<Item> itemList, double shipmentPrice, double taxPrice, double discountPrice) {
         this.outOrderSn = outOrderSn;

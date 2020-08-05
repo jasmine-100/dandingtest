@@ -9,12 +9,12 @@ import lombok.Data;
  */
 @Data
 public class PurOrderItem {
-    private String proCode;
-    private boolean emgFlag;
-    private boolean selected;
-    private double purchasePrice;
-    private int purchaseNum;
-    private double totalMoney;
+     String proCode;
+     boolean emgFlag;
+     boolean selected;
+     double purchasePrice;
+     int purchaseNum;
+     double totalMoney;
 
     public PurOrderItem(String proCode, double purchasePrice, int purchaseNum) {
         this.proCode = proCode;

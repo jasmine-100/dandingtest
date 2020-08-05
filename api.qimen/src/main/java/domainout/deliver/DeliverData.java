@@ -11,11 +11,11 @@ import java.util.List;
 @XmlRootElement(name = "request")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DeliverData {
-    private DeliveryOrder deliveryOrder;
+     DeliveryOrder deliveryOrder;
 
     @XmlElementWrapper(name = "orderLines")
     @XmlElement(name = "orderLine")
-    private List<OrderLine> orderLines;
+     List<OrderLine> orderLines;
 
     public DeliverData() {
     }

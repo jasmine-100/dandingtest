@@ -17,24 +17,24 @@ import java.util.Random;
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class WmsRequestRoot {
-    private String BillId;
-    private String SyncBillId;
-    private String DealCode;
-    private String WarehouseCode;
-    private String Operator;
-    private String OperatorTime;
-    private String ShippingCode;
-    private String ShippingCompany;
-    private String OrigSystem;
-    private String BillDate;
-    private double Weight;
-    private String Memo;
-    private String QGBillId;
-    private String HZID;
+     String BillId;
+     String SyncBillId;
+     String DealCode;
+     String WarehouseCode;
+     String Operator;
+     String OperatorTime;
+     String ShippingCode;
+     String ShippingCompany;
+     String OrigSystem;
+     String BillDate;
+     double Weight;
+     String Memo;
+     String QGBillId;
+     String HZID;
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
-    private List<Product> Products;
+     List<Product> Products;
 
     public WmsRequestRoot(String syncBillId, String warehouseCode, String shippingCompany,List<Product> products) {
         BillId = "RELHXY"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());

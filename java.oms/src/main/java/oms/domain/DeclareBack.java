@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 public class DeclareBack {
-    private String oriStr;
+     String oriStr;
 
     // 根据状态识别报文内容
     public DeclareBack(String orderno,String desc) {

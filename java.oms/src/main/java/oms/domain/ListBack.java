@@ -9,11 +9,11 @@ import lombok.Data;
  */
 @Data
 public class ListBack {
-    private String sign;
-    private String partnerId;
-    private String serviceVersion;
-    private String serviceType;
-    private String bizData;
+     String sign;
+     String partnerId;
+     String serviceVersion;
+     String serviceType;
+     String bizData;
 
     public ListBack(String orderno,String desc) {
         this.sign = "091443acea0d1b927859fa4b0420ab43";

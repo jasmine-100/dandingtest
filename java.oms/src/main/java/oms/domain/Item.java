@@ -9,10 +9,10 @@ import lombok.Data;
  */
 @Data
 public class Item {
-    private String shopItemCode;
-    private String outItemCode;
-    private int count;
-    private double unitPrice;
+     String shopItemCode;
+     String outItemCode;
+     int count;
+     double unitPrice;
 
     public Item(String shopItemCode,String outItemCode, int count, double unitPrice) {
         this.outItemCode = outItemCode;

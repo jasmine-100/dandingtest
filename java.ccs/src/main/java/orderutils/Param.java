@@ -9,9 +9,9 @@ import lombok.Data;
  */
 @Data
 public class Param {
-    private boolean decipher;
-    private String msg_type;
-    private String content;
+     boolean decipher;
+     String msg_type;
+     String content;
 
     public Param(String content) {
         this.decipher = false;

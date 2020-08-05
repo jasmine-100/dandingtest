@@ -9,11 +9,11 @@ import lombok.Data;
  */
 @Data
 public class Sku {
-    private String skuNo;
-    private String skuName;
-    private String barCode;
-    private String unit;
-    private String actionType;
+     String skuNo;
+     String skuName;
+     String barCode;
+     String unit;
+     String actionType;
 
     public Sku(String skuNo, String skuName, String barCode) {
         this.skuNo = skuNo;

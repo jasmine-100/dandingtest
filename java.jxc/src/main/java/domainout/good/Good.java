@@ -9,32 +9,32 @@ import lombok.Data;
  */
 @Data
 public class Good {
-    private String proCode;
-    private String barcode;
-    private String proName;
-    private Integer type; //1 保税商品 ， 2 普通商品
-    private String brand;
-    private String retailPrice;
-    private String isbatch; //1 有批次，0 无批次
-    private String expirationDate; //有效期
+     String proCode;
+     String barcode;
+     String proName;
+     Integer type; //1 保税商品 ， 2 普通商品
+     String brand;
+     String retailPrice;
+     String isbatch; //1 有批次，0 无批次
+     String expirationDate; //有效期
 
-    private int status;
-    private double length; //长
-    private double width; //宽
-    private double height;//高
-    private double grossWeight;//毛重
-    private double netWeight;//净重
-    private String size;//尺寸
-    private String color;//颜色
-    private String specification;//规格
-    private String logisticsVolume;//物流体积
-    private String basis;//成分
+     int status;
+     double length; //长
+     double width; //宽
+     double height;//高
+     double grossWeight;//毛重
+     double netWeight;//净重
+     String size;//尺寸
+     String color;//颜色
+     String specification;//规格
+     String logisticsVolume;//物流体积
+     String basis;//成分
 
-    private String factoryName; //工厂名称
-    private String factoryAdd; //工厂地址
-    private String registrationNum; //注册号
-    private String originCountry; //原产国
-    private String currency; //币种
+     String factoryName; //工厂名称
+     String factoryAdd; //工厂地址
+     String registrationNum; //注册号
+     String originCountry; //原产国
+     String currency; //币种
 
     public Good(String proCode, String proName, String isbatch, String expirationDate, String retailPrice, String brand) {
         this.proCode = proCode;

@@ -13,19 +13,19 @@ import java.util.List;
  */
 @Data
 public class Order {
-    private String accessCode;
-    private String whCode;
-    private String thirdNo;
-    private String receiverName;
-    private String receiverMobile;
-    private String receiverProvince;
-    private String receiverCity;
-    private String receiverDistrict;
-    private String receiverDetailAddress;
-    private String sourcePlatform;
-    private List<Sku> skuList;
-    private String type; //CGRKD采购单，DBRKD调拨入库单，PFTHRKD批发退货入库单，SOTHRKD销售退货入库单
-    private String shippingCode;
+     String accessCode;
+     String whCode;
+     String thirdNo;
+     String receiverName;
+     String receiverMobile;
+     String receiverProvince;
+     String receiverCity;
+     String receiverDistrict;
+     String receiverDetailAddress;
+     String sourcePlatform;
+     List<Sku> skuList;
+     String type; //CGRKD采购单，DBRKD调拨入库单，PFTHRKD批发退货入库单，SOTHRKD销售退货入库单
+     String shippingCode;
 
     public Order(String thirdNo, String whCode, String accessCode, String type, List<Sku> skuList) {
         this.accessCode = accessCode;

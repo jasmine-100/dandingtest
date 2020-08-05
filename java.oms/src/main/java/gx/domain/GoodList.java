@@ -13,13 +13,13 @@ import java.util.Date;
 @Data
 public class GoodList {
 
-    private String name;
+     String name;
     //小B用户id
-    private String userId;
+     String userId;
     //0、上架;1、下架
-    private String status;
-    private String sourceItemCode;
-    private String outeItemCode;
+     String status;
+     String sourceItemCode;
+     String outeItemCode;
 
     public GoodList(String name, String userId, String outeItemCode) {
         this.name = name;

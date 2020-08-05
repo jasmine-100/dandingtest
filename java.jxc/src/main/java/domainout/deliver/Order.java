@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 public class Order {
-    private String orderNo;
+     String orderNo;
 
     public Order(String orderNo) {
         this.orderNo = orderNo;

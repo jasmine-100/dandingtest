@@ -12,14 +12,14 @@ import java.util.Date;
  */
 @Data
 public class Param {
-    private String app_key;
-    private String method;
-    private String sign_method;
-    private String customerId;
-    private String format;
-    private String timestamp;
-    private String sign;
-    private String v;
+     String app_key;
+     String method;
+     String sign_method;
+     String customerId;
+     String format;
+     String timestamp;
+     String sign;
+     String v;
 
     public Param(String method,String customerId) {
         this.app_key = "24869601";

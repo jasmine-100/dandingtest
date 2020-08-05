@@ -2,9 +2,8 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import com.sun.corba.se.spi.orb.ORBData;
-import domainInner.Item;
-import domainInner.Order;
+import domain.Item;
+import domain.Order;
 import domainout.*;
 import org.junit.jupiter.api.Test;
 
@@ -70,7 +69,7 @@ public class OrderSetApi {
     @Test
     public void qingdanBack() throws IOException, InterruptedException {
         // 取申报单的数据库id
-        String orderno = "497791066498400257";
+        String orderno = "497794083641622529";
         //回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 //        String invtNo = "QD20200805151953";

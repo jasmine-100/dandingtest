@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class Cancel {
-    private String orderNo;
-    private String accessCode;
+     String orderNo;
+     String accessCode;
 
     public Cancel(String orderNo, String accessCode) {
         this.orderNo = orderNo;

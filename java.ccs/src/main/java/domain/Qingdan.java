@@ -1,4 +1,4 @@
-package domainInner;
+package domain;
 
 import lombok.Data;
 
@@ -12,14 +12,14 @@ import java.util.Date;
  */
 @Data
 public class Qingdan {
-    private String declareOrderNo;
-    private String customsDetail;
-    private long customsTime;
-    private String customsStatus;
-    private String ebpCode;
-    private String preNo;
+     String declareOrderNo;
+     String customsDetail;
+     long customsTime;
+     String customsStatus;
+     String ebpCode;
+     String preNo;
     //清单编号
-    private String invtNo;
+     String invtNo;
 
     public Qingdan(String declareOrderNo, String customsStatus, String ebpCode) {
         String str = new SimpleDateFormat("MMddHHmmss").format(new Date());

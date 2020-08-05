@@ -1,4 +1,4 @@
-package domainInner;
+package domain;
 
 import lombok.Data;
 
@@ -10,19 +10,19 @@ import lombok.Data;
 @Data
 public class Item {
     // 商品备案料号：唯一标识商品
-    private String recordNo;
+     String recordNo;
     // 商品货号
-    private String itemNo;
+     String itemNo;
     //商品品名
-    private String itemName;
+     String itemName;
     //数量
-    private int count;
+     int count;
     // 商品链接
-    private String itemLink;
+     String itemLink;
     //商品备案序号
-    private String recordGnum;
+     String recordGnum;
     // 单价
-    private double unitPrice;
+     double unitPrice;
 
     public Item(String recordNo,int count, double unitPrice) {
         this.recordNo = recordNo;

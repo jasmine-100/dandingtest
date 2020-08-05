@@ -13,8 +13,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
-    private String Sku;
-    private String SN;
+     String Sku;
+     String SN;
 
     public Product(String sku) {
         Sku = sku;

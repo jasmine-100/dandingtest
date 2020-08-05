@@ -12,36 +12,36 @@ import java.util.Random;
  */
 @Data
 public class Order {
-    private String accessCode;
-    private String orderNo;
+     String accessCode;
+     String orderNo;
 
-    private String province;
-    private String city;
-    private String district;
-    private String street;
-    private String name;
-    private String idCard;
-    private String mobile;
+     String province;
+     String city;
+     String district;
+     String street;
+     String name;
+     String idCard;
+     String mobile;
 
-    private String senderShop;
-    private String remark;
-    private String payerName;
-    private String payerNumber;
-    private String payChannel;
-    private String tradeNo;
-    private double payAmount;
-    private String customsDeclarationCode;
-    private String sourcePlatform;
-    private String packingMaterials;
+     String senderShop;
+     String remark;
+     String payerName;
+     String payerNumber;
+     String payChannel;
+     String tradeNo;
+     double payAmount;
+     String customsDeclarationCode;
+     String sourcePlatform;
+     String packingMaterials;
 
-    private String sender_province;
-    private String sender_city;
-    private String sender_district;
-    private String sender_street;
-    private String sender_name;
-    private String sender_mobile;
+     String sender_province;
+     String sender_city;
+     String sender_district;
+     String sender_street;
+     String sender_name;
+     String sender_mobile;
 
-    private List<Item> itemList;
+     List<Item> itemList;
 
     public Order(String accessCode, String orderNo,List<Item> itemList) {
         this.accessCode = accessCode;

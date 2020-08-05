@@ -14,17 +14,17 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
 
-    private String OrderLineNo;
-    private String Sku;
-    private String BatchCode;
-    private int Qty;
-    private String InventoryType;
-    private String Memo;
-    private String BatchValue1;
-    private String BatchValue2;
-    private String BatchValue3;
-    private String BatchValue4;
-    private String BatchValue5;
+     String OrderLineNo;
+     String Sku;
+     String BatchCode;
+     int Qty;
+     String InventoryType;
+     String Memo;
+     String BatchValue1;
+     String BatchValue2;
+     String BatchValue3;
+     String BatchValue4;
+     String BatchValue5;
 
     public Product(String sku, String batchCode, int qty, String batchValue1,String batchValue2, String inventoryType) {
         OrderLineNo = "";
