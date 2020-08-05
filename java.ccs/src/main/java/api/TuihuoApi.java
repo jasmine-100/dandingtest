@@ -20,12 +20,12 @@ public class TuihuoApi {
     @Test
     public void order() throws Exception {
         // 取退货单列表的退货单号，去掉TH
-        String orderNo = "20080517300210";
+        String orderNo = "20080518020214";
 
         // 回执：地址不详
-//        BackTuiHuo.backAddressError(orderNo,ebpCode,ebcCode);
+//        BackTuiHuo.backAddressError(orderNo,ebpCode,ebcCode,agentCode);
         // 回执：待人工审核
-//        BackTuiHuo.backWaitExamine(orderNo,ebpCode,ebcCode);
+//        BackTuiHuo.backWaitExamine(orderNo,ebpCode,ebcCode,agentCode);
         // 回执：海关放行
         BackTuiHuo.backPass(orderNo,ebpCode,ebcCode,agentCode);
     }
