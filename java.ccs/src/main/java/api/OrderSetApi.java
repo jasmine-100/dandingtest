@@ -16,7 +16,7 @@ import java.util.Random;
 
 /**
  * @Author： jasmine
- * @Description : CCS 下单-申报订单-申报清单流程
+ * @Description : CCS申报单完整流程：推送申报单--申报订单-申报清单--回执电子税单
  * @Date : Created in 2020/7/20 12:23
  */
 public class OrderSetApi {
@@ -93,7 +93,7 @@ public class OrderSetApi {
         BackQingDan.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
-        // 回执税金
+        // 回执：税金
         BackTax.backTaxrd(invtNo,10.23,30,"20200806132012306");
 
     }

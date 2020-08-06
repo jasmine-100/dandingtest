@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * @Author： jasmine
- * @Description : 退货--回执海关报文
+ * @Description : 退货流程--回执海关放行
  * @Date : Created in 2020/8/4 15:12
  */
 public class TuihuoApi {
@@ -24,8 +24,9 @@ public class TuihuoApi {
     public void backPass() throws Exception {
         // 回执：待人工审核
         BackTuiHuo.backWaitExamine(orderNo,ebpCode,ebcCode,agentCode);
-        // 回执：海关放行
+        // 回执：撤单成功
         BackTuiHuo.backPass(orderNo,ebpCode,ebcCode,agentCode);
+
     }
 
     // 回执：地址不详

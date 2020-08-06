@@ -64,7 +64,7 @@ public class BackTax {
     }
 
     // 回执税金状态--作废
-    public static void backTaxQuit(String invtNo,String returnTime) throws IOException {
+    public static void backTaxCancel(String invtNo, String returnTime) throws IOException {
         function(invtNo,returnTime,"3");
     }
 
@@ -83,7 +83,7 @@ public class BackTax {
                 "<assureCode>330766K00W</assureCode>" +
                 "</TaxHeadStatus>" +
                 "</Tax>" +
-                "</CEB818Message>'";
+                "</CEB818Message>";
         new ApiClient(url).doPostForm(new Param(data));
     }
 
