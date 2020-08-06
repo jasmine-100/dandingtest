@@ -20,7 +20,7 @@ public class ChedanApi {
     static String agentCode = "330766K00W";
 
     // 取撤单列表的撤单申报编号，去掉CD
-    String orderNo = "2008060910000162";
+    String orderNo = "2008061450000167";
 
 
     // 撤单成功回执报文

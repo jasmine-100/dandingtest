@@ -17,7 +17,7 @@ public class TaxApi {
     @Test
     public void taxTocal() throws IOException {
         // 清单号
-        String invtNo = "QD20200806135127";
+        String invtNo = "QD20200806144901";
 
         // 已生成
         BackTax.backTaxCreate(invtNo,"20200806140610230");
@@ -29,11 +29,11 @@ public class TaxApi {
     @Test
     public void taxCancel() throws IOException {
         // 清单号
-        String invtNo = "QD20200806135127";
+        String invtNo = "QD20200806145018";
 
         // 已生成
         BackTax.backTaxCreate(invtNo,"20200806140610230");
-        // 已汇总
+        // 已作废
         BackTax.backTaxCancel(invtNo,"20200807140610230");
     }
 
