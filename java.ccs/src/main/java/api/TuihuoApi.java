@@ -17,7 +17,7 @@ public class TuihuoApi {
     static String agentCode = "330766K00W";
 
     // 取退货单列表的退货单号，去掉TH
-    String orderNo = "20080613100215";
+    String orderNo = "20080615160216";
 
     // 回执：海关放行
     @Test

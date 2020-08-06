@@ -12,7 +12,6 @@ import java.io.IOException;
  */
 public class TaxApi {
 
-
     // 已放行申报单：生成并汇总税金
     @Test
     public void taxTocal() throws IOException {
@@ -29,7 +28,7 @@ public class TaxApi {
     @Test
     public void taxCancel() throws IOException {
         // 清单号
-        String invtNo = "QD20200806145018";
+        String invtNo = "QD20200806151604";
 
         // 已生成
         BackTax.backTaxCreate(invtNo,"20200806140610230");
