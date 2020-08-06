@@ -51,7 +51,7 @@ public class OrderSetApi {
         client.doPostJson(JSON.toJSON(order));
 
         //回执订单申报结果
-//        dingdanBack(orderno);
+        dingdanBack(orderno);
     }
 
     /**
@@ -75,7 +75,7 @@ public class OrderSetApi {
     @Test
     public void qingdanBack() throws IOException, InterruptedException {
         // 取申报单的数据库id
-        String orderno = "498061245656596480";
+        String orderno = "498118830946516992";
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 //        String invtNo = "QD20200805151953";
@@ -86,11 +86,11 @@ public class OrderSetApi {
         Thread.sleep(2000);
 
         //回执新增申报成功报文
-        BackQingDan.backDeclareSuccess(orderno,ebcCode,ebpCode,"20200805171702105");
+        BackQingDan.backDeclareSuccess(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
         //回执放行报文
-        BackQingDan.backPass(orderno,ebcCode,ebpCode,invtNo,"20200805181702105");
+        BackQingDan.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
         //回执税费报文
