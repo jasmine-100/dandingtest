@@ -65,43 +65,4 @@ public class BackQingDan {
         new ApiClient(url).doPostForm(new Param(data));
     }
 
-    // 总署回执：税费
-    // 回执报文报文中，清单号必须正确，其他信息取CCS系统中的信息，不校验
-    public static void backTaxrd(String invtNo,double valueAddedTax,double consumptionTax,String returntime) throws IOException {
-        data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-                "<CEB816Message" +
-                "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"e98878cc-48ef-4ce5-968d-dddc3d47a304\">" +
-                "    <Tax>" +
-                "        <TaxHeadRd>" +
-                "            <guid>e98878cc-48ef-4ce5-968d-dddc3d47a304</guid>" +
-                "            <returnTime>"+returntime+"</returnTime>" +
-                "            <invtNo>"+invtNo+"</invtNo>" +
-                "            <taxNo>TX"+System.currentTimeMillis()+"_1</taxNo>" +
-                "            <customsTax>0.0</customsTax>" +
-                "            <valueAddedTax>"+valueAddedTax+"</valueAddedTax>" +
-                "            <consumptionTax>"+consumptionTax+"</consumptionTax>" +
-                "            <status>1</status>" +
-                "            <entDutyNo></entDutyNo>" +
-                "            <note></note>" +
-                "            <assureCode>330766K00Q</assureCode>" +
-                "            <ebcCode>123</ebcCode>" +
-                "            <logisticsCode>123</logisticsCode>" +
-                "            <agentCode>123</agentCode>" +
-                "            <customsCode>2924</customsCode>" +
-                "            <orderNo>Jos123</orderNo>" +
-                "            <logisticsNo>JD0018734413066</logisticsNo>" +
-                "        </TaxHeadRd>" +
-                "        <TaxListRd>" +
-                "            <gnum>1</gnum>" +
-                "            <gcode>2201101000</gcode>" +
-                "            <taxPrice>410.0</taxPrice>" +
-                "            <customsTax>0.0</customsTax>" +
-                "            <valueAddedTax>"+valueAddedTax+"</valueAddedTax>" +
-                "            <consumptionTax>"+consumptionTax+"</consumptionTax>" +
-                "        </TaxListRd>" +
-                "    </Tax>" +
-                "</CEB816Message>";
-        new ApiClient(url).doPostForm(new Param(data));
-    }
-
 }

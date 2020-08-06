@@ -93,8 +93,8 @@ public class OrderSetApi {
         BackQingDan.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
-        //回执税费报文
-        BackQingDan.backTaxrd(invtNo,10.2,15,"20200805191702105");
+        // 回执税金
+        BackTax.backTaxrd(invtNo,10.23,30,"20200806132012306");
 
     }
 

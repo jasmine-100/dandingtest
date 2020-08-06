@@ -16,18 +16,23 @@ public class TuihuoApi {
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
 
+    // 取退货单列表的退货单号，去掉TH
+    String orderNo = "20080613100215";
 
+    // 回执：海关放行
     @Test
-    public void order() throws Exception {
-        // 取退货单列表的退货单号，去掉TH
-        String orderNo = "20080613100215";
-
-        // 回执：地址不详
-//        BackTuiHuo.backAddressError(orderNo,ebpCode,ebcCode,agentCode);
+    public void backPass() throws Exception {
         // 回执：待人工审核
         BackTuiHuo.backWaitExamine(orderNo,ebpCode,ebcCode,agentCode);
         // 回执：海关放行
         BackTuiHuo.backPass(orderNo,ebpCode,ebcCode,agentCode);
     }
+
+    // 回执：地址不详
+    @Test
+    public void backFail() throws Exception {
+        BackTuiHuo.backAddressError(orderNo,ebpCode,ebcCode,agentCode);
+    }
+
 
 }
