@@ -34,7 +34,7 @@ public class BackChedan {
     // 撤单回执：撤单成功
     public static void backChedanSuccess(String orderno,String ebpCode,String ebcCode,String agentCode) throws IOException {
         returnStatus = "399";
-        returnInfo = "[Code:2300;Desc:审核通过],撤单申请审核通过,清单[29242020I426334468]已成功撤单";
+        returnInfo = "[Code:2300;Desc:审核通过],撤单申请审核通过,清单已成功撤单";
         backFunction(orderno,ebpCode,ebcCode,agentCode,returnStatus,returnInfo);
     }
 
