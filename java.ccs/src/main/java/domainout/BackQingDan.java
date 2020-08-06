@@ -19,8 +19,32 @@ public class BackQingDan {
     static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
     static String data = null;
 
+    static String returnStatus;
+    static String returnInfo;
+
     //总署回执：逻辑校验通过
-    public static void backLogicPass(String orderNo,String ebcCode,String ebpCode,String agentCode,String invtNo,String returntime) throws IOException {
+    public static void backLogicPass(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+        returnStatus = "120";
+        returnInfo = "[Code:1800;Desc:逻辑校验通过]";
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+    }
+
+    //总署回执：新增申报成功
+    public static void backDeclareSuccess(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+        returnStatus = "2";
+        returnInfo = "清单新增申报成功[电商企业编码：4401962010订单编号：124183351885]";
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+    }
+
+    //总署回执：放行
+    public static void backPass(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+        returnStatus = "800";
+        returnInfo = "[Code:2600;Desc:放行]";
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+    }
+
+    // 清单申报--回执模板
+    static void function(String orderNo,String ebcCode,String ebpCode,String agentCode,String invtNo,String returnStatus,String returnInfo,String returntime) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"c988cb9e-ea4b-463a-87c4-36e3d24aa7d9\">" +
@@ -33,52 +57,9 @@ public class BackQingDan {
                 "        <copNo>"+orderNo+"</copNo>" +
                 "        <preNo>B20200615494000227</preNo>" +
                 "        <invtNo>"+invtNo+"</invtNo>" +
-                "        <returnStatus>120</returnStatus>" +
+                "        <returnStatus>"+returnStatus+"</returnStatus>" +
                 "        <returnTime>"+returntime+"</returnTime>" +
-                "        <returnInfo>[Code:1800;Desc:逻辑校验通过]</returnInfo>" +
-                "    </InventoryReturn>" +
-                "</CEB622Message>";
-        new ApiClient(url).doPostForm(new Param(data));
-    }
-
-    //总署回执：新增申报成功
-    public static void backDeclareSuccess(String orderNo,String ebcCode,String ebpCode,String returntime) throws IOException {
-        data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-                "<CEB622Message" +
-                "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"48604738-C342-484F-8CA1-46BCF64098D0\">" +
-                "    <InventoryReturn>" +
-                "        <guid>f5885dd5-b765-41de-8f0f-e5a30592885c</guid>" +
-                "        <customsCode>2924</customsCode>" +
-                "        <ebpCode>"+ebpCode+"</ebpCode>" +
-                "        <ebcCode>"+ebcCode+"</ebcCode>" +
-                "        <agentCode>330766K00Q</agentCode>" +
-                "        <copNo>"+orderNo+"</copNo>" +
-                "        <preNo>B20200615494000227</preNo>" +
-                "        <returnStatus>2</returnStatus>" +
-                "        <returnTime>"+returntime+"</returnTime>" +
-                "        <returnInfo>清单新增申报成功[电商企业编码：4401962010订单编号：124183351885]</returnInfo>" +
-                "    </InventoryReturn>" +
-                "</CEB622Message>";
-        new ApiClient(url).doPostForm(new Param(data));
-    }
-
-    //总署回执：放行
-    public static void backPass(String orderNo,String ebcCode,String ebpCode,String invtNo,String returntime) throws IOException {
-        data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-                "<CEB622Message" +
-                "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"0e24b0c5-8eea-429a-a08b-46a0bad0cabd\">" +
-                "    <InventoryReturn>" +
-                "        <guid>f5885dd5-b765-41de-8f0f-e5a30592885c</guid>" +
-                "        <customsCode>2924</customsCode>" +
-                "        <ebpCode>"+ebpCode+"</ebpCode>" +
-                "        <ebcCode>"+ebcCode+"</ebcCode>" +
-                "        <agentCode>330766K00Q</agentCode>" +
-                "        <copNo>"+orderNo+"</copNo>" +
-                "        <preNo>B20200615494000227</preNo>" +
-                "        <invtNo>"+invtNo+"</invtNo>" +
-                "        <returnStatus>800</returnStatus>" +
-                "        <returnTime>"+returntime+"</returnTime>" +
-                "        <returnInfo>[Code:2600;Desc:放行]</returnInfo>" +
+                "        <returnInfo>"+returnInfo+"</returnInfo>" +
                 "    </InventoryReturn>" +
                 "</CEB622Message>";
         new ApiClient(url).doPostForm(new Param(data));

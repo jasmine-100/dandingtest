@@ -56,22 +56,27 @@ public class OrderSetApi {
 
     /**
      * 步骤二：订单申报回执
+     * 回传时间格式：年月日时分秒毫秒
      */
-    public void dingdanBack(String orderno) throws IOException {
-        //订单回执成功
-        BackDingdan.declareSuccess(orderno,ebcCode,ebcCode);
-        BackDingdan.logicSuccess(orderno,ebcCode,ebcCode);
+    public void dingdanBack(String orderno) throws IOException, InterruptedException {
+
+        // 订单回执：逻辑校验通过
+        BackDingdan.logicSuccess(orderno,ebcCode,ebcCode,"20200806115901203");
+        Thread.sleep(2000);
+
+        // 订单回执:新增申报成功
+        BackDingdan.declareSuccess(orderno,ebcCode,ebcCode,"20200806115901203");
+
     }
 
     /**
      * 步骤三：清单申报回执
-     * @throws IOException
      */
     @Test
     public void qingdanBack() throws IOException, InterruptedException {
         // 取申报单的数据库id
-        String orderno = "497830323602587648";
-        //回执清单号
+        String orderno = "498061245656596480";
+        // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 //        String invtNo = "QD20200805151953";
 

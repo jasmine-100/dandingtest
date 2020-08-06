@@ -23,10 +23,14 @@ public class ChedanApi {
         // 取退货单列表的退货单号，去掉TH
         String orderNo = "2008051734000161";
 
+        // 回执：申报
 //        BackChedan.backShenbao(orderNo,ebpCode,ebcCode,agentCode);
 
+        // 回执：逻辑校验通过
 //        BackChedan.backLogicpass(orderNo,ebpCode,ebcCode,agentCode);
 
+        //回执：撤单成功
         BackChedan.backChedanSuccess(orderNo,ebpCode,ebcCode,agentCode);
+
     }
 }

@@ -7,40 +7,36 @@ import java.io.IOException;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 海关订单申报--回执报文
  * @Date : Created in 2020/8/4 15:36
  */
 public class BackDingdan {
     static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
     static String data = null;
 
+    static String returnStatus;
+    static String returnInfo;
+
     /**
      * 回执新增申报成功
-     * @param orderno
-     * @throws IOException
      */
-    public static void declareSuccess(String orderno,String ebpCode,String ebcCode) throws IOException {
-        data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-                "<CEB312Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"C9C9AD3E-1F8D-4583-B62B-07A5FD3E02FB\">" +
-                "    <OrderReturn>" +
-                "        <guid>6656067b-adc2-4880-a9cd-0d78f4bb6d81</guid>" +
-                "        <ebpCode>"+ebpCode+"</ebpCode>" +
-                "        <ebcCode>"+ebcCode+"</ebcCode>" +
-                "        <orderNo>"+orderno+"</orderNo>" +
-                "        <returnStatus>2</returnStatus>" +
-                "        <returnTime>20200708000409381</returnTime>" +
-                "        <returnInfo>新增申报成功[3755623E-EC89-4B3E-8894-4DC7136457AF]</returnInfo>" +
-                "    </OrderReturn>" +
-                "</CEB312Message>";
-        new ApiClient(url).doPostForm(new Param(data));
+    public static void declareSuccess(String orderno,String ebpCode,String ebcCode,String returnTime) throws IOException {
+        returnStatus = "2";
+        returnInfo = "新增申报成功[3755623E-EC89-4B3E-8894-4DC7136457AF]";
+        function(orderno,ebpCode,ebcCode,returnStatus,returnInfo,returnTime);
     }
 
     /**
      * 回执逻辑校验通过
-     * @param orderno
-     * @throws IOException
      */
-    public static void logicSuccess(String orderno,String ebpCode,String ebcCode) throws IOException {
+    public static void logicSuccess(String orderno,String ebpCode,String ebcCode,String returnTime) throws IOException {
+        returnStatus = "120";
+        returnInfo = "[Code:1800;Desc:逻辑校验通过]";
+        function(orderno,ebpCode,ebcCode,returnStatus,returnInfo,returnTime);
+    }
+
+    // 订单申报--回执模板
+    static void function(String orderno,String ebpCode,String ebcCode,String returnStatus,String returnInfo,String returnTime) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB312Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"479237c3-ec79-4d05-bced-3f3299e64c57\">" +
                 "    <OrderReturn>" +
@@ -48,9 +44,9 @@ public class BackDingdan {
                 "        <ebpCode>"+ebpCode+"</ebpCode>" +
                 "        <ebcCode>"+ebcCode+"</ebcCode>" +
                 "        <orderNo>"+orderno+"</orderNo>" +
-                "        <returnStatus>120</returnStatus>" +
-                "        <returnTime>20200709083910849</returnTime>" +
-                "        <returnInfo>[Code:1800;Desc:逻辑校验通过]</returnInfo>" +
+                "        <returnStatus>"+returnStatus+"</returnStatus>" +
+                "        <returnTime>"+returnTime+"</returnTime>" +
+                "        <returnInfo>"+returnInfo+"</returnInfo>" +
                 "    </OrderReturn>" +
                 "</CEB312Message>";
         new ApiClient(url).doPostForm(new Param(data));
