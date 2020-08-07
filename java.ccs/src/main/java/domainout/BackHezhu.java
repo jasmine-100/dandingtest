@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 核注清单回执报文
  * @Date : Created in 2020/8/7 17:46
  */
 public class BackHezhu {
