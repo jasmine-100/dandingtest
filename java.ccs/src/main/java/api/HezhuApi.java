@@ -1,12 +1,10 @@
 package api;
 
-import domainout.BackHefang;
 import domainout.BackHefangHezhu;
 import domainout.BackHezhu;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.Random;
 
 /**
  * @Author： jasmine
