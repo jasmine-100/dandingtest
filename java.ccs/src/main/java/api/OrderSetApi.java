@@ -75,7 +75,7 @@ public class OrderSetApi {
     @Test
     public void qingdanBack() throws IOException, InterruptedException {
         // 取申报单的数据库id
-        String orderno = "498544859108343809";
+        String orderno = "499576158635950081";
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 //        String invtNo = "QD20200805151953";

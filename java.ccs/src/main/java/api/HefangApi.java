@@ -15,17 +15,19 @@ import java.util.Random;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2008101327000181";  // 系统内部核放单编号
-    String SeqNo = "YHF08101328";  // 预录入编号
-    String businessId = "QDHF08101328";  // 核放单号
+    String etpsPreentNo = "HF2008101349000183";  // 系统内部核放单编号
+    String SeqNo = "YHF08101348";  // 预录入编号
+    String businessId = "QDHF08101348";  // 核放单号
 
     @Test
-    public void hefangPass() throws IOException {
+    public void hefangPass() throws IOException, InterruptedException {
         // 核放单：调用成功
-//        BackHefangHezhu.callPass(etpsPreentNo,SeqNo);
+        BackHefangHezhu.callPass(etpsPreentNo,SeqNo);
+        Thread.sleep(1000);
 
         // 核放单：审核通过
-//        BackHefang.backExaminePass(SeqNo,businessId);
+        BackHefang.backExaminePass(SeqNo,businessId);
+        Thread.sleep(1000);
 
         // 核放单：过卡回执
         BackHefang.backCheckPass(SeqNo,businessId);
