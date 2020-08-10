@@ -49,9 +49,13 @@ public class OrderSetApi {
         //接口：推送申报单
         ApiClient client = new ApiClient("http://ccs.backend.daily.yang800.com/xhr/order/submit");
         client.doPostJson(JSON.toJSON(order));
+        Thread.sleep(5000);
 
         //回执订单申报结果
         dingdanBack(orderno);
+
+        //回执清单申报结果
+        qingdanBack(orderno);
     }
 
     /**
@@ -72,25 +76,24 @@ public class OrderSetApi {
     /**
      * 步骤三：清单申报回执
      */
-    @Test
-    public void qingdanBack() throws IOException, InterruptedException {
+    public void qingdanBack(String orderno) throws IOException, InterruptedException {
         // 取申报单的数据库id
-        String orderno = "499576158635950081";
+        String orderid = domainout.Order.getOrderNo(orderno);
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 //        String invtNo = "QD20200805151953";
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
-        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+        BackQingDan.backLogicPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
         //回执新增申报成功报文
-        BackQingDan.backDeclareSuccess(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+        BackQingDan.backDeclareSuccess(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
         //回执放行报文
-        BackQingDan.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+        BackQingDan.backPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
         // 回执：税金
