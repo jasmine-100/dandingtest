@@ -6,14 +6,14 @@ package orderutils;
  * @Date : Created in 2020/8/4 13:28
  */
 public class OrderCancel {
-     static String data;
+ static String data;
 
-    public static String createOrder(){
-        data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-                "<ceb:CEB623Message guid=\"9EFDC2DF-014E-4D77-ADAB-E14C73B2E2A8\" version=\"1.0\" " +
-                "xmlns:ceb=\"http://www.chinaport.gov.cn/ceb\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
-                "<ceb:InvtCancel>" +
-                "<ceb:guid>9EFDC2DF-014E-4D77-ADAB-E14C73B2E2A8</ceb:guid>" +
+public static String createOrder(){
+data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+"<ceb:CEB623Message guid=\"9EFDC2DF-014E-4D77-ADAB-E14C73B2E2A8\" version=\"1.0\" " +
+"xmlns:ceb=\"http://www.chinaport.gov.cn/ceb\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
+"<ceb:InvtCancel>" +
+            "<ceb:guid>9EFDC2DF-014E-4D77-ADAB-E14C73B2E2A8</ceb:guid>" +
                 "<ceb:appType>1</ceb:appType>" +
                 "<ceb:appTime>20200629134101</ceb:appTime>" +
                 "<ceb:appStatus>2</ceb:appStatus>" +

@@ -11,33 +11,33 @@ import java.util.List;
  */
 @Data
 public class Order {
-     String outOrderSn;
-     String declareOrderSn;
-     String customsDeclarationCode;
-     long orderTime;
-     String payChannel;
-     String payNo;
-     long payTime;
+ String outOrderSn;
+ String declareOrderSn;
+ String customsDeclarationCode;
+ long orderTime;
+ String payChannel;
+ String payNo;
+ long payTime;
 
-     String payerIdNumber;
-     String payerName;
+ String payerIdNumber;
+ String payerName;
 
-     String shopId;
-     String sourceChannel;
-     String customsPayNo;
-     long customsPayTime;
+ String shopId;
+ String sourceChannel;
+ String customsPayNo;
+ long customsPayTime;
 
-     String consigneeProvince;
-     String consigneeCity;
-     String consigneeDistrict;
-     String consigneeDetailAddress;
-     String consigneeName;
-     String consigneeIdNumber;
-     String consigneeTel;
+ String consigneeProvince;
+ String consigneeCity;
+ String consigneeDistrict;
+ String consigneeDetailAddress;
+ String consigneeName;
+ String consigneeIdNumber;
+ String consigneeTel;
 
-     List<Item> itemList;
-     double itemPrice;
-     double shipmentPrice;
+ List<Item> itemList;
+ double itemPrice;
+ double shipmentPrice;
      double taxPrice;
      double discountPrice;
      double totalPrice;

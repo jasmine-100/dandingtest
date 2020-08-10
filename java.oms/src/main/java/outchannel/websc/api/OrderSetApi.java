@@ -19,18 +19,18 @@ import java.util.List;
  */
 public class OrderSetApi {
 
-    @Test
-    public void orderSet() throws IOException {
-        //店铺code
-        String accesscode = "49C9ADB18E44BE0711A94E827042F630";
-        //订单编号
-        String orderno = "fx" +new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+@Test
+public void orderSet() throws IOException {
+//店铺code
+String accesscode = "49C9ADB18E44BE0711A94E827042F630";
+//订单编号
+String orderno = "fx" +new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
-        //组装商品项
-        List<Item> itemList = new ArrayList<>();
-        itemList.add(new Item("SPC1596438357513","小苹果","xpg001",1,12));
-        //组装订单项
-        Order order = new Order(accesscode,orderno,itemList);
+//组装商品项
+List<Item> itemList = new ArrayList<>();
+itemList.add(new Item("SPC1596438357513","小苹果","xpg001",1,12));
+//组装订单项
+    Order order = new Order(accesscode,orderno,itemList);
         //组装接口参数
         Params params = new Params(order,"order.out.set","WEBSC");
 

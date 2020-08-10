@@ -7,15 +7,15 @@ package domainout.deliver;
  */
 public class DeliverType {
 
-    //CGTHCKD-采购退货出库单,DBCKD-调拨出库单,PFCKD-批发出库单,QTCKD-其它出库
+//CGTHCKD-采购退货出库单,DBCKD-调拨出库单,PFCKD-批发出库单,QTCKD-其它出库
 
-    public static final String CAIGOU = "CGTHCKD";
+public static final String CAIGOU = "CGTHCKD";
 
-    public static final String DIAOBO = "DBCKD";
+public static final String DIAOBO = "DBCKD";
 
-    public static final String PFCHUKU = "PFCKD";
+public static final String PFCHUKU = "PFCKD";
 
-    public static final String OTHER = "QTCKD";
+public static final String OTHER = "QTCKD";
 
 
 }

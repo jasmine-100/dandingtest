@@ -9,11 +9,11 @@ import lombok.Data;
  */
 @Data
 public class Cancel {
-     String orderNo;
-     String accessCode;
+ String orderNo;
+ String accessCode;
 
-    public Cancel(String orderNo, String accessCode) {
-        this.orderNo = orderNo;
-        this.accessCode = accessCode;
-    }
+public Cancel(String orderNo, String accessCode) {
+this.orderNo = orderNo;
+this.accessCode = accessCode;
+}
 }

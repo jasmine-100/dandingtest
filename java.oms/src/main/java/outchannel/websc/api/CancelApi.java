@@ -14,17 +14,17 @@ import java.io.IOException;
  */
 public class CancelApi {
 
-    @Test
-    public void orderCancel() throws IOException {
-        String accesscode = "49C9ADB18E44BE0711A94E827042F630";
-        //订单编号
-        String orderno = "websc20200722163121";
+@Test
+public void orderCancel() throws IOException {
+String accesscode = "49C9ADB18E44BE0711A94E827042F630";
+//订单编号
+String orderno = "websc20200722163121";
 
-        Cancel cancel = new Cancel(orderno,accesscode);
-        Params params = new Params(cancel,"order.cancel","WEBSC");
+Cancel cancel = new Cancel(orderno,accesscode);
+Params params = new Params(cancel,"order.cancel","WEBSC");
 
-        String url = "http://outtest.order.yang800.cn/open/testV2";
-        ApiClient client = new ApiClient(url);
-        client.doPostForm(params);
-    }
+String url = "http://outtest.order.yang800.cn/open/testV2";
+ApiClient client = new ApiClient(url);
+client.doPostForm(params);
+}
 }

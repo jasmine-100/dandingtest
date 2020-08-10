@@ -11,17 +11,17 @@ import java.io.IOException;
  * @Date : Created in 2020/8/4 15:36
  */
 public class BackDingdan {
-    static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
-    static String data = null;
+static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
+static String data = null;
 
-    static String returnStatus;
-    static String returnInfo;
+static String returnStatus;
+static String returnInfo;
 
-    /**
-     * 回执新增申报成功
-     */
-    public static void declareSuccess(String orderno,String ebpCode,String ebcCode,String returnTime) throws IOException {
-        returnStatus = "2";
+/**
+ * 回执新增申报成功
+ */
+public static void declareSuccess(String orderno,String ebpCode,String ebcCode,String returnTime) throws IOException {
+    returnStatus = "2";
         returnInfo = "新增申报成功[3755623E-EC89-4B3E-8894-4DC7136457AF]";
         function(orderno,ebpCode,ebcCode,returnStatus,returnInfo,returnTime);
     }

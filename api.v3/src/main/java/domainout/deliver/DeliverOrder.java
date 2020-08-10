@@ -12,14 +12,14 @@ import java.util.List;
  */
 @Data
 public class DeliverOrder {
-     String accessCode;
-     String whCode;
-     String thirdNo;
-     String receiverName;
-     String receiverMobile;
-     String receiverProvince;
-     String receiverCity;
-     String receiverDistrict;
+ String accessCode;
+ String whCode;
+ String thirdNo;
+ String receiverName;
+ String receiverMobile;
+ String receiverProvince;
+ String receiverCity;
+   String receiverDistrict;
      String receiverDetailAddress;
      String sourcePlatform;
      List<Sku> skuList;

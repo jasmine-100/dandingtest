@@ -15,7 +15,7 @@ import java.util.Date;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
-     String OrderLineNo;
+ String OrderLineNo;
      String Sku;
      String BatchCode;
      int Qty;

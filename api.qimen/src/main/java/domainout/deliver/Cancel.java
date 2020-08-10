@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "request")
 public class Cancel {
-    String orderCode;
-    String orderType;
-    String warehouseCode;
+String orderCode;
+String orderType;
+  String warehouseCode;
     String ownerCode;
     String cancelReason;
 

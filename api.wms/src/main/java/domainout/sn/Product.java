@@ -13,11 +13,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
-     String Sku;
-     String SN;
+ String Sku;
+ String SN;
 
-    public Product(String sku) {
-        Sku = sku;
-        this.SN = sku;
-    }
+public Product(String sku) {
+Sku = sku;
+this.SN = sku;
+}
 }

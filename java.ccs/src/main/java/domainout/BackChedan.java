@@ -11,30 +11,30 @@ import java.io.IOException;
  * @Date : Created in 2020/8/5 18:09
  */
 public class BackChedan {
-    static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
-    static String data = null;
+static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
+static String data = null;
 
-    static String returnStatus;
-    static String returnInfo;
+static String returnStatus;
+static String returnInfo;
 
-    // 撤单回执：申报
-    public static void backShenbao(String orderno,String ebpCode,String ebcCode,String agentCode,String returnTime) throws IOException {
-        returnStatus = "2";
-        returnInfo = "申报";
-        backFunction(orderno,ebpCode,ebcCode,agentCode,returnStatus,returnInfo,returnTime);
-    }
+// 撤单回执：申报
+public static void backShenbao(String orderno,String ebpCode,String ebcCode,String agentCode,String returnTime) throws IOException {
+returnStatus = "2";
+returnInfo = "申报";
+backFunction(orderno,ebpCode,ebcCode,agentCode,returnStatus,returnInfo,returnTime);
+}
 
-    // 撤单回执：逻辑校验通过
-    public static void backLogicpass(String orderno,String ebpCode,String ebcCode,String agentCode,String returnTime) throws IOException {
-        returnStatus = "120";
-        returnInfo = "[Code:1800;Desc:逻辑校验通过]";
-        backFunction(orderno,ebpCode,ebcCode,agentCode,returnStatus,returnInfo,returnTime);
-    }
+// 撤单回执：逻辑校验通过
+public static void backLogicpass(String orderno,String ebpCode,String ebcCode,String agentCode,String returnTime) throws IOException {
+returnStatus = "120";
+returnInfo = "[Code:1800;Desc:逻辑校验通过]";
+backFunction(orderno,ebpCode,ebcCode,agentCode,returnStatus,returnInfo,returnTime);
+}
 
-    // 撤单回执：撤单成功
-    public static void backChedanSuccess(String orderno,String ebpCode,String ebcCode,String agentCode,String returnTime) throws IOException {
-        returnStatus = "399";
-        returnInfo = "[Code:2300;Desc:审核通过],撤单申请审核通过,清单已成功撤单";
+// 撤单回执：撤单成功
+public static void backChedanSuccess(String orderno,String ebpCode,String ebcCode,String agentCode,String returnTime) throws IOException {
+returnStatus = "399";
+  returnInfo = "[Code:2300;Desc:审核通过],撤单申请审核通过,清单已成功撤单";
         backFunction(orderno,ebpCode,ebcCode,agentCode,returnStatus,returnInfo,returnTime);
     }
 

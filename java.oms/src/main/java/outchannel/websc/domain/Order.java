@@ -12,34 +12,34 @@ import java.util.Random;
  */
 @Data
 public class Order {
-     String accessCode;
-     String orderNo;
+ String accessCode;
+ String orderNo;
 
-     String province;
-     String city;
-     String district;
-     String street;
-     String name;
-     String idCard;
-     String mobile;
+ String province;
+ String city;
+ String district;
+ String street;
+ String name;
+ String idCard;
+ String mobile;
 
-     String senderShop;
-     String remark;
-     String payerName;
-     String payerNumber;
-     String payChannel;
-     String tradeNo;
-     double payAmount;
-     String customsDeclarationCode;
-     String sourcePlatform;
-     String packingMaterials;
+ String senderShop;
+ String remark;
+ String payerName;
+ String payerNumber;
+ String payChannel;
+ String tradeNo;
+ double payAmount;
+ String customsDeclarationCode;
+ String sourcePlatform;
+ String packingMaterials;
 
-     String sender_province;
-     String sender_city;
-     String sender_district;
-     String sender_street;
-     String sender_name;
-     String sender_mobile;
+ String sender_province;
+ String sender_city;
+ String sender_district;
+ String sender_street;
+ String sender_name;
+   String sender_mobile;
 
      List<Item> itemList;
 

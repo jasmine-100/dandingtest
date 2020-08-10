@@ -11,12 +11,12 @@ import java.io.IOException;
  * @Date : Created in 2020/7/21 9:16
  */
 public class DeclareOrder {
-    public static String url = "http://customstest.yang800.cn/orderOutHandle/mock/CUSTOMS_CEB_CALLBACK/fdccReceiveCustomsOrder";
-    public static  ApiClient client = new ApiClient(url);
+public static String url = "http://customstest.yang800.cn/orderOutHandle/mock/CUSTOMS_CEB_CALLBACK/fdccReceiveCustomsOrder";
+public staticApiClient client = new ApiClient(url);
 
-    //模拟订单回执--逻辑校验通过
-    public static void declareLogicPass(String orderNo) throws IOException {
-        DeclareBack declareBack = new DeclareBack(orderNo,"逻辑校验通过");
+//模拟订单回执--逻辑校验通过
+public static void declareLogicPass(String orderNo) throws IOException {
+  DeclareBack declareBack = new DeclareBack(orderNo,"逻辑校验通过");
         client.doPostForm(declareBack);
     }
 

@@ -20,24 +20,24 @@ import java.util.List;
  */
 public class DeliverApi {
 
-    String url = "http://outtest.order.yang800.cn/open/testV3";
-    ApiClient client = new ApiClient(url);
+String url = "http://outtest.order.yang800.cn/open/testV3";
+ApiClient client = new ApiClient(url);
 
-    String whCode = "TESTDEPOT001";
-    String accessCode = "DS15628267317912";
+String whCode = "TESTDEPOT001";
+String accessCode = "DS15628267317912";
 
-    String orderno = "DE1002630001";
+String orderno = "DE1002630001";
 
-    //推送发货单
-    @Test
-    public void deliverPush() throws IOException {
-        List<Sku> skuList = new ArrayList<>();
-        skuList.add(new Sku("JHK000123",100));
+//推送发货单
+@Test
+public void deliverPush() throws IOException {
+List<Sku> skuList = new ArrayList<>();
+skuList.add(new Sku("JHK000123",100));
 
-        DeliverOrder deliver = new DeliverOrder(accessCode,whCode,orderno,skuList);
-        Params params = new Params(JSON.toJSON(deliver).toString(), ServiceName.DELIVER_CREATE, AppId.WMSV3);
+DeliverOrder deliver = new DeliverOrder(accessCode,whCode,orderno,skuList);
+Params params = new Params(JSON.toJSON(deliver).toString(), ServiceName.DELIVER_CREATE, AppId.WMSV3);
 
-        client.doPostForm(params);
-    }
+client.doPostForm(params);
+}
 
 }
