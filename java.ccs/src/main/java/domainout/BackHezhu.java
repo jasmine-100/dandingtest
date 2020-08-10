@@ -1,29 +1,44 @@
 package domainout;
 
+import client.ApiClient;
+import com.alibaba.fastjson.JSON;
+import domain.Hezhu;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * @Author： jasmine
- * @Description : 核注清单回执报文
+ * @Description : 核注清单审核回执报文
  * @Date : Created in 2020/8/7 17:46
  */
 public class BackHezhu {
+    static String url = "http://ccs.fen.daily.yang800.com/zjport/mock/manCallback";
     static String data = null;
 
+    // 未核扣、审核通过
+    public static void backHezhuPass(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) throws IOException {
+        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"0","0");
+    }
 
+    // 已核扣、审核通过
+    public static void backHezhuSuccess(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) throws IOException {
+        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"2","0");
+    }
 
-    // 回执审核报文模板
-    public void function(){
+    /**
+     *
+     * @param etpsInnerInvtNo 企业内部编码
+     * @param invtPreentNo 预录入核注编号
+     * @param bondInvtNo 核注清单编号
+     * @param vrfdedMarkcd 0-未核扣，2-已核扣
+     * @param invtStucd 2-退单;0-审核通过
+     * @throws IOException
+     */
+    static void function(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo,String vrfdedMarkcd,String invtStucd) throws IOException {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        String etpsInnerInvtNo = "HZ208071733000167";   // CCS系统的核注清单编码
-        String bondInvtNo = "QDHZ"+date;  // 核注清单编号
-        String vrfdedMarkcd = "";  // 0-未核扣，2-已核扣
-        String invtStucd = "";  // 2-退单;0-审核通过
-        String invtPreentNo= "YH"+date;  // 预录入核注编号
-
-
-        data = "'<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
+        data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
                 "<Package xmlns=\"http://www.w3.org/2000/09/xmldsig#\">" +
                     "<EnvelopInfo>" +
                         "<version>1.0</version>" +
@@ -148,6 +163,7 @@ public class BackHezhu {
                         "</BussinessData>" +
                     "</DataInfo>" +
                 "</Package>";
+        new ApiClient(url).doPostForm(new Hezhu(data));
     }
 
 }
