@@ -35,7 +35,16 @@ public static void declareSuccess(String orderno,String ebpCode,String ebcCode,S
         function(orderno,ebpCode,ebcCode,returnStatus,returnInfo,returnTime);
     }
 
-    // 订单申报--回执模板
+    /**
+     * 订单申报--回执模板
+     * @param orderno 传入申报单编号
+     * @param ebpCode 电商平台编码
+     * @param ebcCode 电商企业编码
+     * @param returnStatus 报文状态
+     * @param returnInfo 报文信息
+     * @param returnTime 海关回执时间
+     * @throws IOException
+     */
     static void function(String orderno,String ebpCode,String ebcCode,String returnStatus,String returnInfo,String returnTime) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB312Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"479237c3-ec79-4d05-bced-3f3299e64c57\">" +

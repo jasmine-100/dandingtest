@@ -43,7 +43,18 @@ public class BackQingDan {
         function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
     }
 
-    // 清单申报--回执模板
+    /**
+     * 清单申报--回执模板
+     * @param orderNo 传入申报单编号
+     * @param ebcCode 电商企业编码
+     * @param ebpCode 电商平台编码
+     * @param agentCode 清关企业代码
+     * @param invtNo 清单编号
+     * @param returnStatus 报文状态
+     * @param returnInfo 报文信息
+     * @param returntime 海关回执时间
+     * @throws IOException
+     */
     static void function(String orderNo,String ebcCode,String ebpCode,String agentCode,String invtNo,String returnStatus,String returnInfo,String returntime) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +
