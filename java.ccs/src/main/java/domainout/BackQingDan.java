@@ -2,6 +2,7 @@ package domainout;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
+import dao.Data;
 import orderutils.Param;
 
 import java.io.IOException;
@@ -16,7 +17,6 @@ import java.util.Random;
  * @Date : Created in 2020/7/20 13:11
  */
 public class BackQingDan {
-    static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
     static String data = null;
 
     static String returnStatus;
@@ -73,7 +73,7 @@ public class BackQingDan {
                 "        <returnInfo>"+returnInfo+"</returnInfo>" +
                 "    </InventoryReturn>" +
                 "</CEB622Message>";
-        new ApiClient(url).doPostForm(new Param(data));
+        new ApiClient(Data.URL2).doPostForm(new Param(data));
     }
 
 }

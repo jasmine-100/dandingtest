@@ -2,6 +2,7 @@ package domainout;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
+import dao.Data;
 import domain.Hezhu;
 
 import java.io.IOException;
@@ -14,7 +15,6 @@ import java.util.Date;
  * @Date : Created in 2020/8/7 17:46
  */
 public class BackHezhu {
-    static String url = "http://ccs.fen.daily.yang800.com/zjport/mock/manCallback";
     static String data = null;
 
     // 未核扣、审核通过
@@ -163,7 +163,7 @@ public class BackHezhu {
                         "</BussinessData>" +
                     "</DataInfo>" +
                 "</Package>";
-        new ApiClient(url).doPostForm(new Hezhu(data));
+        new ApiClient(Data.URL3).doPostForm(new Hezhu(data));
     }
 
 }

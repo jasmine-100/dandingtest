@@ -1,6 +1,7 @@
 package domainout;
 
 import client.ApiClient;
+import dao.Data;
 import orderutils.Param;
 
 import java.io.IOException;
@@ -11,7 +12,6 @@ import java.io.IOException;
  * @Date : Created in 2020/8/6 13:29
  */
 public class BackTax {
-    static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
     static String data = null;
 
     // 海关回执：税费
@@ -49,7 +49,7 @@ public class BackTax {
                         "</TaxListRd>" +
                     "</Tax>" +
                 "</CEB816Message>";
-        new ApiClient(url).doPostForm(new Param(data));
+        new ApiClient(Data.URL2).doPostForm(new Param(data));
     }
 
     // 回执税金状态--生成
@@ -83,7 +83,7 @@ public class BackTax {
                 "</TaxHeadStatus>" +
                 "</Tax>" +
                 "</CEB818Message>";
-        new ApiClient(url).doPostForm(new Param(data));
+        new ApiClient(Data.URL2).doPostForm(new Param(data));
     }
 
 }

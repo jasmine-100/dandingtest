@@ -1,6 +1,7 @@
 package domainout;
 
 import client.ApiClient;
+import dao.Data;
 import orderutils.Param;
 
 import java.io.IOException;
@@ -11,7 +12,6 @@ import java.io.IOException;
  * @Date : Created in 2020/8/4 15:36
  */
 public class BackDingdan {
-static String url = "http://ccs.fen.daily.yang800.com/zjport/callback";
 static String data = null;
 
 static String returnStatus;
@@ -58,7 +58,7 @@ public static void declareSuccess(String orderno,String ebpCode,String ebcCode,S
                 "        <returnInfo>"+returnInfo+"</returnInfo>" +
                 "    </OrderReturn>" +
                 "</CEB312Message>";
-        new ApiClient(url).doPostForm(new Param(data));
+        new ApiClient(Data.URL2).doPostForm(new Param(data));
     }
 
     /**
@@ -91,7 +91,7 @@ public static void declareSuccess(String orderno,String ebpCode,String ebcCode,S
                 "        </list>" +
                 "    </body>" +
                 "</mo>";
-        new ApiClient(url).doPostForm(new Param(data));
+        new ApiClient(Data.URL2).doPostForm(new Param(data));
     }
 
 }

@@ -1,6 +1,7 @@
 package domainout;
 
 import client.ApiClient;
+import dao.Data;
 import domain.Hezhu;
 
 import java.io.IOException;
@@ -12,7 +13,6 @@ import java.util.Random;
  * @Date : Created in 2020/8/10 9:40
  */
 public class BackHefang {
-    static String url = "http://ccs.fen.daily.yang800.com/zjport/mock/manCallback";
     static String data = null;
 
     // 核放单回执：审核通过
@@ -103,7 +103,7 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-        new ApiClient(url).doPostForm(new Hezhu(data));
+        new ApiClient(Data.URL3).doPostForm(new Hezhu(data));
     }
 
     // 核放单过卡回执
@@ -182,6 +182,6 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-        new ApiClient(url).doPostForm(new Hezhu(data));
+        new ApiClient(Data.URL3).doPostForm(new Hezhu(data));
     }
 }

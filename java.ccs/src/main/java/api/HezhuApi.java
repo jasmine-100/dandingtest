@@ -14,10 +14,10 @@ import java.io.IOException;
 public class HezhuApi {
 
     // ccs系统内核注单 编号
-    String EtpsPreentNo = "HZ2008101348000176";
+    String EtpsPreentNo = "HZ2008111553000001";
     // 预录入核注单号
-    String SeqNo = "YHZ08101348";
-    String bondInvtNo = "HZQD08101348";
+    String SeqNo = "YHZ08111554";
+    String bondInvtNo = "HZQD08111554";
 
     @Test
     public void backHezhu() throws IOException, InterruptedException {
