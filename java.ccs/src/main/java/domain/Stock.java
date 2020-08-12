@@ -1,10 +1,13 @@
 package domain;
 
+import lombok.Data;
+
 /**
  * @Author： jasmine
  * @Description :
  * @Date : Created in 2020/8/12 15:05
  */
+@Data
 public class Stock {
     double avgPrice; //平均美元单价
     int currCode;  //币值
@@ -17,7 +20,7 @@ public class Stock {
     String goodsSeqNo;
     String goodsUnit;
     String hsCode;
-    String inDate;
+    long inDate;
     int inLegalQty;
     int inQty;
     String invtGoodsNo;
@@ -40,7 +43,7 @@ public class Stock {
         this.goodsSeqNo = goodsSeqNo;
         this.goodsUnit = "001";
         this.hsCode = "3304200092";
-        this.inDate = "2020-8-12";
+        this.inDate = System.currentTimeMillis();
         this.inLegalQty = 1000;
         this.inQty = 1000;
         this.invtGoodsNo = "";

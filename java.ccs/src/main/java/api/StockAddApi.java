@@ -18,9 +18,11 @@ public class StockAddApi {
     @Test
     public void stockAdd() throws IOException {
         Stock stock = null;
-        for(int i=0;i<50000;i++){
+        for(int i=1;i<50000;i++){
             stock = new Stock("SK"+i,"JHY"+i,"9");
             new ApiClient(Data.URL5).doPostJson(JSON.toJSON(stock));
         }
+//        stock = new Stock("SK1","JHY1","9");
+        new ApiClient(Data.URL5).doPostJson(JSON.toJSON(stock));
     }
 }
