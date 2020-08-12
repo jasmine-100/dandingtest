@@ -12,7 +12,7 @@ import java.util.Collections;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 根据外部渠道编号查询数据库id
  * @Date : Created in 2020/8/10 14:14
  */
 public class Order {

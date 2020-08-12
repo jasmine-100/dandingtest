@@ -10,6 +10,10 @@ public class Data {
     public static String BASEURL = "http://ccs.backend.uat.yang800.com";
     // ccs下单系统域名
     public static String URL = BASEURL+"/xhr/order/submit";
+    // ccs推送备案商品
+    public static String URL4 = BASEURL+"/xhr/goodsRecord/upset";
+    // ccs推送账册库存
+    public static String URL5 = BASEURL+"/xhr/customsBookItem/upset";
 
     // 基础域名
     public static String BASEURL2 = "http://ccs.fen.uat.yang800.com";
