@@ -35,25 +35,22 @@ public class OrderSetApi {
     public void pushOrder() throws IOException, InterruptedException {
 
         // 渠道订单号和申报单号:随机生成
-        String orderno = "JIS"+new SimpleDateFormat("MMddHHmmss").format(new Date());
+        String orderno = "KO"+new SimpleDateFormat("MMddHHmmss").format(new Date());
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("JHKN2008071512",2,10));
-//        items.add(new Item("NO0715J02",6,11));
-//        items.add(new Item("NO0715J03",5,12));
+        items.add(new Item("JHKN2008071513",2,10));
+        items.add(new Item("JHKN2008071515",5,12.3));
 
         // 组装申报单
-//        Order order = new Order(orderno,"ZTO","Z"+new Random(999999),"jasRoute", items);
         Order order = new Order("xiaoyuer","小鱼儿",orderno,"SF","SF"+new Random().nextInt(999999),"xiaohei", items);
 
         //接口：推送申报单
-        ApiClient client = new ApiClient(Data.URL);
-        client.doPostJson(JSON.toJSON(order));
+        new ApiClient(Data.URL).doPostJson(JSON.toJSON(order));
         Thread.sleep(5000);
 
         //回执订单申报结果
-//        dingdanBack(orderno);
+        dingdanBack(orderno);
 
         //回执清单申报结果
         qingdanBack(orderno);
@@ -84,7 +81,8 @@ public class OrderSetApi {
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         // 口岸回执：处理成功
-//        BackQingDan.kouan(orderid,agentCode);
+        BackQingDan.kouan(orderid,agentCode);
+        Thread.sleep(2000);
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
@@ -95,12 +93,12 @@ public class OrderSetApi {
         BackQingDan.backDeclareSuccess(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
-        //回执放行报文
-        BackQingDan.backPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
-        Thread.sleep(2000);
-
-        // 回执：税金
-        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200809102920102");
+//        //回执放行报文
+//        BackQingDan.backPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+//        Thread.sleep(2000);
+//
+//        // 回执：税金
+//        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200809102920102");
 
     }
 

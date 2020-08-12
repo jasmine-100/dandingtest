@@ -16,8 +16,8 @@ public class Data {
     public static String URL5 = BASEURL+"/xhr/customsBookItem/upset";
 
     // 基础域名
-    public static String BASEURL2 = "http://ccs.fen.uat.yang800.com";
-//    public static String BASEURL2 = "http://ccs.fen.daily.yang800.com";
+//    public static String BASEURL2 = "http://ccs.fen.uat.yang800.com";
+    public static String BASEURL2 = "http://ccs.fen.daily.yang800.com";
     // 回执报文
     public static String URL2 = BASEURL2+"/zjport/callback";
     // 回传核放核注信息
