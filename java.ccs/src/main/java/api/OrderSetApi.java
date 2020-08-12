@@ -93,12 +93,12 @@ public class OrderSetApi {
         BackQingDan.backDeclareSuccess(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
-//        //回执放行报文
-//        BackQingDan.backPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
-//        Thread.sleep(2000);
-//
-//        // 回执：税金
-//        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200809102920102");
+        //回执放行报文
+        BackQingDan.backPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+        Thread.sleep(2000);
+
+        // 回执：税金
+        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200809102920102");
 
     }
 
