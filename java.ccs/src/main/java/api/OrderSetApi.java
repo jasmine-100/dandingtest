@@ -53,7 +53,7 @@ public class OrderSetApi {
         Thread.sleep(5000);
 
         //回执订单申报结果
-        dingdanBack(orderno);
+//        dingdanBack(orderno);
 
         //回执清单申报结果
         qingdanBack(orderno);
@@ -82,14 +82,16 @@ public class OrderSetApi {
         String orderid = domainout.Order.getOrderNo(orderno);
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-//        String invtNo = "QD20200805151953";
+
+        // 口岸回执：处理成功
+//        BackQingDan.kouan(orderid,agentCode);
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
         BackQingDan.backLogicPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 
-        //回执新增申报成功报文
+        // 回执新增申报成功报文
         BackQingDan.backDeclareSuccess(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
         Thread.sleep(2000);
 

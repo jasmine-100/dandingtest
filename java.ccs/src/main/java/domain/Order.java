@@ -70,7 +70,7 @@ public class Order {
         this.declareOrderNo = declareOrderNo;
         this.declarePayNo = "PN" + str;
         this.outOrderNo = declareOrderNo;
-        this.payChannel = "Alipay";
+        this.payChannel = "wechatpay";
         this.tradePayNo = "TPN" + str;
         this.tradeTime = System.currentTimeMillis();
         this.routeCode = routeCode;
@@ -103,7 +103,7 @@ public class Order {
         this.declareOrderNo = declareOrderNo;
         this.declarePayNo = "PN" + str;
         this.outOrderNo = declareOrderNo;
-        this.payChannel = "Alipay";
+        this.payChannel = "wechatpay";
         this.tradePayNo = "TPN" + str;
         this.tradeTime = System.currentTimeMillis();
         this.routeCode = routeCode;

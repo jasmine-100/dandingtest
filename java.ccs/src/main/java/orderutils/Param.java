@@ -18,4 +18,10 @@ public class Param {
         this.msg_type = "CUSTOMS_CEB_CALLBACK";   // 除了CUSTOMS_CEB_CALLBACK，其他都识别为口岸
         this.content = content;
     }
+
+    public Param(String content,String msg_type) {
+        this.decipher = false;  //是否需要解密，测试环境传false
+        this.msg_type = msg_type;   // 除了CUSTOMS_CEB_CALLBACK，其他都识别为口岸
+        this.content = content;
+    }
 }

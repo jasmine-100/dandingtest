@@ -44,6 +44,39 @@ public class BackQingDan {
     }
 
     /**
+     * 口岸回执：处理成功
+     * @param orderno 订单号
+     * @param companyCode 清关企业代码
+     */
+    public static void kouan(String orderno,String companyCode) throws IOException {
+        String data = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
+                "<mo version=\"1.0.0\">" +
+                    "<head>" +
+                        "<businessType>RESULT</businessType>" +
+                    "</head>" +
+                    "<body>" +
+                        "<list>" +
+                            "<jkfResult>" +
+                                "<companyCode>"+companyCode+"</companyCode>" +
+                                "<businessNo>"+orderno+"</businessNo>" +
+                                "<businessType>PERSONAL_GOODS_DECLAR</businessType>" +
+                                "<declareType>1</declareType>" +
+                                "<chkMark>1</chkMark>" +
+                                "<noticeDate>2020-06-15</noticeDate>" +
+                                "<noticeTime>17:15</noticeTime>" +
+                                "<resultList>" +
+                                "<jkfResultDetail>" +
+                                "<resultInfo>处理成功</resultInfo>" +
+                                    "</jkfResultDetail>" +
+                                "</resultList>" +
+                            "</jkfResult>" +
+                        "</list>" +
+                    "</body>" +
+                "</mo>";
+        new ApiClient(Data.URL2).doPostForm(new Param(data,"kouan"));
+    }
+
+    /**
      * 清单申报--回执模板
      * @param orderNo 传入申报单编号
      * @param ebcCode 电商企业编码

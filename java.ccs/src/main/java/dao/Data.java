@@ -6,8 +6,8 @@ package dao;
  * @Date : Created in 2020/8/11 16:01
  */
 public class Data {
-//    public static String BASEURL = "http://ccs.backend.daily.yang800.com";
-    public static String BASEURL = "http://ccs.backend.uat.yang800.com";
+    public static String BASEURL = "http://ccs.backend.daily.yang800.com";
+//    public static String BASEURL = "http://ccs.backend.uat.yang800.com";
     // ccs下单系统域名
     public static String URL = BASEURL+"/xhr/order/submit";
     // ccs推送备案商品
