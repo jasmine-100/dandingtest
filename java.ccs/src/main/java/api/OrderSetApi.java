@@ -33,9 +33,8 @@ public class OrderSetApi {
      */
     @Test
     public void pushOrder() throws IOException, InterruptedException {
-
         // 渠道订单号和申报单号:随机生成
-        String orderno = "KO"+new SimpleDateFormat("MMddHHmmss").format(new Date());
+        String orderno = "A"+new SimpleDateFormat("MMddHHmmss").format(new Date());
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
@@ -47,12 +46,19 @@ public class OrderSetApi {
 
         //接口：推送申报单
         new ApiClient(Data.URL_ORDER).doPostJson(JSON.toJSON(order));
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 
-        //回执订单申报结果
+//        //回执订单申报结果
 //        dingdanBack(orderno);
 //
 //        //回执清单申报结果
+//        qingdanBack(orderno);
+    }
+
+    @Test
+    public void test() throws IOException, InterruptedException {
+        String orderno = "A0817142957";
+        dingdanBack(orderno);
 //        qingdanBack(orderno);
     }
 
@@ -63,11 +69,11 @@ public class OrderSetApi {
     public void dingdanBack(String orderno) throws IOException, InterruptedException {
 
         // 订单回执：逻辑校验通过
-        BackDingdan.logicSuccess(orderno,ebcCode,ebcCode,"20200806115901203");
+        BackDingdan.logicSuccess(orderno,ebcCode,ebcCode,"20200806090000001");
         Thread.sleep(2000);
 
         // 订单回执:新增申报成功
-        BackDingdan.declareSuccess(orderno,ebcCode,ebcCode,"20200806115901203");
+        BackDingdan.declareSuccess(orderno,ebcCode,ebcCode,"20200807100000000");
 
     }
 
@@ -75,30 +81,28 @@ public class OrderSetApi {
      * 步骤三：清单申报回执
      */
     public void qingdanBack(String orderno) throws IOException, InterruptedException {
-        // 取申报单的数据库id
-        String orderid = domainout.Order.getOrderNo(orderno);
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         // 口岸回执：处理成功
-        BackQingDan.kouan(orderid,agentCode);
+        BackQingDan.kouan(orderno,agentCode);
         Thread.sleep(2000);
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
-        BackQingDan.backLogicPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
         Thread.sleep(2000);
 
         // 回执新增申报成功报文
-        BackQingDan.backDeclareSuccess(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+        BackQingDan.backAddOk(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810140000001");
         Thread.sleep(2000);
 
         //回执放行报文
-        BackQingDan.backPass(orderid,ebcCode,ebpCode,agentCode,invtNo,"20200805161702105");
+        BackQingDan.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810150000001");
         Thread.sleep(2000);
 
         // 回执：税金
-        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200809102920102");
+        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200810160000001");
 
     }
 

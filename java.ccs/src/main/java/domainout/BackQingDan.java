@@ -26,7 +26,7 @@ public class BackQingDan {
     }
 
     //总署回执：新增申报成功
-    public static void backDeclareSuccess(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+    public static void backAddOk(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime) throws IOException {
         returnStatus = "2";
         returnInfo = "清单新增申报成功[电商企业编码：4401962010订单编号：124183351885]";
         function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
@@ -39,12 +39,27 @@ public class BackQingDan {
         function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
     }
 
+    //总署回执：清单上的订购人电话号码与订单上的订购人电话号码不一致
+    public static void backInfoError(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+        returnStatus = "100";
+        returnInfo = "[Code:130126;Desc:清单上的订购人电话号码与订单上的订购人电话号码不一致]";
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+    }
+
+    //总署回执：海关超限
+    public static void backMoneyLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+        returnStatus = "100";
+        returnInfo = "[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度;totalPrice：26,114.44; limitPrice: 26,000;]";
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+    }
+
     /**
      * 口岸回执：处理成功
      * @param orderno 订单号
      * @param companyCode 清关企业代码
      */
     public static void kouan(String orderno,String companyCode) throws IOException {
+        String orderId = Order.getOrderNo(orderno);
         String data = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
                 "<mo version=\"1.0.0\">" +
                     "<head>" +
@@ -54,7 +69,7 @@ public class BackQingDan {
                         "<list>" +
                             "<jkfResult>" +
                                 "<companyCode>"+companyCode+"</companyCode>" +
-                                "<businessNo>"+orderno+"</businessNo>" +
+                                "<businessNo>"+orderId+"</businessNo>" +
                                 "<businessType>PERSONAL_GOODS_DECLAR</businessType>" +
                                 "<declareType>1</declareType>" +
                                 "<chkMark>1</chkMark>" +
@@ -85,6 +100,7 @@ public class BackQingDan {
      * @throws IOException
      */
     static void function(String orderNo,String ebcCode,String ebpCode,String agentCode,String invtNo,String returnStatus,String returnInfo,String returntime) throws IOException {
+        String orderId = Order.getOrderNo(orderNo);
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"c988cb9e-ea4b-463a-87c4-36e3d24aa7d9\">" +
@@ -94,7 +110,7 @@ public class BackQingDan {
                 "        <ebpCode>"+ebpCode+"</ebpCode>" +
                 "        <ebcCode>"+ebcCode+"</ebcCode>" +
                 "        <agentCode>"+agentCode+"</agentCode>" +
-                "        <copNo>"+orderNo+"</copNo>" +
+                "        <copNo>"+orderId+"</copNo>" +
                 "        <preNo>B20200615494000227</preNo>" +
                 "        <invtNo>"+invtNo+"</invtNo>" +
                 "        <returnStatus>"+returnStatus+"</returnStatus>" +
