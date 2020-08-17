@@ -52,13 +52,6 @@ public class BackDingdan {
         function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
     }
 
-    // 总署回执：清单表体商品项与订单表体商品项的项数不一致
-    public static void backItemError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
-        returnStatus = "100";
-        returnInfo = "[Code:1320;Desc:清单表体商品项与订单表体商品项的项数不一致],[InventoryHead.orderNo:DOCP201910312059110001008544,OrderHead.orderNo:DOCP201910312059110001008544]";
-        function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
-    }
-
     /**
      * 订单申报--回执模板
      *

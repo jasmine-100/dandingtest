@@ -49,8 +49,39 @@ public class BackQingDan {
     //总署回执：海关超限
     public static void backMoneyLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
         returnStatus = "100";
-        returnInfo = "[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度;totalPrice：26,114.44; limitPrice: 26,000;]";
+        returnInfo = "[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度]";
         function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+    }
+
+    // 总署回执：清单表体商品项与订单表体商品项不一致
+    public static void backItemError(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
+        returnStatus = "100";
+        returnInfo = "[Code:1322;Desc:订单清单表体商品项不一致]";
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+    }
+    // 总署回执：海关审结
+    public static void backExamine(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
+        returnStatus = "300";
+        returnInfo = "海关审结";
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+    }
+    // 总署回执：查验
+    public static void backCheck(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
+        returnStatus = "500";
+        returnInfo = "查验";
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+    }
+    // 总署回执：退运
+    public static void backReturn(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
+        returnStatus = "700";
+        returnInfo = "退运";
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+    }
+    // 总署回执：挂起
+    public static void backSuspend(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
+        returnStatus = "600";
+        returnInfo = "退运";
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
     }
 
     /**
@@ -99,7 +130,7 @@ public class BackQingDan {
      * @param returntime 海关回执时间
      * @throws IOException
      */
-    static void function(String orderNo,String ebcCode,String ebpCode,String agentCode,String invtNo,String returnStatus,String returnInfo,String returntime) throws IOException {
+    public static void function(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returnStatus,String returnInfo,String returntime) throws IOException {
         String orderId = Order.getOrderNo(orderNo);
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +

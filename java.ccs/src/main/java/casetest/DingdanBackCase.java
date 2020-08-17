@@ -48,9 +48,4 @@ public class DingdanBackCase {
         BackDingdan.backMoneyError(orderno,ebcCode,ebcCode,"20200817060000001");
     }
 
-    // 订单回执：清单表体商品项与订单表体商品项的项数不一致
-    @Test
-    public void backItemError() throws IOException {
-        BackDingdan.backItemError(orderno,ebcCode,ebcCode,"20200817060000001");
-    }
 }

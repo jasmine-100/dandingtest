@@ -41,22 +41,29 @@ public class QingdanBackCase {
         BackQingDan.backAddOk(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817150000001");
     }
 
+    // 测试用例：清单回执--新增申报成功
+    @Test
+    public void backZancun() throws IOException {
+        // 暂存
+        BackQingDan.function(orderno,ebpCode,ebcCode,agentCode,invtNo,"1","暂存","20200817116000001");
+    }
+
     // 测试用例：清单回执--放行
     @Test
     public void backPass() throws IOException {
         BackQingDan.backAddOk(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817160000001");
     }
 
-    // 测试用例：清单回执--订购人电话不一致
-    @Test
-    public void backInfoError() throws IOException {
-        BackQingDan.backInfoError(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
-    }
-
-    // 测试用例：清单回执--海关超限
-    @Test
-    public void backMoneyLimit() throws IOException {
-        BackQingDan.backMoneyLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
-    }
+//    // 测试用例：清单回执--订购人电话不一致
+//    @Test
+//    public void backInfoError() throws IOException {
+//        BackQingDan.backInfoError(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
+//    }
+//
+//    // 测试用例：清单回执--海关超限
+//    @Test
+//    public void backMoneyLimit() throws IOException {
+//        BackQingDan.backMoneyLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
+//    }
 
 }
