@@ -17,21 +17,45 @@ public class BackDingdan {
     static String returnStatus;
     static String returnInfo;
 
-    /**
-     * 总署回执：新增申报成功
-     */
+    // 总署回执：新增申报成功
     public static void declareSuccess(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         returnStatus = "2";
         returnInfo = "新增申报成功[3755623E-EC89-4B3E-8894-4DC7136457AF]";
         function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
     }
 
-    /**
-     * 总署回执：逻辑校验通过
-     */
+    // 总署回执：逻辑校验通过
     public static void logicSuccess(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         returnStatus = "120";
         returnInfo = "[Code:1800;Desc:逻辑校验通过]";
+        function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
+    }
+
+    // 总署回执：订单中的订购人姓名和身份证不匹配
+    public static void backIDError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+        returnStatus = "99";
+        returnInfo = "订单中的订购人姓名和身份证不匹配！";
+        function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
+    }
+
+    // 总署回执：清单上的订购人姓名与订单上的订购人姓名不一致
+    public static void backNameError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+        returnStatus = "100";
+        returnInfo = "[Code:13127;Desc:清单上的订购人姓名与订单上的订购人姓名不一致]";
+        function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
+    }
+
+    // 总署回执：支付单支付金额与订单支付金额不一致
+    public static void backMoneyError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+        returnStatus = "100";
+        returnInfo = "[Code:1332;Desc:支付单支付金额与订单支付金额不一致],[OrderHead.acturalPaid:561.89,PaymentHead.amountPaid3197.95]";
+        function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
+    }
+
+    // 总署回执：清单表体商品项与订单表体商品项的项数不一致
+    public static void backItemError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+        returnStatus = "100";
+        returnInfo = "[Code:1320;Desc:清单表体商品项与订单表体商品项的项数不一致],[InventoryHead.orderNo:DOCP201910312059110001008544,OrderHead.orderNo:DOCP201910312059110001008544]";
         function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
     }
 

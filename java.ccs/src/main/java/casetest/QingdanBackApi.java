@@ -1,7 +1,6 @@
-package api;
+package casetest;
 
 import domainout.BackQingDan;
-import domainout.Order;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -10,7 +9,7 @@ import java.util.Date;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 测试用例--用于测试清单申报回执
  * @Date : Created in 2020/8/17 14:36
  */
 public class QingdanBackApi {
