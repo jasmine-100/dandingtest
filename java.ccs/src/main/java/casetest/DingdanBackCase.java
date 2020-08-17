@@ -15,10 +15,8 @@ public class DingdanBackCase {
     static String ebpCode = "1234650123";
     // 电商企业编码
     static String ebcCode= "1234650123";
-    // 此项要配置，不要改
-    static String agentCode = "330766K00W";
 
-    static String orderno = "";
+    static String orderno = "A0817152240";
 
     // 订单回执：逻辑校验通过
     @Test

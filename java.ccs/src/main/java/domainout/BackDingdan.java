@@ -20,7 +20,7 @@ public class BackDingdan {
     // 总署回执：新增申报成功
     public static void declareAddOk(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         returnStatus = "2";
-        returnInfo = "新增申报成功[3755623E-EC89-4B3E-8894-4DC7136457AF]";
+        returnInfo = "新增申报成功";
         function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
     }
 
