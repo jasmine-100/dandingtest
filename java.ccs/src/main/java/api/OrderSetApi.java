@@ -46,13 +46,13 @@ public class OrderSetApi {
 
         //接口：推送申报单
         new ApiClient(Data.URL_ORDER).doPostJson(JSON.toJSON(order));
-//        Thread.sleep(5000);
+        Thread.sleep(5000);
 
-//        //回执订单申报结果
-//        dingdanBack(orderno);
-//
-//        //回执清单申报结果
-//        qingdanBack(orderno);
+        //回执订单申报结果
+        dingdanBack(orderno);
+
+        //回执清单申报结果
+        qingdanBack(orderno);
     }
 
     @Test
