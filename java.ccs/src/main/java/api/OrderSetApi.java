@@ -69,11 +69,11 @@ public class OrderSetApi {
     public void dingdanBack(String orderno) throws IOException, InterruptedException {
 
         // 订单回执：逻辑校验通过
-        BackDingdan.logicSuccess(orderno,ebcCode,ebcCode,"20200806090000001");
+        BackDingdan.logicOk(orderno,ebcCode,ebcCode,"20200806090000001");
         Thread.sleep(2000);
 
         // 订单回执:新增申报成功
-        BackDingdan.declareSuccess(orderno,ebcCode,ebcCode,"20200807100000000");
+        BackDingdan.declareAddOk(orderno,ebcCode,ebcCode,"20200807100000000");
 
     }
 

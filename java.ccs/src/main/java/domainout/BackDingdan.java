@@ -18,14 +18,14 @@ public class BackDingdan {
     static String returnInfo;
 
     // 总署回执：新增申报成功
-    public static void declareSuccess(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void declareAddOk(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         returnStatus = "2";
         returnInfo = "新增申报成功[3755623E-EC89-4B3E-8894-4DC7136457AF]";
         function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);
     }
 
     // 总署回执：逻辑校验通过
-    public static void logicSuccess(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void logicOk(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         returnStatus = "120";
         returnInfo = "[Code:1800;Desc:逻辑校验通过]";
         function(orderno, ebpCode, ebcCode, returnStatus, returnInfo, returnTime);

@@ -12,7 +12,7 @@ import java.util.Date;
  * @Description : 测试用例--用于测试清单申报回执
  * @Date : Created in 2020/8/17 14:36
  */
-public class QingdanBackApi {
+public class QingdanBackCase {
     // 电商平台编码
     static String ebpCode = "1234650123";
     // 电商企业编码
