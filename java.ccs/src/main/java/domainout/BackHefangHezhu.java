@@ -5,7 +5,6 @@ import dao.Data;
 import domain.Hezhu;
 
 import java.io.IOException;
-import java.util.Random;
 
 /**
  * @Author： jasmine
@@ -28,6 +27,6 @@ public class BackHefangHezhu {
                     "<CheckInfo>调用成功</CheckInfo>" +
                     "<DealFlag>0</DealFlag>" +
                 "</CommonResponeMessage>";
-        new ApiClient(Data.URL3).doPostForm(new Hezhu(data));
+        new ApiClient(Data.URL_BACK2).doPostForm(new Hezhu(data));
     }
 }

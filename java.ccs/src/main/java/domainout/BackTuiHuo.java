@@ -1,7 +1,6 @@
 package domainout;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
 import dao.Data;
 import orderutils.Param;
 
@@ -64,7 +63,7 @@ public class BackTuiHuo {
                 "<returnInfo>"+returnInfo+"</returnInfo>" +
                 "</InvtRefundReturn>" +
                 "</CEB626Message>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
     }
 
 }

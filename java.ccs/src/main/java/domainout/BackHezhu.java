@@ -1,7 +1,6 @@
 package domainout;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
 import dao.Data;
 import domain.Hezhu;
 
@@ -163,7 +162,7 @@ public class BackHezhu {
                         "</BussinessData>" +
                     "</DataInfo>" +
                 "</Package>";
-        new ApiClient(Data.URL3).doPostForm(new Hezhu(data));
+        new ApiClient(Data.URL_BACK2).doPostForm(new Hezhu(data));
     }
 
 }

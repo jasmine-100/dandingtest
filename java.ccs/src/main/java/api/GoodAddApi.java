@@ -20,7 +20,7 @@ public class GoodAddApi {
         Good good = null;
         for(int i=0;i<50000;i++){
             good = new Good("SK"+i,"JHY"+i,"9");
-            new ApiClient(Data.URL4).doPostJson(JSON.toJSON(good));
+            new ApiClient(Data.URL_GOOD).doPostJson(JSON.toJSON(good));
         }
 
     }

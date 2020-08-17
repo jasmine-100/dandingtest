@@ -49,7 +49,7 @@ public class BackTax {
                         "</TaxListRd>" +
                     "</Tax>" +
                 "</CEB816Message>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
     }
 
     // 回执税金状态--生成
@@ -83,7 +83,7 @@ public class BackTax {
                 "</TaxHeadStatus>" +
                 "</Tax>" +
                 "</CEB818Message>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
     }
 
 }

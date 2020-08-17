@@ -59,7 +59,7 @@ public class BackDingdan {
                 "        <returnInfo>" + returnInfo + "</returnInfo>" +
                 "    </OrderReturn>" +
                 "</CEB312Message>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
     }
 
     /**
@@ -93,7 +93,7 @@ public class BackDingdan {
                 "        </list>" +
                 "    </body>" +
                 "</mo>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
     }
 
 }

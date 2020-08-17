@@ -46,14 +46,14 @@ public class OrderSetApi {
         Order order = new Order("xiaoyuer","小鱼儿",orderno,"SF","SF"+new Random().nextInt(999999),"xiaohei", items);
 
         //接口：推送申报单
-        new ApiClient(Data.URL).doPostJson(JSON.toJSON(order));
+        new ApiClient(Data.URL_ORDER).doPostJson(JSON.toJSON(order));
         Thread.sleep(5000);
 
         //回执订单申报结果
-        dingdanBack(orderno);
-
-        //回执清单申报结果
-        qingdanBack(orderno);
+//        dingdanBack(orderno);
+//
+//        //回执清单申报结果
+//        qingdanBack(orderno);
     }
 
     /**

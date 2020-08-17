@@ -8,7 +8,6 @@ import dao.Data;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.Collections;
 
 /**
  * @Author： jasmine
@@ -19,7 +18,7 @@ public class Order {
 
     // 获取申报单的数据库ID
     public static String getOrderNo(String orderno) throws IOException {
-        String url = Data.BASEURL+ "/xhr/order/paging?currentPage=1&pageSize=20&queryType=outOrderNo&queryInfo=" + orderno;
+        String url = Data.TESTBASE1 + "/xhr/order/paging?currentPage=1&pageSize=20&queryType=outOrderNo&queryInfo=" + orderno;
         String str = new ApiClient(url).doGetUrl();
 
         // 获取result字符

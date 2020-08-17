@@ -5,7 +5,6 @@ import dao.Data;
 import domain.Hezhu;
 
 import java.io.IOException;
-import java.util.Random;
 
 /**
  * @Author： jasmine
@@ -103,7 +102,7 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-        new ApiClient(Data.URL3).doPostForm(new Hezhu(data));
+        new ApiClient(Data.URL_BACK2).doPostForm(new Hezhu(data));
     }
 
     // 核放单过卡回执
@@ -182,6 +181,6 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-        new ApiClient(Data.URL3).doPostForm(new Hezhu(data));
+        new ApiClient(Data.URL_BACK2).doPostForm(new Hezhu(data));
     }
 }

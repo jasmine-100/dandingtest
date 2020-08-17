@@ -63,7 +63,7 @@ public class BackChedan {
                 "<returnInfo>" + returnInfo + "</returnInfo>" +
                 "</InvtCancelReturn>" +
                 "</CEB624Message>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
     }
 
 

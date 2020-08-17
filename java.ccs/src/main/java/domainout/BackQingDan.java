@@ -1,14 +1,10 @@
 package domainout;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
 import dao.Data;
 import orderutils.Param;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
 
 /**
  * @Author： jasmine
@@ -73,7 +69,7 @@ public class BackQingDan {
                         "</list>" +
                     "</body>" +
                 "</mo>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data,"kouan"));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data,"kouan"));
     }
 
     /**
@@ -106,7 +102,7 @@ public class BackQingDan {
                 "        <returnInfo>"+returnInfo+"</returnInfo>" +
                 "    </InventoryReturn>" +
                 "</CEB622Message>";
-        new ApiClient(Data.URL2).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
     }
 
 }
