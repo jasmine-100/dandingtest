@@ -55,7 +55,7 @@ public class ApiClient {
 //                System.out.println(key+":"+map.get(key).toString());
             }
             String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
-            System.out.println(str);
+//            System.out.println(str);
             post = new HttpPost(url+"?"+str);
         }
 

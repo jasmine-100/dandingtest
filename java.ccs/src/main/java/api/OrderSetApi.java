@@ -62,10 +62,10 @@ public class OrderSetApi {
     public void dingdanBack(String orderno) throws IOException, InterruptedException {
         // 口岸：处理成功
         BackDingdanKouan.backPass(orderno,"2020-8-06");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         // 总署：逻辑校验通过
         BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,"20200806090000001");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         // 总署:新增申报成功
         BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,"20200807100000000");
     }
@@ -78,7 +78,7 @@ public class OrderSetApi {
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         // 口岸回执：处理成功
-        BackQingdanZongshu.kouan(orderno,agentCode);
+        BackQingdanKouan.backPass(orderno,agentCode,"2020-8-16");
         Thread.sleep(1000);
 
         //回执逻辑校验通过报文

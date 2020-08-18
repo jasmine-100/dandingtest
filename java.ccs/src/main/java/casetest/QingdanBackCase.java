@@ -1,6 +1,7 @@
 package casetest;
 
 import domainout.BackDingdanKouan;
+import domainout.BackQingdanKouan;
 import domainout.BackQingdanZongshu;
 import domainout.BackTax;
 import org.junit.jupiter.api.Test;
@@ -21,14 +22,14 @@ public class QingdanBackCase {
     static String agentCode = "330766K00W";
 
     // 申报单号
-    String orderno = "A108181312132";
+    String orderno = "A08181532080";
     // 清单号
-    String invtNo = "QD202008181313";
+    String invtNo = "QD202008181537";
 
     // 测试用例：清单回执--口岸处理成功
     @Test
     public void backKouan() throws IOException {
-        BackDingdanKouan.backPass(orderno,agentCode);
+        BackQingdanKouan.backPass(orderno,agentCode,"2020-8-17");
     }
     // 测试用例：清单回执--逻辑校验通过
     @Test

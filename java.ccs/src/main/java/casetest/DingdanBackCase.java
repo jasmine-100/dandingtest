@@ -17,14 +17,13 @@ public class DingdanBackCase {
     // 电商企业编码
     static String ebcCode= "1234650123";
 
-    static String orderno = "A108181312120";
+    static String orderno = "A08181532080";
 
     // 订单回执：新增申报成功
     @Test
     public void backAddOk() throws IOException {
         BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,"20200817150000001");
     }
-
     // 订单回执：逻辑校验通过
     @Test
     public void backLogic() throws IOException {
