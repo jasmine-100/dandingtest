@@ -39,31 +39,5 @@ public class DingdanBackCase {
     public void backError2 () throws IOException {
         BackDingdanZongshu.modelZongshu(orderno,ebpCode,ebcCode,"-301020","验签失败","20200817180000001");
     }
-//    @Test
-//    public void backError3() throws IOException {
-//        BackDingdan.function(orderno,ebpCode,ebcCode,"2","[code:22001;Desc:支付企业未备案]","20200817170000001");
-//    }
-//    @Test
-//    public void backError4() throws IOException {
-//        BackDingdan.function(orderno,ebpCode,ebcCode,"2","[code:22007;Desc:对应清单已放行]","20200817170000001");
-//    }
-
-//    // 订单回执：订单中的订购人姓名和身份证不匹配
-//    @Test
-//    public void backIdError() throws IOException {
-//        BackDingdan.backIDError(orderno,ebcCode,ebcCode,"20200817060000001");
-//    }
-//
-//    // 订单回执：清单上的订购人姓名与订单上的订购人姓名不一致
-//    @Test
-//    public void backNameError() throws IOException {
-//        BackDingdan.backNameError(orderno,ebcCode,ebcCode,"20200817060000001");
-//    }
-//
-//    // 订单回执：支付单支付金额与订单支付金额不一致
-//    @Test
-//    public void backMoneyError() throws IOException {
-//        BackDingdan.backMoneyError(orderno,ebcCode,ebcCode,"20200817060000001");
-//    }
 
 }

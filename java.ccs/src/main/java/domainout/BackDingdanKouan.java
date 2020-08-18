@@ -19,10 +19,12 @@ public class BackDingdanKouan {
         modelKouan(orderno,"22001:支付企业未备案",date);
     }
 
+    // 验签失败
     public static void errorEndorse(String orderno,String date) throws IOException {
         modelKouan(orderno,"-301020:调用加签接口失败",date);
     }
 
+    // 电商平台未备案
     public static void errorBusCompany(String orderno,String date) throws IOException {
         modelKouan(orderno,"22002:电商平台编号未备案",date);
     }

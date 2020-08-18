@@ -24,18 +24,19 @@ public class BackDingdanZongshu {
         modelZongshu(orderno, ebpCode, ebcCode, "120", "[Code:1800;Desc:逻辑校验通过]", returnTime);
     }
 
+    // 申报失败的情况
     // 总署回执：订单中的订购人姓名和身份证不匹配
-    public static void backIDError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void errorID(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "99", "订单中的订购人姓名和身份证不匹配", returnTime);
     }
 
     // 总署回执：清单上的订购人姓名与订单上的订购人姓名不一致
-    public static void backNameError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void errorName(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:13127;Desc:清单上的订购人姓名与订单上的订购人姓名不一致]", returnTime);
     }
 
     // 总署回执：支付单支付金额与订单支付金额不一致
-    public static void backMoneyError(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void errorMoney(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:1332;Desc:支付单支付金额与订单支付金额不一致]", returnTime);
     }
 
@@ -63,6 +64,6 @@ public class BackDingdanZongshu {
                 "        <returnInfo>" + returnInfo + "</returnInfo>" +
                 "    </OrderReturn>" +
                 "</CEB312Message>";
-        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
+        new ApiClient(Data.URL_BACK).doPostForm(new Param(data,"other"));
     }
 }
