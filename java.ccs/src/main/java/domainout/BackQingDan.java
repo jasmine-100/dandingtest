@@ -15,73 +15,40 @@ import java.io.IOException;
 public class BackQingDan {
     static String data = null;
 
-    static String returnStatus;
-    static String returnInfo;
-
-    //总署回执：逻辑校验通过
     public static void backLogicPass(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
-        returnStatus = "120";
-        returnInfo = "[Code:1800;Desc:逻辑校验通过]";
-        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"120","[Code:1800;Desc:逻辑校验通过]",returntime);
     }
-
-    //总署回执：新增申报成功
     public static void backAddOk(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime) throws IOException {
-        returnStatus = "2";
-        returnInfo = "清单新增申报成功[电商企业编码：4401962010订单编号：124183351885]";
-        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"2","清单新增申报成功",returntime);
     }
-
-    //总署回执：放行
     public static void backPass(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
-        returnStatus = "800";
-        returnInfo = "[Code:2600;Desc:放行]";
-        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"800","[Code:2600;Desc:放行]",returntime);
     }
 
-    //总署回执：清单上的订购人电话号码与订单上的订购人电话号码不一致
-    public static void backInfoError(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
-        returnStatus = "100";
-        returnInfo = "[Code:130126;Desc:清单上的订购人电话号码与订单上的订购人电话号码不一致]";
-        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
-    }
-
-    //总署回执：海关超限
-    public static void backMoneyLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
-        returnStatus = "100";
-        returnInfo = "[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度]";
-        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returntime);
-    }
-
-    // 总署回执：清单表体商品项与订单表体商品项不一致
-    public static void backItemError(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
-        returnStatus = "100";
-        returnInfo = "[Code:1322;Desc:订单清单表体商品项不一致]";
-        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
-    }
-    // 总署回执：海关审结
+    // 不常用的回执节点
     public static void backExamine(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
-        returnStatus = "300";
-        returnInfo = "海关审结";
-        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"300","海关审结",returnTime);
     }
-    // 总署回执：查验
     public static void backCheck(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
-        returnStatus = "500";
-        returnInfo = "查验";
-        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"500","查验",returnTime);
     }
-    // 总署回执：退运
     public static void backReturn(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
-        returnStatus = "700";
-        returnInfo = "退运";
-        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"700","退运",returnTime);
     }
-    // 总署回执：挂起
     public static void backSuspend(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
-        returnStatus = "600";
-        returnInfo = "退运";
-        function(orderno,ebpCode,ebcCode,agentCode,invtNo,returnStatus,returnInfo,returnTime);
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"600","挂起",returnTime);
+    }
+
+
+    // 申报失败的回执
+    public static void errorTel(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:130126;Desc:清单上的订购人电话号码与订单上的订购人电话号码不一致]",returntime);
+    }
+    public static void errorLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度]",returntime);
+    }
+    public static void errorItem(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1322;Desc:订单清单表体商品项不一致]",returnTime);
     }
 
     /**

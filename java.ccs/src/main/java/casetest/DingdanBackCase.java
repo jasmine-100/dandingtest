@@ -1,5 +1,6 @@
 package casetest;
 
+import domainout.BackDingdanKouan;
 import domainout.BackDingdanZongshu;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,7 @@ public class DingdanBackCase {
     // 电商企业编码
     static String ebcCode= "1234650123";
 
-    static String orderno = "A108181312131";
+    static String orderno = "A108181312120";
 
     // 订单回执：新增申报成功
     @Test
@@ -32,12 +33,29 @@ public class DingdanBackCase {
 
     // 以下为异常的订单回执
     @Test
-    public void backError1() throws IOException {
-        BackDingdanZongshu.modelZongshu(orderno,ebpCode,ebcCode,"100","[code:13035;Desc:支付企业不一致]","20200817170000001");
+    public void backErrorKouan1() throws IOException {
+        BackDingdanKouan.errorEndorse(orderno,"2020-08-17");
     }
     @Test
-    public void backError2 () throws IOException {
-        BackDingdanZongshu.modelZongshu(orderno,ebpCode,ebcCode,"-301020","验签失败","20200817180000001");
+    public void backErrorKouan2() throws IOException {
+        BackDingdanKouan.errorPayCompany(orderno,"2020-8-16");
+    }
+    @Test
+    public void backErrorKouan3 () throws IOException {
+        BackDingdanKouan.errorBusCompany(orderno,"2020-08-15");
+    }
+
+    @Test
+    public void backErrorZongshu1() throws IOException {
+        BackDingdanZongshu.errorID(orderno,ebpCode,ebcCode,"20200818130000001");
+    }
+    @Test
+    public void backErrorZongshu2() throws IOException {
+        BackDingdanZongshu.errorItem(orderno,ebpCode,ebcCode,"20200818130000001");
+    }
+    @Test
+    public void backErrorZongshu3() throws IOException {
+        BackDingdanZongshu.errorPayer(orderno,ebpCode,ebcCode,"20200818130000001");
     }
 
 }

@@ -25,19 +25,17 @@ public class BackDingdanZongshu {
     }
 
     // 申报失败的情况
-    // 总署回执：订单中的订购人姓名和身份证不匹配
+
     public static void errorID(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "99", "订单中的订购人姓名和身份证不匹配", returnTime);
     }
 
-    // 总署回执：清单上的订购人姓名与订单上的订购人姓名不一致
-    public static void errorName(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void errorPayer(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:13127;Desc:清单上的订购人姓名与订单上的订购人姓名不一致]", returnTime);
     }
 
-    // 总署回执：支付单支付金额与订单支付金额不一致
-    public static void errorMoney(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
-        modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:1332;Desc:支付单支付金额与订单支付金额不一致]", returnTime);
+    public static void errorItem(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+        modelZongshu(orderno,ebpCode,ebcCode,"100","[Code:1320;Desc:清单表体商品项与订单表体商品项的项数不一致]",returnTime);
     }
 
     /**
