@@ -14,15 +14,19 @@ import java.io.IOException;
 public class BackDingdanKouan {
     static String data = null;
 
+    public static void backPass(String orderno,String date) throws IOException {
+        modelKouan(orderno,"1","处理成功",date);
+    }
+
     // 申报失败的回执
     public static void errorPayCompany(String orderno,String date) throws IOException {
-        modelKouan(orderno,"22001:支付企业未备案",date);
+        modelKouan(orderno,"2","22001:支付企业未备案",date);
     }
     public static void errorEndorse(String orderno,String date) throws IOException {
-        modelKouan(orderno,"22001:调用加签接口失败",date);
+        modelKouan(orderno,"2","22001:调用加签接口失败",date);
     }
     public static void errorBusCompany(String orderno,String date) throws IOException {
-        modelKouan(orderno,"22002:电商平台编号未备案",date);
+        modelKouan(orderno,"2","22002:电商平台编号未备案",date);
     }
 
     /**
@@ -30,7 +34,7 @@ public class BackDingdanKouan {
      * @param orderno
      * @throws IOException
      */
-    public static void modelKouan(String orderno,String resulInfo,String date) throws IOException {
+    public static void modelKouan(String orderno,String status,String resulInfo,String date) throws IOException {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
                 "<mo version=\"1.0.0\">" +
                 "    <head>" +
@@ -43,7 +47,7 @@ public class BackDingdanKouan {
                 "                <businessNo>" + orderno + "</businessNo>" +
                 "                <businessType>IMPORTORDER</businessType>" +
                 "                <declareType>1</declareType>" +
-                "                <chkMark>2</chkMark>" +
+                "                <chkMark>"+status+"</chkMark>" +
                 "                <noticeDate>"+date+"</noticeDate>" +
                 "                <noticeTime>00:03</noticeTime>" +
                 "                <resultList>" +

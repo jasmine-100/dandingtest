@@ -55,26 +55,19 @@ public class OrderSetApi {
         qingdanBack(orderno);
     }
 
-    @Test
-    public void test() throws IOException, InterruptedException {
-        String orderno = "A0817142957";
-        dingdanBack(orderno);
-//        qingdanBack(orderno);
-    }
-
     /**
      * 步骤二：订单申报回执
      * 回传时间格式：年月日时分秒毫秒
      */
     public void dingdanBack(String orderno) throws IOException, InterruptedException {
-
-        // 订单回执：逻辑校验通过
+        // 口岸：处理成功
+        BackDingdanKouan.backPass(orderno,"2020-8-06");
+        Thread.sleep(1000);
+        // 总署：逻辑校验通过
         BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,"20200806090000001");
-        Thread.sleep(2000);
-
-        // 订单回执:新增申报成功
+        Thread.sleep(1000);
+        // 总署:新增申报成功
         BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,"20200807100000000");
-
     }
 
     /**
@@ -85,21 +78,21 @@ public class OrderSetApi {
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         // 口岸回执：处理成功
-        BackQingDan.kouan(orderno,agentCode);
-        Thread.sleep(2000);
+        BackQingdanZongshu.kouan(orderno,agentCode);
+        Thread.sleep(1000);
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
-        BackQingDan.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
-        Thread.sleep(2000);
+        BackQingdanZongshu.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
+        Thread.sleep(1000);
 
         // 回执新增申报成功报文
-        BackQingDan.backAddOk(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810140000001");
-        Thread.sleep(2000);
+        BackQingdanZongshu.backAddOk(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810140000001");
+        Thread.sleep(1000);
 
         //回执放行报文
-        BackQingDan.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810150000001");
-        Thread.sleep(2000);
+        BackQingdanZongshu.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810150000001");
+        Thread.sleep(1000);
 
         // 回执：税金
         BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200810160000001");
