@@ -1,6 +1,7 @@
 package casetest;
 
 import domainout.BackQingDan;
+import domainout.BackTax;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -20,8 +21,9 @@ public class QingdanBackCase {
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
 
-    String orderno = "";
-    String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    String orderno = "A08180943174";
+//    String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    String invtNo = "QD202008181032";
 
     // 测试用例：清单回执--口岸处理成功
     @Test
@@ -41,17 +43,16 @@ public class QingdanBackCase {
         BackQingDan.backAddOk(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817150000001");
     }
 
-    // 测试用例：清单回执--暂存
-    @Test
-    public void backZancun() throws IOException {
-        // 暂存
-        BackQingDan.function(orderno,ebpCode,ebcCode,agentCode,invtNo,"1","暂存","20200817116000001");
-    }
-
     // 测试用例：清单回执--放行
     @Test
     public void backPass() throws IOException {
-        BackQingDan.backAddOk(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817160000001");
+        BackQingDan.backPass(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817160000001");
+    }
+
+    // 测试用例：清单回执-税费
+    @Test
+    public void backTax() throws IOException {
+        BackTax.backTaxrd(invtNo,901.52,10,5,"20200817170000001");
     }
 
 //    // 测试用例：清单回执--订购人电话不一致
