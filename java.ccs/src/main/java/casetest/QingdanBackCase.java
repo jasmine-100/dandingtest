@@ -1,6 +1,5 @@
 package casetest;
 
-import domainout.BackDingdanKouan;
 import domainout.BackQingdanKouan;
 import domainout.BackQingdanZongshu;
 import domainout.BackTax;
@@ -22,9 +21,9 @@ public class QingdanBackCase {
     static String agentCode = "330766K00W";
 
     // 申报单号
-    String orderno = "A08181532080";
+    String orderno = "A08181532092";
     // 清单号
-    String invtNo = "QD202008181537";
+    String invtNo = "QD202008181542";
 
     // 测试用例：清单回执--口岸处理成功
     @Test
@@ -33,8 +32,8 @@ public class QingdanBackCase {
     }
     // 测试用例：清单回执--逻辑校验通过
     @Test
-    public void backLogic () throws IOException {
-        BackQingdanZongshu.backLogicPass(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817140000001");
+    public void backLogic() throws IOException {
+        BackQingdanZongshu.backLogic(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817140000001");
     }
     // 测试用例：清单回执--新增申报成功
     @Test

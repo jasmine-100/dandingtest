@@ -83,7 +83,7 @@ public class OrderSetApi {
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
-        BackQingdanZongshu.backLogicPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
+        BackQingdanZongshu.backLogic(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
         Thread.sleep(1000);
 
         // 回执新增申报成功报文

@@ -15,7 +15,7 @@ import java.io.IOException;
 public class BackQingdanZongshu {
     static String data = null;
 
-    public static void backLogicPass(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
+    public static void backLogic(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime) throws IOException {
         function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"120","[Code:1800;Desc:逻辑校验通过]",returntime);
     }
     public static void backAddOk(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime) throws IOException {
