@@ -14,26 +14,21 @@ import java.io.IOException;
 public class BackDingdanZongshu {
     static String data = null;
 
-    // 总署回执：新增申报成功
+    // 总署回执：正常的回执
     public static void declareAddOk(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "2", "新增申报成功", returnTime);
     }
-
-    // 总署回执：逻辑校验通过
     public static void logicOk(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "120", "[Code:1800;Desc:逻辑校验通过]", returnTime);
     }
 
-    // 申报失败的情况
-
+    // 申报失败的回执
     public static void errorID(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "99", "订单中的订购人姓名和身份证不匹配", returnTime);
     }
-
     public static void errorPayer(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:13127;Desc:清单上的订购人姓名与订单上的订购人姓名不一致]", returnTime);
     }
-
     public static void errorItem(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
         modelZongshu(orderno,ebpCode,ebcCode,"100","[Code:1320;Desc:清单表体商品项与订单表体商品项的项数不一致]",returnTime);
     }
