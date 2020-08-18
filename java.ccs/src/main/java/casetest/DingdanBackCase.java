@@ -31,7 +31,7 @@ public class DingdanBackCase {
         BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,"20200817160000001");
     }
 
-    // 以下为异常的订单回执
+    // 失败的回执--口岸
     @Test
     public void backErrorKouan1() throws IOException {
         BackDingdanKouan.errorEndorse(orderno,"2020-08-17");
@@ -45,6 +45,7 @@ public class DingdanBackCase {
         BackDingdanKouan.errorBusCompany(orderno,"2020-08-15");
     }
 
+    // 失败的回执--总署
     @Test
     public void backErrorZongshu1() throws IOException {
         BackDingdanZongshu.errorID(orderno,ebpCode,ebcCode,"20200818130000001");
