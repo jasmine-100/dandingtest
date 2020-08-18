@@ -16,18 +16,18 @@ public class DingdanBackCase {
     // 电商企业编码
     static String ebcCode= "1234650123";
 
-    static String orderno = "A0817152240";
-
-    // 订单回执：逻辑校验通过
-    @Test
-    public void backLogic() throws IOException {
-        BackDingdan.logicOk(orderno,ebcCode,ebcCode,"20200817150000001");
-    }
+    static String orderno = "A08180943152";
 
     // 订单回执：新增申报成功
     @Test
     public void backAddOk() throws IOException {
-        BackDingdan.declareAddOk(orderno,ebcCode,ebcCode,"20200817060000001");
+        BackDingdan.declareAddOk(orderno,ebcCode,ebcCode,"20200817150000001");
+    }
+
+    // 订单回执：逻辑校验通过
+    @Test
+    public void backLogic() throws IOException {
+        BackDingdan.logicOk(orderno,ebcCode,ebcCode,"20200817160000001");
     }
 
     // 订单回执：订单中的订购人姓名和身份证不匹配
