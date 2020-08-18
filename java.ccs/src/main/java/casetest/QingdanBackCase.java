@@ -41,7 +41,7 @@ public class QingdanBackCase {
         BackQingDan.backAddOk(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817150000001");
     }
 
-    // 测试用例：清单回执--新增申报成功
+    // 测试用例：清单回执--暂存
     @Test
     public void backZancun() throws IOException {
         // 暂存

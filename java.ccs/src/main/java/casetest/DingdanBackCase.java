@@ -30,22 +30,22 @@ public class DingdanBackCase {
         BackDingdan.logicOk(orderno,ebcCode,ebcCode,"20200817160000001");
     }
 
-    // 订单回执：订单中的订购人姓名和身份证不匹配
-    @Test
-    public void backIdError() throws IOException {
-        BackDingdan.backIDError(orderno,ebcCode,ebcCode,"20200817060000001");
-    }
-
-    // 订单回执：清单上的订购人姓名与订单上的订购人姓名不一致
-    @Test
-    public void backNameError() throws IOException {
-        BackDingdan.backNameError(orderno,ebcCode,ebcCode,"20200817060000001");
-    }
-
-    // 订单回执：支付单支付金额与订单支付金额不一致
-    @Test
-    public void backMoneyError() throws IOException {
-        BackDingdan.backMoneyError(orderno,ebcCode,ebcCode,"20200817060000001");
-    }
+//    // 订单回执：订单中的订购人姓名和身份证不匹配
+//    @Test
+//    public void backIdError() throws IOException {
+//        BackDingdan.backIDError(orderno,ebcCode,ebcCode,"20200817060000001");
+//    }
+//
+//    // 订单回执：清单上的订购人姓名与订单上的订购人姓名不一致
+//    @Test
+//    public void backNameError() throws IOException {
+//        BackDingdan.backNameError(orderno,ebcCode,ebcCode,"20200817060000001");
+//    }
+//
+//    // 订单回执：支付单支付金额与订单支付金额不一致
+//    @Test
+//    public void backMoneyError() throws IOException {
+//        BackDingdan.backMoneyError(orderno,ebcCode,ebcCode,"20200817060000001");
+//    }
 
 }
