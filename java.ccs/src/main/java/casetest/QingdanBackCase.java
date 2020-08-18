@@ -21,9 +21,9 @@ public class QingdanBackCase {
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
 
-    String orderno = "A08180943174";
+    String orderno = "A108181312132";
 //    String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-    String invtNo = "QD202008181032";
+    String invtNo = "QD202008181313";
 
     // 测试用例：清单回执--口岸处理成功
     @Test
@@ -55,16 +55,17 @@ public class QingdanBackCase {
         BackTax.backTaxrd(invtNo,901.52,10,5,"20200817170000001");
     }
 
-//    // 测试用例：清单回执--订购人电话不一致
-//    @Test
-//    public void backInfoError() throws IOException {
-//        BackQingDan.backInfoError(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
-//    }
-//
-//    // 测试用例：清单回执--海关超限
-//    @Test
-//    public void backMoneyLimit() throws IOException {
-//        BackQingDan.backMoneyLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
-//    }
+    // 常见的错误回执报文
+    // 测试用例：清单回执--订购人电话不一致
+    @Test
+    public void backInfoError() throws IOException {
+        BackQingDan.backInfoError(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
+    }
+
+    // 测试用例：清单回执--海关超限
+    @Test
+    public void backMoneyLimit() throws IOException {
+        BackQingDan.backMoneyLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
+    }
 
 }
