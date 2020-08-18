@@ -21,9 +21,9 @@ public class QingdanBackCase {
     static String agentCode = "330766K00W";
 
     // 申报单号
-    String orderno = "A08181532092";
+    String orderno = "A08181532104";
     // 清单号
-    String invtNo = "QD202008181542";
+    String invtNo = "QD202008181547";
 
     // 测试用例：清单回执--口岸处理成功
     @Test
