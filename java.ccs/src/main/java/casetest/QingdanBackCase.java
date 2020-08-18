@@ -1,5 +1,6 @@
 package casetest;
 
+import domainout.BackDingdanKouan;
 import domainout.BackQingdanZongshu;
 import domainout.BackTax;
 import org.junit.jupiter.api.Test;
@@ -19,34 +20,31 @@ public class QingdanBackCase {
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
 
+    // 申报单号
     String orderno = "A108181312132";
-//    String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    // 清单号
     String invtNo = "QD202008181313";
 
     // 测试用例：清单回执--口岸处理成功
     @Test
     public void backKouan() throws IOException {
-        BackQingdanZongshu.kouan(orderno,agentCode);
+        BackDingdanKouan.backPass(orderno,agentCode);
     }
-
     // 测试用例：清单回执--逻辑校验通过
     @Test
     public void backLogic () throws IOException {
         BackQingdanZongshu.backLogicPass(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817140000001");
     }
-
     // 测试用例：清单回执--新增申报成功
     @Test
     public void backAddOk() throws IOException {
         BackQingdanZongshu.backAddOk(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817150000001");
     }
-
     // 测试用例：清单回执--放行
     @Test
     public void backPass() throws IOException {
         BackQingdanZongshu.backPass(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817160000001");
     }
-
     // 测试用例：清单回执-税费
     @Test
     public void backTax() throws IOException {
@@ -54,16 +52,20 @@ public class QingdanBackCase {
     }
 
     // 常见的错误回执报文
-    // 测试用例：清单回执--订购人电话不一致
+    // 测试用例：清单回执--清单和订单表体不一致
     @Test
-    public void backInfoError() throws IOException {
-        BackQingdanZongshu.backInfoError(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
+    public void errorItem() throws IOException {
+        BackQingdanZongshu.errorItem(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");
     }
-
     // 测试用例：清单回执--海关超限
     @Test
-    public void backMoneyLimit() throws IOException {
-        BackQingdanZongshu.backMoneyLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817170000001");
+    public void errorLimit() throws IOException {
+        BackQingdanZongshu.errorLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");
+    }
+    // 测试用例：清单回执--订购人电话不一致
+    @Test
+    public void errorTel() throws IOException {
+        BackQingdanZongshu.errorTel(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");
     }
 
 }

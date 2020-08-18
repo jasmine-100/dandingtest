@@ -39,7 +39,6 @@ public class BackQingdanZongshu {
         function(orderno,ebpCode,ebcCode,agentCode,invtNo,"600","挂起",returnTime);
     }
 
-
     // 申报失败的回执
     public static void errorTel(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
         function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:130126;Desc:清单上的订购人电话号码与订单上的订购人电话号码不一致]",returntime);
@@ -49,40 +48,6 @@ public class BackQingdanZongshu {
     }
     public static void errorItem(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
         function(orderno,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1322;Desc:订单清单表体商品项不一致]",returnTime);
-    }
-
-    /**
-     * 口岸回执：处理成功
-     * @param orderno 订单号
-     * @param companyCode 清关企业代码
-     */
-    public static void kouan(String orderno,String companyCode) throws IOException {
-        String orderId = Order.getOrderNo(orderno);
-        String data = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
-                "<mo version=\"1.0.0\">" +
-                    "<head>" +
-                        "<businessType>RESULT</businessType>" +
-                    "</head>" +
-                    "<body>" +
-                        "<list>" +
-                            "<jkfResult>" +
-                                "<companyCode>"+companyCode+"</companyCode>" +
-                                "<businessNo>"+orderId+"</businessNo>" +
-                                "<businessType>PERSONAL_GOODS_DECLAR</businessType>" +
-                                "<declareType>1</declareType>" +
-                                "<chkMark>1</chkMark>" +
-                                "<noticeDate>2020-06-15</noticeDate>" +
-                                "<noticeTime>17:15</noticeTime>" +
-                                "<resultList>" +
-                                "<jkfResultDetail>" +
-                                "<resultInfo>处理成功</resultInfo>" +
-                                    "</jkfResultDetail>" +
-                                "</resultList>" +
-                            "</jkfResult>" +
-                        "</list>" +
-                    "</body>" +
-                "</mo>";
-        new ApiClient(Data.URL_BACK).doPostForm(new Param(data,"kouan"));
     }
 
     /**

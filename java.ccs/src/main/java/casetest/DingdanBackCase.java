@@ -33,29 +33,29 @@ public class DingdanBackCase {
 
     // 失败的回执--口岸
     @Test
-    public void backErrorKouan1() throws IOException {
+    public void errorKouan1() throws IOException {
         BackDingdanKouan.errorEndorse(orderno,"2020-08-17");
     }
     @Test
-    public void backErrorKouan2() throws IOException {
+    public void errorKouan2() throws IOException {
         BackDingdanKouan.errorPayCompany(orderno,"2020-8-16");
     }
     @Test
-    public void backErrorKouan3 () throws IOException {
+    public void errorKouan3 () throws IOException {
         BackDingdanKouan.errorBusCompany(orderno,"2020-08-15");
     }
 
     // 失败的回执--总署
     @Test
-    public void backErrorZongshu1() throws IOException {
+    public void errorZongshu1() throws IOException {
         BackDingdanZongshu.errorID(orderno,ebpCode,ebcCode,"20200818130000001");
     }
     @Test
-    public void backErrorZongshu2() throws IOException {
+    public void errorZongshu2() throws IOException {
         BackDingdanZongshu.errorItem(orderno,ebpCode,ebcCode,"20200818130000001");
     }
     @Test
-    public void backErrorZongshu3() throws IOException {
+    public void errorZongshu3() throws IOException {
         BackDingdanZongshu.errorPayer(orderno,ebpCode,ebcCode,"20200818130000001");
     }
 
