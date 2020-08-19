@@ -35,5 +35,4 @@ public class TuihuoApi {
         BackTuiHuo.backAddressError(orderNo,ebpCode,ebcCode,agentCode);
     }
 
-
 }

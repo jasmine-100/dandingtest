@@ -17,7 +17,7 @@ public class DingdanBackCase {
     // 电商企业编码
     static String ebcCode= "1234650123";
 
-    static String orderno = "JA08191700160";
+    static String orderno = "JA08191700171";
 
     // 订单回执：新增申报成功
     @Test
