@@ -21,9 +21,9 @@ public class QingdanBackCase {
     static String agentCode = "330766K00W";
 
     // 申报单号
-    String orderno = "A08181532104";
+    String orderno = "A08190957521";
     // 清单号
-    String invtNo = "QD202008181547";
+    String invtNo = "QD202008190959";
 
     // 测试用例：清单回执--口岸处理成功
     @Test
@@ -52,20 +52,15 @@ public class QingdanBackCase {
     }
 
     // 常见的错误回执报文
-    // 测试用例：清单回执--清单和订单表体不一致
+    // 测试用例：清单回执--清单和订单表体不一致(申报终止,可重推)
     @Test
     public void errorItem() throws IOException {
         BackQingdanZongshu.errorItem(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");
     }
-    // 测试用例：清单回执--海关超限
+    // 测试用例：清单回执--海关超限(申报失败,不可重推)
     @Test
     public void errorLimit() throws IOException {
         BackQingdanZongshu.errorLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");
-    }
-    // 测试用例：清单回执--订购人电话不一致
-    @Test
-    public void errorTel() throws IOException {
-        BackQingdanZongshu.errorTel(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");
     }
 
 }

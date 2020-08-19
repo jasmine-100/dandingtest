@@ -40,9 +40,6 @@ public class BackQingdanZongshu {
     }
 
     // 申报失败的回执
-    public static void errorTel(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
-        function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:130126;Desc:清单上的订购人电话号码与订单上的订购人电话号码不一致]",returntime);
-    }
     public static void errorLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws IOException {
         function(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度]",returntime);
     }
