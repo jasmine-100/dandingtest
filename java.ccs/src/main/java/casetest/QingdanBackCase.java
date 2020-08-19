@@ -52,12 +52,12 @@ public class QingdanBackCase {
     }
 
     // 常见的错误回执报文
-    // 测试用例：清单回执--清单和订单表体不一致(申报终止,可重推)
+    // 测试用例：总署回执--清单和订单表体不一致(申报终止,可重推)
     @Test
     public void errorItem() throws IOException {
         BackQingdanZongshu.errorItem(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");
     }
-    // 测试用例：清单回执--海关超限(申报失败,不可重推)
+    // 测试用例：总署回执--海关超限(申报失败,不可重推)
     @Test
     public void errorLimit() throws IOException {
         BackQingdanZongshu.errorLimit(orderno,ebpCode,ebcCode,agentCode,invtNo,"20200817180000001");

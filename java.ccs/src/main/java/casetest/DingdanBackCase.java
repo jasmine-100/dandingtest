@@ -31,21 +31,19 @@ public class DingdanBackCase {
     }
 
     // 失败的回执--口岸
+    // 测试用例：验签失败
     @Test
-    public void errorKouan1() throws IOException {
+    public void errorVertify() throws IOException {
         BackDingdanKouan.errorEndorse(orderno,"2020-08-17");
     }
+    // 测试用例：支付企业未备案
     @Test
     public void errorKouan2() throws IOException {
         BackDingdanKouan.errorPayCompany(orderno,"2020-8-16");
     }
-    @Test
-    public void errorKouan3 () throws IOException {
-        BackDingdanKouan.errorBusCompany(orderno,"2020-08-15");
-    }
 
     // 常见的错误回执报文
-    // 测试用例：订单回执--企业未备案(申报终止,可重推)
+    // 测试用例：总署回执--支付企业不一致(申报终止,可重推)
     @Test
     public void errCompany() throws IOException {
         BackDingdanZongshu.errorCompany(orderno,ebpCode,ebcCode,"20200818130000001");

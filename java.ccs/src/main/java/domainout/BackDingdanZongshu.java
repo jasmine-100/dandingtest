@@ -24,7 +24,7 @@ public class BackDingdanZongshu {
 
     // 申报失败的回执
     public static void errorCompany(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
-        modelZongshu(orderno, ebpCode, ebcCode, "2", "[Code:22001;Desc:企业未备案]", returnTime);
+        modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:13035;Desc:支付企业不一致]", returnTime);
     }
 
     /**
