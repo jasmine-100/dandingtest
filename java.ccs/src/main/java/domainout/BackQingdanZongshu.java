@@ -27,16 +27,16 @@ public class BackQingdanZongshu {
 
     // 不常用的回执节点
     public static void backExamine(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
-        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"300","海关审结",returnTime);
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"399","海关审结",returnTime);
     }
     public static void backCheck(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
         function(orderno,ebpCode,ebcCode,agentCode,invtNo,"500","查验",returnTime);
     }
-    public static void backReturn(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
-        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"700","退运",returnTime);
-    }
     public static void backSuspend(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
         function(orderno,ebpCode,ebcCode,agentCode,invtNo,"600","挂起",returnTime);
+    }
+    public static void backReturn(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws IOException {
+        function(orderno,ebpCode,ebcCode,agentCode,invtNo,"700","退运",returnTime);
     }
 
     // 申报失败的回执

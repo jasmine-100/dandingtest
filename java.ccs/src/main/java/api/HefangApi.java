@@ -13,9 +13,9 @@ import java.io.IOException;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2008111712000002";  // 系统内部核放单编号
-    String SeqNo = "YHF08111712";  // 预录入编号
-    String businessId = "QDHF08111712";  // 核放单号
+    String etpsPreentNo = "HF2008191520000185";  // 系统内部核放单编号
+    String SeqNo = "YHF08111714";  // 预录入编号
+    String businessId = "QDHF08111714";  // 核放单号
 
     @Test
     public void hefangPass() throws IOException, InterruptedException {

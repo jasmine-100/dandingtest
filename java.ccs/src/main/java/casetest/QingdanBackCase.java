@@ -1,5 +1,6 @@
 package casetest;
 
+import domainout.BackDingdanZongshu;
 import domainout.BackQingdanKouan;
 import domainout.BackQingdanZongshu;
 import domainout.BackTax;
@@ -21,9 +22,9 @@ public class QingdanBackCase {
     static String agentCode = "330766K00W";
 
     // 申报单号
-    String orderno = "A08190957521";
+    String orderno = "JA08191700160";
     // 清单号
-    String invtNo = "QD202008190959";
+    String invtNo = "QD202008191439";
 
     // 测试用例：清单回执--口岸处理成功
     @Test

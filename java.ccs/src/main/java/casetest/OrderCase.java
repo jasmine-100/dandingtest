@@ -25,7 +25,7 @@ public class OrderCase {
     public void orderSet() throws IOException {
         for(int i=0;i<5;i++){
             // 渠道订单号和申报单号:随机生成
-            String orderno = "A"+new SimpleDateFormat("MMddHHmmss").format(new Date())+i;
+            String orderno = "JA"+new SimpleDateFormat("MMddHHmmss").format(new Date())+i;
 
             // 添加商品项
             List<Item> items = new ArrayList<Item>();
