@@ -23,14 +23,8 @@ public class BackDingdanZongshu {
     }
 
     // 申报失败的回执
-    public static void errorID(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
-        modelZongshu(orderno, ebpCode, ebcCode, "99", "订单中的订购人姓名和身份证不匹配", returnTime);
-    }
-    public static void errorPayer(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
-        modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:13127;Desc:清单上的订购人姓名与订单上的订购人姓名不一致]", returnTime);
-    }
-    public static void errorItem(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
-        modelZongshu(orderno,ebpCode,ebcCode,"100","[Code:1320;Desc:清单表体商品项与订单表体商品项的项数不一致]",returnTime);
+    public static void errorCompany(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+        modelZongshu(orderno, ebpCode, ebcCode, "2", "[Code:22001;Desc:企业未备案]", returnTime);
     }
 
     /**

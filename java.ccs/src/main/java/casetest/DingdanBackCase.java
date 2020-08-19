@@ -44,18 +44,11 @@ public class DingdanBackCase {
         BackDingdanKouan.errorBusCompany(orderno,"2020-08-15");
     }
 
-    // 失败的回执--总署
+    // 常见的错误回执报文
+    // 测试用例：订单回执--企业未备案(申报终止,可重推)
     @Test
-    public void errorZongshu1() throws IOException {
-        BackDingdanZongshu.errorID(orderno,ebpCode,ebcCode,"20200818130000001");
-    }
-    @Test
-    public void errorZongshu2() throws IOException {
-        BackDingdanZongshu.errorItem(orderno,ebpCode,ebcCode,"20200818130000001");
-    }
-    @Test
-    public void errorZongshu3() throws IOException {
-        BackDingdanZongshu.errorPayer(orderno,ebpCode,ebcCode,"20200818130000001");
+    public void errCompany() throws IOException {
+        BackDingdanZongshu.errorCompany(orderno,ebpCode,ebcCode,"20200818130000001");
     }
 
 }
