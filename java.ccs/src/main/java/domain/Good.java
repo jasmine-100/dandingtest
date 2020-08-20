@@ -61,7 +61,7 @@ public class Good {
         this.grossWeight = 10;
         this.netWeight = 9;
         this.hgsbys = "申报要素";
-        this.hsCode = "3304200092";
+        this.hsCode = "3406000090";
         this.model = "规格";
         this.length = 7;
         this.width = 8;

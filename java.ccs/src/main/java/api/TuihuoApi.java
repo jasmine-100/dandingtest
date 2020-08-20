@@ -1,7 +1,10 @@
 package api;
 
+import domainout.BackTax;
 import domainout.BackTuiHuo;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
 
 /**
  * @Author： jasmine
@@ -17,22 +20,28 @@ public class TuihuoApi {
     static String agentCode = "330766K00W";
 
     // 取退货单列表的退货单号，去掉TH
-    String orderNo = "20080615160216";
+    String orderNo = "20081916490225";
 
-    // 回执：海关放行
+    // 回执：待人工审核
+    @Test
+    public void backExamine() throws Exception {
+        BackTuiHuo.backExamine(orderNo,ebpCode,ebcCode,agentCode,"20200816070000001");
+    }
+    // 回执：放行
     @Test
     public void backPass() throws Exception {
-        // 回执：待人工审核
-        BackTuiHuo.backWaitExamine(orderNo,ebpCode,ebcCode,agentCode);
-        // 回执：撤单成功
-        BackTuiHuo.backPass(orderNo,ebpCode,ebcCode,agentCode);
-
+        BackTuiHuo.backPass(orderNo,ebpCode,ebcCode,agentCode,"20200816080000001");
+    }
+    // 回执：税金作废
+    @Test
+    public void backTax() throws IOException {
+        BackTax.backTaxCancel("","20200816090000001");
     }
 
-    // 回执：地址不详
+    // 异常回执：地址不详
     @Test
     public void backFail() throws Exception {
-        BackTuiHuo.backAddressError(orderNo,ebpCode,ebcCode,agentCode);
+        BackTuiHuo.backAddressError(orderNo,ebpCode,ebcCode,agentCode,"20200816080000001");
     }
 
 }

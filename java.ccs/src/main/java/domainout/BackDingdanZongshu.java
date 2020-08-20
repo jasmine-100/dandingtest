@@ -1,7 +1,7 @@
 package domainout;
 
 import client.ApiClient;
-import dao.Data;
+import dao.BaseParam;
 import orderutils.Param;
 
 import java.io.IOException;
@@ -51,6 +51,6 @@ public class BackDingdanZongshu {
                 "        <returnInfo>" + returnInfo + "</returnInfo>" +
                 "    </OrderReturn>" +
                 "</CEB312Message>";
-        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
+        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
     }
 }

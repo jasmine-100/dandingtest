@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class TaxApi {
 
-    // 已放行申报单：生成并汇总税金
+    // 已放行申报单：生成并汇总税金（已生成是海关内部的一个状态，对本系统没有影响）
     @Test
     public void taxTocal() throws IOException {
         // 清单号

@@ -5,7 +5,7 @@ package dao;
  * @Description :
  * @Date : Created in 2020/8/11 16:01
  */
-public class Data {
+public class BaseParam {
     // 压测域名（2020-08-12）
 //    public static String TESTBASE1 = "http://ccs.backend.uat.yang800.com";
 //    public static String TESTBASE2 = "http://ccs.fen.uat.yang800.com";

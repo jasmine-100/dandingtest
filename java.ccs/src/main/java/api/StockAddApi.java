@@ -2,7 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import dao.Data;
+import dao.BaseParam;
 import domain.Stock;
 import org.junit.jupiter.api.Test;
 
@@ -15,14 +15,20 @@ import java.io.IOException;
  */
 public class StockAddApi {
 
+    // 单一添加商品库存
     @Test
-    public void stockAdd() throws IOException {
+    public void addStock() throws IOException {
+        Stock stock = new Stock("gsn1406","pd1406","13");
+        new ApiClient(BaseParam.URL_STOCK).doPostJson(JSON.toJSON(stock));
+    }
+
+    // 批量添加账册库存
+    @Test
+    public void addStocks() throws IOException {
         Stock stock = null;
-        for(int i=1;i<50000;i++){
-            stock = new Stock("SK"+i,"JHY"+i,"9");
-            new ApiClient(Data.URL_STOCK).doPostJson(JSON.toJSON(stock));
+        for(int i=1;i<5000;i++){
+            stock = new Stock("SK1"+i,"JHY1"+i,"13");
+            new ApiClient(BaseParam.URL_STOCK).doPostJson(JSON.toJSON(stock));
         }
-//        stock = new Stock("SK1","JHY1","9");
-        new ApiClient(Data.URL_STOCK).doPostJson(JSON.toJSON(stock));
     }
 }

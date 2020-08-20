@@ -2,7 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import dao.Data;
+import dao.BaseParam;
 import domain.Item;
 import domain.Order;
 import domainout.*;
@@ -45,7 +45,7 @@ public class OrderSetApi {
         Order order = new Order("xiaoyuer","小鱼儿",orderno,"SF","SF"+new Random().nextInt(999999),"xiaohei", items);
 
         //接口：推送申报单
-        new ApiClient(Data.URL_ORDER).doPostJson(JSON.toJSON(order));
+        new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
         Thread.sleep(5000);
 
         //回执订单申报结果

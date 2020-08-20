@@ -4,7 +4,7 @@ import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import dao.Data;
+import dao.BaseParam;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class Order {
 
     // 获取申报单的数据库ID
     public static String getOrderNo(String orderno) throws IOException {
-        String url = Data.DOMAIN + "/xhr/order/paging?currentPage=1&pageSize=20&queryType=outOrderNo&queryInfo=" + orderno;
+        String url = BaseParam.DOMAIN + "/xhr/order/paging?currentPage=1&pageSize=20&queryType=outOrderNo&queryInfo=" + orderno;
         String str = new ApiClient(url).doGetUrl();
 
         // 获取result字符

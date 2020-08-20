@@ -1,7 +1,7 @@
 package domainout;
 
 import client.ApiClient;
-import dao.Data;
+import dao.BaseParam;
 import domain.Hezhu;
 
 import java.io.IOException;
@@ -27,6 +27,6 @@ public class BackHefangHezhu {
                     "<CheckInfo>调用成功</CheckInfo>" +
                     "<DealFlag>0</DealFlag>" +
                 "</CommonResponeMessage>";
-        new ApiClient(Data.URL_BACK2).doPostForm(new Hezhu(data));
+        new ApiClient(BaseParam.URL_BACK2).doPostForm(new Hezhu(data));
     }
 }

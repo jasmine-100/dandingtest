@@ -38,10 +38,10 @@ public class Order {
     String consigneeName;
     String consigneeTel;
 
-    double discount;
-    double feeAmount;
-    double taxAmount;
-    double insureAmount;
+    double discount;  // 优惠
+    double feeAmount;  // 运费
+    double taxAmount;  // 税费
+    double insureAmount;  // 保费
 
     int grossWeight;//毛重
     int netWeight;//净重
@@ -85,10 +85,10 @@ public class Order {
         this.consigneeEmail = "123456@126.com";
         this.consigneeName = "Eimmly";
         this.consigneeTel = "11122223333";
-        this.discount = 5;
-        this.feeAmount = 50;
-        this.taxAmount = 10.23;
-        this.insureAmount = 50;
+        this.discount = 6;
+        this.feeAmount = 11;
+        this.taxAmount = 12.23;
+        this.insureAmount = 15;
         this.grossWeight = 10;
         this.netWeight = 9;
         this.expressCode = expressCode;
@@ -118,10 +118,10 @@ public class Order {
         this.consigneeEmail = "123456@126.com";
         this.consigneeName = "Eimmly";
         this.consigneeTel = "11122223333";
-        this.discount = 5;
-        this.feeAmount = 50;
-        this.taxAmount = 10.23;
-        this.insureAmount = 50;
+        this.discount = 6;
+        this.feeAmount = 11;
+        this.taxAmount = 12.23;
+        this.insureAmount = 15;
         this.grossWeight = 10;
         this.netWeight = 9;
         this.expressCode = expressCode;

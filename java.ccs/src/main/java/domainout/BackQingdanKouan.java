@@ -1,7 +1,7 @@
 package domainout;
 
 import client.ApiClient;
-import dao.Data;
+import dao.BaseParam;
 import orderutils.Param;
 
 import java.io.IOException;
@@ -49,7 +49,7 @@ public class BackQingdanKouan {
                         "</list>" +
                     "</body>" +
                 "</mo>";
-        new ApiClient(Data.URL_BACK).doPostForm(new Param(data,"kouan"));
+        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data,"kouan"));
     }
 
 }

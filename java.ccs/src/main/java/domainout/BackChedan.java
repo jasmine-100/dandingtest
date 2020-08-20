@@ -1,7 +1,7 @@
 package domainout;
 
 import client.ApiClient;
-import dao.Data;
+import dao.BaseParam;
 import orderutils.Param;
 
 import java.io.IOException;
@@ -63,7 +63,7 @@ public class BackChedan {
                 "<returnInfo>" + returnInfo + "</returnInfo>" +
                 "</InvtCancelReturn>" +
                 "</CEB624Message>";
-        new ApiClient(Data.URL_BACK).doPostForm(new Param(data));
+        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
     }
 
 

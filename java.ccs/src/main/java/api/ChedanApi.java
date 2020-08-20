@@ -1,6 +1,7 @@
 package api;
 
 import domainout.BackChedan;
+import domainout.BackTax;
 import domainout.BackTuiHuo;
 import org.junit.jupiter.api.Test;
 
@@ -23,17 +24,24 @@ public class ChedanApi {
     String orderNo = "2008061450000167";
 
 
-    // 撤单成功回执报文
+    // 撤单回执：申报
+    @Test
+    public void backShenbao() throws IOException {
+        BackChedan.backShenbao(orderNo,ebpCode,ebcCode,agentCode,"20200806160000001");
+    }
+    // 撤单回执：逻辑校验通过
+    @Test
+    public void backLogic() throws IOException {
+        BackChedan.backLogicpass(orderNo,ebpCode,ebcCode,agentCode,"20200806170000001");
+    }
     @Test
     public void backPass() throws Exception {
-        // 回执：申报
-        BackChedan.backShenbao(orderNo,ebpCode,ebcCode,agentCode,"20200806191310230");
-
-        // 回执：逻辑校验通过
-        BackChedan.backLogicpass(orderNo,ebpCode,ebcCode,agentCode,"20200806191310230");
-
         //回执：撤单成功
-        BackChedan.backChedanSuccess(orderNo,ebpCode,ebcCode,agentCode,"20200806191310230");
+        BackChedan.backChedanSuccess(orderNo,ebpCode,ebcCode,agentCode,"20200806180000000");
+    }
+    @Test
+    public void backTax() throws IOException {
+        BackTax.backTaxCancel("","20200806190000001");
     }
 
     // 回执申报失败

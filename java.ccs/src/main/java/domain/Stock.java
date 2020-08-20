@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 账册库存实体类
  * @Date : Created in 2020/8/12 15:05
  */
 @Data
@@ -42,7 +42,7 @@ public class Stock {
         this.goodsName = "测试商品";
         this.goodsSeqNo = goodsSeqNo;
         this.goodsUnit = "001";
-        this.hsCode = "3304200092";
+        this.hsCode = "3304990039";
         this.inDate = System.currentTimeMillis();
         this.inLegalQty = 1000;
         this.inQty = 1000;

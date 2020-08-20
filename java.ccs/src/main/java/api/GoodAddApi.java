@@ -2,7 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import dao.Data;
+import dao.BaseParam;
 import domain.Good;
 import org.junit.jupiter.api.Test;
 
@@ -15,14 +15,21 @@ import java.io.IOException;
  */
 public class GoodAddApi {
 
+    // 单一添加商品备案信息
     @Test
-    public void createGood() throws IOException {
-        Good good = null;
-        for(int i=0;i<50000;i++){
-            good = new Good("SK"+i,"JHY"+i,"9");
-            new ApiClient(Data.URL_GOOD).doPostJson(JSON.toJSON(good));
-        }
+    public void addGood() throws IOException {
+        Good good = new Good("sku1406","pd1406","13");
+        new ApiClient(BaseParam.URL_GOOD).doPostJson(JSON.toJSON(good));
+    }
 
+    //  批量添加商品
+    @Test
+    public void addGoods() throws IOException {
+        Good good = null;
+        for(int i=0;i<5000;i++){
+            good = new Good("SK1"+i,"JHY1"+i,"13");
+            new ApiClient(BaseParam.URL_GOOD).doPostJson(JSON.toJSON(good));
+        }
     }
 
 }

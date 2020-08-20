@@ -1,7 +1,7 @@
 package domainout;
 
 import client.ApiClient;
-import dao.Data;
+import dao.BaseParam;
 import orderutils.Param;
 
 import java.io.IOException;
@@ -56,6 +56,6 @@ public class BackDingdanKouan {
                 "        </list>" +
                 "    </body>" +
                 "</mo>";
-        new ApiClient(Data.URL_BACK).doPostForm(new Param(data,"other"));
+        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data,"other"));
     }
 }

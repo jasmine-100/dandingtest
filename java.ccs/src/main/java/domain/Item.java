@@ -9,20 +9,13 @@ import lombok.Data;
  */
 @Data
 public class Item {
-    // 商品备案料号：唯一标识商品
-     String recordNo;
-    // 商品货号
-     String itemNo;
-    //商品品名
-     String itemName;
-    //数量
-     int count;
-    // 商品链接
-     String itemLink;
-    //商品备案序号
-     String recordGnum;
-    // 单价
-     double unitPrice;
+     String recordNo; //商品备案料号：唯一标识商品
+     String itemNo;// 商品货号
+     String itemName;//商品品名
+     int count;//数量
+     String itemLink;// 商品链接
+     String recordGnum;//商品备案序号
+     double unitPrice;// 单价
 
     public Item(String recordNo,int count, double unitPrice) {
         this.recordNo = recordNo;
