@@ -16,20 +16,19 @@ public class ChedanApi {
     // 取撤单列表的撤单申报编号，去掉CD
     String orderNo = "2008061450000167";
 
-
-    // 撤单回执：申报
-    @Test
-    public void backShenbao() throws IOException {
-        BackChedan.backShenbao(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806160000001");
-    }
-    // 撤单回执：逻辑校验通过
+    // 回执：逻辑校验通过
     @Test
     public void backLogic() throws IOException {
         BackChedan.backLogicpass(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806170000001");
     }
+    // 回执：新增申报成功
+    @Test
+    public void backShenbao() throws IOException {
+        BackChedan.backShenbao(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806160000001");
+    }
+    // 回执：撤单成功
     @Test
     public void backPass() throws Exception {
-        //回执：撤单成功
         BackChedan.backChedanSuccess(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806180000000");
     }
     @Test

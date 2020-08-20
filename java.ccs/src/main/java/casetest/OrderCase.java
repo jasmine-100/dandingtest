@@ -23,7 +23,7 @@ public class OrderCase {
 
     // 批量下单
     @Test
-    public void orderSet() throws IOException {
+    public void ordersSet() throws IOException {
         for(int i=0;i<5;i++){
             // 渠道订单号和申报单号:随机生成
             String orderno = "JA"+new SimpleDateFormat("MMddHHmmss").format(new Date())+i;
@@ -35,6 +35,20 @@ public class OrderCase {
             //接口：推送申报单
             new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
         }
+    }
+
+    // 单一下单
+    @Test
+    public void orderSet() throws IOException {
+        String orderno = "JA08201723421";
+        // 添加商品项
+        List<Item> items = new ArrayList<Item>();
+        items.add(new Item("pd1406",3,10));
+        // 组装申报单
+        Order order = new Order("xiaoyuer","小鱼儿",orderno,"SF","SF"+new Random().nextInt(999999),Data.routeCode, items);
+        //接口：推送申报单
+        new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
+
     }
 
 }
