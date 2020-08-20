@@ -20,7 +20,7 @@ public class BackChedan {
     // 撤单回执：申报
     public static void backShenbao(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime) throws IOException {
         returnStatus = "2";
-        returnInfo = "申报";
+        returnInfo = "新增申报成功";
         backFunction(orderno, ebpCode, ebcCode, agentCode, returnStatus, returnInfo, returnTime);
     }
 

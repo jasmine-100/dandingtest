@@ -14,23 +14,24 @@ import java.io.IOException;
  */
 public class ChedanApi {
     // 取撤单列表的撤单申报编号，去掉CD
-    String orderNo = "2008061450000167";
+    String orderNo = "2008111115000237";
 
-    // 回执：逻辑校验通过
-    @Test
-    public void backLogic() throws IOException {
-        BackChedan.backLogicpass(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806170000001");
-    }
     // 回执：新增申报成功
     @Test
     public void backShenbao() throws IOException {
         BackChedan.backShenbao(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806160000001");
+    }
+    // 回执：逻辑校验通过
+    @Test
+    public void backLogic() throws IOException {
+        BackChedan.backLogicpass(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806170000001");
     }
     // 回执：撤单成功
     @Test
     public void backPass() throws Exception {
         BackChedan.backChedanSuccess(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806180000000");
     }
+    // 作废税金
     @Test
     public void backTax() throws IOException {
         BackTax.backTaxCancel("","20200806190000001");
