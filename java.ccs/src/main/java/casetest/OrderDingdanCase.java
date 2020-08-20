@@ -10,7 +10,7 @@ import java.io.IOException;
  * @Description :
  * @Date : Created in 2020/8/17 15:17
  */
-public class DingdanBackCase {
+public class OrderDingdanCase {
 
     // 订单回执：新增申报成功
     @Test

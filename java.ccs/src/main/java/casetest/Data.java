@@ -6,6 +6,8 @@ package casetest;
  * @Date : Created in 2020/8/20 16:43
  */
 public class Data {
+    // 路由编码
+    public static String routeCode = "xiaohei";
     // 电商平台编码
     public static String ebpCode = "1234650123";
     // 电商企业编码

@@ -12,7 +12,7 @@ import java.io.IOException;
  * @Description : 测试用例--用于测试清单申报回执
  * @Date : Created in 2020/8/17 14:36
  */
-public class QingdanBackCase {
+public class OrderQingdanCase {
 
     // 测试用例：清单回执--口岸处理成功
     @Test
