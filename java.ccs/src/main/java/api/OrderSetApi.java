@@ -34,7 +34,9 @@ public class OrderSetApi {
     @Test
     public void pushOrder() throws IOException, InterruptedException {
         // 渠道订单号和申报单号:随机生成
-        String orderno = "A"+new SimpleDateFormat("MMddHHmmss").format(new Date());
+        String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
+        String outOrderNo = "JOS"+str;
+        String declareOrderno = "DOS"+str;
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
@@ -42,17 +44,17 @@ public class OrderSetApi {
         items.add(new Item("JHKN2008071515",5,12.3));
 
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",orderno,"SF","SF"+new Random().nextInt(999999),"xiaohei", items);
+        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei", items);
 
         //接口：推送申报单
         new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         //回执订单申报结果
-        dingdanBack(orderno);
+        dingdanBack(declareOrderno);
 
         //回执清单申报结果
-        qingdanBack(orderno);
+        qingdanBack(declareOrderno);
     }
 
     /**

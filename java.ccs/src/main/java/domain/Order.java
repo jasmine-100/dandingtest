@@ -129,4 +129,37 @@ public class Order {
         this.itemList = itemList;
         this.notifyUrl = "http://www.baidu.com";
     }
+    public Order(String tenantOuterId,String tenantName,String outOrderNo,String declareOrderNo, String expressCode, String logisticsNo, String routeCode, List<Item> itemList) {
+        this.tenantOuterId = tenantOuterId;
+        this.tenantName = tenantName;
+        String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        this.declareOrderNo = declareOrderNo;
+        this.declarePayNo = "PN" + str;
+        this.outOrderNo = outOrderNo;
+        this.payChannel = "wechatpay";
+        this.tradePayNo = "TPN" + str;
+        this.tradeTime = System.currentTimeMillis();
+        this.routeCode = routeCode;
+        this.senderName = "奶粉厂家";
+        this.buyerIdNumber = "330110199912102236";
+        this.buyerName = "Lily";
+        this.buyerTelNumber = "15566669999";
+        this.consigneeProvince = "浙江省";
+        this.consigneeCity = "杭州市";
+        this.consigneeDistrict = "西湖区";
+        this.consigneeAddress = "科技路小小区100号1单元501室";
+        this.consigneeEmail = "123456@126.com";
+        this.consigneeName = "Eimmly";
+        this.consigneeTel = "11122223333";
+        this.discount = 6;
+        this.feeAmount = 11;
+        this.taxAmount = 12.23;
+        this.insureAmount = 15;
+        this.grossWeight = 10;
+        this.netWeight = 9;
+        this.expressCode = expressCode;
+        this.logisticsNo = logisticsNo;
+        this.itemList = itemList;
+        this.notifyUrl = "http://www.baidu.com";
+    }
 }
