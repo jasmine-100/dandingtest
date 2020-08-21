@@ -28,14 +28,24 @@ public class OrderSetApi {
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
 
+    // 批量造订单
+    @Test
+    public void batchOrders() throws IOException, InterruptedException {
+        for(int i=0;i<=5;i++){
+            pushOrder();
+        }
+    }
+
     /**
      * 步骤一：推送申报单
      */
     @Test
     public void pushOrder() throws IOException, InterruptedException {
-        // 渠道订单号和申报单号:随机生成
+
         String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
+        // 渠道订单号
         String outOrderNo = "JOS"+str;
+        // 申报单号
         String declareOrderno = "DOS"+str;
 
         // 添加商品项

@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class ChedanApi {
     // 取撤单列表的撤单申报编号，去掉CD
-    String orderNo = "2008111115000237";
+    String orderNo = "2008211512000256";
 
     // 回执：新增申报成功
     @Test
@@ -34,7 +34,7 @@ public class ChedanApi {
     // 作废税金
     @Test
     public void backTax() throws IOException {
-        BackTax.backTaxCancel("","20200806190000001");
+        BackTax.backTaxCancel(Data.invtNo,"20200806190000001");
     }
 
     // 回执申报失败

@@ -52,11 +52,6 @@ public class BackTax {
         new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
     }
 
-    // 回执税金状态--生成
-    public static void backTaxCreate(String invtNo,String returnTime) throws IOException {
-        function(invtNo,returnTime,"1");
-    }
-
     // 回执税金状态--汇总
     public static void backTaxTotal(String invtNo,String returnTime) throws IOException {
         function(invtNo,returnTime,"2");
