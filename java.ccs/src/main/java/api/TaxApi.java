@@ -13,20 +13,20 @@ import java.io.IOException;
 public class TaxApi {
 
     // 清单号
-    String invtNo = "QD202008211531";
+    String invtNo = "QD20200821180548";
 
     // 已放行申报单：汇总税金
     @Test
     public void taxTotal() throws IOException {
         // 已汇总
-        BackTax.backTaxTotal(invtNo,"20200807120000102");
+        BackTax.backTaxTotal(invtNo,"20200821120000102");
     }
 
     // 已退货或撤单的申报单：作废税金
     @Test
     public void taxCancel() throws IOException {
         // 已作废
-        BackTax.backTaxCancel(invtNo,"20200807140610102");
+        BackTax.backTaxCancel(invtNo,"20200821150000102");
     }
 
 }

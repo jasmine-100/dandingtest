@@ -107,7 +107,7 @@ public class OrderSetApi {
         Thread.sleep(1000);
 
         // 回执：税金
-        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200810160000001");
+        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200831114735001");
 
     }
 
