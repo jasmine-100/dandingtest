@@ -66,7 +66,7 @@ public class Good {
         this.length = 7;
         this.width = 8;
         this.height = 9;
-        this.opinion = 1;
+//        this.opinion = 1;  // 没有起作用
         this.originCountry = "142";
         this.reason = "原因";
         this.recordFinishTime = System.currentTimeMillis();
