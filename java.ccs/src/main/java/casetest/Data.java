@@ -16,8 +16,8 @@ public class Data {
     public static String agentCode = "330766K00W";
 
     // 申报单号
-    public static String orderno = "JA08201723420";
+    public static String orderno = "JA08211329133";
     // 清单号
-    public static String invtNo = "QD202008201725";
+    public static String invtNo = "QD202008211330";
 
 }

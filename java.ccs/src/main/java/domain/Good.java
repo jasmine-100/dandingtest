@@ -32,7 +32,7 @@ public class Good {
     double length;  //长
     double width;  //宽
     double height;   //高
-    int opinion;   //审核状态
+    int opinion;   //审核状态：1审核通过；0：驳回
     String originCountry;   //原产国
     String reason;
     long recordFinishTime;
