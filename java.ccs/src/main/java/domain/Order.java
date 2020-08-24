@@ -24,7 +24,9 @@ public class Order {
     String tradePayNo;//支付交易流水号
     long tradeTime;//交易时间|付款时间
     String routeCode;//申报路由编码
-
+    String firstIdentify;//申报路由标识1
+    String secondIdentify;//申报路由标识2
+    String thirdIdentify;//申报路由标识3
     String senderName;
     String buyerIdNumber;
     String buyerName;
