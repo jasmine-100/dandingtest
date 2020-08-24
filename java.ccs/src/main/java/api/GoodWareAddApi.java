@@ -25,7 +25,7 @@ public class GoodWareAddApi {
 
     // ccs同步备案商品
     @Test
-    public void updateGood() throws IOException {
+    public void goodUpdate() throws IOException {
         BackGood.backAddGood("20200807",good,"1901900000");
     }
 
