@@ -54,14 +54,14 @@ public class OrderSetApi {
         items.add(new Item("JHKY08241046",10,2));
 
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei","","","", items);
+        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+new Random().nextInt(999999),"","first1","second1","third1", items);
 
         //接口：推送申报单
         new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
         Thread.sleep(10000);
 
         //回执订单申报结果
-        dingdanBack(declareOrderno);
+//        dingdanBack(declareOrderno);
 
         //回执清单申报结果
         qingdanBack(declareOrderno);
@@ -85,25 +85,25 @@ public class OrderSetApi {
     /**
      * 步骤三：清单申报回执
      */
-    public void qingdanBack(String orderno) throws IOException, InterruptedException {
+    public void qingdanBack(String declareOrderNo) throws IOException, InterruptedException {
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         // 口岸回执：处理成功
-        BackQingdanKouan.backPass(orderno,agentCode,"2020-8-16");
+        BackQingdanKouan.backPass(declareOrderNo,agentCode,"2020-8-16");
         Thread.sleep(1000);
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
-        BackQingdanZongshu.backLogic(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
+        BackQingdanZongshu.backLogic(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
         Thread.sleep(1000);
 
         // 回执新增申报成功报文
-        BackQingdanZongshu.backAddOk(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810140000001");
+        BackQingdanZongshu.backAddOk(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810140000001");
         Thread.sleep(1000);
 
         //回执放行报文
-        BackQingdanZongshu.backPass(orderno,ebcCode,ebpCode,agentCode,invtNo,"20200810150000001");
+        BackQingdanZongshu.backPass(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810150000001");
         Thread.sleep(1000);
 
         // 回执：税金

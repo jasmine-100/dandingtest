@@ -23,6 +23,7 @@ public class Order {
     String payChannel;
     String tradePayNo;//支付交易流水号
     long tradeTime;//交易时间|付款时间
+
     String routeCode;//申报路由编码
     String firstIdentify;//申报路由标识1
     String secondIdentify;//申报路由标识2
@@ -65,7 +66,8 @@ public class Order {
     String verDept;//收款企业社会信用代码
     String recpName;//收款企业工商备案名称
 
-    public Order(String tenantOuterId,String tenantName,String outOrderNo,String declareOrderNo, String expressCode, String logisticsNo, String routeCode,String firstIdentify,String secondIdentify,String thirdIdentify, List<Item> itemList) {
+    public Order(String tenantOuterId,String tenantName,String outOrderNo,String declareOrderNo, String expressCode, String logisticsNo,
+                 String routeCode,String firstIdentify,String secondIdentify,String thirdIdentify, List<Item> itemList) {
         this.tenantOuterId = tenantOuterId;
         this.tenantName = tenantName;
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -97,5 +99,8 @@ public class Order {
         this.logisticsNo = logisticsNo;
         this.itemList = itemList;
         this.notifyUrl = "http://www.baidu.com";
+        this.firstIdentify = firstIdentify;
+        this.secondIdentify = secondIdentify;
+        this.thirdIdentify = thirdIdentify;
     }
 }

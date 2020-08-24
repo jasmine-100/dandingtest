@@ -49,7 +49,7 @@ public class BackQingdanZongshu {
 
     /**
      * 清单申报--回执模板
-     * @param orderNo 传入申报单编号
+     * @param declareOrderNo 传入申报单编号
      * @param ebcCode 电商企业编码
      * @param ebpCode 电商平台编码
      * @param agentCode 清关企业代码
@@ -59,8 +59,8 @@ public class BackQingdanZongshu {
      * @param returntime 海关回执时间
      * @throws IOException
      */
-    public static void modelData(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returnStatus, String returnInfo, String returntime) throws IOException {
-        String orderId = Order.getOrderNo(orderNo);
+    public static void modelData(String declareOrderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returnStatus, String returnInfo, String returntime) throws IOException {
+        String orderId = Order.getOrderNo(declareOrderNo);
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"c988cb9e-ea4b-463a-87c4-36e3d24aa7d9\">" +
