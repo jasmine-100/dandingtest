@@ -18,7 +18,7 @@ public class StockAddApi {
     // 单一添加商品库存
     @Test
     public void addStock() throws IOException {
-        Stock stock = new Stock("gsn1406","pd1406","13");
+        Stock stock = new Stock(Data.goodsSeqNo,Data.productId,Data.bookId);
         new ApiClient(BaseParam.URL_STOCK).doPostJson(JSON.toJSON(stock));
     }
 

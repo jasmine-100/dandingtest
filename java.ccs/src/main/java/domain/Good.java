@@ -58,8 +58,8 @@ public class Good {
         this.enable = 1;
         this.firstUnit = "011";
         this.firstUnitAmount = 1;
-        this.grossWeight = 10;
-        this.netWeight = 9;
+        this.grossWeight = 6;
+        this.netWeight = 5.5;
         this.hgsbys = "申报要素";
         this.hsCode = "3406000090";
         this.model = "规格";

@@ -18,7 +18,7 @@ public class GoodAddApi {
     // 单一添加商品备案信息
     @Test
     public void addGood() throws IOException {
-        Good good = new Good("sku1409","pd1409","13");
+        Good good = new Good(Data.skuNo,Data.productId,Data.bookId);
         new ApiClient(BaseParam.URL_GOOD).doPostJson(JSON.toJSON(good));
     }
 

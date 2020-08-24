@@ -20,7 +20,7 @@ import java.util.Random;
  * @Description : CCS申报单完整流程：推送申报单--申报订单-申报清单--回执电子税单
  * @Date : Created in 2020/7/20 12:23
  */
-public class OrderSetApi {
+public class OrdersSetApi {
     // 电商平台编码
     static String ebpCode = "1234650123";
     // 电商企业编码
@@ -31,8 +31,8 @@ public class OrderSetApi {
     // 批量造订单
     @Test
     public void batchOrders() throws IOException, InterruptedException {
-        for(int i=0;i<=5;i++){
-            pushOrder();
+        for(int i=0;i<=500;i++){
+            pushOrder(i);
         }
     }
 
@@ -40,13 +40,11 @@ public class OrderSetApi {
      * 步骤一：推送申报单
      */
     @Test
-    public void pushOrder() throws IOException, InterruptedException {
-
-        String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
+    public void pushOrder(int i) throws IOException, InterruptedException {
         // 渠道订单号
-        String outOrderNo = "JOS"+str;
+        String outOrderNo = "JOS_A"+i;
         // 申报单号
-        String declareOrderno = "DOS"+str;
+        String declareOrderno = "DOS_A"+i;
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
@@ -54,7 +52,7 @@ public class OrderSetApi {
         items.add(new Item("JHKY08241046",10,2));
 
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei", items);
+        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+i,"xiaohei", items);
 
         //接口：推送申报单
         new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
