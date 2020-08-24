@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 仓库商品实体类
  * @Date : Created in 2020/8/24 14:59
  */
 @Data

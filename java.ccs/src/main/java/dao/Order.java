@@ -1,24 +1,23 @@
-package domainout;
+package dao;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import dao.BaseParam;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
 /**
  * @Author： jasmine
- * @Description : 根据外部渠道编号查询数据库id
+ * @Description : 根据申报单号查询数据库id
  * @Date : Created in 2020/8/10 14:14
  */
 public class Order {
 
     // 获取申报单的数据库ID
-    public static String getOrderNo(String orderno) throws IOException {
-        String url = BaseParam.DOMAIN + "/xhr/order/paging?currentPage=1&pageSize=20&queryType=declareOrderNo&queryInfo=" + orderno;
+    public static String getOrderNo(String declareOrderNo) throws IOException {
+        String url = BaseParam.DOMAIN + "/xhr/order/paging?currentPage=1&pageSize=20&queryType=declareOrderNo&queryInfo=" + declareOrderNo;
         String str = new ApiClient(url).doGetUrl();
 
         // 获取result字符
