@@ -2,7 +2,7 @@ package domainout;
 
 import client.ApiClient;
 import dao.BaseParam;
-import domain.Hezhu;
+import domain.Param2;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -162,7 +162,7 @@ public class BackHezhu {
                         "</BussinessData>" +
                     "</DataInfo>" +
                 "</Package>";
-        new ApiClient(BaseParam.URL_BACK2).doPostForm(new Hezhu(data));
+        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
     }
 
 }

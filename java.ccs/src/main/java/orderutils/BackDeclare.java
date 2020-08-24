@@ -26,20 +26,20 @@ public class BackDeclare {
                 "    </head>" +
                 "    <body>" +
                 "        <list>" +
-                "            <jkfResult>" +
-                "                <companyCode>330766K00Q</companyCode>" +
-                "                <businessNo>"+orderno+"</businessNo>" +
-                "                <businessType>PERSONAL_GOODS_DECLAR</businessType>" +
-                "                <declareType>1</declareType>" +
-                "                <chkMark>1</chkMark>" +
-                "                <noticeDate>"+new SimpleDateFormat("yyyy-MM-dd").format(new Date()) +"</noticeDate>" +
-                "                <noticeTime>"+new SimpleDateFormat("mm:ss").format(new Date()) +"</noticeTime>" +
-                "                <resultList>" +
-                "                    <jkfResultDetail>" +
-                "                        <resultInfo>处理成功</resultInfo>" +
-                "                    </jkfResultDetail>" +
-                "                </resultList>" +
-                "            </jkfResult>" +
+                "  <jkfResult>" +
+                "      <companyCode>330766K00Q</companyCode>" +
+                "      <businessNo>"+orderno+"</businessNo>" +
+                "      <businessType>PERSONAL_GOODS_DECLAR</businessType>" +
+                "      <declareType>1</declareType>" +
+                "      <chkMark>1</chkMark>" +
+                "      <noticeDate>"+new SimpleDateFormat("yyyy-MM-dd").format(new Date()) +"</noticeDate>" +
+                "      <noticeTime>"+new SimpleDateFormat("mm:ss").format(new Date()) +"</noticeTime>" +
+                "      <resultList>" +
+                "          <jkfResultDetail>" +
+                "              <resultInfo>处理成功</resultInfo>" +
+                "          </jkfResultDetail>" +
+                "      </resultList>" +
+                "  </jkfResult>" +
                 "        </list>" +
                 "    </body>" +
                 "</mo>";
@@ -131,31 +131,31 @@ public class BackDeclare {
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"e98878cc-48ef-4ce5-968d-dddc3d47a304\">" +
                 "    <Tax>" +
                 "        <TaxHeadRd>" +
-                "            <guid>e98878cc-48ef-4ce5-968d-dddc3d47a304</guid>" +
-                "            <returnTime>20200615171556658</returnTime>" +
-                "            <invtNo>29242020I439440284</invtNo>" +
-                "            <taxNo>29242020I439440284_0</taxNo>" +
-                "            <customsTax>0.0</customsTax>" +
-                "            <valueAddedTax>37.31</valueAddedTax>" +
-                "            <consumptionTax>0.0</consumptionTax>" +
-                "            <status>1</status>" +
-                "            <entDutyNo></entDutyNo>" +
-                "            <note></note>" +
-                "            <assureCode>330766K00Q</assureCode>" +
-                "            <ebcCode>4401962010</ebcCode>" +
-                "            <logisticsCode>11089609XE</logisticsCode>" +
-                "            <agentCode>330766K00Q</agentCode>" +
-                "            <customsCode>2924</customsCode>" +
-                "            <orderNo>124183351885</orderNo>" +
-                "            <logisticsNo>JD0018734413066</logisticsNo>" +
+                "  <guid>e98878cc-48ef-4ce5-968d-dddc3d47a304</guid>" +
+                "  <returnTime>20200615171556658</returnTime>" +
+                "  <invtNo>29242020I439440284</invtNo>" +
+                "  <taxNo>29242020I439440284_0</taxNo>" +
+                "  <customsTax>0.0</customsTax>" +
+                "  <valueAddedTax>37.31</valueAddedTax>" +
+                "  <consumptionTax>0.0</consumptionTax>" +
+                "  <status>1</status>" +
+                "  <entDutyNo></entDutyNo>" +
+                "  <note></note>" +
+                "  <assureCode>330766K00Q</assureCode>" +
+                "  <ebcCode>4401962010</ebcCode>" +
+                "  <logisticsCode>11089609XE</logisticsCode>" +
+                "  <agentCode>330766K00Q</agentCode>" +
+                "  <customsCode>2924</customsCode>" +
+                "  <orderNo>124183351885</orderNo>" +
+                "  <logisticsNo>JD0018734413066</logisticsNo>" +
                 "        </TaxHeadRd>" +
                 "        <TaxListRd>" +
-                "            <gnum>1</gnum>" +
-                "            <gcode>2201101000</gcode>" +
-                "            <taxPrice>410.0</taxPrice>" +
-                "            <customsTax>0.0</customsTax>" +
-                "            <valueAddedTax>37.31</valueAddedTax>" +
-                "            <consumptionTax>0.0</consumptionTax>" +
+                "  <gnum>1</gnum>" +
+                "  <gcode>2201101000</gcode>" +
+                "  <taxPrice>410.0</taxPrice>" +
+                "  <customsTax>0.0</customsTax>" +
+                "  <valueAddedTax>37.31</valueAddedTax>" +
+                "  <consumptionTax>0.0</consumptionTax>" +
                 "        </TaxListRd>" +
                 "    </Tax>" +
                 "</CEB816Message>";

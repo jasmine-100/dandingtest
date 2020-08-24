@@ -24,7 +24,8 @@ public class BaseParam {
 
     // 回执报文
     public static String URL_BACK = DOMAINBACK +"/zjport/callback";
-    // 回传核放核注信息
-    public static String URL_BACK2 = DOMAINBACK +"/zjport/mock/manCallback";
+    // 手动模拟回传
+    public static String URL_BACKMOCK = DOMAINBACK +"/zjport/mock/manCallback";
 
 }
+

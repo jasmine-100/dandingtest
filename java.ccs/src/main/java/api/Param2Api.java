@@ -11,7 +11,7 @@ import java.io.IOException;
  * @Description :
  * @Date : Created in 2020/8/7 17:46
  */
-public class HezhuApi {
+public class Param2Api {
 
     // ccs系统内核注单 编号
     String EtpsPreentNo = "HZ2008191702000179";

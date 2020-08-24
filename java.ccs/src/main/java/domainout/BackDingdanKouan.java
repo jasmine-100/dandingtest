@@ -2,7 +2,7 @@ package domainout;
 
 import client.ApiClient;
 import dao.BaseParam;
-import orderutils.Param;
+import domain.Param;
 
 import java.io.IOException;
 
@@ -39,20 +39,20 @@ public class BackDingdanKouan {
                 "    </head>" +
                 "    <body>" +
                 "        <list>" +
-                "            <jkfResult>" +
-                "                <companyCode>3301964J31</companyCode>" +
-                "                <businessNo>" + orderno + "</businessNo>" +
-                "                <businessType>IMPORTORDER</businessType>" +
-                "                <declareType>1</declareType>" +
-                "                <chkMark>"+status+"</chkMark>" +
-                "                <noticeDate>"+date+"</noticeDate>" +
-                "                <noticeTime>00:03</noticeTime>" +
-                "                <resultList>" +
-                "                    <jkfResultDetail>" +
-                "                        <resultInfo>"+resulInfo+"</resultInfo>" +
-                "                    </jkfResultDetail>" +
-                "                </resultList>" +
-                "            </jkfResult>" +
+                "  <jkfResult>" +
+                "      <companyCode>3301964J31</companyCode>" +
+                "      <businessNo>" + orderno + "</businessNo>" +
+                "      <businessType>IMPORTORDER</businessType>" +
+                "      <declareType>1</declareType>" +
+                "      <chkMark>"+status+"</chkMark>" +
+                "      <noticeDate>"+date+"</noticeDate>" +
+                "      <noticeTime>00:03</noticeTime>" +
+                "      <resultList>" +
+                "          <jkfResultDetail>" +
+                "              <resultInfo>"+resulInfo+"</resultInfo>" +
+                "          </jkfResultDetail>" +
+                "      </resultList>" +
+                "  </jkfResult>" +
                 "        </list>" +
                 "    </body>" +
                 "</mo>";

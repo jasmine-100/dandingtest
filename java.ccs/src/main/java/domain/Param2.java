@@ -8,10 +8,10 @@ import lombok.Data;
  * @Date : Created in 2020/8/10 9:25
  */
 @Data
-public class Hezhu {
+public class Param2 {
     private String content;
 
-    public Hezhu(String content) {
+    public Param2(String content) {
         this.content = content;
     }
 }

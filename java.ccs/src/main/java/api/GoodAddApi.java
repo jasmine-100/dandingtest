@@ -4,6 +4,7 @@ import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import dao.BaseParam;
 import domain.Good;
+import domainout.BackGood;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

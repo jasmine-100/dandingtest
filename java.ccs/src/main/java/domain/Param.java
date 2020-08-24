@@ -1,4 +1,4 @@
-package orderutils;
+package domain;
 
 import lombok.Data;
 
