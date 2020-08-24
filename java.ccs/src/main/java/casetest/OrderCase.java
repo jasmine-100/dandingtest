@@ -32,8 +32,8 @@ public class OrderCase {
             String declareOrderNo = "DC"+str;
             // 添加商品项
             List<Item> items = new ArrayList<Item>();
-            items.add(new Item("JHKY08241053",3,9));
-            items.add(new Item("JHKY08241046",10,2));
+            items.add(new Item("JHKY08241053","SKU08241053",3,9));
+            items.add(new Item("JHKY08241046","SKU08241046",10,2));
             // 组装申报单
             Order order = new Order("xiaoyuer","小鱼儿",outOrderno,declareOrderNo,"SF",Data.logiticsNo,Data.routeCode,"","","", items);
             //接口：推送申报单
@@ -47,7 +47,7 @@ public class OrderCase {
         String orderno = "JA08201723421";
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("pd1406",3,10));
+        items.add(new Item("pd1406","sku1406",3,10));
         // 组装申报单
         Order order = new Order("xiaoyuer","小鱼儿",orderno,orderno,"SF","SF"+new Random().nextInt(999999),Data.routeCode,"","","", items);
         //接口：推送申报单

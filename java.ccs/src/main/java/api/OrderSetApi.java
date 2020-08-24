@@ -50,11 +50,11 @@ public class OrderSetApi {
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("JHKY08241053",3,9));
-        items.add(new Item("JHKY08241046",10,2));
+        items.add(new Item("JHKY08241053","SKU08241053",3,9));
+        items.add(new Item("JHKY08241046","SKU08241046",10,2));
 
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+new Random().nextInt(999999),"","first1","second1","third1", items);
+        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei","","","", items);
 
         //接口：推送申报单
         new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
