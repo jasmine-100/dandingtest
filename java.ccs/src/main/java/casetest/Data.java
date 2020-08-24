@@ -15,11 +15,11 @@ public class Data {
     // 此项要配置，不要改
     public static String agentCode = "330766K00W";
 
-    static String str = "202008241355";
+    static String str = "08241600230";
     // 申报单号
-    public static String declareOrderNo = "DO"+str;
+    public static String declareOrderNo = "DC"+str;
     // 清单号
-    public static String invtNo = "QDDO"+str;
+    public static String invtNo = "QD"+str;
     // 运单号
     public static String logiticsNo = "SF"+str;
 

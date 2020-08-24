@@ -14,7 +14,7 @@ import java.io.IOException;
  * @Date : Created in 2020/8/24 14:57
  */
 public class GoodWareAddApi {
-    GoodWare good = new GoodWare("D2019042501274160","DS15979766114883","SkuJS002","测试商品2");
+    GoodWare good = new GoodWare("D2019042501274160","DS15979766114883","SkuJS003","小苹果");
 
     // 仓库添加商品
     @Test
@@ -28,6 +28,5 @@ public class GoodWareAddApi {
     public void updateGood() throws IOException {
         BackGood.backAddGood("20200807",good,"1901900000");
     }
-
 
 }
