@@ -19,12 +19,8 @@ import java.util.*;
  */
 public class GoodApi {
 
-    // 添加普通、无批次商品
-    @Test
-    public void goodAdd() throws Exception {
-        String str = new SimpleDateFormat("yyyyMMddHHmm").format(new Date());
-
-        Good good = new Good(str,"小西瓜","0","100","12.6","巴拉巴拉");
+    // 添加商品
+    public static void goodAdd(Good good) throws Exception {
         ApiClient.doPostJson(BaseParam.GOOD_ADD,null, Cookie.getCookie(),JSON.toJSON(good));
     }
 

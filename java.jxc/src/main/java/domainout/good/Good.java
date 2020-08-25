@@ -14,7 +14,7 @@ public class Good {
      String proName;
      Integer type; //1 保税商品 ， 2 普通商品
      String retailPrice;
-     String isbatch; //1 有批次，0 无批次
+     int isbatch; //1 有批次，0 无批次
      double length; //长
      double width; //宽
      double height;//高
@@ -22,8 +22,9 @@ public class Good {
      double netWeight;//净重
     String brandName;
     String brandCode;
+    int expirationDate;
 
-    public Good(String proCode, String proName, String isbatch, String expirationDate, String retailPrice, String brand) {
+    public Good(String proCode, String proName, int isbatch, int expirationDate, String retailPrice) {
         this.proCode = proCode;
         this.barcode = proCode;
         this.proName = proName;
@@ -37,6 +38,7 @@ public class Good {
         this.retailPrice = retailPrice;
         this.brandCode = "B2008251351162060";
         this.brandName = "巴拉巴拉";
+        this.expirationDate = expirationDate;
     }
 
 

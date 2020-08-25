@@ -28,9 +28,9 @@ public class PurchaseStockinApi {
     @BeforeClass
     public static void setUp() {
         String str = "202007271724";
-        goods.add(new Good(str + 1, "小西瓜", "0", "100", "12.6", "AAA"));
-        goods.add(new Good(str + 2, "小西瓜", "0", "100", "12.6", "AAA"));
-        goods.add(new Good(str + 3, "小西瓜", "0", "100", "12.6", "AAA"));
+//        goods.add(new Good(str + 1, "小西瓜", "0", "100", "12.6", "AAA"));
+//        goods.add(new Good(str + 2, "小西瓜", "0", "100", "12.6", "AAA"));
+//        goods.add(new Good(str + 3, "小西瓜", "0", "100", "12.6", "AAA"));
     }
 
     @Test
@@ -68,8 +68,8 @@ public class PurchaseStockinApi {
         for (Good good:goods){
             int num = 10000;
             //入库单回执商品列表
-            String i = good.getIsbatch();
-            if(i.equals("1")){
+            int i = good.getIsbatch();
+            if(i==1){
                 products.add(new Product(good.getProCode(),"201010",num,"2020-1-1","2022-1-1","ZP"));
             }else{
                 products.add(new Product(good.getProCode(),"",num,"2020-1-1","2022-1-1","ZP"));
