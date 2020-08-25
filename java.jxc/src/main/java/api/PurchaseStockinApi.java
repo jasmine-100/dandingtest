@@ -77,7 +77,7 @@ public class PurchaseStockinApi {
         }
 
         //组装bizdata
-        StockinData stockinData = new StockinData(stockinOrderNo,"01","GL01",BillType.CAIGOU,products);
+        StockinData stockinData = new StockinData(stockinOrderNo,"01","GL01",BillType.CAIGOU,BillType.CAIGOU,products);
         System.out.println(XmlUtil.objToXml(stockinData));
 
         //组装请求参数
