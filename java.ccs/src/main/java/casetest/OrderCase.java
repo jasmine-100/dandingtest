@@ -44,12 +44,11 @@ public class OrderCase {
     // 单一下单
     @Test
     public void orderSet() throws IOException {
-        String orderno = "JA08201723421";
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("pd1406","sku1406",3,10));
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",orderno,orderno,"SF","SF"+new Random().nextInt(999999),Data.routeCode,"","","", items);
+        Order order = new Order("xiaoyuer","小鱼儿",Data.declareOrderNo,Data.declareOrderNo,"SF","SF"+new Random().nextInt(999999),Data.routeCode,"","","", items);
         //接口：推送申报单
         new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
 

@@ -15,12 +15,12 @@ public class OrderDingdanCase {
     // 订单回执：新增申报成功
     @Test
     public void backAddOk() throws IOException {
-        BackDingdanZongshu.declareAddOk(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,"20200817150000001");
+        BackDingdanZongshu.declareAddOk(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,"20200818150000001");
     }
     // 订单回执：逻辑校验通过
     @Test
     public void backLogic() throws IOException {
-        BackDingdanZongshu.logicOk(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,"20200817160000001");
+        BackDingdanZongshu.logicOk(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,"20200818160000001");
     }
 
     // 失败的回执--口岸(口岸异常未处理，已总署为准)
@@ -41,5 +41,4 @@ public class OrderDingdanCase {
     public void errCompany() throws IOException {
         BackDingdanZongshu.errorCompany(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,"20200818130000001");
     }
-
 }
