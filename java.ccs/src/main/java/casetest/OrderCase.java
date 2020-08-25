@@ -2,6 +2,7 @@ package casetest;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
+import com.google.protobuf.Api;
 import dao.BaseParam;
 import domain.Item;
 import domain.Order;
@@ -43,14 +44,14 @@ public class OrderCase {
 
     // 单一下单
     @Test
-    public void orderSet() throws IOException {
+    public void orderSet() throws Exception {
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("pd1406","sku1406",3,10));
         // 组装申报单
         Order order = new Order("xiaoyuer","小鱼儿",Data.declareOrderNo,Data.declareOrderNo,"SF",Data.logiticsNo,Data.routeCode,"","","", items);
         //接口：推送申报单
-        new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
+        ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);
 
     }
 

@@ -21,7 +21,7 @@ public class GoodApi {
 
     // 添加商品
     public static void goodAdd(Good good) throws Exception {
-        ApiClient.doPostJson(BaseParam.GOOD_ADD,null, Cookie.getCookie(),JSON.toJSON(good));
+        ApiClient.doPostJson(BaseParam.GOOD_ADD,null, Cookie.getCookie(),good);
     }
 
 }

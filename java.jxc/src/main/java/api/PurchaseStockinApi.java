@@ -3,6 +3,7 @@ package api;
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import dao.BaseParam;
+import dao.Cookie;
 import domainout.ParamsWms;
 import domainout.ServiceType;
 import domainout.deliver.Product;
@@ -54,6 +55,8 @@ public class PurchaseStockinApi {
         String response = client.doPostJson(JSON.toJSON(purchaseOrder));
         String purchaseId = JsonUtils.getJsonStr(response,"purOrderId").toString();
         Thread.sleep(2000);
+
+        ApiClient.doPostJson(BaseParam.PURCHASE_ADD,null, Cookie.getCookie(),JSON.toJSON(purchaseOrder));
 
         //创建入库单
         this.createStockinOrder(purchaseId,stoOrderItems);
