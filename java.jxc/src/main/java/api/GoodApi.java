@@ -2,6 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
+import dao.BaseParam;
 import domainout.good.Good;
 import org.junit.jupiter.api.Test;
 
@@ -19,19 +20,11 @@ import java.util.List;
 public class GoodApi {
 
     @Test
-    public void testAddGoods() throws IOException {
+    public void goodAdd() throws IOException {
         String str = new SimpleDateFormat("yyyyMMddHHmm").format(new Date());
 
-        List<Good> goods = new ArrayList<>();
-        goods.add(new Good(str+1,"小西瓜","0","100","12.6","AAA"));
-        goods.add(new Good(str+2,"小西瓜","0","100","12.6","AAA"));
-        goods.add(new Good(str+3,"小西瓜","0","100","12.6","AAA"));
+        Good good = new Good(str,"小西瓜","0","100","12.6","巴拉巴拉");
 
-        for (Good good:goods){
-            //接口：创建商品
-            ApiClient client = new ApiClient("http://logistics-api-fat.yang800.com/xhr/pro/upsert");
-            client.doPostJson(JSON.toJSON(good));
-        }
-
+        new ApiClient(BaseParam.GOOD_ADD).doPostJson(JSON.toJSON(good));
     }
 }

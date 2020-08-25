@@ -14,7 +14,7 @@ import java.io.IOException;
 public class TuihuoCase {
 
     // 取退货单列表的退货单号，去掉TH
-    String orderNo = "20082513200232";
+    String orderNo = "20082514000235";
 
     // 回执：待人工审核
     @Test
@@ -35,7 +35,7 @@ public class TuihuoCase {
     // 异常回执：地址不详
     @Test
     public void backFail() throws Exception {
-        BackTuiHuo.backAddressError(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200816080000001");
+        BackTuiHuo.backAddressError(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200816090000001");
     }
 
 }

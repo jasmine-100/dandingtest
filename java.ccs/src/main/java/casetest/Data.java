@@ -15,7 +15,7 @@ public class Data {
     // 此项要配置，不要改
     public static String agentCode = "330766K00W";
 
-    static String str = "08251315";
+    static String str = "08251416";
     // 申报单号
     public static String declareOrderNo = "DC"+str;
     // 清单号

@@ -1,6 +1,7 @@
 package api;
 
 import client.ApiClient;
+import dao.BaseParam;
 import domainout.deliverback.Params;
 import domainout.deliverback.Product;
 import domainout.deliverback.WmsRequestRoot;
@@ -30,9 +31,7 @@ public class DeliverBackApi {
 
         Params params = new Params("1.0","wms.saleorderinfo.update",XmlUtil.objToXml(wmsRequestRoot));
 
-        String url = "http://hwms-notify-fat.yang800.com/dt/notify";
-        ApiClient client = new ApiClient(url);
-        client.doPostForm(params);
+        new ApiClient(BaseParam.WMS_BACK).doPostForm(params);
 
     }
 

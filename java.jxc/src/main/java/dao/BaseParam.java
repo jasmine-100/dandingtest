@@ -11,8 +11,15 @@ public class BaseParam {
 //    public static String BASE_URL = "http://logistics-api-fat.yang800.com";
 
     // 开发环境域名
-    public static String BASE_URL = "http://dev.front-api.yang800.cn:9001";
+    static String BASE_URL = "http://dev.front-api.yang800.cn:9001";
+    static String BACK_URL = "http://dev.front-api.yang800.cn:8000";
 
-    public static String WMS_BACK = BASE_URL+"/dt/notify";
+    // 添加商品
+    public static String GOOD_ADD = BASE_URL+"/xhr/pro/upsert";
+
+    // 回执出入库单
+    public static String WMS_BACK = BACK_URL+"/dt/notify";
+
+
 
 }

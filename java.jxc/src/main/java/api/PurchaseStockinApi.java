@@ -2,6 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
+import dao.BaseParam;
 import domainout.ParamsWms;
 import domainout.ServiceType;
 import domainout.deliver.Product;
@@ -62,7 +63,6 @@ public class PurchaseStockinApi {
     @Test
     public void orderBack() throws Exception {
         String stockinOrderNo = "ET20200728140915928315";
-        String url = "http://hwms-notify-fat.yang800.com/dt/notify";
 
         List<Product> products = new ArrayList<Product>();
         for (Good good:goods){
@@ -83,10 +83,8 @@ public class PurchaseStockinApi {
         //组装请求参数
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(stockinData), ServiceType.STOCKIN_BACK,"1.0");
 
-        ApiClient client = new ApiClient(url);
-        client.doPostForm(param);
+        new ApiClient(BaseParam.WMS_BACK).doPostForm(param);
     }
-
 
     //创建采购单关联的入库单
     public void createStockinOrder(String purchaseId,List<StoOrderItem> stoOrderItems) throws IOException {
