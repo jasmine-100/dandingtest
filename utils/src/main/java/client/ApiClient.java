@@ -4,12 +4,15 @@ import org.apache.http.Consts;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.CookieStore;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import utils.JavaBeanUtils;
@@ -38,6 +41,44 @@ public class ApiClient {
         client = HttpClients.createDefault();
         post = new HttpPost(url);
         get = new HttpGet(url);
+    }
+
+    public static String doPostJson(String url,Object params,Map<String,Object> head,Object body) throws Exception {
+        client = HttpClients.createDefault();
+        post = new HttpPost(url);
+        String responseStr = null;
+
+        //组装params参数
+        if(params!=null){
+            Map<String,Object> map1 = JavaBeanUtils.convertBeanToMap(params);
+            List<NameValuePair> paramList = new ArrayList<NameValuePair>();
+            for (String key : map1.keySet()) {
+                paramList.add(new BasicNameValuePair(key, map1.get(key).toString()));
+            }
+            String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
+            post = new HttpPost(url+"?"+str);
+        }
+
+        //组装head参数
+        if(head!=null) {
+            for (String key : head.keySet()) {
+                System.out.println(key+head.get(key));
+                post.addHeader(key,head.get(key).toString());
+            }
+        }
+
+        if(body!=null){
+            System.out.println("请求数据："+body);
+            StringEntity entity = new StringEntity(body.toString(), "utf-8");// 解决中文乱码问题
+            entity.setContentEncoding("UTF-8");
+            entity.setContentType("application/json");
+            post.setEntity(entity);
+
+            response = client.execute(post);
+            responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
+            System.out.println(responseStr);
+        }
+        return responseStr;
     }
 
     public static String doPostXml(String url,Object params,Object head,Object body) throws Exception {
