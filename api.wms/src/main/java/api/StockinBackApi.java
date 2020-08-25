@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -35,6 +36,20 @@ public class StockinBackApi {
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK, "1.0");
 
         ApiClient.doPostXml(url, param, null, null);
+    }
+
+
+    @Test
+    public void stockinBack() throws Exception {
+        String orderno = "ET20200825184325108586";
+        List<Product> products = new LinkedList<>();
+        products.add(new Product("20200825172332","",1000));
+        StockinData stockinData = new StockinData(orderno,"01","GL01","CGRKD","1",products);
+        System.out.println(XmlUtil.objToXml(stockinData));
+        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.purchaseorderinfo.update", "1.0");
+        System.out.println(paramsWms);
+
+        ApiClient.doPostJson("http://dev.front-api.yang800.cn:8000/dt/notify",paramsWms,null,null);
     }
 
 }

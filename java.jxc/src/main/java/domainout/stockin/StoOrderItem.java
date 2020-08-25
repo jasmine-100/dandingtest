@@ -10,9 +10,9 @@ import lombok.Data;
 @Data
 public class StoOrderItem {
      String proCode;
-     String predictNum;
+     int predictNum;
 
-    public StoOrderItem(String proCode, String purchaseNum) {
+    public StoOrderItem(String proCode, int purchaseNum) {
         this.proCode = proCode;
         this.predictNum = purchaseNum; //入库数量
     }

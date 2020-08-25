@@ -1,10 +1,13 @@
 package dao;
 
+import lombok.Data;
+
 /**
  * @Author： jasmine
  * @Description :
  * @Date : Created in 2020/8/25 10:26
  */
+@Data
 public class WmsData {
     String serviceType;
     String serviceVersion;

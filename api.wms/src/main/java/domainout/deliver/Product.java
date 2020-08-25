@@ -40,5 +40,18 @@ public class Product {
         InventoryType = inventoryType;
     }
 
+    public Product(String sku, String batchCode, int qty) {
+        OrderLineNo = "";
+        Sku = sku;
+        BatchCode = batchCode;
+        Qty = qty;
+        Memo = "你好备注";
+        BatchValue1 = "";
+        BatchValue2 = "";
+        BatchValue3 = "";
+        BatchValue4 = "";
+        BatchValue5 = "";
+        InventoryType = "ZP";
+    }
 
 }

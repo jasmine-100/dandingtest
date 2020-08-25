@@ -16,8 +16,12 @@ public class BaseParam {
 
     // 添加商品
     public static String GOOD_ADD = BASE_URL+"/xhr/pro/upsert";
-    // 添加采购单
+    // 采购单-添加
     public static String PURCHASE_ADD = BASE_URL+"/xhr/purchase/upsert";
+    // 采购单-审核
+    public static String PURCHASE_EXAMINE = BASE_URL+"/xhr/purchase/examineOrder";
+    // 采购入库单-添加
+    public static String STOCKIN_ADD = BASE_URL+"/xhr/stockin/upsert";
 
     // 回执出入库单
     public static String WMS_BACK = BACK_URL+"/dt/notify";

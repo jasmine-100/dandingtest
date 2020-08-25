@@ -96,7 +96,7 @@ public class ApiClient {
         return responseStr;
     }
 
-    public static String doPostJson(String url,Map<String,Object> params,Map<String,Object> head,Object body) throws Exception {
+    public static String doPostJson(String url,Object params,Map<String,Object> head,Object body) throws Exception {
         client = HttpClients.createDefault();
         post = new HttpPost(url);
         String responseStr = null;
