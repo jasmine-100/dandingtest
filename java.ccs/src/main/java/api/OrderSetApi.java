@@ -61,10 +61,10 @@ public class OrderSetApi {
         Thread.sleep(10000);
 
         //回执订单申报结果
-//        dingdanBack(declareOrderno);
+        dingdanBack(declareOrderno);
 
         //回执清单申报结果
-        qingdanBack(declareOrderno);
+//        qingdanBack(declareOrderno);
     }
 
     /**
