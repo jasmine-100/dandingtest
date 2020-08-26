@@ -24,7 +24,7 @@ public class DeliverBack {
         String deliverOrderNo = "OB20200826135543817686";
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product(BaseParams.procode, "", 100, "", "", "ZP"));
+        products.add(new Product("", "", 100, "", "", "ZP"));
         DeliverData deliverData = new DeliverData(deliverOrderNo, BaseParams.warehouseCode, "ZTO", 1.68, BaseParams.hzid, products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);

@@ -25,7 +25,7 @@ public class OutboundBack {
         String outboundOrderNo = "OB20200826141416395008";
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product(BaseParams.procode, "", 100, "", "", "ZP"));
+        products.add(new Product("HW001", "", 100, "", "", "ZP"));
         OutboundData outboundData = new OutboundData(outboundOrderNo,BaseParams.warehouseCode,BaseParams.hzid,"ZTO","PFCKD",1.68,products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);

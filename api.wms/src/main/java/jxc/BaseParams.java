@@ -12,8 +12,4 @@ public class BaseParams {
     public static String warehouseCode = "GLB";
     public static String hzid = "GL01";
 
-
-    public static String procode = "sku08260904";
-
-
 }

@@ -20,9 +20,9 @@ public class StockinBack {
     // 采购入口单回执
     @Test
     public void stockinBack() throws Exception {
-        String stockinOrderNo = "ET20200826135230054980";
+        String stockinOrderNo = "ET20200826143926023902";
         List<Product> products = new LinkedList<>();
-        products.add(new Product(BaseParams.procode,"",100));
+        products.add(new Product("HW001","",150));
         StockinData stockinData = new StockinData(stockinOrderNo,BaseParams.warehouseCode,BaseParams.hzid,"CGRKD","1",products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.purchaseorderinfo.update", "1.0");
 
