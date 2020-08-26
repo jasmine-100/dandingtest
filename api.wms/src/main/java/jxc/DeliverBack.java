@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class DeliverBack {
 
-    // 发货单回执
+    // 发货单回执（B单和C单回执通用）
     @Test
     public void backDeliver() throws Exception {
         // 出库单编号
