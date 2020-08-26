@@ -23,18 +23,6 @@ public class OrderDingdanCase {
         BackDingdanZongshu.logicOk(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,"20200818160000001");
     }
 
-    // 失败的回执--口岸(口岸异常未处理，已总署为准)
-    // 测试用例：验签失败
-//    @Test
-//    public void errorVertify() throws IOException {
-//        BackDingdanKouan.errorEndorse(orderno,"2020-08-17");
-//    }
-//    // 测试用例：支付企业未备案
-//    @Test
-//    public void errorKouan2() throws IOException {
-//        BackDingdanKouan.errorPayCompany(orderno,"2020-8-16");
-//    }
-
     // 常见的错误回执报文
     // 测试用例：总署回执--支付企业不一致(申报终止,可重推)
     @Test

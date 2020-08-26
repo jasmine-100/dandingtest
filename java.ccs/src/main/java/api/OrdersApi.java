@@ -54,11 +54,11 @@ public class OrdersApi {
         items.add(new Item("JHKY08241046","SKU08241046",10,2));
 
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,"SF","SF"+new Random().nextInt(999999),"xiaohei",items);
+        Order order = new Order("xiaoyuer","小鱼儿",declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei",items);
 
         //接口：推送申报单
         new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         //回执订单申报结果
         dingdanBack(declareOrderno);

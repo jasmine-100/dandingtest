@@ -23,7 +23,7 @@ import java.util.Random;
 public class OrderCase {
     @Test
     public void testMore() throws Exception {
-        for (int i =0;i<10;i++){
+        for (int i =0;i<2;i++){
             orderSet();
         }
     }

@@ -12,7 +12,7 @@ public class Data {
     public static String ebpCode = "1234650123";
     // 电商企业编码
     public static String ebcCode= "1234650123";
-    // 此项要配置，不要改
+    // 清关企业编码，需要开发配置，不要改
     public static String agentCode = "330766K00W";
 
     static String str = "08261022";
