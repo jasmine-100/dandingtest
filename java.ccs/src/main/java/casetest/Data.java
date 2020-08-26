@@ -15,7 +15,7 @@ public class Data {
     // 清关企业编码，需要开发配置，不要改
     public static String agentCode = "330766K00W";
 
-    static String str = "08261022";
+    static String str = "0826115016874";
     // 申报单号
     public static String declareOrderNo = "DC"+str;
     // 清单号

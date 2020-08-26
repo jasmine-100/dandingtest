@@ -1,4 +1,4 @@
-package dao;
+package jxc;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;

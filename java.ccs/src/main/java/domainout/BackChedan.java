@@ -1,7 +1,7 @@
 package domainout;
 
 import client.ApiClient;
-import dao.BaseParam;
+import jxc.BaseParam;
 import domain.Param;
 
 import java.io.IOException;

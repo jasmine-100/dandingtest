@@ -1,16 +1,9 @@
 package api;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
-import dao.BaseParam;
-import dao.Cookie;
+import jxc.BaseParam;
+import jxc.Cookie;
 import domainout.good.Good;
-import org.apache.http.impl.cookie.BasicClientCookie;
-import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
 /**
  * @Author： jasmine

@@ -38,15 +38,5 @@ public class StockinBackApi {
         ApiClient.doPostXml(url, param, null, null);
     }
 
-    @Test
-    public void stockinBack() throws Exception {
-        String orderno = "ET20200826094021750603";
-        List<Product> products = new LinkedList<>();
-        products.add(new Product("20200825172332","",1000));
-        StockinData stockinData = new StockinData(orderno,"GLB","GL01","CGRKD","1",products);
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.purchaseorderinfo.update", "1.0");
-
-        ApiClient.doPostForm("http://dev.front-api.yang800.cn:8000/dt/notify",null,null,paramsWms);
-    }
 
 }

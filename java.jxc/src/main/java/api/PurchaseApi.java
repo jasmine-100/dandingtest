@@ -2,17 +2,12 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSONObject;
-import dao.BaseParam;
-import dao.Cookie;
-import dao.WmsData;
-import domainout.deliverback.Product;
-import domainout.deliverback.WmsRequestRoot;
+import jxc.BaseParam;
+import jxc.Cookie;
+import jxc.WmsData;
 import domainout.stockin.*;
-import org.junit.jupiter.api.Test;
-import utils.XmlUtil;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**

@@ -1,4 +1,4 @@
-package dao;
+package jxc;
 
 /**
  * @Author： jasmine

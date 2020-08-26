@@ -2,7 +2,7 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import dao.BaseParam;
+import jxc.BaseParam;
 import domain.Item;
 import domain.Order;
 import domainout.*;

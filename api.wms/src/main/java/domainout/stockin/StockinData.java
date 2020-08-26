@@ -18,8 +18,8 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class StockinData {
      String BillId;
-     String OrigSystem;
      String SyncBillId;
+     String OrigSystem;
      String HZID;
      String WarehouseCode;
      String BillType;

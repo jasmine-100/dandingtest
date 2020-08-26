@@ -1,7 +1,7 @@
 package api;
 
 import client.ApiClient;
-import dao.BaseParam;
+import jxc.BaseParam;
 import domainout.deliverback.Params;
 import domainout.deliverback.Product;
 import domainout.deliverback.WmsRequestRoot;

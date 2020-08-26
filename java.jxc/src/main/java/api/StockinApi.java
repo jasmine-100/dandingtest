@@ -1,8 +1,8 @@
 package api;
 
 import client.ApiClient;
-import dao.BaseParam;
-import dao.Cookie;
+import jxc.BaseParam;
+import jxc.Cookie;
 import domainout.stockin.StoOrderItem;
 import domainout.stockin.StockinOrder;
 

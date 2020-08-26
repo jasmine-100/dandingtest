@@ -77,7 +77,7 @@ public class ApiClient {
 
         if(body!=null){
             try{
-//                System.out.println(body);
+                System.out.println(body);
                 post.setHeader("Content-Type", "application/x-www-form-urlencoded");
                 Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
                 List<NameValuePair> paramList = new ArrayList<NameValuePair>();
@@ -105,7 +105,7 @@ public class ApiClient {
         setParams(params);
         setHead(head);
         if(body!=null){
-            System.out.println("请求数据："+body);
+            System.out.println("请求数据："+JSON.toJSON(body).toString());
             StringEntity entity = new StringEntity(JSON.toJSON(body).toString(), "utf-8");// 解决中文乱码问题
             entity.setContentEncoding("UTF-8");
             entity.setContentType("application/json");

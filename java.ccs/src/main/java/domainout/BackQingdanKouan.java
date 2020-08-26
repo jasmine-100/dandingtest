@@ -1,8 +1,8 @@
 package domainout;
 
 import client.ApiClient;
-import dao.BaseParam;
-import dao.Order;
+import jxc.BaseParam;
+import jxc.Order;
 import domain.Param;
 
 import java.io.IOException;
