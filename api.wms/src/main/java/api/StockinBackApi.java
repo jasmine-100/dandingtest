@@ -38,7 +38,6 @@ public class StockinBackApi {
         ApiClient.doPostXml(url, param, null, null);
     }
 
-
     @Test
     public void stockinBack() throws Exception {
         String orderno = "ET20200825184325108586";
