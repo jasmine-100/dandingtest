@@ -20,7 +20,7 @@ import java.util.Random;
  * @Description : CCS申报单完整流程：推送申报单--申报订单-申报清单--回执电子税单
  * @Date : Created in 2020/7/20 12:23
  */
-public class OrderSetApi {
+public class OrdersApi {
     // 电商平台编码
     static String ebpCode = "1234650123";
     // 电商企业编码
@@ -30,7 +30,7 @@ public class OrderSetApi {
 
     // 批量造订单
     @Test
-    public void batchOrders() throws IOException, InterruptedException {
+    public void batchOrders() throws Exception {
         for(int i=0;i<=5;i++){
             pushOrder();
         }
@@ -40,7 +40,7 @@ public class OrderSetApi {
      * 步骤一：推送申报单
      */
     @Test
-    public void pushOrder() throws IOException, InterruptedException {
+    public void pushOrder() throws Exception {
 
         String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
         // 渠道订单号
@@ -54,7 +54,7 @@ public class OrderSetApi {
         items.add(new Item("JHKY08241046","SKU08241046",10,2));
 
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei","","","", items);
+        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,"SF","SF"+new Random().nextInt(999999),"xiaohei",items);
 
         //接口：推送申报单
         new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
@@ -64,7 +64,7 @@ public class OrderSetApi {
         dingdanBack(declareOrderno);
 
         //回执清单申报结果
-//        qingdanBack(declareOrderno);
+        qingdanBack(declareOrderno);
     }
 
     /**
@@ -85,7 +85,7 @@ public class OrderSetApi {
     /**
      * 步骤三：清单申报回执
      */
-    public void qingdanBack(String declareOrderNo) throws IOException, InterruptedException {
+    public void qingdanBack(String declareOrderNo) throws Exception {
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 

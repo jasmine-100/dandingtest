@@ -40,15 +40,13 @@ public class StockinBackApi {
 
     @Test
     public void stockinBack() throws Exception {
-        String orderno = "ET20200825184325108586";
+        String orderno = "ET20200826094021750603";
         List<Product> products = new LinkedList<>();
         products.add(new Product("20200825172332","",1000));
-        StockinData stockinData = new StockinData(orderno,"01","GL01","CGRKD","1",products);
-        System.out.println(XmlUtil.objToXml(stockinData));
+        StockinData stockinData = new StockinData(orderno,"GLB","GL01","CGRKD","1",products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.purchaseorderinfo.update", "1.0");
-        System.out.println(paramsWms);
 
-        ApiClient.doPostJson("http://dev.front-api.yang800.cn:8000/dt/notify",paramsWms,null,null);
+        ApiClient.doPostForm("http://dev.front-api.yang800.cn:8000/dt/notify",null,null,paramsWms);
     }
 
 }

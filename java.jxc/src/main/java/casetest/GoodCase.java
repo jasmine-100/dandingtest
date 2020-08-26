@@ -17,7 +17,7 @@ public class GoodCase {
     @Test
     public void goodAdd() throws Exception {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        Good good = new Good(str,"小西瓜","B2008260905166930",1,200,"12.6");
+        Good good = new Good(str,"小西瓜","B2008251351162060",1,200,"12.6");
 
         GoodApi.goodAdd(good);
     }

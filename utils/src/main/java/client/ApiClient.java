@@ -67,16 +67,17 @@ public class ApiClient {
         }
     }
 
-    public static String doPostForm(String url,Map<String,Object> params,Map<String,Object> head,Object body) throws Exception {
+    public static String doPostForm(String url,Object params,Map<String,Object> head,Object body) throws Exception {
         client = HttpClients.createDefault();
         post = new HttpPost(url);
         String responseStr = null;
 
         setParams(params);
         setHead(head);
+
         if(body!=null){
             try{
-                System.out.println(body);
+//                System.out.println(body);
                 post.setHeader("Content-Type", "application/x-www-form-urlencoded");
                 Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
                 List<NameValuePair> paramList = new ArrayList<NameValuePair>();
