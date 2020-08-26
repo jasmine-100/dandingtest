@@ -17,17 +17,17 @@ import java.util.List;
 public class PurchaseApi {
 
     // 创建采购单
-    public static String createPurchaseOrder(String procode,int num) throws Exception{
+    public static String createPurchaseOrder(String procode,int num,String supplierCode,String billCurrency) throws Exception{
         // 采购商品项
         List<PurOrderItem> purOrderItems = new ArrayList<PurOrderItem>();
         purOrderItems.add(new PurOrderItem(procode,10,num));
 
         // 采购单信息
-        PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems);
+        PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems,supplierCode,billCurrency);
 
         // 接口推送
         String response = ApiClient.doPostJson(BaseParam.PURCHASE_ADD,null, Cookie.getCookie(),purchaseOrder);
-
+        Thread.sleep(1000);
         // 获取采购单号
         JSONObject jsonObject = (JSONObject) JSONObject.parse(response);
         JSONObject object = (JSONObject) jsonObject.get("result");
@@ -40,7 +40,5 @@ public class PurchaseApi {
     public static void examine(String purchaseId) throws Exception {
         ApiClient.doPostForm(BaseParam.PURCHASE_EXAMINE+"?purOrderId="+purchaseId,null,Cookie.getCookie(),null);
     }
-
-
 
 }

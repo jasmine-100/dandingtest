@@ -17,13 +17,13 @@ import java.util.List;
 public class StockinApi {
 
     // 添加采购单
-    public static void stockin(String purchaseId,String procode,int num) throws Exception {
+    public static void stockin(String purchaseId,String logicWareCode ,String procode,int num) throws Exception {
         // 入库单商品项
         List<StoOrderItem> stoOrderItems = new LinkedList<>();
         stoOrderItems.add(new StoOrderItem(procode,num));
 
         // 入库单信息
-        StockinOrder stockinOrder = new StockinOrder("LSMSMJQJMW",purchaseId,stoOrderItems);
+        StockinOrder stockinOrder = new StockinOrder(logicWareCode,purchaseId,stoOrderItems);
 
         // 借口推送
         ApiClient.doPostJson(BaseParam.STOCKIN_ADD,null, Cookie.getCookie(),stockinOrder);

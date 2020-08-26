@@ -13,13 +13,13 @@ public class StokcinCase {
 
     @Test
     public void stockinAdd () throws Exception {
-        String procode = "20200826092934";
-        int num = 100;
+        String procode = "sku08261516";
+        int num = 80;
 
-        String orderId = PurchaseApi.createPurchaseOrder(procode,num);
+        String orderId = PurchaseApi.createPurchaseOrder(procode,num,"S200826093442963114","RMB");
 
         PurchaseApi.examine(orderId);
 
-        StockinApi.stockin(orderId,procode,num);
+        StockinApi.stockin(orderId,"LSS6TSGHGT",procode,num);
     }
 }
