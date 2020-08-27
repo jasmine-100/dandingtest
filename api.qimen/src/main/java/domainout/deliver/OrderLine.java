@@ -23,6 +23,7 @@ public class OrderLine {
     String subSourceOrderCode;
     int actualPrice;
     String batchCode;
+    String inventoryType;
 
     public OrderLine(String sourceOrderCode, String ownerCode, String itemCode, String itemName, int planQty, int actualPrice) {
         this.orderLineNo = "";
@@ -36,4 +37,17 @@ public class OrderLine {
         this.actualPrice = actualPrice;
         this.batchCode = "";
     }
+
+    // 退货订单实体类
+    public OrderLine(String ownerCode, String itemCode, String inventoryType, int planQty) {
+        this.orderLineNo = "";
+        this.ownerCode = ownerCode;
+        this.itemCode = itemCode;
+        this.itemId = itemCode;
+        this.inventoryType = inventoryType;
+        this.planQty = planQty;
+        this.batchCode = "";
+    }
+
+
 }

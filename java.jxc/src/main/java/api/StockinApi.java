@@ -25,7 +25,7 @@ public class StockinApi {
         // 入库单信息
         StockinOrder stockinOrder = new StockinOrder(logicWareCode,purchaseId,stoOrderItems);
 
-        // 借口推送
+        // 接口推送
         ApiClient.doPostJson(BaseParam.STOCKIN_ADD,null, Cookie.getCookie(),stockinOrder);
     }
 

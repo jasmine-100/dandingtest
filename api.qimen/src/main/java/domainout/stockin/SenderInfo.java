@@ -13,25 +13,25 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SenderInfo {
-String company;
-String name;
-String zipCode;
-String tel;
-String mobile;
-String countryCode;
-String province;
-String city;
-String area;
-String town;
-String detailAddress;
+    String company;
+    String name;
+    String zipCode;
+    String tel;
+    String mobile;
+    String countryCode;
+    String province;
+    String city;
+    String area;
+    String town;
+    String detailAddress;
 
-public SenderInfo() {
-this.company = "旗舰店";
-this.name = "jasmine";
-this.tel = "15522223333";
-this.mobile = "15522223333";
-this.countryCode = "中国";
-  this.province = "浙江省";
+    public SenderInfo() {
+        this.company = "旗舰店";
+        this.name = "jasmine";
+        this.tel = "15522223333";
+        this.mobile = "15522223333";
+        this.countryCode = "中国";
+        this.province = "浙江省";
         this.city = "杭州市";
         this.area = "江干区";
         this.town = "彩虹小镇";
@@ -50,7 +50,7 @@ this.countryCode = "中国";
         this.detailAddress = "理想大道101号A座5楼";
     }
 
-    public SenderInfo(String company,String province, String city, String area) {
+    public SenderInfo(String company, String province, String city, String area) {
         this.company = company;
         this.name = "jasmine";
         this.tel = "15522223333";

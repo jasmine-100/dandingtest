@@ -10,17 +10,17 @@ import java.util.List;
  */
 @XmlRootElement(name = "request")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DeliverData {
+public class RequestOrderDeliver {
      DeliveryOrder deliveryOrder;
 
     @XmlElementWrapper(name = "orderLines")
     @XmlElement(name = "orderLine")
      List<OrderLine> orderLines;
 
-    public DeliverData() {
+    public RequestOrderDeliver() {
     }
 
-    public DeliverData(DeliveryOrder deliveryOrder, List<OrderLine> orderLines) {
+    public RequestOrderDeliver(DeliveryOrder deliveryOrder, List<OrderLine> orderLines) {
         this.deliveryOrder = deliveryOrder;
         this.orderLines = orderLines;
     }

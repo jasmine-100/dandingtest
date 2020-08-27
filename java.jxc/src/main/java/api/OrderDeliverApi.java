@@ -17,7 +17,7 @@ import java.util.List;
  * @Description : 创建发货单--审核--配货
  * @Date : Created in 2020/7/20 14:45
  */
-public class DeliverApi {
+public class OrderDeliverApi {
 
     @Test
     public void deliverOrder() throws IOException {

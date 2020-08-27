@@ -14,7 +14,7 @@ public class Method {
     public static final String OUTBOUND = "stockout.create";
 
     //采购入库单
-    public static final String STOCKIN = "entryorder.create";
+    public static final String STOCKIN = "";
 
 
 }

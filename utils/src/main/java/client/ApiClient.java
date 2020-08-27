@@ -130,6 +130,7 @@ public class ApiClient {
             System.out.println(body);
             //组装xml参数
             StringEntity entity2 = new StringEntity(body.toString(), "utf-8");// 解决中文乱码问题
+            post.setHeader("Content-Type","application/xml");
             post.setEntity(entity2);
         }
         response = client.execute(post);

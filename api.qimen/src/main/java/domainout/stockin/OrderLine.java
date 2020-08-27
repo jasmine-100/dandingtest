@@ -38,4 +38,14 @@ public class OrderLine {
         this.batchCode = "";
         this.unit = "个";
     }
+
+    public OrderLine(String ownerCode, String itemCode,int qty, String inventoryType,String batchCode) {
+        this.orderLineNo = "";
+        this.ownerCode = ownerCode;
+        this.itemCode = itemCode;
+        this.itemId = itemCode;
+        this.inventoryType = inventoryType;
+        this.planQty = qty;
+        this.batchCode = batchCode;
+    }
 }
