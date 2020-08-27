@@ -1,8 +1,8 @@
 package api;
 
 import client.ApiClient;
-import jxc.BaseParam;
-import jxc.Cookie;
+import casetest.BaseParam;
+import casetest.Cookie;
 import domainout.good.Good;
 
 /**

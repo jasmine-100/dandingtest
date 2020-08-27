@@ -2,8 +2,8 @@ package api;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSONObject;
-import jxc.BaseParam;
-import jxc.Cookie;
+import casetest.BaseParam;
+import casetest.Cookie;
 import domainout.stockin.*;
 
 import java.util.ArrayList;

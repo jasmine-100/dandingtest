@@ -35,10 +35,10 @@ public class StockoutBack {
     @Test
     public void backOutDiaobo() throws Exception {
         // 出库单编号
-        String outboundOrderNo = "OB20200826135543817686";
+        String outboundOrderNo = "OB20200827164000761066";
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product("", "", 100, "", "", "ZP"));
+        products.add(new Product("HW001", "", 10, "", "", "ZP"));
         OutboundData outboundData = new OutboundData(outboundOrderNo, BaseParams.warehouseCode, BaseParams.hzid,"ZTO","DBCKD",1.68 ,products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);

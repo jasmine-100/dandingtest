@@ -20,19 +20,19 @@ import java.util.List;
 public class OrderDeliver {
 
     //外部订单号，相同货主内唯一
-    String orderno = "JOD"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+    String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 
     //进销存存在的店铺名称
-    String shopName = "小店";
+    String sellerNick = "爽肤水";
 
     @Test
     public void deliverOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,Data.ownerCode,"sku07301047","",10,10));
+        orderLines.add(new OrderLine(orderno,Data.ownerCode,"sku08260904","",10,10));
 
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode,shopName,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode,sellerNick,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
 
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);

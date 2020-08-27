@@ -31,7 +31,7 @@ public class StockinBackApi {
         List<Product> products = new ArrayList<>();
         products.add(new Product("JHK000123", "000123", 100, "2020-1-1", "2023-6-6", "ZP"));
 
-        StockinData wmsRequestRoot = new StockinData(orderno, whCode, hzid, BillType.CAIGOU, "0", products);
+        StockinData wmsRequestRoot = new StockinData(orderno, whCode, hzid, BillType.CAIGOU, 1,1, products);
 
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK, "1.0");
 

@@ -1,4 +1,4 @@
-package jxc;
+package casetest;
 
 /**
  * @Author： jasmine

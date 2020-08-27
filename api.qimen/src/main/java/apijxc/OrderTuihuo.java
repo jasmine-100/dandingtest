@@ -21,14 +21,14 @@ import java.util.Random;
  * @Date : Created in 2020/8/27 14:10
  */
 public class OrderTuihuo {
-    String orderno = "JTH"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+    String orderno = "QM_TH"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
     String expressCode = "YT"+new Random().nextInt(999999);
 
     @Test
     public void order() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(Data.ownerCode,"sku07301047","ZP",10));
+        orderLines.add(new OrderLine(Data.ownerCode,"SKU-XIGUA","ZP",100));
 
         // 组装body的订单项
         ReturnOrder returnOrder = new ReturnOrder(orderno,Data.whCode,"THRK",expressCode,new SenderInfo("浙江省","杭州市","西湖区"));

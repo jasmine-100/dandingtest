@@ -48,7 +48,6 @@ public class ApiClient {
         //组装head参数
         if(head!=null) {
             for (String key : head.keySet()) {
-                System.out.println(key+head.get(key));
                 post.addHeader(key,head.get(key).toString());
             }
         }
@@ -78,7 +77,7 @@ public class ApiClient {
 
         if(body!=null){
             try{
-                System.out.println(body);
+//                System.out.println(body);
                 post.setHeader("Content-Type", "application/x-www-form-urlencoded");
                 Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
                 List<NameValuePair> paramList = new ArrayList<NameValuePair>();
@@ -107,7 +106,7 @@ public class ApiClient {
         setParams(params);
         setHead(head);
         if(body!=null){
-            System.out.println("请求数据："+JSON.toJSON(body).toString());
+//            System.out.println("请求数据："+JSON.toJSON(body).toString());
             StringEntity entity = new StringEntity(JSON.toJSON(body).toString(), "utf-8");// 解决中文乱码问题
             entity.setContentEncoding("UTF-8");
             entity.setContentType("application/json");
@@ -133,7 +132,7 @@ public class ApiClient {
         if (body != null){
             System.out.println(body);
             //组装xml参数
-            HttpEntity entity2 = new StringEntity(body.toString());// 解决中文乱码问题
+            HttpEntity entity2 = new StringEntity(body.toString(),"utf-8");// 解决中文乱码问题
             post.addHeader("Context-Type","text/xml;charset=UTF-8");
             post.setEntity(entity2);
         }

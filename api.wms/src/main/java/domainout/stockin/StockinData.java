@@ -27,8 +27,8 @@ public class StockinData {
      String OpertatorTime;
      String Memo;
      String BillDate;
-     String IsConfirm;
-     String BatchNo;
+     int IsConfirm;  // 0-全部入库；1-部分入库
+     int BatchNo;
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
@@ -37,7 +37,7 @@ public class StockinData {
     public StockinData() {
     }
 
-    public StockinData(String syncBillId, String warehouseCode, String HZID, String billType,String batchNo, List<Product> products) {
+    public StockinData(String syncBillId, String warehouseCode, String HZID, String billType,int isConfirm,int batchNo, List<Product> products) {
         BillId = "RELBRJ20012000950392";
         OrigSystem = "Y800OMS";
         SyncBillId = syncBillId;
@@ -47,7 +47,7 @@ public class StockinData {
         OpertatorTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         Memo = "你好备注";
         BillDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        IsConfirm = "0";
+        IsConfirm = isConfirm;
         this.HZID = HZID;
         Products = products;
         BatchNo = batchNo;

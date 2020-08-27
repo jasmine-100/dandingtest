@@ -19,16 +19,16 @@ import java.util.List;
  */
 public class OrderStockin {
     //外部订单号，相同货主内唯一
-    String orderno = "JOS"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+    String orderno = "QM_S"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 
     @Test
     public void orderSet() throws Exception {
 
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(Data.ownerCode, "sku07301047", 100, "ZP"));
+        orderLines.add(new OrderLine(Data.ownerCode, "sku08260904", 1001, "ZP"));
         //组装订单项
-        EntryOrder entryOrder = new EntryOrder(orderno, Data.ownerCode, Data.whCode, "CGRK", "");
+        EntryOrder entryOrder = new EntryOrder(orderno, Data.ownerCode, Data.whCode, "CGRK", "S200827133843428257");
 
         //组装请求body
         OrderData orderData = new OrderData(entryOrder, orderLines);

@@ -22,7 +22,6 @@ public class OutboundData {
      String BusinessType;
      String Operator;
      String OperatorTime;
-
      String ShippingCode;
      String ShippingCompany;
      String OrigSystem;
