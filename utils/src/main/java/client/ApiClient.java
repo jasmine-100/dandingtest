@@ -1,18 +1,18 @@
 package client;
 
 import com.alibaba.fastjson.JSON;
-import org.apache.http.Consts;
-import org.apache.http.Header;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
+import org.apache.http.*;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -67,7 +67,8 @@ public class ApiClient {
         }
     }
 
-    public static String doPostForm(String url,Object params,Map<String,Object> head,Object body) throws Exception {
+    public static String doPostForm(String URL,Object params,Map<String,Object> head,Object body) throws Exception {
+        url = URL;
         client = HttpClients.createDefault();
         post = new HttpPost(url);
         String responseStr = null;
@@ -97,7 +98,8 @@ public class ApiClient {
         return responseStr;
     }
 
-    public static String doPostJson(String url,Object params,Map<String,Object> head,Object body) throws Exception {
+    public static String doPostJson(String URL,Object params,Map<String,Object> head,Object body) throws Exception {
+        url = URL;
         client = HttpClients.createDefault();
         post = new HttpPost(url);
         String responseStr = null;
@@ -118,8 +120,10 @@ public class ApiClient {
         return responseStr;
     }
 
-    public static String doPostXml(String url,Object params,Map<String,Object> head,Object body) throws Exception {
+    public static String doPostXml(String URL,Object params,Map<String,Object> head,Object body) throws Exception {
+        url = URL;
         client = HttpClients.createDefault();
+        System.out.println(url);
         post = new HttpPost(url);
         String responseStr = null;
 
@@ -129,8 +133,8 @@ public class ApiClient {
         if (body != null){
             System.out.println(body);
             //组装xml参数
-            StringEntity entity2 = new StringEntity(body.toString(), "utf-8");// 解决中文乱码问题
-            post.setHeader("Content-Type","application/xml");
+            HttpEntity entity2 = new StringEntity(body.toString());// 解决中文乱码问题
+            post.addHeader("Context-Type","text/xml;charset=UTF-8");
             post.setEntity(entity2);
         }
         response = client.execute(post);

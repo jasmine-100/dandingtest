@@ -8,6 +8,7 @@ package apijxc;
 public class Data {
 
     public static String url = "http://outtest.order.yang800.cn/qimen/api";
+
     //仓库编码：取经销存系统的逻辑仓编码
     public static String whCode = "LSS6TSGHGT";
 
