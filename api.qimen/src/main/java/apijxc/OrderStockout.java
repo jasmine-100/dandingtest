@@ -25,7 +25,7 @@ public class OrderStockout {
     //进销存存在的店铺名称
     String sellerNick = "爽肤水";
     // 商品编码
-    String sku = "SKU08261503";
+    String sku = "sku08260904";
     int planQty = 100;
 
     /**
