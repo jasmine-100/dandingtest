@@ -73,8 +73,10 @@ public class OrderStockout {
     public static void orderCancel (String orderCode) throws Exception {
         // 接口参数
         Param param = new Param("order.cancel",Data.customerId);
+        System.out.println(param);
         // 接口消息体
         Cancel cancel = new Cancel(orderCode,"JYCK",Data.whCode, "");
+        System.out.println(XmlUtil.objToXml(cancel));
 
         ApiClient.doPostXml(Data.url,param,null,XmlUtil.objToXml(cancel));
     }

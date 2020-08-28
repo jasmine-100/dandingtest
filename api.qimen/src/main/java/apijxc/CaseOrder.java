@@ -58,10 +58,10 @@ public class CaseOrder {
         System.out.println(orderno);
     }
 
-    // 取消订单
+    // 取消c单和B单
     @Test
     public void cancel () throws Exception {
-        OrderStockout.orderCancel("");
+        OrderStockout.orderCancel("QM20200828193209369");
     }
 
 }
