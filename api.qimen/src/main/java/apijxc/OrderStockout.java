@@ -70,11 +70,11 @@ public class OrderStockout {
      * @Author jasmine
      * @Desc 奇门接口--取消订单
      */
-    public static void orderCancel (String orderno) throws Exception {
+    public static void orderCancel (String orderCode) throws Exception {
         // 接口参数
         Param param = new Param("order.cancel",Data.customerId);
         // 接口消息体
-        Cancel cancel = new Cancel(orderno,"JYCK",Data.whCode, Data.ownerCode);
+        Cancel cancel = new Cancel(orderCode,"JYCK",Data.whCode, "");
 
         ApiClient.doPostXml(Data.url,param,null,XmlUtil.objToXml(cancel));
     }

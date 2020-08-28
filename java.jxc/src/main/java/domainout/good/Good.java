@@ -24,7 +24,7 @@ public class Good {
     String brandCode;
     int expirationDate;
 
-    public Good(String proCode, String proName,String brandCode,int isbatch, int expirationDate, String retailPrice) {
+    public Good(String proCode, String proName,String brandCode,String brandName,int isbatch, int expirationDate, String retailPrice) {
         this.proCode = proCode;
         this.barcode = proCode;
         this.proName = proName;
@@ -37,6 +37,7 @@ public class Good {
         this.netWeight = 9;
         this.retailPrice = retailPrice;
         this.brandCode = brandCode;
+        this.brandName = brandName;
         this.expirationDate = expirationDate;
     }
 

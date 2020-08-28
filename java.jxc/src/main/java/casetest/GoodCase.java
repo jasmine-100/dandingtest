@@ -17,14 +17,14 @@ public class GoodCase {
     // 添加有批次的商品
     @Test
     public void goodAdd1() throws Exception {
-        Good good = new Good("SKU08261506","小西瓜","B2008260905166930",1,200,"12.6");
+        Good good = new Good("SKU08281752","小南瓜","B2008260905166930","巴拉巴拉",1,200,"12.6");
         GoodApi.goodAdd(good);
     }
 
     // 添加无批次的商品
     @Test
     public void goodAdd2() throws Exception {
-        Good good = new Good("SKU08261504","小西瓜","B2008260905166930",0,0,"12.6");
+        Good good = new Good("SKU08261504","小西瓜","B2008260905166930","巴拉巴拉",0,0,"12.6");
         GoodApi.goodAdd(good);
     }
 

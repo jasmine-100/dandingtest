@@ -17,28 +17,20 @@ import java.util.List;
  * @Date : Created in 2020/8/26 15:40
  */
 public class BackStockout {
-    // 出库单编号
-    String orderId = "OB20200826135543817686";
-    // 出库商品sku编码
-    String sku = "";
-    // 商品批次号（有批次的商品需要填写，无批次的空）
-    String batchCode = "";
 
     // 销售单回执（B单和C单回执通用）
-    @Test
-    public void backDeliver() throws Exception {
+    public static void backDeliver(String orderId,String sku,String batchCode,int qty,String batchValue1,String batchValue2,String inventoryType) throws Exception {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(sku, batchCode, 100, "", "", "ZP"));
+        products.add(new Product(sku, batchCode, qty, batchValue1, batchValue2, inventoryType));
         DeliverData deliverData = new DeliverData(orderId, BaseParams.warehouseCode, "ZTO", 1.68, BaseParams.hzid, products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }
 
     // 调拨出库单回执
-    @Test
-    public void backOutDiaobo() throws Exception {
+    public static void backOutDiaobo(String orderId,String sku,String batchCode,int qty,String batchValue1,String batchValue2,String inventoryType) throws Exception {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(sku, batchCode, 10, "", "", "ZP"));
+        products.add(new Product(sku, batchCode, qty, batchValue1, batchValue2, inventoryType));
         OutboundData outboundData = new OutboundData(orderId, BaseParams.warehouseCode, BaseParams.hzid,"ZTO","DBCKD",1.68 ,products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);

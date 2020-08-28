@@ -17,35 +17,51 @@ public class CaseOrder {
     //进销存存在的店铺名称
     String shopNick = "jasmine的小店";
     // 入库商品sku
-    String sku = "sku08281705";
-    String batchCode = "";
-    // 入库数量
-    int num = 1000;
+    String sku = "SKU08281752";
+    String batchCode = "20200811";
 
+    // 采购入库单
     @Test
-    public void stockin() throws Exception {
-        OrderStockin.orderPurchase(sku,num,orderno);
+    public void purchase() throws Exception {
+        OrderStockin.orderPurchase(sku,10000,orderno);
+        System.out.println(orderno);
     }
+    // 退货入库单
     @Test
     public void tuihuo() throws Exception {
-        OrderStockin.orderTuihuo(sku,num,orderno);
+        OrderStockin.orderTuihuo(sku,10000,orderno);
+        System.out.println(orderno);
     }
+    // 调拨入库单
     @Test
     public void diaoboIn() throws Exception {
-        OrderStockin.orderDiaobo(sku,num,orderno);
+        OrderStockin.orderDiaobo(sku,10000,orderno);
+        System.out.println(orderno);
     }
 
+    // 发货出库单
     @Test
     public void deliver() throws Exception {
-        OrderStockout.deliverOrder(orderno,shopNick,sku,batchCode,num);
+        OrderStockout.deliverOrder(orderno,shopNick,sku,batchCode,10);
+        System.out.println(orderno);
     }
+    // 批发出库单
     @Test
     public void outbound() throws Exception {
-        OrderStockout.outboundOrder(orderno,shopNick,sku,batchCode,num);
+        OrderStockout.outboundOrder(orderno,shopNick,sku,batchCode,10);
+        System.out.println(orderno);
     }
+    // 调拨出库单
     @Test
     public void diaoboOut() throws Exception {
-        OrderStockout.diaoboOrder(orderno,shopNick,sku,batchCode,num);
+        OrderStockout.diaoboOrder(orderno,shopNick,sku,batchCode,10);
+        System.out.println(orderno);
+    }
+
+    // 取消订单
+    @Test
+    public void cancel () throws Exception {
+        OrderStockout.orderCancel("");
     }
 
 }
