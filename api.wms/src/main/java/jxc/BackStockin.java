@@ -39,9 +39,9 @@ public class BackStockin {
     @Test
     public void backTuihuo() throws Exception {
         List<Product> products = new LinkedList<>();
-        products.add(new Product(sku,"20200815",5,"2020-08-11 11:49:50","2022-8-12 11:49:50","ZP"));
-        products.add(new Product(sku,"20200816",6,"2020-08-11 11:49:50","2022-8-12 11:49:50","ZP"));
-        StockinData stockinData = new StockinData(stockinOrderNo,BaseParams.warehouseCode,BaseParams.hzid,"SOTHRKD",1,7,products);
+        products.add(new Product(sku,"20200817",17,"2020-08-11 11:49:50","2022-8-12 11:49:50","ZP"));
+        products.add(new Product(sku,"20200818",8,"2020-08-30 11:49:50","2025-8-12 11:49:50","CP"));
+        StockinData stockinData = new StockinData(stockinOrderNo,BaseParams.warehouseCode,BaseParams.hzid,"SOTHRKD",0,10,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
