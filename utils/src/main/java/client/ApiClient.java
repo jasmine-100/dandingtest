@@ -77,7 +77,7 @@ public class ApiClient {
 
         if(body!=null){
             try{
-//                System.out.println(body);
+                System.out.println(body);
                 post.setHeader("Content-Type", "application/x-www-form-urlencoded");
                 Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
                 List<NameValuePair> paramList = new ArrayList<NameValuePair>();
@@ -122,7 +122,6 @@ public class ApiClient {
     public static String doPostXml(String URL,Object params,Map<String,Object> head,Object body) throws Exception {
         url = URL;
         client = HttpClients.createDefault();
-        System.out.println(url);
         post = new HttpPost(url);
         String responseStr = null;
 
@@ -130,7 +129,7 @@ public class ApiClient {
         setHead(head);
         //组装body参数(xml格式)
         if (body != null){
-            System.out.println(body);
+//            System.out.println(body);
             //组装xml参数
             HttpEntity entity2 = new StringEntity(body.toString(),"utf-8");// 解决中文乱码问题
             post.addHeader("Context-Type","text/xml;charset=UTF-8");
