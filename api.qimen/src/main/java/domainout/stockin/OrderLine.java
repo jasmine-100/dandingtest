@@ -1,5 +1,7 @@
 package domainout.stockin;
 
+import lombok.Data;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
@@ -8,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
  * @Description :
  * @Date : Created in 2020/7/24 13:53
  */
+@Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderLine {
 
@@ -17,6 +20,7 @@ public class OrderLine {
      String itemId;
      String itemName;
      int planQty;
+     int actualPrice;
      int actualQty;
      double purchasePrice;
      double retailPrice;
@@ -24,9 +28,13 @@ public class OrderLine {
      String batchCode;
      String unit;
 
-    public OrderLine(String ownerCode, String itemCode,int qty, String inventoryType) {
+    String sourceOrderCode;
+    String subSourceOrderCode;
+
+    // 推送采购入库单实体类
+    public OrderLine(String itemCode,int qty, String batchCode) {
         this.orderLineNo = "";
-        this.ownerCode = ownerCode;
+        this.ownerCode = "";
         this.itemCode = itemCode;
         this.itemId = itemCode;
         this.itemName = "";
@@ -34,18 +42,34 @@ public class OrderLine {
         this.actualQty = qty;
         this.purchasePrice = 10;
         this.retailPrice = 10;
-        this.inventoryType = inventoryType;
-        this.batchCode = "";
+        this.inventoryType = "ZP";
+        this.batchCode = batchCode;
         this.unit = "个";
     }
 
-    public OrderLine(String ownerCode, String itemCode,int qty, String inventoryType,String batchCode) {
+    // 退货入库订单实体类
+    public OrderLine(String ownerCode,String itemCode,int qty, String inventoryType,String batchCode) {
         this.orderLineNo = "";
         this.ownerCode = ownerCode;
         this.itemCode = itemCode;
         this.itemId = itemCode;
-        this.inventoryType = inventoryType;
         this.planQty = qty;
+        this.inventoryType = inventoryType;
         this.batchCode = batchCode;
     }
+
+    // 推送发货单实体类
+    public OrderLine(String ownerCode, String itemCode, int planQty, String batchCode) {
+        this.orderLineNo = "";
+        this.ownerCode = ownerCode;
+        this.itemCode = itemCode;
+        this.itemId = itemCode;
+        this.itemName = "";
+        this.planQty = planQty;
+        this.sourceOrderCode = "";
+        this.subSourceOrderCode = "";
+        this.actualPrice = 10;
+        this.batchCode = batchCode;
+    }
+
 }

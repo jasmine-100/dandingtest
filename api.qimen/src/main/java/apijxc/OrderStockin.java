@@ -1,7 +1,7 @@
 package apijxc;
 
 import client.ApiClient;
-import domainout.Method;
+import domainout.stockin.OrderLine;
 import domainout.Param;
 import domainout.returnorder.RequestOrderReturn;
 import domainout.returnorder.ReturnOrder;
@@ -21,24 +21,17 @@ import java.util.Random;
  * @Date : Created in 2020/7/24 13:43
  */
 public class OrderStockin {
-    //外部订单号，相同货主内唯一
-    String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-    String expressCode = "YT"+new Random().nextInt(999999);
-    // 入库商品sku
-    String sku = "SKU08261503";
-    // 入库数量
-    int num = 100;
+
     /**
      * 采购入库单
      * @throws Exception
      */
-    @Test
-    public void orderSet() throws Exception {
+    public static void orderPurchase(String sku,int num,String orderno) throws Exception {
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(Data.ownerCode, sku, num, "ZP"));
+        orderLines.add(new OrderLine(sku, num, ""));
         //组装订单项
-        EntryOrder entryOrder = new EntryOrder(orderno, Data.ownerCode, Data.whCode, "CGRK", "S200827133843428257");
+        EntryOrder entryOrder = new EntryOrder(orderno, Data.whCode, "CGRK", "S200827133843428257");
         //组装请求body
         OrderData orderData = new OrderData(entryOrder, orderLines);
 
@@ -49,13 +42,12 @@ public class OrderStockin {
      * 退货入库单
      * @throws Exception
      */
-    @Test
-    public void order() throws Exception {
+    public static void orderTuihuo(String sku,int num,String orderno) throws Exception {
         // 组装body的商品项
-        List<domainout.deliver.OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new domainout.deliver.OrderLine(Data.ownerCode,sku,"ZP",num));
+        List<OrderLine> orderLines = new ArrayList<>();
+        orderLines.add(new OrderLine("",sku,num,"",""));
         // 组装body的订单项
-        ReturnOrder returnOrder = new ReturnOrder(orderno,Data.whCode,"THRK",expressCode,new SenderInfo("浙江省","杭州市","西湖区"));
+        ReturnOrder returnOrder = new ReturnOrder(orderno,Data.whCode,"THRK","",new SenderInfo("浙江省","杭州市","西湖区"));
         // 组装body消息体
         RequestOrderReturn request = new RequestOrderReturn(returnOrder,orderLines);
 
@@ -66,13 +58,12 @@ public class OrderStockin {
      * 调拨入库单
      * 说明：和采购入库单一样，orderType不同
      */
-    @Test
-    public void orderDiaobo() throws Exception {
+    public static void orderDiaobo(String sku,int num,String orderno) throws Exception {
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(Data.ownerCode, sku, num, "ZP"));
+        orderLines.add(new OrderLine(sku, num, ""));
         //组装订单项
-        EntryOrder entryOrder = new EntryOrder(orderno, Data.ownerCode, Data.whCode, "DBRK", "S200827133843428257");
+        EntryOrder entryOrder = new EntryOrder(orderno, Data.whCode, "DBRK", "S200827133843428257");
         //组装请求body
         OrderData orderData = new OrderData(entryOrder, orderLines);
 

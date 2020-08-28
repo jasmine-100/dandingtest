@@ -17,33 +17,32 @@ import java.util.List;
  */
 public class BackStockin {
     // 入库单编号
-    String stockinOrderNo = "ET20200828112826879288";
+    String stockinOrderNo = "ET20200828154919990727";
     // 入库商品sku
-    String sku = "SKU08261503";
+    String sku = "sku08281548";
+
     /**
      * 采购入库单回执
      */
-    @Test
-    public void backPurStockin() throws Exception {
+    public static void backPurStockin(String orderId,String sku,int num,int batchNo,String batchCode,String batchValue1,String batchValue2,String inventoryType,int confirm) throws Exception {
         List<Product> products = new LinkedList<>();
-        products.add(new Product(sku,"20200811",10,"2020-08-11 11:49:50","2022-8-12 11:49:50","CP"));
-        StockinData stockinData = new StockinData(stockinOrderNo,BaseParams.warehouseCode,BaseParams.hzid,"CGRKD",0,2,products);
+        products.add(new Product(sku,batchCode,num,batchValue1,batchValue2,inventoryType));
+//        products.add(new Product(sku,"20200811",700,"2020-08-11 11:49:50","2022-8-12 11:49:50","ZP"));
+        StockinData stockinData = new StockinData(orderId,BaseParams.warehouseCode,BaseParams.hzid,"CGRKD",confirm,batchNo,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.purchaseorderinfo.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
     }
+
     /**
      * 退货入库单回执
      * @throws Exception
      */
-    @Test
-    public void backTuihuo() throws Exception {
+    public static void backTuihuo(String orderId,String sku,int num,int batchNo,String batchCode,String batchValue1,String batchValue2,String inventoryType,int confirm) throws Exception {
         List<Product> products = new LinkedList<>();
-        products.add(new Product(sku,"20200817",17,"2020-08-11 11:49:50","2022-8-12 11:49:50","ZP"));
-        products.add(new Product(sku,"20200818",8,"2020-08-30 11:49:50","2025-8-12 11:49:50","CP"));
-        StockinData stockinData = new StockinData(stockinOrderNo,BaseParams.warehouseCode,BaseParams.hzid,"SOTHRKD",0,10,products);
+        products.add(new Product(sku,batchCode,num,batchValue1,batchValue2,inventoryType));
+        StockinData stockinData = new StockinData(orderId,BaseParams.warehouseCode,BaseParams.hzid,"SOTHRKD",confirm,batchNo,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
-
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
     }
 
@@ -51,14 +50,11 @@ public class BackStockin {
      * 调拨入库单回执
      * @throws Exception
      */
-    @Test
-    public void backDiaobo() throws Exception {
+    public static void backDiaobo(String orderId, String sku, int num, int batchNo, String batchCode, String batchValue1, String batchValue2, String inventoryType, int confirm) throws Exception {
         List<Product> products = new LinkedList<>();
-        products.add(new Product(sku,"20200813",90,"2020-08-11 11:49:50","2022-8-12 11:49:50","ZP"));
-        products.add(new Product(sku,"20200814",10,"2020-08-11 11:49:50","2022-8-12 11:49:50","CP"));
-        StockinData stockinData = new StockinData(stockinOrderNo,BaseParams.warehouseCode,BaseParams.hzid,"DBRKD",0,1,products);
+        products.add(new Product(sku,batchCode,num,batchValue1,batchValue2,inventoryType));
+        StockinData stockinData = new StockinData(orderId,BaseParams.warehouseCode,BaseParams.hzid,"DBRKD",confirm,batchNo,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
-
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
     }
 

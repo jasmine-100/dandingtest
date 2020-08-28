@@ -22,9 +22,9 @@ public class EntryOrder {
      SenderInfo senderInfo;
 
 
-    public EntryOrder(String entryOrderCode, String ownerCode, String warehouseCode, String orderType, String supplierCode) {
+    public EntryOrder(String entryOrderCode, String warehouseCode, String orderType, String supplierCode) {
         this.entryOrderCode = entryOrderCode;
-        this.ownerCode = ownerCode;
+        this.ownerCode = "";
         this.warehouseCode = warehouseCode;
         this.orderType = orderType;
         this.expectStartTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());

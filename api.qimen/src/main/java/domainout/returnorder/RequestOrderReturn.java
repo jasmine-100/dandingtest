@@ -1,6 +1,5 @@
 package domainout.returnorder;
-
-import domainout.deliver.OrderLine;
+import domainout.stockin.OrderLine;
 import lombok.Data;
 
 import javax.xml.bind.annotation.*;

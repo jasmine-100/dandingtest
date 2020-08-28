@@ -1,7 +1,5 @@
 package domainout.deliver;
-
 import domainout.stockin.SenderInfo;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.text.SimpleDateFormat;
@@ -50,7 +48,7 @@ public class DeliveryOrder {
 
     String remark;
 
-    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode, String shopNick, List<OrderLine> orderLines,String logisticsCode, SenderInfo senderInfo, ReceiverInfo receiverInfo) {
+    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode, String shopNick, List<OrderLine> orderLines, String logisticsCode, SenderInfo senderInfo, ReceiverInfo receiverInfo) {
         this.deliveryOrderCode = deliveryOrderCode;
         this.preDeliveryOrderCode = "20200701";
         this.preDeliveryOrderId = "";
