@@ -25,7 +25,7 @@ public class OrderLine {
     String batchCode;
     String inventoryType;
 
-    public OrderLine(String sourceOrderCode, String ownerCode, String itemCode, String itemName, int planQty, int actualPrice) {
+    public OrderLine(String sourceOrderCode, String ownerCode, String itemCode, String itemName, int planQty, String batchCode) {
         this.orderLineNo = "";
         this.ownerCode = ownerCode;
         this.itemCode = itemCode;
@@ -34,8 +34,8 @@ public class OrderLine {
         this.planQty = planQty;
         this.sourceOrderCode = sourceOrderCode;
         this.subSourceOrderCode = "";
-        this.actualPrice = actualPrice;
-        this.batchCode = "";
+        this.actualPrice = 10;
+        this.batchCode = batchCode;
     }
 
     // 退货订单实体类

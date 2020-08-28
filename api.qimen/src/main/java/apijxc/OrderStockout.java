@@ -23,9 +23,10 @@ public class OrderStockout {
     String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 
     //进销存存在的店铺名称
-    String sellerNick = "爽肤水";
+    String shopNick = "jasmine的小店";
     // 商品编码
     String sku = "sku08260904";
+    String batchCode = "20200811";
     int planQty = 100;
 
     /**
@@ -36,9 +37,9 @@ public class OrderStockout {
     public void deliverOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"", planQty,10));
+        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"", planQty,batchCode));
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode,sellerNick,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode, shopNick,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
 
@@ -53,9 +54,9 @@ public class OrderStockout {
     public void outboundOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",planQty,10));
+        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",planQty,batchCode));
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode,sellerNick,orderLines,"DBL",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode, shopNick,orderLines,"DBL",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
 
@@ -70,9 +71,9 @@ public class OrderStockout {
     public void diaoboOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",planQty,10));
+        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",planQty,batchCode));
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"QTCK",Data.whCode,sellerNick,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"QTCK",Data.whCode, shopNick,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
 
