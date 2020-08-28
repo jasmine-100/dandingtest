@@ -17,8 +17,8 @@ public class CaseOrder {
     //进销存存在的店铺名称
     String shopNick = "jasmine的小店";
     // 入库商品sku
-    String sku = "SKU08281752";
-    String batchCode = "20200811";
+    String sku = "sku08281737";
+    String batchCode = "";
 
     // 采购入库单
     @Test
@@ -63,5 +63,4 @@ public class CaseOrder {
     public void cancel () throws Exception {
         OrderStockout.orderCancel("QM20200828193209369");
     }
-
 }

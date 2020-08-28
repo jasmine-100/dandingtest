@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
  * @Date : Created in 2020/8/28 18:11
  */
 public class CaseStockout {
-    String orderId = "OB20200828191813841443";
-    String sku = "SKU08281752";
-    String batchCode = "20200811";
+    String orderId = "OB20200828193537835345";
+    String sku = "sku08281737";
+    String batchCode = "";
 
     /**
      * 发货单和批发出库单回传
