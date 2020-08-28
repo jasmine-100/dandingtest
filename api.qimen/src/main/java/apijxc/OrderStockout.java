@@ -25,13 +25,18 @@ public class OrderStockout {
     //进销存存在的店铺名称
     String sellerNick = "爽肤水";
     // 商品编码
-    String sku = "sku08260904";
+    String sku = "SKU08261503";
+    int planQty = 100;
 
+    /**
+     * 发货单出库
+     * @throws Exception
+     */
     @Test
     public void deliverOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",10,10));
+        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"", planQty,10));
         // 组装body的订单项
         DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode,sellerNick,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
@@ -40,12 +45,15 @@ public class OrderStockout {
         ApiClient.doPostXml(Data.url,new Param("deliveryorder.create",Data.customerId),null, XmlUtil.objToXml(deliverData));
     }
 
-    // 发货单物流公司使用德邦，即自动转换为批发出库单
+    /**
+     * 发货单物流公司使用德邦，即自动转换为批发出库单
+     * @throws Exception
+     */
     @Test
     public void outboundOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",10,10));
+        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",planQty,10));
         // 组装body的订单项
         DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",Data.whCode,sellerNick,orderLines,"DBL",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
@@ -54,12 +62,15 @@ public class OrderStockout {
         ApiClient.doPostXml(Data.url,new Param("deliveryorder.create",Data.customerId),null, XmlUtil.objToXml(deliverData));
     }
 
-    // 调拨出库单：和发货单一样，改一下ordertype
+    /**
+     * 调拨出库单：和发货单一样，改一下ordertype
+     * @throws Exception
+     */
     @Test
     public void diaoboOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",10,10));
+        orderLines.add(new OrderLine(orderno,Data.ownerCode,sku,"",planQty,10));
         // 组装body的订单项
         DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"QTCK",Data.whCode,sellerNick,orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体

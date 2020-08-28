@@ -63,6 +63,7 @@ public class ApiClient {
             }
             String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
             post = new HttpPost(url+"?"+str);
+//            System.out.println(url+"?"+str);
         }
     }
 
@@ -77,7 +78,7 @@ public class ApiClient {
 
         if(body!=null){
             try{
-                System.out.println(body);
+//                System.out.println(body);
                 post.setHeader("Content-Type", "application/x-www-form-urlencoded");
                 Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
                 List<NameValuePair> paramList = new ArrayList<NameValuePair>();
@@ -129,7 +130,7 @@ public class ApiClient {
         setHead(head);
         //组装body参数(xml格式)
         if (body != null){
-//            System.out.println(body);
+            System.out.println(body);
             //组装xml参数
             HttpEntity entity2 = new StringEntity(body.toString(),"utf-8");// 解决中文乱码问题
             post.addHeader("Context-Type","text/xml;charset=UTF-8");

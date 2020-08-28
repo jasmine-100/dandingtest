@@ -16,7 +16,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/8/26 15:40
  */
-public class StockoutBack {
+public class BackStockout {
     // 出库单编号
     String orderId = "OB20200826135543817686";
     // 出库商品sku编码

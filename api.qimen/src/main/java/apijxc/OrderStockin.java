@@ -24,7 +24,10 @@ public class OrderStockin {
     //外部订单号，相同货主内唯一
     String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
     String expressCode = "YT"+new Random().nextInt(999999);
-    String sku = "";
+    // 入库商品sku
+    String sku = "SKU08261503";
+    // 入库数量
+    int num = 100;
     /**
      * 采购入库单
      * @throws Exception
@@ -33,7 +36,7 @@ public class OrderStockin {
     public void orderSet() throws Exception {
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(Data.ownerCode, sku, 100, "ZP"));
+        orderLines.add(new OrderLine(Data.ownerCode, sku, num, "ZP"));
         //组装订单项
         EntryOrder entryOrder = new EntryOrder(orderno, Data.ownerCode, Data.whCode, "CGRK", "S200827133843428257");
         //组装请求body
@@ -50,7 +53,7 @@ public class OrderStockin {
     public void order() throws Exception {
         // 组装body的商品项
         List<domainout.deliver.OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new domainout.deliver.OrderLine(Data.ownerCode,sku,"ZP",100));
+        orderLines.add(new domainout.deliver.OrderLine(Data.ownerCode,sku,"ZP",num));
         // 组装body的订单项
         ReturnOrder returnOrder = new ReturnOrder(orderno,Data.whCode,"THRK",expressCode,new SenderInfo("浙江省","杭州市","西湖区"));
         // 组装body消息体
@@ -67,7 +70,7 @@ public class OrderStockin {
     public void orderDiaobo() throws Exception {
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(Data.ownerCode, sku, 1001, "ZP"));
+        orderLines.add(new OrderLine(Data.ownerCode, sku, num, "ZP"));
         //组装订单项
         EntryOrder entryOrder = new EntryOrder(orderno, Data.ownerCode, Data.whCode, "DBRK", "S200827133843428257");
         //组装请求body
