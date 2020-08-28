@@ -1,14 +1,12 @@
-package apijxc;
+package jxc;
 
 import client.ApiClient;
 import domainout.Param;
 import domainout.deliver.*;
 import domainout.stockin.SenderInfo;
-import org.junit.Test;
 import utils.XmlUtil;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

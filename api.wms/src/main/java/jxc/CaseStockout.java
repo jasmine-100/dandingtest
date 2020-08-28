@@ -13,7 +13,7 @@ public class CaseStockout {
     String batchCode = "";
 
     /**
-     * 发货单和批发出库单回传
+     * C单和B单  出库回传
      * 只校验批次号，不校验效期
      * 只回传正品，不回传次品
       * @throws Exception
@@ -24,7 +24,7 @@ public class CaseStockout {
     }
 
     @Test
-    public void tuihuo() throws Exception {
+    public void diaobo() throws Exception {
         BackStockout.backOutDiaobo(orderId,sku,batchCode,10,"","","ZP");
     }
 }

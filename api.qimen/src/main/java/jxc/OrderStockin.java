@@ -1,4 +1,4 @@
-package apijxc;
+package jxc;
 
 import client.ApiClient;
 import domainout.stockin.OrderLine;
@@ -6,14 +6,10 @@ import domainout.Param;
 import domainout.returnorder.RequestOrderReturn;
 import domainout.returnorder.ReturnOrder;
 import domainout.stockin.*;
-import org.junit.Test;
 import utils.XmlUtil;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @Author： jasmine
