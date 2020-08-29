@@ -23,6 +23,7 @@ public class CaseStockout {
         BackStockout.backDeliver(orderId,sku,batchCode,9,"","","ZP");
     }
 
+    // 回执调拨出库单
     @Test
     public void diaobo() throws Exception {
         BackStockout.backOutDiaobo(orderId,sku,batchCode,10,"","","ZP");

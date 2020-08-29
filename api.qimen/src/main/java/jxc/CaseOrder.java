@@ -16,25 +16,25 @@ public class CaseOrder {
     //进销存存在的店铺名称
     String shopNick = "jasmine的小店";
     // 入库商品sku
-    String sku = "sku08281737";
+    String sku = "sku08291659";
     String batchCode = "";
 
     // 采购入库单
     @Test
     public void purchase() throws Exception {
-        OrderStockin.orderPurchase(sku,10000,orderno);
+        OrderStockin.orderPurchase(sku,2000,orderno);
         System.out.println(orderno);
     }
     // 退货入库单
     @Test
     public void tuihuo() throws Exception {
-        OrderStockin.orderTuihuo(sku,10000,orderno);
+        OrderStockin.orderTuihuo(sku,2000,orderno);
         System.out.println(orderno);
     }
     // 调拨入库单
     @Test
     public void diaoboIn() throws Exception {
-        OrderStockin.orderDiaobo(sku,10000,orderno);
+        OrderStockin.orderDiaobo(sku,2000,orderno);
         System.out.println(orderno);
     }
 
