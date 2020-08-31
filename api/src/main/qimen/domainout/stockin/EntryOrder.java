@@ -13,6 +13,7 @@ import java.util.Date;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class EntryOrder {
      String entryOrderCode;
+     String purchaseOrderCode;// 采购单号
      String ownerCode;
      String warehouseCode;
      String orderType;
@@ -24,6 +25,7 @@ public class EntryOrder {
 
     public EntryOrder(String entryOrderCode, String warehouseCode, String orderType, String supplierCode) {
         this.entryOrderCode = entryOrderCode;
+        this.purchaseOrderCode = "P"+entryOrderCode;
         this.ownerCode = "";
         this.warehouseCode = warehouseCode;
         this.orderType = orderType;

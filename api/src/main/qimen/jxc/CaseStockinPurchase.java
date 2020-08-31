@@ -21,11 +21,11 @@ public class CaseStockinPurchase {
     }
     @Test
     public void backWhole() throws Exception {
-        StockinModel.stockin("CGRKD","ET20200831104131285858");
+        StockinModel.stockin("CGRKD","ET20200831133426728468");
     }
     @Test
     public void backMore() throws Exception {
-        StockinModel.stockins("CGRKD","ET20200831114203575455");
+        StockinModel.stockins("CGRKD","ET20200831133432768709");
     }
 
     // 采购入库单--有批次
