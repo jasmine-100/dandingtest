@@ -12,39 +12,36 @@ import java.util.Date;
  */
 public class CaseStockinTuihuo {
     String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+    int num = 3000;
 
     // 退货入库单：无批次、一次全部回传
     @Test
     public void stockin() throws Exception {
-        OrderStockin.orderTuihuo(Data.sku,2000,orderno);
+        OrderStockin.orderTuihuo(Data.sku,num,orderno);
     }
     @Test
     public void backWhole() throws Exception {
-        OrderStockin.orderTuihuo(Data.sku,2000,orderno);
-
-        StockinModel.stockin("SOTHRKD","");
+        StockinModel.stockin("SOTHRKD","ET20200831144824119512",num);
     }
     // 退货入库单：无批次、多次回传
     @Test
     public void backMore() throws Exception {
-        OrderStockin.orderTuihuo(Data.sku,2000,orderno);
-
-        StockinModel.stockins("SOTHRKD","");
+        StockinModel.stockins("SOTHRKD","ET20200831144828370097",num);
     }
 
     // 退货入库单：无批次、一次全部回传
     @Test
     public void stockinBatch() throws Exception {
-        OrderStockin.orderTuihuo(Data.skuBatch,2000,orderno);
+        OrderStockin.orderTuihuo(Data.skuBatch,num,orderno);
     }
     @Test
     public void backWholeBatch() throws Exception {
-        StockinModel.stockinBatch("SOTHRKD","");
+        StockinModel.stockinBatch("SOTHRKD","",num);
     }
     // 退货入库单：无批次、多次回传
     @Test
     public void backMoreBatch() throws Exception {
-        StockinModel.stockinBatchs("SOTHRKD","");
+        StockinModel.stockinBatchs("SOTHRKD","",num);
     }
 
 
