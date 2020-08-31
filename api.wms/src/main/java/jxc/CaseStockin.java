@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
  */
 public class CaseStockin {
     // 入库单编号
-    static String orderId = "ET20200829170756572047";
+    static String orderId = "ET20200831092617464315";
     // 入库商品sku
-    static String sku = "sku08291659";
+    static String sku = "sku08310925";
 
     // 采购单回执
     // 全部入库、无批次

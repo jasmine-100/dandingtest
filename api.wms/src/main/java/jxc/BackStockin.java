@@ -16,10 +16,10 @@ import java.util.List;
  * @Date : Created in 2020/8/26 14:05
  */
 public class BackStockin {
-    // 入库单编号
-    String stockinOrderNo = "ET20200828154919990727";
-    // 入库商品sku
-    String sku = "sku08281548";
+//    // 入库单编号
+//    String stockinOrderNo = "ET20200828154919990727";
+//    // 入库商品sku
+//    String sku = "sku08281548";
 
     /**
      * 采购入库单回执
@@ -28,7 +28,7 @@ public class BackStockin {
         List<Product> products = new LinkedList<>();
         products.add(new Product(sku,batchCode,num,batchValue1,batchValue2,inventoryType));
         StockinData stockinData = new StockinData(orderId,BaseParams.warehouseCode,BaseParams.hzid,billType,confirm,batchNo,products);
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.purchaseorderinfo.update", "1.0");
+        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
     }

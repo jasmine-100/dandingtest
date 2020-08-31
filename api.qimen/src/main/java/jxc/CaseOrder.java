@@ -16,7 +16,7 @@ public class CaseOrder {
     //进销存存在的店铺名称
     String shopNick = "jasmine的小店";
     // 入库商品sku
-    String sku = "sku08291659";
+    String sku = "sku08310925";
     String batchCode = "";
 
     // 采购入库单
