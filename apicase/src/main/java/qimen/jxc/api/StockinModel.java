@@ -1,6 +1,5 @@
-package qimen.jxccase;
+package qimen.jxc.api;
 
-import org.junit.jupiter.api.Test;
 import wms.jxc.BackStockin;
 
 /**

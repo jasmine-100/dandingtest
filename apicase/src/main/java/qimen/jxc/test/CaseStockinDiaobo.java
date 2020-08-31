@@ -1,6 +1,9 @@
-package qimen.jxccase;
+package qimen.jxc.test;
 
 import org.junit.jupiter.api.Test;
+import qimen.jxc.api.Data;
+import qimen.jxc.api.OrderStockin;
+import qimen.jxc.api.StockinModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,11 +26,11 @@ public class CaseStockinDiaobo {
     }
     @Test
     public void backWhole() throws Exception {
-        StockinModel.stockin("DBRKD","ET20200831144644357067",num);
+        StockinModel.stockin("DBRKD","ET20200831145622855832",num);
     }
     @Test
     public void backMore() throws Exception {
-        StockinModel.stockins("DBRKD","ET20200831144649535549",num);
+        StockinModel.stockins("DBRKD","ET20200831145625701878",num);
     }
 
     // 调拨入库单--有批次
@@ -38,11 +41,11 @@ public class CaseStockinDiaobo {
     }
     @Test
     public void backWholeBatch() throws Exception {
-        StockinModel.stockinBatch("DBRKD","ET20200831144717089557",num);
+        StockinModel.stockinBatch("DBRKD","ET20200831145651744749",num);
     }
     @Test
     public void backMoreBatch() throws Exception {
-        StockinModel.stockinBatchs("DBRKD","ET20200831144720589447",num);
+        StockinModel.stockinBatchs("DBRKD","ET20200831145654080230",num);
     }
 
 }

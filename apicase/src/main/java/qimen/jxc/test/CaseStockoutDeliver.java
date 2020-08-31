@@ -1,6 +1,8 @@
-package qimen.jxccase;
+package qimen.jxc.test;
 
 import org.junit.jupiter.api.Test;
+import qimen.jxc.api.Data;
+import qimen.jxc.api.OrderStockout;
 import wms.jxc.BackStockout;
 
 import java.text.SimpleDateFormat;
@@ -17,13 +19,13 @@ public class CaseStockoutDeliver {
     // 发货出库单--无批次--下单
     @Test
     public void deliver() throws Exception {
-        OrderStockout.deliverOrder(orderno,Data.shopNick,Data.sku,"",10);
+        OrderStockout.deliverOrder(orderno, Data.shopNick,Data.sku,"",100);
         System.out.println(orderno);
     }
     // 回传
     @Test
     public void deliverBack() throws Exception {
-        BackStockout.backDeliver("",Data.sku,"",9,"","","ZP");
+        BackStockout.backDeliver("OB20200831150005242000",Data.sku,"",99,"","","ZP");
     }
 
     // 有批次--下单
@@ -35,13 +37,13 @@ public class CaseStockoutDeliver {
     // 回传
     @Test
     public void deliverBackBatch() throws Exception {
-        BackStockout.backDeliver("",Data.skuBatch,Data.batch,9,"","","ZP");
+        BackStockout.backDeliver("OB20200831150037390820",Data.skuBatch,Data.batch,9,"","","ZP");
     }
 
     // 取消c单和B单
     @Test
     public void cancel () throws Exception {
-        OrderStockout.orderCancel("QM20200828193209369");
+        OrderStockout.orderCancel("QM20200831150155873");
     }
 
 }

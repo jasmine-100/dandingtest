@@ -1,4 +1,4 @@
-package qimen.jxccase;
+package qimen.jxc.api;
 
 import client.ApiClient;
 import qimen.domain.Param;
