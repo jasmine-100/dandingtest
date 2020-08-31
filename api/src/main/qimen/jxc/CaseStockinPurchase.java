@@ -25,7 +25,7 @@ public class CaseStockinPurchase {
     }
     @Test
     public void backMore() throws Exception {
-        StockinModel.stockins("CGRKD","ET20200831103520961151");
+        StockinModel.stockins("CGRKD","ET20200831114203575455");
     }
 
     // 采购入库单--有批次
@@ -40,6 +40,6 @@ public class CaseStockinPurchase {
     }
     @Test
     public void backMoreBatch() throws Exception {
-        StockinModel.stockinBatchs("CGRKD","ET20200831104343254177");
+        StockinModel.stockinBatchs("CGRKD","ET20200831114429438110");
     }
 }
