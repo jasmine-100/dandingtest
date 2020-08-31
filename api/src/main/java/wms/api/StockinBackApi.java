@@ -1,11 +1,11 @@
 package wms.api;
 
 import client.ApiClient;
-import wms.domainout.ParamsWms;
-import wms.domainout.ServiceType;
-import wms.domainout.deliver.Product;
-import wms.domainout.stockin.BillType;
-import wms.domainout.stockin.StockinData;
+import wms.domain.ParamsWms;
+import wms.domain.ServiceType;
+import wms.domain.deliver.Product;
+import wms.domain.stockin.BillType;
+import wms.domain.stockin.StockinData;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 

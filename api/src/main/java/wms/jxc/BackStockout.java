@@ -1,10 +1,10 @@
 package wms.jxc;
 
 import client.ApiClient;
-import wms.domainout.ParamsWms;
-import wms.domainout.deliver.DeliverData;
-import wms.domainout.deliver.Product;
-import wms.domainout.outbound.OutboundData;
+import wms.domain.ParamsWms;
+import wms.domain.deliver.DeliverData;
+import wms.domain.deliver.Product;
+import wms.domain.outbound.OutboundData;
 import utils.XmlUtil;
 
 import java.util.ArrayList;

@@ -1,10 +1,10 @@
 package wms.api;
 
 import client.ApiClient;
-import wms.domainout.ParamsWms;
-import wms.domainout.ServiceType;
-import wms.domainout.deliver.Product;
-import wms.domainout.outbound.OutboundData;
+import wms.domain.ParamsWms;
+import wms.domain.ServiceType;
+import wms.domain.deliver.Product;
+import wms.domain.outbound.OutboundData;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 

@@ -1,4 +1,4 @@
-package wms.domainout.stockin;
+package wms.domain.stockin;
 
 /**
  * @Author： jasmine

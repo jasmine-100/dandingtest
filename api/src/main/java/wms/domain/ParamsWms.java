@@ -1,4 +1,4 @@
-package wms.domainout;
+package wms.domain;
 
 import lombok.Data;
 

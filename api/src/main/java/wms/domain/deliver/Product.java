@@ -1,4 +1,4 @@
-package wms.domainout.deliver;
+package wms.domain.deliver;
 
 import lombok.Data;
 

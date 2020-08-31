@@ -1,4 +1,4 @@
-package wms.domainout.sn;
+package wms.domain.sn;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;

@@ -1,6 +1,6 @@
-package wms.domainout.stockin;
+package wms.domain.stockin;
 
-import wms.domainout.deliver.Product;
+import wms.domain.deliver.Product;
 import lombok.Data;
 
 import javax.xml.bind.annotation.*;

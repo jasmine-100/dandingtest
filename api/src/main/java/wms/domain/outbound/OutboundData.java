@@ -1,7 +1,6 @@
-package wms.domainout.deliver;
+package wms.domain.outbound;
 
-import lombok.Data;
-
+import wms.domain.deliver.Product;
 import javax.xml.bind.annotation.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,49 +10,46 @@ import java.util.Random;
 /**
  * @Author： jasmine
  * @Description :
- * @Date : Created in 2020/7/24 9:03
+ * @Date : Created in 2020/7/24 9:36
  */
-@Data
 @XmlRootElement(name = "wmsRequestRoot")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DeliverData {
+public class OutboundData {
      String BillId;
      String SyncBillId;
-     String DealCode;
      String WarehouseCode;
+     String HZID;
+     String BusinessType;
      String Operator;
      String OperatorTime;
      String ShippingCode;
      String ShippingCompany;
      String OrigSystem;
-     String BillDate;
+     String OrderType;
      double Weight;
      String Memo;
-     String QGBillId;
-     String HZID;
 
     @XmlElementWrapper(name = "Products")
     @XmlElement(name = "Product")
      List<Product> Products;
 
-    public DeliverData(String syncBillId, String warehouseCode, String shippingCompany, double weight, String HZID, List<Product> products) {
-        BillId = "RELHXY20021100953752";
-        SyncBillId = syncBillId;
-        DealCode = "420000050620200210473068849300";
-        WarehouseCode = warehouseCode;
-        Operator = "笑笑";
-        OperatorTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        ShippingCode = "Y"+new Random().nextInt(10000000);
-        ShippingCompany = shippingCompany;
-        OrigSystem = "Y800OMS";
-        BillDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        Weight = weight;
-        Memo = "你好备注";
-        this.QGBillId = "29242020I090828278";
-        this.HZID = HZID;
-        Products = products;
+    public OutboundData() {
     }
 
-    public DeliverData() {
+    public OutboundData( String syncBillId, String warehouseCode, String HZID, String shippingCompany,String orderType, double weight, List<Product> products) {
+        BillId = "RELBRJ20012000950392";
+        SyncBillId = syncBillId;
+        WarehouseCode = warehouseCode;
+        this.HZID = HZID;
+        BusinessType = "";
+        Operator = "咖宝";
+        OperatorTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        ShippingCode = "Y"+new Random().nextInt(99999999);
+        ShippingCompany = shippingCompany;
+        OrigSystem = "Y800OMS";
+        OrderType = orderType;
+        Weight = weight;
+        Memo = "你好出库单";
+        Products = products;
     }
 }
