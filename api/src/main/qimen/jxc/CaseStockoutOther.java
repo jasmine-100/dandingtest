@@ -10,7 +10,7 @@ import java.util.Date;
  * @Description :
  * @Date : Created in 2020/8/31 10:25
  */
-public class CaseStockoutPifa {
+public class CaseStockoutOther {
     String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 
     // 批发出库单
