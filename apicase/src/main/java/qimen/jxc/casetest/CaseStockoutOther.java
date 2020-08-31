@@ -24,7 +24,7 @@ public class CaseStockoutOther {
     }
     @Test
     public void outboundBack() throws Exception {
-        BackStockout.backDeliver("OB20200831150240019251",Data.sku,"",11,"","","ZP");
+        BackStockout.backDeliver("OB20200831181726467144",Data.sku,"",200,"","","ZP");
     }
 
     // 有批次

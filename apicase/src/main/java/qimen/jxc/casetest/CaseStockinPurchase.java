@@ -25,11 +25,11 @@ public class CaseStockinPurchase {
     }
     @Test
     public void backWhole() throws Exception {
-        StockinModel.stockin("CGRKD","ET20200831145503103282",num);
+        StockinModel.stockin("CGRKD","ET20200831173005442516",100);
     }
     @Test
     public void backMore() throws Exception {
-        StockinModel.stockins("CGRKD","ET20200831145509490829",num);
+        StockinModel.stockins("CGRKD","ET20200831171912571626",num);
     }
 
     // 采购入库单--有批次
@@ -40,7 +40,7 @@ public class CaseStockinPurchase {
     }
     @Test
     public void backWholeBatch() throws Exception {
-        StockinModel.stockinBatch("CGRKD","ET20200831145554208577",num);
+        StockinModel.stockinBatch("CGRKD","ET20200831172257025460",1000);
     }
     @Test
     public void backMoreBatch() throws Exception {
