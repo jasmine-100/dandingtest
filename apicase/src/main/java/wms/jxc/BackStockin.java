@@ -32,6 +32,15 @@ public class BackStockin {
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
     }
 
+    public static void backStockinDetail(String whcode,String billType,String orderId,String sku,int num,int batchNo,String batchCode,String batchValue1,String batchValue2,String inventoryType,int confirm) throws Exception {
+        List<Product> products = new LinkedList<>();
+        products.add(new Product(sku,batchCode,num,batchValue1,batchValue2,inventoryType));
+        StockinData stockinData = new StockinData(orderId,whcode,BaseParams.hzid,billType,confirm,batchNo,products);
+        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
+
+        ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
+    }
+
 //    /**
 //     * 退货入库单回执
 //     * @throws Exception

@@ -1,4 +1,4 @@
-package qimen.jxc.test;
+package qimen.jxc.casetest;
 
 import org.junit.jupiter.api.Test;
 import qimen.jxc.api.Data;
