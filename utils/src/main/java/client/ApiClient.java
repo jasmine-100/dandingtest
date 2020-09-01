@@ -130,7 +130,7 @@ public class ApiClient {
         setHead(head);
         //组装body参数(xml格式)
         if (body != null){
-//            System.out.println(body);
+            System.out.println(body);
             //组装xml参数
             HttpEntity entity2 = new StringEntity(body.toString(),"utf-8");// 解决中文乱码问题
             post.addHeader("Context-Type","text/xml;charset=UTF-8");

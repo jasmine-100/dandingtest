@@ -68,9 +68,9 @@ public class CaseStockoutDeliver {
         List<OrderLine> orderLines = new ArrayList<>();
         orderLines.add(new OrderLine("","SKU09011642",10,""));
         orderLines.add(new OrderLine("","SKU09011645",12,"20200901"));
-        orderLines.add(new OrderLine("","SKU09011512",8,"20200901"));
+        orderLines.add(new OrderLine("","SKU09011645",8,"20200905"));
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK","LSBNV8LQYC", "我的店",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK","LSBNV8LQYC", "谁的店",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
 
