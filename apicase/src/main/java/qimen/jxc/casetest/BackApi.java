@@ -23,20 +23,10 @@ import java.util.List;
  * @Date : Created in 2020/8/31 15:38
  */
 public class BackApi {
-    // 采购入库单回执
-    @Test
-    public void stockinBack() throws Exception {
-        List<Product> products = new LinkedList<>();
-        products.add(new Product("sku","",100,"","","ZP"));
-        StockinData stockinData = new StockinData("","","GL01","CGRK",0,1,products);
-        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
-
-        ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
-    }
 
     // 发货单回执
     @Test
-    public static void backDelivers() throws Exception {
+    public void backDelivers() throws Exception {
         List<Product> products = new ArrayList<>();
         products.add(new Product("SKU08311329", "batchCode", 100, "", "", "ZP"));
         DeliverData deliverData = new DeliverData("", "", "ZTO", 1.68, BaseParams.hzid, products);
