@@ -15,10 +15,6 @@ import java.util.List;
  * @Date : Created in 2020/8/26 14:05
  */
 public class BackStockin {
-//    // 入库单编号
-//    String stockinOrderNo = "ET20200828154919990727";
-//    // 入库商品sku
-//    String sku = "sku08281548";
 
     /**
      * 采购入库单回执

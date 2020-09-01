@@ -20,9 +20,9 @@ public class Data {
 
     public static String shopNick = "小小店铺";
 
-    public static String sku = "SKU08311328";
+    public static String sku = "SKU09011535";
 
-    public static String skuBatch = "SKU08311329";
+    public static String skuBatch = "SKU09011512";
     public static String batch = "20200812";
 
 }

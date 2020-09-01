@@ -8,11 +8,13 @@ import utils.XmlUtil;
 import wms.domain.ParamsWms;
 import wms.domain.deliver.DeliverData;
 import wms.domain.deliver.Product;
+import wms.domain.stockin.StockinData;
 import wms.jxc.BackStockin;
 import wms.jxc.BackStockout;
 import wms.jxc.BaseParams;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -21,12 +23,23 @@ import java.util.List;
  * @Date : Created in 2020/8/31 15:38
  */
 public class BackApi {
-
+    // 采购入库单回执
     @Test
-    public static void backDelivers(String orderId,String sku,String batchCode,int qty,String batchValue1,String batchValue2,String inventoryType) throws Exception {
+    public void stockinBack() throws Exception {
+        List<Product> products = new LinkedList<>();
+        products.add(new Product("sku","",100,"","","ZP"));
+        StockinData stockinData = new StockinData("","","GL01","CGRK",0,1,products);
+        ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
+
+        ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
+    }
+
+    // 发货单回执
+    @Test
+    public static void backDelivers() throws Exception {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(sku, batchCode, qty, batchValue1, batchValue2, inventoryType));
-        DeliverData deliverData = new DeliverData(orderId, "", "ZTO", 1.68, BaseParams.hzid, products);
+        products.add(new Product("SKU08311329", "batchCode", 100, "", "", "ZP"));
+        DeliverData deliverData = new DeliverData("", "", "ZTO", 1.68, BaseParams.hzid, products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }
@@ -43,7 +56,7 @@ public class BackApi {
     }
     @Test
     public void backDiaoboIn() throws Exception {
-        BackStockin.backStockinDetail("LSHRGHWLRN","DBRKD","ET20200831155624062313","SKU08311329",10,1,"20200810","2020-08-11 10:00:50","2023-08-11 10:00:50","ZP",0);
+        BackStockin.backStockinDetail("LSHRGHWLRN","DBRKD","ET20200901105000339288","SKU08311328",100,1,"","","","ZP",0);
     }
 
 }

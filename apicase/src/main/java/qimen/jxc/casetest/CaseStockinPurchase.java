@@ -16,7 +16,7 @@ import java.util.Date;
 public class CaseStockinPurchase {
     //外部订单号，相同货主内唯一
     String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-    int num = 3000;
+    int num = 1000;
 
     // 采购入库单
     @Test
@@ -25,7 +25,7 @@ public class CaseStockinPurchase {
     }
     @Test
     public void backWhole() throws Exception {
-        StockinModel.stockin("CGRKD","ET20200831173005442516",100);
+        StockinModel.stockin("CGRKD","ET20200831173005442516",num);
     }
     @Test
     public void backMore() throws Exception {

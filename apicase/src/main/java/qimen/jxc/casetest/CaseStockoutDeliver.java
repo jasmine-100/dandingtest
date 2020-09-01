@@ -25,13 +25,13 @@ public class CaseStockoutDeliver {
     // 回传
     @Test
     public void deliverBack() throws Exception {
-        BackStockout.backDeliver("OB20200831181406225941",Data.sku,"",10,"","","ZP");
+        BackStockout.backDeliver("OB20200901151812321615",Data.sku,"",200,"","","ZP");
     }
 
     // 有批次--下单
     @Test
     public void deliverBatch() throws Exception {
-        OrderStockout.deliverOrder(orderno,Data.shopNick,Data.skuBatch,"",10);
+        OrderStockout.deliverOrder(orderno,Data.shopNick,Data.skuBatch,"",100);
         System.out.println(orderno);
     }
     // 回传

@@ -64,7 +64,6 @@ public class OrderStockin {
         EntryOrder entryOrder = new EntryOrder(orderno, Data.whCode, "DBRK", "S200827133843428257");
         //组装请求body
         OrderData orderData = new OrderData(entryOrder, orderLines);
-
         ApiClient.doPostXml(Data.url, new Param("entryorder.create", Data.customerId), null, XmlUtil.objToXml(orderData));
     }
 }

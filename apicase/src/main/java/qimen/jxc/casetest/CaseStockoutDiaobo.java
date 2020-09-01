@@ -25,7 +25,7 @@ public class CaseStockoutDiaobo {
     // 回执
     @Test
     public void back() throws Exception {
-        BackStockout.backOutDiaobo("OB20200831150820076299",Data.sku,"",9,"","","ZP");
+        BackStockout.backOutDiaobo("OB20200901105003015962",Data.sku,"",100,"","","ZP");
     }
 
     // 有批次--下单
