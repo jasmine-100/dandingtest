@@ -48,7 +48,7 @@ public class StockinDiaobo {
     @Test
     public void stockinBack() throws Exception {
         List<Product> products = new LinkedList<>();
-        products.add(new Product("SKU09021031","",1000,"","","ZP"));
+        products.add(new Product("SKU09021031","",2000,"","","ZP"));
         products.add(new Product("SKU09021032","200902",3000,"2020-01-02 10:20:30","2025-01-02 10:20:30","ZP"));
 //        products.add(new Product("SKU09011645","20200901",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
 //        products.add(new Product("SKU09011645","20200902",500,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
@@ -56,11 +56,10 @@ public class StockinDiaobo {
 //        products.add(new Product("SKU09011645","20200903",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
 //        products.add(new Product("SKU09011645","20200904",300,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
 //        products.add(new Product("SKU09011645","20200905",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        StockinData stockinData = new StockinData("ET20200902103325576292","LSBNV8LQYC","GL01","DBRK",0,1,products);
+        StockinData stockinData = new StockinData("ET20200902134758050092","LSBNV8LQYC","GL01","DBRK",0,1,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
     }
-
 
 }
