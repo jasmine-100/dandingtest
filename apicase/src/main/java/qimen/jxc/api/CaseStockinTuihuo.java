@@ -1,12 +1,23 @@
-package qimen.jxc.casetest;
+package qimen.jxc.api;
 
+import client.ApiClient;
 import org.junit.jupiter.api.Test;
-import qimen.jxc.api.Data;
-import qimen.jxc.api.OrderStockin;
-import qimen.jxc.api.StockinModel;
+import qimen.domain.Param;
+import qimen.domain.returnorder.RequestOrderReturn;
+import qimen.domain.returnorder.ReturnOrder;
+import qimen.domain.stockin.OrderLine;
+import qimen.domain.stockin.SenderInfo;
+import utils.XmlUtil;
+import wms.domain.ParamsWms;
+import wms.domain.deliver.Product;
+import wms.domain.stockin.StockinData;
+import wms.jxc.BaseParams;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @Author： jasmine
@@ -46,6 +57,5 @@ public class CaseStockinTuihuo {
     public void backMoreBatch() throws Exception {
         StockinModel.stockinBatchs("SOTHRKD","ET20200831145813083469",num);
     }
-
 
 }

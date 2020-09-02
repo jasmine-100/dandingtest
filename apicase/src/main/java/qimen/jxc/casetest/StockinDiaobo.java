@@ -26,40 +26,9 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/8/31 9:54
  */
-public class CaseStockinDiaobo {
+public class StockinDiaobo {
     //外部订单号，相同货主内唯一
     String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-    int num =3000;
-
-    // 调拨入库单--无批次
-    @Test
-    public void diaoboIn() throws Exception {
-        OrderStockin.orderDiaobo(Data.sku,num,orderno);
-        System.out.println(orderno);
-    }
-    @Test
-    public void backWhole() throws Exception {
-        StockinModel.stockin("DBRKD","ET20200831145622855832",num);
-    }
-    @Test
-    public void backMore() throws Exception {
-        StockinModel.stockins("DBRKD","ET20200831145625701878",num);
-    }
-
-    // 调拨入库单--有批次
-    @Test
-    public void diaoboInBatch() throws Exception {
-        OrderStockin.orderDiaobo(Data.skuBatch,num,orderno);
-        System.out.println(orderno);
-    }
-    @Test
-    public void backWholeBatch() throws Exception {
-        StockinModel.stockinBatch("DBRKD","ET20200831145651744749",num);
-    }
-    @Test
-    public void backMoreBatch() throws Exception {
-        StockinModel.stockinBatchs("DBRKD","ET20200831145654080230",num);
-    }
 
     // 下单
     @Test
@@ -79,15 +48,15 @@ public class CaseStockinDiaobo {
     @Test
     public void stockinBack() throws Exception {
         List<Product> products = new LinkedList<>();
-        products.add(new Product("SKU09011642","",2000,"","","ZP"));
+        products.add(new Product("SKU09011642","",500,"","","ZP"));
 //        products.add(new Product("SKU09011642","",20,"","","CP"));
-        products.add(new Product("SKU09011645","20200901",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09011645","20200902",500,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09011645","20200901",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
-        products.add(new Product("SKU09011645","20200903",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09011645","20200904",300,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09011645","20200905",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        StockinData stockinData = new StockinData("ET20200901173533728341","LSBNV8LQYC","GL01","DBRK",0,1,products);
+//        products.add(new Product("SKU09011645","20200901",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+//        products.add(new Product("SKU09011645","20200902",500,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+//        products.add(new Product("SKU09011645","20200901",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
+//        products.add(new Product("SKU09011645","20200903",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+//        products.add(new Product("SKU09011645","20200904",300,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+//        products.add(new Product("SKU09011645","20200905",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+        StockinData stockinData = new StockinData("ET20200902100608495951","LS0FVYBALT","GL01","DBRK",0,1,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);

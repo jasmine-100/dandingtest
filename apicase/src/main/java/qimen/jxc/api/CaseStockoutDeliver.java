@@ -1,4 +1,4 @@
-package qimen.jxc.casetest;
+package qimen.jxc.api;
 
 import client.ApiClient;
 import org.junit.jupiter.api.Test;
@@ -8,8 +8,6 @@ import qimen.domain.deliver.OrderLine;
 import qimen.domain.deliver.ReceiverInfo;
 import qimen.domain.deliver.RequestOrderDeliver;
 import qimen.domain.stockin.SenderInfo;
-import qimen.jxc.api.Data;
-import qimen.jxc.api.OrderStockout;
 import utils.XmlUtil;
 import wms.domain.ParamsWms;
 import wms.domain.deliver.DeliverData;
@@ -58,34 +56,6 @@ public class CaseStockoutDeliver {
     @Test
     public void cancel () throws Exception {
         OrderStockout.orderCancel("QM20200831150155873");
-    }
-
-    // 发货单
-    // 下单
-    @Test
-    public void deliverOrder() throws Exception {
-        // 组装body的商品项
-        List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine("","SKU09011642",10,""));
-        orderLines.add(new OrderLine("","SKU09011645",12,"20200901"));
-        orderLines.add(new OrderLine("","SKU09011645",8,"20200905"));
-        // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK","LSBNV8LQYC", "谁的店",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
-        // 组装body消息体
-        RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
-
-        ApiClient.doPostXml(Data.url,new Param("deliveryorder.create",Data.customerId),null, XmlUtil.objToXml(deliverData));
-    }
-    // 回执
-    @Test
-    public void backDeliver() throws Exception {
-        List<Product> products = new ArrayList<>();
-        products.add(new Product("SKU09011642", "", 10, "", "", "ZP"));
-        products.add(new Product("SKU09011645", "20200901", 12, "", "", "ZP"));
-        products.add(new Product("SKU09011512", "20200901", 8, "", "", "ZP"));
-        DeliverData deliverData = new DeliverData("OB20200901174524721188","GLB", "ZTO", 1.68, "GL01", products);
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.saleorderinfo.update", "1.0");
-        ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }
 
 }

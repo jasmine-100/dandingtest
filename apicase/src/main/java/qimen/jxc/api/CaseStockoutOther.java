@@ -1,12 +1,24 @@
-package qimen.jxc.casetest;
+package qimen.jxc.api;
 
+import client.ApiClient;
 import org.junit.jupiter.api.Test;
-import qimen.jxc.api.Data;
-import qimen.jxc.api.OrderStockout;
+import qimen.domain.Param;
+import qimen.domain.deliver.DeliveryOrder;
+import qimen.domain.deliver.OrderLine;
+import qimen.domain.deliver.ReceiverInfo;
+import qimen.domain.deliver.RequestOrderDeliver;
+import qimen.domain.stockin.SenderInfo;
+import utils.XmlUtil;
+import wms.domain.ParamsWms;
+import wms.domain.deliver.DeliverData;
+import wms.domain.deliver.Product;
 import wms.jxc.BackStockout;
+import wms.jxc.BaseParams;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author： jasmine

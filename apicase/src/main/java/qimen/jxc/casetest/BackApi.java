@@ -42,11 +42,11 @@ public class BackApi {
     // 调拨出库
     @Test
     public void backDiaoboOut() throws Exception {
-        BackStockout.backOutDiaobo("OB20200831155629230645","SKU08311329","20200810",10,"","","ZP");
+        BackStockout.backOutDiaobo("OB20200902093854807740","SKU09011512","20200901",10,"","","ZP");
     }
     @Test
     public void backDiaoboIn() throws Exception {
-        BackStockin.backStockinDetail("LSHRGHWLRN","DBRKD","ET20200901105000339288","SKU08311328",100,1,"","","","ZP",0);
+        BackStockin.backStockinDetail("LSHRGHWLRN","DBRKD","ET20200902093854544216","SKU09011512",10,1,"20200901","2020-01-02 10:10:50","2025-01-02 10:10:50","ZP",0);
     }
 
 }
