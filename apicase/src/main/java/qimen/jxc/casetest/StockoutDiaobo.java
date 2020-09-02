@@ -35,12 +35,12 @@ public class StockoutDiaobo {
     public void diaoboOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine("","",100,""));
+        orderLines.add(new OrderLine("","SKU09021031",100,""));
+//        orderLines.add(new OrderLine("","SKU09021032",200,"202011"));
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK","", "",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK","LSBNV8LQYC", "谁的店",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
-
         ApiClient.doPostXml(Data.url,new Param("deliveryorder.create",Data.customerId),null, XmlUtil.objToXml(deliverData));
     }
 
@@ -48,8 +48,9 @@ public class StockoutDiaobo {
     // 调拨出库单回执
     public void backOutDiaobo() throws Exception {
         List<Product> products = new ArrayList<>();
-        products.add(new Product("SKU09011642", "", 500, "", "", "ZP"));
-        OutboundData outboundData = new OutboundData("OB20200902100608396383", "LSBNV8LQYC", "GL01","ZTO","DBCKD",1.68 ,products);
+        products.add(new Product("SKU09021031", "", 100, "", "", "ZP"));
+//        products.add(new Product("SKU09021032", "202011", 200, "2020-01-01 10:20:30","2022-01-01 10:20:30", "ZP"));
+        OutboundData outboundData = new OutboundData("OB20200902114259055326", "GLB", "GL01","ZTO","DBCKD",1.68 ,products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }
