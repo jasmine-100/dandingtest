@@ -48,11 +48,12 @@ public class StockoutDiaobo {
     // 调拨出库单回执
     public void backOutDiaobo() throws Exception {
         List<Product> products = new ArrayList<>();
-        products.add(new Product("SKU09021031", "", 20, "", "", "ZP"));
-        products.add(new Product("SKU09021032", "20200900", 10, "","", "ZP"));
-        products.add(new Product("SKU09021032", "200902", 10, "","", "ZP"));
-        products.add(new Product("SKU09021032", "20200902", 10, "","", "ZP"));
-        OutboundData outboundData = new OutboundData("OB20200902154829404774", "GLB", "GL01","ZTO","DBCKD",1.68 ,products);
+        products.add(new Product("SKU09021656", "", 900, "", "", "ZP"));
+        products.add(new Product("SKU09021656", "", 100, "", "", "CP"));
+        products.add(new Product("SKU09021657", "20200901", 1000, "","", "ZP"));
+        products.add(new Product("SKU09021657", "20200902", 900, "","", "ZP"));
+        products.add(new Product("SKU09021657", "20200902", 100, "","", "CP"));
+        OutboundData outboundData = new OutboundData("OB20200902170615877144", "GLB", "GL01","ZTO","DBCKD",1.68 ,products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }

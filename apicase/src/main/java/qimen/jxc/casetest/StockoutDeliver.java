@@ -41,7 +41,7 @@ public class StockoutDeliver {
         orderLines.add(new OrderLine("","SKU09021032",5,"20200900"));
         orderLines.add(new OrderLine("","SKU09021032",6,"20200901"));
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK","LSBNV8LQYC", "店铺123",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK","LSBNV8LQYC", "黑店",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
 
@@ -55,7 +55,7 @@ public class StockoutDeliver {
         products.add(new Product("SKU09021032", "20200902", 10, "", "", "ZP"));
         products.add(new Product("SKU09021032", "20200900", 5, "", "", "ZP"));
         products.add(new Product("SKU09021032", "20200901", 6, "", "", "ZP"));
-        DeliverData deliverData = new DeliverData("OB20200902164531200530","GLB", "ZTO", 1.68, "GL01", products);
+        DeliverData deliverData = new DeliverData("OB20200902164938329829","GLB", "ZTO", 1.68, "GL01", products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }
