@@ -55,7 +55,7 @@ public class StockoutDeliver {
         products.add(new Product("SKU09021032", "20200902", 10, "", "", "ZP"));
         products.add(new Product("SKU09021032", "20200900", 5, "", "", "ZP"));
         products.add(new Product("SKU09021032", "20200901", 6, "", "", "ZP"));
-        DeliverData deliverData = new DeliverData("OB20200902164938329829","GLB", "ZTO", 1.68, "GL01", products);
+        DeliverData deliverData = new DeliverData("OB20200902172912664555","GLB", "ZTO", 1.68, "GL01", products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }
