@@ -1,5 +1,7 @@
 package utils;
 
+import org.junit.jupiter.api.Test;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,7 +17,6 @@ public class UtilTime {
     /**
      * @param time  yyyyMMddHHmmss 格式
      * @return 返回时间戳
-     * @throws ParseException
      */
     public static long getTime(String time){
         Date date = null;
@@ -30,5 +31,8 @@ public class UtilTime {
         return timestamp;
     }
 
-
+    @Test
+    public void test(){
+        System.out.println(getTime("20200901131310"));
+    }
 }
