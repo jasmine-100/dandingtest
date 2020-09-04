@@ -1,6 +1,12 @@
 package domain;
 
 import lombok.Data;
+import utils.UtilTime;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @Author： jasmine
@@ -31,7 +37,7 @@ public class Stock {
     String  secondUnit;
     int totalAmt;
 
-    public Stock(String goodsSeqNo, String productId, String customsBookId) {
+    public Stock(String goodsSeqNo, String productId, String customsBookId){
         this.avgPrice = 10;
         this.currCode = 142;
         this.customsBookId = customsBookId;
@@ -43,7 +49,7 @@ public class Stock {
         this.goodsSeqNo = goodsSeqNo;
         this.goodsUnit = "001";
         this.hsCode = "3304990039";
-        this.inDate = System.currentTimeMillis();
+        this.inDate = UtilTime.getTime("20200901102030");
         this.inLegalQty = 1000;
         this.inQty = 1000;
         this.invtGoodsNo = "";

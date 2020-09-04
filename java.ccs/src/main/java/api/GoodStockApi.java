@@ -13,7 +13,7 @@ import java.io.IOException;
  * @Description : 仓储系统：添加商品
  * @Date : Created in 2020/8/24 14:57
  */
-public class GoodWareAddApi {
+public class GoodStockApi {
     GoodWare good = new GoodWare("D2019042501274160","DS15979766114883","SkuJS003","小苹果");
 
     // 仓库添加商品

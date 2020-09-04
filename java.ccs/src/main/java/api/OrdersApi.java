@@ -50,8 +50,8 @@ public class OrdersApi {
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("JHKY08241053","SKU08241053",3,9));
-        items.add(new Item("JHKY08241046","SKU08241046",10,2));
+        items.add(new Item("JHKY09041042","SKU09041042",3,9));
+//        items.add(new Item("JHKY08241046","SKU08241046",10,2));
 
         // 组装申报单
         Order order = new Order("xiaoyuer","小鱼儿",declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei",items);
@@ -64,7 +64,7 @@ public class OrdersApi {
         dingdanBack(declareOrderno);
 
         //回执清单申报结果
-        qingdanBack(declareOrderno);
+//        qingdanBack(declareOrderno);
     }
 
     /**
