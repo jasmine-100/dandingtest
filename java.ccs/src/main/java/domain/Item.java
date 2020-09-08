@@ -25,4 +25,14 @@ public class Item {
         this.itemLink = "http://www.taobao.com";
         this.unitPrice = unitPrice;
     }
+
+    public Item(String itemNo,int count, double unitPrice) {
+        this.recordNo = "";
+        this.itemNo = itemNo;
+        this.itemName = "外部商品";
+        this.count = count;
+        this.itemLink = "http://www.taobao.com";
+        this.unitPrice = unitPrice;
+    }
+
 }
