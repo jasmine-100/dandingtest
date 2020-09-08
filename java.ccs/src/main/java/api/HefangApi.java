@@ -13,21 +13,34 @@ import java.io.IOException;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2008191520000185";  // 系统内部核放单编号
-    String SeqNo = "YHF08111714";  // 预录入编号
-    String businessId = "QDHF08111714";  // 核放单号
+    String etpsPreentNo = "HF2009081310000192";  // 系统内部核放单编号
+    String SeqNo = "Y"+etpsPreentNo;  // 预录入编号
+    String businessId = "QD"+etpsPreentNo;  // 核放单号
 
     @Test
     public void hefangPass() throws IOException, InterruptedException {
         // 核放单：调用成功
-        BackHefangHezhu.callPass(etpsPreentNo,SeqNo);
+        callPass();
         Thread.sleep(1000);
 
         // 核放单：审核通过
-        BackHefang.backExaminePass(SeqNo,businessId);
+        backExaminePass();
         Thread.sleep(1000);
 
         // 核放单：过卡回执
+        backCheckPass();
+    }
+
+    @Test
+    public void callPass() throws IOException {
+        BackHefangHezhu.callPass(etpsPreentNo,SeqNo);
+    }
+    @Test
+    public void backExaminePass() throws IOException {
+        BackHefang.backExaminePass(SeqNo,businessId);
+    }
+    @Test
+    public void backCheckPass() throws IOException {
         BackHefang.backCheckPass(SeqNo,businessId);
     }
 }

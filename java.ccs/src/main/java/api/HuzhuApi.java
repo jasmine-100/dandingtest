@@ -14,21 +14,21 @@ import java.io.IOException;
 public class HuzhuApi {
 
     // ccs系统内核注单 编号
-    String EtpsPreentNo = "HZ2008191702000179";
+    String EtpsPreentNo = "HZ2009081146000209";
     // 预录入核注单号
-    String SeqNo = "YHZ08191651";
-    String bondInvtNo = "HZQD08191651";
+    String SeqNo = "Y"+EtpsPreentNo;
+    String bondInvtNo = "QD"+EtpsPreentNo;
 
     @Test
-    public void backHezhu() throws IOException, InterruptedException {
-
+    public void backCallpass() throws IOException, InterruptedException {
         // 核放单：调用成功
         BackHefangHezhu.callPass(EtpsPreentNo,SeqNo);
-        Thread.sleep(1000);
+    }
 
+    @Test
+    public void backHezhupass() throws IOException {
         // 核放单：未核扣、审核通过
         BackHezhu.backHezhuPass(EtpsPreentNo,SeqNo,bondInvtNo);
-
     }
 
     @Test
