@@ -14,7 +14,7 @@
         <module>java.ccs</module>
         <module>java.jxc</module>
         <module>api.v3</module>
-        <module>apicase</module>
+        <module>api</module>
     </modules>
 
     <dependencies>

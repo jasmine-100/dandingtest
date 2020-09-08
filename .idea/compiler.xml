@@ -16,7 +16,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api" target="1.8" />
       <module name="api.qimen" target="1.8" />
     </bytecodeTargetLevel>
   </component>
