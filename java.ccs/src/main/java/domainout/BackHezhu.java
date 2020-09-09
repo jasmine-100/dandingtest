@@ -17,13 +17,17 @@ public class BackHezhu {
     static String data = null;
 
     // 未核扣、审核通过
-    public static void backHezhuPass(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) throws IOException {
-        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"0","0",5);
+    public static void backHezhuPass(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo){
+        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,0,0,5);
     }
 
     // 已核扣、审核通过
-    public static void backHezhuSuccess(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) throws IOException {
-        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"2","0",1);
+    public static void backHezhuSuccess(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) {
+        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,2,0,1);
+    }
+
+    public static void backError(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo){
+        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,0,2,3);
     }
 
     /**
@@ -33,9 +37,10 @@ public class BackHezhu {
      * @param bondInvtNo 核注清单编号
      * @param vrfdedMarkcd 0-未核扣，2-已核扣
      * @param invtStucd 2-退单;0-审核通过
+     * @param manageResult 1-通过（已核扣）；2-转人工；3-退单；4-预核扣；5-通过（未核扣）
      * @throws IOException
      */
-    static void function(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo,String vrfdedMarkcd,String invtStucd,int manageResult) throws IOException {
+    static void function(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo,int vrfdedMarkcd,int invtStucd,int manageResult) {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
                 "<Package xmlns=\"http://www.w3.org/2000/09/xmldsig#\">" +

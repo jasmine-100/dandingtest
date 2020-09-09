@@ -58,11 +58,9 @@ public class OrdersApi {
 
         //接口：推送申报单
         ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);
-        Thread.sleep(5000);
 
         //回执订单申报结果
         dingdanBack(declareOrderno);
-        Thread.sleep(5000);
 
         //回执清单申报结果
         qingdanBack(declareOrderno);
@@ -75,13 +73,13 @@ public class OrdersApi {
     public void dingdanBack(String orderno) throws IOException, InterruptedException {
         // 口岸：处理成功
         BackDingdanKouan.backPass(orderno,"2020-8-06");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         // 总署：逻辑校验通过
         BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,"20200806090000001");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         // 总署:新增申报成功
         BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,"20200807100000000");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
     /**

@@ -29,6 +29,11 @@ public class CcsOrder {
         return orderSn;
     }
 
+    @Test
+    public void test(){
+        System.out.println(getOrderSn("DOS0909150322"));
+    }
+
     /**
      * 连接ccs测试库
      * @param sql  查询语句
@@ -39,7 +44,6 @@ public class CcsOrder {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://10.99.111.83:3306/ccs_order","root","ENPInr4GJRefShEI");
-            System.out.println(connection.isClosed());
             Statement statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
         } catch (Exception e) {

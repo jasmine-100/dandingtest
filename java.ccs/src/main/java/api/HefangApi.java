@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2009081733000198";  // 系统内部核放单编号
+    String etpsPreentNo = "HF2009091533000200";  // 系统内部核放单编号
     String SeqNo = "Y"+etpsPreentNo;  // 预录入编号
     String businessId = "QD"+etpsPreentNo;  // 核放单号
 
