@@ -20,7 +20,7 @@ public class GoodStockApi {
     @Test
     public void goodAdd() throws IOException {
         String url = "http://depottest.yang800.cn/api/sku/sync";
-        new ApiClient(url).doPostJson(JSON.toJSON(good));
+        ApiClient.doPostJson(url,null,null,good);
     }
 
     // ccs同步备案商品

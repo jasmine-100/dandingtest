@@ -63,7 +63,8 @@ public class BackTuiHuo {
                 "<returnInfo>"+returnInfo+"</returnInfo>" +
                 "</InvtRefundReturn>" +
                 "</CEB626Message>";
-        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
+//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
+        ApiClient.doPostForm(BaseParam.URL_BACK,null,null,new Param(data));
     }
 
 }

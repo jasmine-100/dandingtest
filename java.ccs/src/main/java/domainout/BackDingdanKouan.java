@@ -56,6 +56,7 @@ public class BackDingdanKouan {
                 "        </list>" +
                 "    </body>" +
                 "</mo>";
-        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data,"other"));
+//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data,"other"));
+        ApiClient.doPostForm(BaseParam.URL_BACK,null,null,new Param(data,"other"));
     }
 }

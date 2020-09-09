@@ -1,8 +1,8 @@
 package domainout;
 
 import client.ApiClient;
+import domain.Param;
 import jxc.BaseParam;
-import domain.Param2;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -18,12 +18,12 @@ public class BackHezhu {
 
     // 未核扣、审核通过
     public static void backHezhuPass(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) throws IOException {
-        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"0","0");
+        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"0","0",5);
     }
 
     // 已核扣、审核通过
     public static void backHezhuSuccess(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) throws IOException {
-        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"2","0");
+        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,"2","0",1);
     }
 
     /**
@@ -35,7 +35,7 @@ public class BackHezhu {
      * @param invtStucd 2-退单;0-审核通过
      * @throws IOException
      */
-    static void function(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo,String vrfdedMarkcd,String invtStucd) throws IOException {
+    static void function(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo,String vrfdedMarkcd,String invtStucd,int manageResult) throws IOException {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
                 "<Package xmlns=\"http://www.w3.org/2000/09/xmldsig#\">" +
@@ -61,7 +61,7 @@ public class BackHezhu {
                                     "<businessId>QD292420E000007507</businessId>" +
                                     "<tmsCnt>0</tmsCnt>" +
                                     "<typecd>1</typecd>" +
-                                    "<manageResult>5</manageResult>" +
+                                    "<manageResult>"+manageResult+"</manageResult>" +
                                     "<manageDate>"+date+"</manageDate>" +
                                     "<rmk/>" +
                                 "</HdeApprResult>" +
@@ -162,7 +162,8 @@ public class BackHezhu {
                         "</BussinessData>" +
                     "</DataInfo>" +
                 "</Package>";
-        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
+//        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param(data));
+        ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 
 }

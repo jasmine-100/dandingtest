@@ -50,18 +50,19 @@ public class OrdersApi {
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("","SKU2009031332",3,9));
-        items.add(new Item("","SKU2008071513",10,2));
+        items.add(new Item("JHKY09091056","SKU09091056",3,9));
+        items.add(new Item("JHKY09091057","SKU09091057",10,2));
 
         // 组装申报单
         Order order = new Order("xiaoyuer","小鱼儿",declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei",items);
 
         //接口：推送申报单
-        new ApiClient(BaseParam.URL_ORDER).doPostJson(JSON.toJSON(order));
+        ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);
         Thread.sleep(5000);
 
         //回执订单申报结果
         dingdanBack(declareOrderno);
+        Thread.sleep(5000);
 
         //回执清单申报结果
         qingdanBack(declareOrderno);

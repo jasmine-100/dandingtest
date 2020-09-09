@@ -34,8 +34,8 @@ public class OrderCase {
         String declareOrderNo = "DC"+str;
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("JHKY08241053","SKU08241053",3,9));
-        items.add(new Item("JHKY08241046","SKU08241046",10,2));
+        items.add(new Item("JHKY09091056","SKU09091056",3,9));
+        items.add(new Item("JHKY09091057","SKU09091057",10,2));
 
         // 组装申报单
 //        Order order = new Order("xiaoyuer","小鱼儿",outOrderno,"SF",Data.logiticsNo,Data.routeCode,items);

@@ -50,7 +50,8 @@ public class BackQingdanKouan {
                         "</list>" +
                     "</body>" +
                 "</mo>";
-        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data,"kouan"));
+//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data,"kouan"));
+        ApiClient.doPostForm(BaseParam.URL_BACK,null,null,new Param(data,"kouan"));
     }
 
 }

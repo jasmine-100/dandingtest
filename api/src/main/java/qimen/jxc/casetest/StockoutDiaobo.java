@@ -35,10 +35,11 @@ public class StockoutDiaobo {
     public void diaoboOrder() throws Exception {
         // 组装body的商品项
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine("","SKU09021031",100,""));
-//        orderLines.add(new OrderLine("","SKU09021032",200,"202011"));
+        orderLines.add(new OrderLine("","SKU09090853",10,""));
+        orderLines.add(new OrderLine("","SKU09090854",10,"20200901"));
+        orderLines.add(new OrderLine("","SKU09090854",10,"20200902"));
         // 组装body的订单项
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK","LSBNV8LQYC", "谁的店",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK","LSS6TSGHGT", "谁的店",orderLines,"SF",new SenderInfo(),new ReceiverInfo());
         // 组装body消息体
         RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
         ApiClient.doPostXml(Data.url,new Param("deliveryorder.create",Data.customerId),null, XmlUtil.objToXml(deliverData));
@@ -48,12 +49,12 @@ public class StockoutDiaobo {
     // 调拨出库单回执
     public void backOutDiaobo() throws Exception {
         List<Product> products = new ArrayList<>();
-//        products.add(new Product("SKU09090853", "", 10, "", "", "ZP"));
-//        products.add(new Product("SKU09021656", "", 100, "", "", "CP"));
-        products.add(new Product("SKU09090854", "20200900", 10, "","", "ZP"));
-//        products.add(new Product("SKU09021657", "20200902", 900, "","", "ZP"));
+        products.add(new Product("SKU09090853", "", 10, "", "", "ZP"));
+//        products.add(new Product("SKU09090853", "", 100, "", "", "CP"));
+        products.add(new Product("SKU09090854", "20200901", 10, "","", "ZP"));
+        products.add(new Product("SKU09090854", "20200902", 10, "","", "ZP"));
 //        products.add(new Product("SKU09021657", "20200902", 100, "","", "CP"));
-        OutboundData outboundData = new OutboundData("OB20200909090900833370", "LSS6TSGHGT", "GL01","ZTO","DBCKD",1.68 ,products);
+        OutboundData outboundData = new OutboundData("OB20200909095813191796", "LSS6TSGHGT", "GL01","ZTO","DBCKD",1.68 ,products);
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.saleorderinfo.update", "1.0");
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,param);
     }

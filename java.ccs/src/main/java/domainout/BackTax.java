@@ -49,7 +49,8 @@ public class BackTax {
                         "</TaxListRd>" +
                     "</Tax>" +
                 "</CEB816Message>";
-        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
+//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
+        ApiClient.doPostForm(BaseParam.URL_BACK,null,null,new Param(data));
     }
 
     // 回执税金状态--汇总
@@ -78,7 +79,8 @@ public class BackTax {
                 "</TaxHeadStatus>" +
                 "</Tax>" +
                 "</CEB818Message>";
-        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
+//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
+        ApiClient.doPostForm(BaseParam.URL_BACK,null,null,new Param(data));
     }
 
 }

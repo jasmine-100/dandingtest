@@ -47,7 +47,7 @@ public class Good {
     public Good(String skuId, String productId, String customsBookId) {
         this.skuId = skuId;
         this.productId = productId;
-        this.goodsRecordName = "压测商品";
+        this.goodsRecordName = "我是商品";
         this.barCode = new Random().nextInt(99999999);
         this.brand = "巴拉巴拉";
         this.brandEn = "balabala";

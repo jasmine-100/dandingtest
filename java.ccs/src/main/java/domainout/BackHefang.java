@@ -1,6 +1,7 @@
 package domainout;
 
 import client.ApiClient;
+import domain.Param;
 import jxc.BaseParam;
 import domain.Param2;
 
@@ -102,7 +103,8 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
+//        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
+        ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 
     // 核放单过卡回执
@@ -181,6 +183,7 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
+//        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
+        ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 }

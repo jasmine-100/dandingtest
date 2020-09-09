@@ -51,14 +51,11 @@ public class StockinPurchase {
         List<Product> products = new LinkedList<>();
         products.add(new Product("SKU09090853","",1000,"","","ZP"));
         products.add(new Product("SKU09090853","",10,"","","CP"));
-        products.add(new Product("SKU09090854","20200900",500,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09090854","20200901",500,"2020-08-11 10:00:50","2022-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09090854","20200902",10,"2020-08-11 10:00:50","2023-08-11 10:00:50","CP"));
-//        products.add(new Product("SKU09021657","20200901",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-//        products.add(new Product("SKU09021657","20200903",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-//        products.add(new Product("SKU09021657","20200904",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
-//        products.add(new Product("SKU09021657","20200905",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        StockinData stockinData = new StockinData("ET20200909085552264164","LSS6TSGHGT","GL01","CGRK",0,1,products);
+        products.add(new Product("SKU09090854","20200901",500,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090854","20200902",300,"2020-08-11 10:00:50","2022-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090854","20200903",200,"2020-08-11 10:00:50","2023-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090854","20200904",10,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
+        StockinData stockinData = new StockinData("ET20200909095209493204","LSS6TSGHGT","GL01","CGRK",0,1,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);

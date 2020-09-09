@@ -19,7 +19,7 @@ public class GoodAddApi {
     @Test
     public void addGood() throws IOException {
         Good good = new Good(Data.skuNo,Data.productId,Data.bookId);
-        new ApiClient(BaseParam.URL_GOOD).doPostJson(JSON.toJSON(good));
+        ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
     }
 
     //  批量添加商品
@@ -28,7 +28,7 @@ public class GoodAddApi {
         Good good = null;
         for(int i=0;i<5000;i++){
             good = new Good("SK1"+i,"JHY1"+i,"13");
-            new ApiClient(BaseParam.URL_GOOD).doPostJson(JSON.toJSON(good));
+            ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
         }
     }
 
