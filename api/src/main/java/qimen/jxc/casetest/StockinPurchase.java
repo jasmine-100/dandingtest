@@ -36,8 +36,8 @@ public class StockinPurchase {
     public void stockinOrder() throws Exception {
         //组装商品项
         List<OrderLine> orderLines = new ArrayList<>();
-//        orderLines.add(new OrderLine("SKU09081358", 1000, ""));
-        orderLines.add(new OrderLine("SKU09081359", 6000, ""));
+        orderLines.add(new OrderLine("SKU09090853", 1000, ""));
+        orderLines.add(new OrderLine("SKU09090854", 1000, ""));
         //组装订单项
         EntryOrder entryOrder = new EntryOrder(orderno, "LSS6TSGHGT", "CGRK", "S200826093442963114");
         //组装请求body
@@ -49,15 +49,16 @@ public class StockinPurchase {
     @Test
     public void stockinBack() throws Exception {
         List<Product> products = new LinkedList<>();
-//        products.add(new Product("SKU09081358","",1000,"","","ZP"));
-        products.add(new Product("SKU09081359","20200900",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09081359","20200901",2000,"2020-08-11 10:00:50","2022-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09081359","20200902",3000,"2020-08-11 10:00:50","2023-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090853","",1000,"","","ZP"));
+        products.add(new Product("SKU09090853","",10,"","","CP"));
+        products.add(new Product("SKU09090854","20200900",500,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090854","20200901",500,"2020-08-11 10:00:50","2022-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090854","20200902",10,"2020-08-11 10:00:50","2023-08-11 10:00:50","CP"));
 //        products.add(new Product("SKU09021657","20200901",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
 //        products.add(new Product("SKU09021657","20200903",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
 //        products.add(new Product("SKU09021657","20200904",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
 //        products.add(new Product("SKU09021657","20200905",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        StockinData stockinData = new StockinData("ET20200908144927273484","LSS6TSGHGT","GL01","CGRK",0,1,products);
+        StockinData stockinData = new StockinData("ET20200909085552264164","LSS6TSGHGT","GL01","CGRK",0,1,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);

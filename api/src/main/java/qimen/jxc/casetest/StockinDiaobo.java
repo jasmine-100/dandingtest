@@ -48,16 +48,16 @@ public class StockinDiaobo {
     @Test
     public void stockinBack() throws Exception {
         List<Product> products = new LinkedList<>();
-        products.add(new Product("SKU09021656","",900,"","","ZP"));
-        products.add(new Product("SKU09021656","",100,"","","CP"));
-        products.add(new Product("SKU09021657","20200901",1000,"2020-01-01 10:20:30","2022-01-01 10:20:30", "ZP"));
-        products.add(new Product("SKU09021657","20200902",900,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        products.add(new Product("SKU09021657","20200902",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
-//        products.add(new Product("SKU09021657","20200902",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
+        products.add(new Product("SKU09090853","",10,"","","ZP"));
+        products.add(new Product("SKU09090853","",100,"","","CP"));
+        products.add(new Product("SKU09090854","20200901",10,"2020-01-01 10:20:30","2022-01-01 10:20:30", "ZP"));
+        products.add(new Product("SKU09090854","20200902",900,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090854","20200903",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
+        products.add(new Product("SKU09090854","20200904",100,"2020-08-11 10:00:50","2021-08-11 10:00:50","CP"));
 //        products.add(new Product("SKU09011645","20200903",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
 //        products.add(new Product("SKU09011645","20200904",300,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
 //        products.add(new Product("SKU09011645","20200905",1000,"2020-08-11 10:00:50","2021-08-11 10:00:50","ZP"));
-        StockinData stockinData = new StockinData("ET20200902170615544779","LSY4BZHVTL","GL01","DBRK",0,1,products);
+        StockinData stockinData = new StockinData("ET20200909090900849318","LSNPLZ9XP1","GL01","DBRK",0,1,products);
         ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
 
         ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
