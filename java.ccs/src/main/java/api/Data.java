@@ -6,7 +6,7 @@ package api;
  * @Date : Created in 2020/8/24 10:48
  */
 public class Data {
-    static String str = "09091057";
+    static String str = "09101743";
 
     // 仓库sku编码
     public static String skuNo = "SKU"+str;

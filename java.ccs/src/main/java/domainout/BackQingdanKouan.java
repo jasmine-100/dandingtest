@@ -1,6 +1,7 @@
 package domainout;
 
 import client.ApiClient;
+import database.CcsOrder;
 import jxc.BaseParam;
 import jxc.Order;
 import domain.Param;
@@ -21,11 +22,11 @@ public class BackQingdanKouan {
     }
     /**
      * 口岸回执：处理成功
-     * @param orderno 订单号
+     * @param declareOrderNo 订单号
      * @param companyCode 清关企业代码
      */
-    public static void kouan(String orderno,String companyCode,String status,String info,String date) throws IOException {
-        String orderId = Order.getOrderNo(orderno);
+    public static void kouan(String declareOrderNo,String companyCode,String status,String info,String date) throws IOException {
+        String orderId = CcsOrder.getOrderSn(declareOrderNo);
         String data = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
                 "<mo version=\"1.0.0\">" +
                     "<head>" +

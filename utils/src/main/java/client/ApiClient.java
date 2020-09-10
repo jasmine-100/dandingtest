@@ -38,79 +38,6 @@ public class ApiClient {
      static HttpPost post = null;
      static HttpResponse response= null;
 
-    public ApiClient(String url){
-        client = HttpClients.createDefault();
-        post = new HttpPost(url);
-        get = new HttpGet(url);
-    }
-
-    static void setHead(Map<String,Object> head){
-        //组装head参数
-        if(head!=null) {
-            for (String key : head.keySet()) {
-                post.addHeader(key,head.get(key).toString());
-            }
-        }
-    }
-
-    static void setParams(Object params){
-        //组装params参数
-        if(params!=null){
-            Map<String,Object> map = null;
-            try {
-                map = JavaBeanUtils.convertBeanToMap(params);
-                List<NameValuePair> paramList = new ArrayList<NameValuePair>();
-                for (String key : map.keySet()) {
-                    paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
-                }
-                String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
-                post = new HttpPost(url+"?"+str);
-//            System.out.println(url+"?"+str);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    static void setForm(Object body){
-        if(body!=null){
-            try{
-                System.out.println(body);
-                post.setHeader("Content-Type", "application/x-www-form-urlencoded");
-                Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
-                List<NameValuePair> paramList = new ArrayList<NameValuePair>();
-                for (String key : map.keySet()) {
-                    paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
-                }
-                // 模拟表单
-                UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList,"utf-8");
-                post.setEntity(entity);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
-    static void setJson(Object body){
-        if(body!=null){
-//            System.out.println("请求数据："+JSON.toJSON(body).toString());
-            StringEntity entity = new StringEntity(JSON.toJSON(body).toString(), "utf-8");// 解决中文乱码问题
-            entity.setContentEncoding("UTF-8");
-            entity.setContentType("application/json");
-            post.setEntity(entity);
-        }
-    }
-
-    static void setXml(Object body){
-        //组装body参数(xml格式)
-        if (body != null){
-//            System.out.println(body);
-            //组装xml参数
-            HttpEntity entity2 = new StringEntity(body.toString(),"utf-8");// 解决中文乱码问题
-            post.addHeader("Context-Type","text/xml;charset=UTF-8");
-            post.setEntity(entity2);
-        }
-    }
-
     public static String doPostForm(String URL,Object params,Map<String,Object> head,Object body){
         url = URL;
         client = HttpClients.createDefault();
@@ -144,7 +71,7 @@ public class ApiClient {
         try {
             response = client.execute(post);
             responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
-        System.out.println(responseStr);
+            System.out.println(responseStr);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -167,7 +94,9 @@ public class ApiClient {
         return responseStr;
     }
 
-    public String doGetUrl() throws IOException {
+    public static String doGetUrl(String URL) throws IOException {
+        url = URL;
+        get = new HttpGet(url);
         String responseStr = null;
 
         get.setHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -176,6 +105,73 @@ public class ApiClient {
         responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
 //        System.out.println(responseStr);
         return responseStr;
+    }
+
+    static void setHead(Map<String,Object> head){
+        //组装head参数
+        if(head!=null) {
+            for (String key : head.keySet()) {
+                post.addHeader(key,head.get(key).toString());
+            }
+        }
+    }
+
+    static void setParams(Object params){
+        //组装params参数
+        if(params!=null){
+            Map<String,Object> map = null;
+            try {
+                map = JavaBeanUtils.convertBeanToMap(params);
+                List<NameValuePair> paramList = new ArrayList<NameValuePair>();
+                for (String key : map.keySet()) {
+                    paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
+                }
+                String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
+                post = new HttpPost(url+"?"+str);
+//            System.out.println(url+"?"+str);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    static void setForm(Object body){
+        if(body!=null){
+            try{
+//                System.out.println(body);
+                post.setHeader("Content-Type", "application/x-www-form-urlencoded");
+                Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
+                List<NameValuePair> paramList = new ArrayList<NameValuePair>();
+                for (String key : map.keySet()) {
+                    paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
+                }
+                // 模拟表单
+                UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList,"utf-8");
+                post.setEntity(entity);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+    static void setJson(Object body){
+        if(body!=null){
+//            System.out.println("请求数据："+JSON.toJSON(body).toString());
+            StringEntity entity = new StringEntity(JSON.toJSON(body).toString(), "utf-8");// 解决中文乱码问题
+            entity.setContentEncoding("UTF-8");
+            entity.setContentType("application/json");
+            post.setEntity(entity);
+        }
+    }
+
+    static void setXml(Object body){
+        //组装body参数(xml格式)
+        if (body != null){
+//            System.out.println(body);
+            //组装xml参数
+            HttpEntity entity2 = new StringEntity(body.toString(),"utf-8");// 解决中文乱码问题
+            post.addHeader("Context-Type","text/xml;charset=UTF-8");
+            post.setEntity(entity2);
+        }
     }
 
 }

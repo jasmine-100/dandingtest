@@ -28,14 +28,6 @@ public class OrdersApi {
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
 
-    // 批量造订单
-    @Test
-    public void batchOrders() throws Exception {
-        for(int i=0;i<=5;i++){
-            pushOrder();
-        }
-    }
-
     /**
      * 步骤一：推送申报单
      */
@@ -50,20 +42,20 @@ public class OrdersApi {
 
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("JHKY09091056","SKU09091056",3,9));
-        items.add(new Item("JHKY09091057","SKU09091057",10,2));
+        items.add(new Item("JHKY09101743","SKU09101743",3,9));
+//        items.add(new Item("SKA205","SKA205",10,2));
 
         // 组装申报单
-        Order order = new Order("xiaoyuer","小鱼儿",declareOrderno,"SF","SF"+new Random().nextInt(999999),"xiaohei",items);
+        Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+str,"xiaohei",items);
 
         //接口：推送申报单
         ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);
 
         //回执订单申报结果
-        dingdanBack(declareOrderno);
+//        dingdanBack(declareOrderno);
 
         //回执清单申报结果
-        qingdanBack(declareOrderno);
+//        qingdanBack(declareOrderno);
     }
 
     /**
@@ -73,10 +65,10 @@ public class OrdersApi {
     public void dingdanBack(String orderno) throws IOException, InterruptedException {
         // 口岸：处理成功
         BackDingdanKouan.backPass(orderno,"2020-8-06");
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
         // 总署：逻辑校验通过
         BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,"20200806090000001");
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
         // 总署:新增申报成功
         BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,"20200807100000000");
         Thread.sleep(3000);
@@ -91,24 +83,86 @@ public class OrdersApi {
 
         // 口岸回执：处理成功
         BackQingdanKouan.backPass(declareOrderNo,agentCode,"2020-8-16");
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
         BackQingdanZongshu.backLogic(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
 
         // 回执新增申报成功报文
         BackQingdanZongshu.backAddOk(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810140000001");
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
 
         //回执放行报文
         BackQingdanZongshu.backPass(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810150000001");
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
 
         // 回执：税金
         BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200831114735001");
 
+    }
+
+    // 批量造sku不同的申报单
+    @Test
+    public void batchOrders() throws Exception {
+//        for(int i=0;i<3;i++){
+//            pushOrder();
+//        }
+        for(int i=0;i<21;i++){
+            String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
+            // 渠道订单号
+            String outOrderNo = "JOS"+str;
+            // 申报单号
+            String declareOrderno = "DOS"+str;
+
+            // 添加商品项
+            List<Item> items = new ArrayList<Item>();
+            for(int j=1;j<=10;j++){
+                items.add(new Item("SKA"+(i*10+j),"SKA"+(i*10+j),1,10));
+//                items.add(new Item("SKA"+j,"SKA"+j,1,10));
+            }
+            // 组装申报单
+            Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","AC"+i,"xiaohei",items);
+
+            //接口：推送申报单
+            ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);
+            Thread.sleep(1000);
+
+            //回执订单申报结果
+//            dingdanBack(declareOrderno);
+
+            //回执清单申报结果
+            qingdanBack(declareOrderno);
+        }
+    }
+
+    // 批量造运单
+    @Test
+    public void batchOrders2() throws Exception {
+        for (int i = 0; i < 2001; i++) {
+            String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
+            // 渠道订单号
+            String outOrderNo = "JOS" + str;
+            // 申报单号
+            String declareOrderno = "DOS" + str;
+
+            // 添加商品项
+            List<Item> items = new ArrayList<Item>();
+            items.add(new Item("SKA1", "SKA1", 1, 10));
+            // 组装申报单
+            Order order = new Order("xiaoyuer", "小鱼儿", outOrderNo, declareOrderno, "SF", "AD" + i, "xiaohei", items);
+
+            //接口：推送申报单
+            ApiClient.doPostJson(BaseParam.URL_ORDER, null, null, order);
+            Thread.sleep(1000);
+
+            //回执订单申报结果
+//            dingdanBack(declareOrderno);
+
+            //回执清单申报结果
+            qingdanBack(declareOrderno);
+        }
     }
 
 }

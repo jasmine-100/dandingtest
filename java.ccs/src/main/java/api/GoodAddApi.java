@@ -26,8 +26,12 @@ public class GoodAddApi {
     @Test
     public void addGoods() throws IOException {
         Good good = null;
-        for(int i=0;i<5000;i++){
-            good = new Good("SK1"+i,"JHY1"+i,"13");
+//        for(int i=1;i<=201;i++){
+//            good = new Good("SKA"+i,"SKA"+i,"13");
+//            ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
+//        }
+        for(int i=202;i<=202;i++){
+            good = new Good("SKA"+i,"SKA"+i,"13");
             ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
         }
     }

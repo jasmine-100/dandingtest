@@ -18,7 +18,7 @@ public class Order {
     // 获取申报单的数据库ID
     public static String getOrderNo(String declareOrderNo) throws IOException {
         String url = BaseParam.DOMAIN + "/xhr/order/paging?currentPage=1&pageSize=20&queryType=declareOrderNo&queryInfo=" + declareOrderNo;
-        String str = new ApiClient(url).doGetUrl();
+        String str = ApiClient.doGetUrl(url);
 
         // 获取result字符
         JSONObject result = (JSONObject) JSON.parseObject(str).get("result");

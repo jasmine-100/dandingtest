@@ -19,7 +19,6 @@ public class StockAddApi {
     @Test
     public void addStock() throws IOException {
         Stock stock = new Stock(Data.goodsSeqNo,Data.productId,Data.bookId);
-//        new ApiClient(BaseParam.URL_STOCK).doPostJson(JSON.toJSON(stock));
         ApiClient.doPostJson(BaseParam.URL_STOCK,null,null,stock);
     }
 
@@ -27,9 +26,8 @@ public class StockAddApi {
     @Test
     public void addStocks() throws IOException {
         Stock stock = null;
-        for(int i=1;i<5000;i++){
-            stock = new Stock("SK1"+i,"JHY1"+i,"13");
-//            new ApiClient(BaseParam.URL_STOCK).doPostJson(JSON.toJSON(stock));
+        for(int i=202;i<=202;i++){
+            stock = new Stock("SKA"+i,"SKA"+i,"13");
             ApiClient.doPostJson(BaseParam.URL_STOCK,null,null,stock);
         }
     }

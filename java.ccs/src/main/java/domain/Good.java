@@ -73,8 +73,8 @@ public class Good {
         this.recordFunction = "食用";
         this.recordStatus = 0;
         this.recordUsage = "暂无";
-        this.secondUnit = "";
-        this.secondUnitAmount = "";
+        this.secondUnit = "011";
+        this.secondUnitAmount = "1";
         this.taxRate = 0;
         this.vatRate = 0;
     }
