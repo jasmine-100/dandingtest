@@ -14,29 +14,24 @@ import java.io.IOException;
 public class HuzhuApi {
 
     // ccs系统内核注单 编号
-    String EtpsPreentNo = "HZ2009101620000248";
+    String EtpsPreentNo = "HZ2009111654000254";
     // 预录入核注单号
     String SeqNo = "Y"+EtpsPreentNo;
     String bondInvtNo = "QD"+EtpsPreentNo;
 
     @Test
-    public void backCallpass() throws IOException {
+    public void both(){
         // 核放单：调用成功
         BackHefangHezhu.callPass(EtpsPreentNo,SeqNo);
-    }
-
-    @Test
-    public void backExaminePass() throws IOException {
         // 核放单：未核扣、审核通过
         BackHezhu.backHezhuPass(EtpsPreentNo,SeqNo,bondInvtNo);
     }
 
     @Test
-    public void backHezhuPass() throws IOException {
+    public void backHezhuPass()  {
         // 核注单：已核扣、审核通过
         BackHezhu.backHezhuSuccess(EtpsPreentNo,SeqNo,bondInvtNo);
     }
-
 
     // 退单
     @Test

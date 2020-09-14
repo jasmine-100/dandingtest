@@ -19,7 +19,7 @@ public class BackHefangHezhu {
      * @param SeqNo  预录入核注清单编号/预录入核放编号
      * @throws IOException
      */
-    public static void callPass(String EtpsPreentNo,String SeqNo) throws IOException {
+    public static void callPass(String EtpsPreentNo,String SeqNo) {
         String data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
                 "<CommonResponeMessage>" +
                     "<SeqNo>"+SeqNo+"</SeqNo>" +

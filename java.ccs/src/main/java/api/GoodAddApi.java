@@ -17,8 +17,8 @@ public class GoodAddApi {
 
     // 单一添加商品备案信息
     @Test
-    public void addGood() throws IOException {
-        Good good = new Good(Data.skuNo,Data.productId,Data.bookId);
+    public void addGood() {
+        Good good = new Good(Data.skuNo,Data.goosName,Data.productId,Data.bookId);
         ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
     }
 
@@ -30,10 +30,10 @@ public class GoodAddApi {
 //            good = new Good("SKA"+i,"SKA"+i,"13");
 //            ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
 //        }
-        for(int i=202;i<=202;i++){
-            good = new Good("SKA"+i,"SKA"+i,"13");
-            ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
-        }
+//        for(int i=202;i<=202;i++){
+//            good = new Good("SKA"+i,"SKA"+i,"13");
+//            ApiClient.doPostJson(BaseParam.URL_GOOD,null,null,good);
+//        }
     }
 
 }

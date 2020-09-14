@@ -34,30 +34,32 @@ public class Stock {
     String  originCountry;
     String  productId;
     String  remark;
+    int inSecondLegalQty;
     String  secondUnit;
     int totalAmt;
 
-    public Stock(String goodsSeqNo, String productId, String customsBookId){
+    public Stock(String goodsSeqNo,String goodsName, String productId, String customsBookId){
         this.avgPrice = 10;
         this.currCode = 142;
         this.customsBookId = customsBookId;
         this.declarePrice = 10;
         this.enable = 1;
-        this.firstUnit = "011";
         this.goodsModel = "规格";
-        this.goodsName = "测试商品";
+        this.goodsName = goodsName;
         this.goodsSeqNo = goodsSeqNo;
         this.goodsUnit = "001";
         this.hsCode = "3304990039";
         this.inDate = UtilTime.getTime("20200901102030");
         this.inLegalQty = 1000;
         this.inQty = 1000;
+        this.firstUnit = "011";
         this.invtGoodsNo = "";
         this.invtNo = "";
         this.originCountry = "142";
         this.productId = productId;
         this.remark = "";
-        this.secondUnit = "";
+        this.inSecondLegalQty = 1;
+        this.secondUnit = "011";
         this.totalAmt = 1000;
     }
 }

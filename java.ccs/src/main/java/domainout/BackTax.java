@@ -16,7 +16,7 @@ public class BackTax {
 
     // 海关回执：税费
     // 回执报文报文中，清单号必须正确，其他信息取CCS系统中的信息，不校验
-    public static void backTaxrd(String invtNo,double taxPrice,double valueAddedTax,double consumptionTax,String returntime) throws IOException {
+    public static void backTaxrd(String invtNo,double taxPrice,double valueAddedTax,double consumptionTax,String returntime) {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB816Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"e98878cc-48ef-4ce5-968d-dddc3d47a304\">" +
                     "<Tax>" +
@@ -54,18 +54,18 @@ public class BackTax {
     }
 
     // 回执税金状态--汇总
-    public static void backTaxTotal(String invtNo,String returnTime) throws IOException {
+    public static void backTaxTotal(String invtNo,String returnTime)  {
         function(invtNo,returnTime,"2");
     }
 
     // 回执税金状态--作废
-    public static void backTaxCancel(String invtNo, String returnTime) throws IOException {
+    public static void backTaxCancel(String invtNo, String returnTime) {
         function(invtNo,returnTime,"3");
     }
 
     // 税金状态回执模板
     // status:1-已生成;2-已汇总;3-作废
-    static void function(String invtNo,String returnTime,String status) throws IOException {
+    static void function(String invtNo,String returnTime,String status) {
         data = "<CEB818Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"ec43d7c9-21bc-448d-8b11-aba3ca9beb5b\">" +
                 "<Tax>" +
                 "<TaxHeadStatus>" +
@@ -79,7 +79,6 @@ public class BackTax {
                 "</TaxHeadStatus>" +
                 "</Tax>" +
                 "</CEB818Message>";
-//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
         ApiClient.doPostForm(BaseParam.URL_BACK,null,null,new Param(data));
     }
 

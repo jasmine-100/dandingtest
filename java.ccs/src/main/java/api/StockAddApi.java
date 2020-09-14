@@ -17,18 +17,18 @@ public class StockAddApi {
 
     // 单一添加商品库存
     @Test
-    public void addStock() throws IOException {
-        Stock stock = new Stock(Data.goodsSeqNo,Data.productId,Data.bookId);
+    public void addStock()  {
+        Stock stock = new Stock(Data.goodsSeqNo,Data.goosName,Data.productId,Data.bookId);
         ApiClient.doPostJson(BaseParam.URL_STOCK,null,null,stock);
     }
 
     // 批量添加账册库存
-    @Test
-    public void addStocks() throws IOException {
-        Stock stock = null;
-        for(int i=202;i<=202;i++){
-            stock = new Stock("SKA"+i,"SKA"+i,"13");
-            ApiClient.doPostJson(BaseParam.URL_STOCK,null,null,stock);
-        }
-    }
+//    @Test
+//    public void addStocks() throws IOException {
+//        Stock stock = null;
+//        for(int i=202;i<=202;i++){
+//            stock = new Stock("SKA"+i,"SKA"+i,"13");
+//            ApiClient.doPostJson(BaseParam.URL_STOCK,null,null,stock);
+//        }
+//    }
 }

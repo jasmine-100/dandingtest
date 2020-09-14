@@ -17,35 +17,35 @@ import java.io.IOException;
 public class BackQingdanZongshu {
     static String data = null;
 
-    public static void backLogic(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime) throws Exception {
+    public static void backLogic(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime){
         modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"120","[Code:1800;Desc:逻辑校验通过]",returntime);
     }
-    public static void backAddOk(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime) throws Exception {
+    public static void backAddOk(String orderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returntime){
         modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"2","清单新增申报成功",returntime);
     }
-    public static void backPass(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws Exception {
+    public static void backPass(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) {
         modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"800","[Code:2600;Desc:放行]",returntime);
     }
 
     // 不常用的回执节点
-    public static void backExamine(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws Exception {
+    public static void backExamine(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) {
         modelData(orderno,ebpCode,ebcCode,agentCode,invtNo,"399","海关审结",returnTime);
     }
-    public static void backCheck(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws Exception {
+    public static void backCheck(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) {
         modelData(orderno,ebpCode,ebcCode,agentCode,invtNo,"500","查验",returnTime);
     }
-    public static void backSuspend(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws Exception {
+    public static void backSuspend(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) {
         modelData(orderno,ebpCode,ebcCode,agentCode,invtNo,"600","挂起",returnTime);
     }
-    public static void backReturn(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws Exception {
+    public static void backReturn(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) {
         modelData(orderno,ebpCode,ebcCode,agentCode,invtNo,"700","退运",returnTime);
     }
 
     // 申报失败的回执
-    public static void errorLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) throws Exception {
+    public static void errorLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) {
         modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度]",returntime);
     }
-    public static void errorItem(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) throws Exception {
+    public static void errorItem(String orderno, String ebpCode, String ebcCode,String agentCode,String invtNo, String returnTime) {
         modelData(orderno,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1322;Desc:订单清单表体商品项不一致]",returnTime);
     }
 
@@ -61,7 +61,7 @@ public class BackQingdanZongshu {
      * @param returntime 海关回执时间
      * @throws IOException
      */
-    public static void modelData(String declareOrderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returnStatus, String returnInfo, String returntime) throws Exception {
+    public static void modelData(String declareOrderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returnStatus, String returnInfo, String returntime) {
         String orderSn = CcsOrder.getOrderSn(declareOrderNo);
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +

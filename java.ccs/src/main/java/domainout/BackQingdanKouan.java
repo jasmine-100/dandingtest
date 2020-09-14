@@ -17,7 +17,7 @@ import java.io.IOException;
 public class BackQingdanKouan {
     static String data = null;
 
-    public static void backPass(String orderno,String companyCode,String date) throws IOException {
+    public static void backPass(String orderno,String companyCode,String date) {
         kouan(orderno,companyCode,"1","处理成功",date);
     }
     /**
@@ -25,7 +25,7 @@ public class BackQingdanKouan {
      * @param declareOrderNo 订单号
      * @param companyCode 清关企业代码
      */
-    public static void kouan(String declareOrderNo,String companyCode,String status,String info,String date) throws IOException {
+    public static void kouan(String declareOrderNo,String companyCode,String status,String info,String date) {
         String orderId = CcsOrder.getOrderSn(declareOrderNo);
         String data = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
                 "<mo version=\"1.0.0\">" +
@@ -51,7 +51,6 @@ public class BackQingdanKouan {
                         "</list>" +
                     "</body>" +
                 "</mo>";
-//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data,"kouan"));
         ApiClient.doPostForm(BaseParam.URL_BACK,null,null,new Param(data,"kouan"));
     }
 

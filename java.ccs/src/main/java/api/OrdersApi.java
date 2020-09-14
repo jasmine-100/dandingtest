@@ -28,13 +28,20 @@ public class OrdersApi {
     // 此项要配置，不要改
     static String agentCode = "330766K00W";
 
+    @Test
+    public void test(){
+        for (int i=0;i<5;i++){
+            pushOrder();
+        }
+    }
+
     /**
      * 步骤一：推送申报单
      */
     @Test
-    public void pushOrder() throws Exception {
+    public void pushOrder(){
 
-        String str = new SimpleDateFormat("MMddHHmmss").format(new Date());
+        String str = new SimpleDateFormat("MMddHHmmssSSS").format(new Date());
         // 渠道订单号
         String outOrderNo = "JOS"+str;
         // 申报单号
@@ -55,7 +62,7 @@ public class OrdersApi {
 //        dingdanBack(declareOrderno);
 
         //回执清单申报结果
-//        qingdanBack(declareOrderno);
+        qingdanBack(declareOrderno);
     }
 
     /**
@@ -77,7 +84,7 @@ public class OrdersApi {
     /**
      * 步骤三：清单申报回执
      */
-    public void qingdanBack(String declareOrderNo) throws Exception {
+    public void qingdanBack(String declareOrderNo) {
         // 回执清单号
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
