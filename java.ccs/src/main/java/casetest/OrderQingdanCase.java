@@ -32,8 +32,8 @@ public class OrderQingdanCase {
     // 测试用例：清单回执--放行
     @Test
     public void backPass() throws Exception {
-//        BackQingdanZongshu.backPass(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,Data.invtNo,"20200817160000001");
-        BackQingdanZongshu.backPass("DOS0910142536",Data.ebpCode,Data.ebcCode,Data.agentCode,"QD20200910142547","20200817160000001");
+        BackQingdanZongshu.backPass(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,Data.invtNo,"20200817160000001");
+//        BackQingdanZongshu.backPass("DOS0910142536",Data.ebpCode,Data.ebcCode,Data.agentCode,"QD20200910142547","20200817160000001");
     }
     // 测试用例：清单回执-税费
     @Test

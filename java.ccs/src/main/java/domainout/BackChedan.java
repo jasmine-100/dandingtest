@@ -46,7 +46,7 @@ public class BackChedan {
     }
 
     // 清单撤单--回执模板
-    static void backFunction(String orderno, String ebpCode, String ebcCode, String agentCode, String returnStatus, String returnInfo, String returnTime) throws IOException {
+    static void backFunction(String orderno, String ebpCode, String ebcCode, String agentCode, String returnStatus, String returnInfo, String returnTime) {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB624Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"2B91DA66-77A7-409D-AC5C-982B441E5585\">" +
                 "<InvtCancelReturn>" +

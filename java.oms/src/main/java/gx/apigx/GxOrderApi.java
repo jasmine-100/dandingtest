@@ -10,7 +10,9 @@ import orderutils.ShipOrder;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -22,16 +24,16 @@ import java.util.Random;
 public class GxOrderApi {
 
     //订单号
-    String orderno = "JOS2020073110";
+    String orderno = "JOS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
     //jasmine12b的店铺id
-    String shopId = "1046";
+    String shopId = "869";
 
     //小B下单，调用OMS内部下单接口
     @Test
     public void orderSet() throws Exception {
         //组装商品项：下单之前小B需要映射和上架商品、补足库存
         List<Item> items = new ArrayList<>();
-        items.add(new Item("","PDD04",10,1));
+        items.add(new Item("","OUT1600052535875",1,100));
 //        items.add(new Item("","PDD101",2,100));
 
         //组装并推送订单

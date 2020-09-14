@@ -32,8 +32,7 @@ public class GxApi {
     public void searchGood() throws IOException {
         String url = "http://npc.daily.yang800.com/backend/docking/api/item/queryItems?userId="+ BUserId +"&pageSize=1000&currentPage=1";
 
-        ApiClient client = new ApiClient(url);
-        client.doGetUrl();
+        ApiClient.doGetUrl(url);
     }
 
     //第二步：大B选品上架
@@ -43,9 +42,7 @@ public class GxApi {
         GoodUp good = new GoodUp("", BUserId,"SKU1595668920235");
 
         String url = "http://npc.daily.yang800.com/backend/docking/api/item/add";
-        ApiClient client = new ApiClient(url);
-        client.doPostJson(JSON.toJSON(good));
-
+        ApiClient.doPostJson(url,null,null,good);
     }
 
     //第三步：小B选品加入清单
@@ -55,8 +52,7 @@ public class GxApi {
         GoodList goodList = new GoodList("珍珠锁水保湿丝薄面膜",bUserId,"GX20200723143026");
 
         String url = "http://npc.daily.yang800.com/backend/docking/api/item/insItem";
-        ApiClient client = new ApiClient(url);
-        client.doPostForm(goodList);
+        ApiClient.doPostJson(url,null,null,goodList);
     }
 
     //第四步：小B下单，调用OMS内部下单接口
@@ -88,9 +84,6 @@ public class GxApi {
         Order order = new Order("DO2007221503573171441",outOrderSn, BUserId,items);
 
         String url = "http://npc.daily.yang800.com/backend/docking/api/order/receive2bOrder";
-        ApiClient client = new ApiClient(url);
-        client.doPostJson(JSON.toJSON(order));
+        ApiClient.doPostJson(url,null,null,order);
     }
-
-
 }

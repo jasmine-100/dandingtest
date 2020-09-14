@@ -24,7 +24,6 @@ Cancel cancel = new Cancel(orderno,accesscode);
 Params params = new Params(cancel,"order.cancel","WEBSC");
 
 String url = "http://outtest.order.yang800.cn/open/testV2";
-ApiClient client = new ApiClient(url);
-client.doPostForm(params);
+    ApiClient.doPostForm(url,params,null,null);
 }
 }

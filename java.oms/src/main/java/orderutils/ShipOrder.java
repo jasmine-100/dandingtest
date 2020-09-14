@@ -11,19 +11,18 @@ import java.io.IOException;
  * @Date : Created in 2020/7/21 9:10
  */
 public class ShipOrder {
-public staticString url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
-public staticApiClient client = new ApiClient(url);
+static  String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
 
 //模拟运单回执
 public static void shipBackPush(String orderno) throws IOException {
 ShipBack shipBack = new ShipBack(orderno);
-client.doPostForm(shipBack);
+    ApiClient.doPostForm(url,null,null,shipBack);
 }
 
 //模拟运单回执
 public static void shipBackPush(String orderno,String shipCompany,String shipCode,String operateDate) throws IOException {
 ShipBack shipBack = new ShipBack(orderno,shipCompany,shipCode,operateDate);
-client.doPostForm(shipBack);
+    ApiClient.doPostForm(url,null,null,shipBack);
 }
 
 }

@@ -13,12 +13,11 @@ import java.io.IOException;
  */
 public class Pay {
 public static String url = "http://pangu.admintest.yang800.cn/docking/api/customs/pay/info/upload";
-public static ApiClient client = new ApiClient(url);
 
 //模拟推送海关支付信息
 public static void payInfoPush(String orderNo) throws IOException {
 PayInfo payInfo = new PayInfo(orderNo);
-client.doPostJson(JSON.toJSON(payInfo));
+    ApiClient.doPostJson(url,null,null,payInfo);
 }
 
 }

@@ -35,8 +35,7 @@ itemList.add(new Item("SPC1596438357513","小苹果","xpg001",1,12));
         Params params = new Params(order,"order.out.set","WEBSC");
 
         String url = "http://outtest.order.yang800.cn/open/testV2";
-        ApiClient client = new ApiClient(url);
-        client.doPostForm(params);
+    ApiClient.doPostForm(url,params,null,null);
 
     }
 
