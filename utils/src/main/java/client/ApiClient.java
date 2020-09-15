@@ -155,7 +155,7 @@ public class ApiClient {
     }
     static void setJson(Object body){
         if(body!=null){
-//            System.out.println("请求数据："+JSON.toJSON(body).toString());
+            System.out.println("请求数据："+JSON.toJSON(body).toString());
             StringEntity entity = new StringEntity(JSON.toJSON(body).toString(), "utf-8");// 解决中文乱码问题
             entity.setContentEncoding("UTF-8");
             entity.setContentType("application/json");

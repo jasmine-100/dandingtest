@@ -51,6 +51,7 @@ public class Order {
 
     String expressCode;
     List<Item> itemList;
+//    List<origGoodsInfo> origGoodsInfoList;
 
     String logisticsNo;
     String notifyUrl;
@@ -106,24 +107,25 @@ public class Order {
     }
 
     String goodsName;
-    String systemGlobalSn;//全局单号，和进销存一致
+    String systemGlobalSn;//全局单号
     String outTradeNo;
     double goodsSumAmount;
     String merchantCode;
 
     // OMS订单上报实体类
     public Order(String systemGlobalSn,String outOrderNo,String declareOrderNo,String routeCode) {
-        this.goodsName = "testGood";
+//        this.goodsName = "testGood";
         this.systemGlobalSn = systemGlobalSn;
         this.declareOrderNo = declareOrderNo;
         this.outOrderNo = outOrderNo;
         this.routeCode = routeCode;
+        this.outTradeNo = outOrderNo;
         this.firstIdentify = "";
         this.secondIdentify = "";
         this.thirdIdentify = "";
         this.discount = 6;
         this.feeAmount = 11;
-        this.taxAmount = 12.23;
+        this.taxAmount = 12;
         this.insureAmount = 15;
         this.goodsSumAmount = 100;
         this.payTransactionAmount= goodsSumAmount+feeAmount+taxAmount+insureAmount-discount;
