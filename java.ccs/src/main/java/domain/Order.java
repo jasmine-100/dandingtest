@@ -66,7 +66,7 @@ public class Order {
     String verDept;//收款企业社会信用代码
     String recpName;//收款企业工商备案名称
 
-    // 测试路由标识的实体类
+    // 实体类
     public Order(String tenantOuterId,String tenantName,String outOrderNo,String declareOrderNo, String expressCode, String logisticsNo,
                  String routeCode,List<Item> itemList) {
         this.tenantOuterId = tenantOuterId;
@@ -105,4 +105,44 @@ public class Order {
         this.thirdIdentify = "";
     }
 
+    String goodsName;
+    String systemGlobalSn;//全局单号，和进销存一致
+    String outTradeNo;
+    double goodsSumAmount;
+    String merchantCode;
+
+    // OMS订单上报实体类
+    public Order(String systemGlobalSn,String outOrderNo,String declareOrderNo,String routeCode) {
+        this.goodsName = "testGood";
+        this.systemGlobalSn = systemGlobalSn;
+        this.declareOrderNo = declareOrderNo;
+        this.outOrderNo = outOrderNo;
+        this.routeCode = routeCode;
+        this.firstIdentify = "";
+        this.secondIdentify = "";
+        this.thirdIdentify = "";
+        this.discount = 6;
+        this.feeAmount = 11;
+        this.taxAmount = 12.23;
+        this.insureAmount = 15;
+        this.goodsSumAmount = 100;
+        this.payTransactionAmount= goodsSumAmount+feeAmount+taxAmount+insureAmount-discount;
+        this.senderName = "奶粉厂家";
+        this.buyerIdNumber = "330110199912102236";
+        this.buyerName = "Lily";
+        this.buyerTelNumber = "15566669999";
+        this.payChannel = "wechatpay";
+        this.declarePayNo = "PN" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        this.tradePayNo = "TPN" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        this.tradeTime = System.currentTimeMillis();
+        this.merchantCode = "";
+        this.payTransactionId = "";
+        this.verDept= "";
+        this.payWay = "";
+        this.recpCode = "";
+        this.recpName = "";
+        this.recpAccount = "";
+        this.payRequestMessage = "";
+        this.payResponseMessage = "";
+    }
 }

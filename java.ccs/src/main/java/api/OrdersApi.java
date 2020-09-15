@@ -50,7 +50,10 @@ public class OrdersApi {
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("JHKY09101743","SKU09101743",3,9));
-//        items.add(new Item("SKA205","SKA205",10,2));
+        items.add(new Item("SKA205","SKA205",10,2));
+        items.add(new Item("JHKY200914091330","SKU200914091330",10,2));
+        items.add(new Item("JHKY200914091143","SKU200914091143",10,2));
+        items.add(new Item("JHKY200914090547","SKU200914090547",10,2));
 
         // 组装申报单
         Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+str,"xiaohei",items);

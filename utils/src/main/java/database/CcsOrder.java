@@ -2,10 +2,7 @@ package database;
 
 import org.junit.jupiter.api.Test;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * @Author： jasmine
@@ -14,17 +11,30 @@ import java.sql.Statement;
  */
 public class CcsOrder {
 
-    // 清关单：根据申报单号查询订单sn
+    // 清关单：根据申报单号查询订单sn（需连VPN）
     public static String getOrderSn(String declareOrderNo){
         String orderSn = null;
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
         try {
-            String sql = "SELECT sn from ccs_customs_inventory_2020q3 WHERE declare_order_no=\""+declareOrderNo+"\"";
-            ResultSet resultSet = database(sql);
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://10.99.111.83:3306/ccs_order","root","ENPInr4GJRefShEI");
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT sn from ccs_customs_inventory_2020q3 WHERE declare_order_no=\""+declareOrderNo+"\"");
             while (resultSet.next()){
                 orderSn = resultSet.getString("sn");
             }
         }catch (Exception e){
             e.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+                statement.close();
+                connection.close();
+            } catch (Exception throwables) {
+                throwables.printStackTrace();
+            }
         }
         return orderSn;
     }
@@ -34,21 +44,4 @@ public class CcsOrder {
         System.out.println(getOrderSn("DOS0909150322"));
     }
 
-    /**
-     * 连接ccs测试库
-     * @param sql  查询语句
-     * @return
-     */
-    static ResultSet database(String sql){
-        ResultSet resultSet = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://10.99.111.83:3306/ccs_order","root","ENPInr4GJRefShEI");
-            Statement statement = connection.createStatement();
-            resultSet = statement.executeQuery(sql);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return resultSet;
-    }
 }

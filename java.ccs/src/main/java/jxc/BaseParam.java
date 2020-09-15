@@ -20,7 +20,8 @@ public class BaseParam {
     public static String URL_GOOD = DOMAIN +"/xhr/goodsRecord/upset";
     // ccs推送账册库存
     public static String URL_STOCK = DOMAIN +"/xhr/customsBookItem/upset";
-
+    // OMS订单上报
+    public static String URL_DECLARE = DOMAIN + "/xhr/order/syncDockerOrder";
 
     // 回执报文
     public static String URL_BACK = DOMAINBACK +"/zjport/callback";

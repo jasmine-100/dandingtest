@@ -27,7 +27,6 @@ public class BackHefangHezhu {
                     "<CheckInfo>调用成功</CheckInfo>" +
                     "<DealFlag>0</DealFlag>" +
                 "</CommonResponeMessage>";
-//        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param(data));
         ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 }

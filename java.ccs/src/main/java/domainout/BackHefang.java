@@ -16,8 +16,13 @@ public class BackHefang {
     static String data = null;
 
     // 核放单回执：审核通过
-    public static void backExaminePass(String etpsPreentNo,String businessId) throws IOException {
-        backExamine(etpsPreentNo,businessId,"1","1");
+    public static void backExaminePass(String etpsPreentNo,String businessId,String time) {
+        backExamine(etpsPreentNo,businessId,1,1,time);
+    }
+
+    // 核放单回执：作废
+    public static void backCancel(String etpsPreentNo,String businessId,String time) {
+        backExamine(etpsPreentNo,businessId,3,3,time);
     }
 
     /**
@@ -28,8 +33,7 @@ public class BackHefang {
      * @param manageResult  1-通过;3-退单
      * @throws IOException
      */
-    static void backExamine(String etpsPreentNo,String businessId, String typecd, String manageResult) throws IOException {
-        String time = "2020-08-06 12:00:10";
+    static void backExamine(String etpsPreentNo,String businessId, int typecd, int manageResult,String time) {
         data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
                 "<Package>" +
                 "<EnvelopInfo>" +
@@ -103,13 +107,11 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-//        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
         ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 
     // 核放单过卡回执
-    public static void backCheckPass(String etpsPreentNo,String businessId) throws IOException {
-        String time = "2020-08-06 12:00:10";
+    public static void backCheckPass(String etpsPreentNo,String businessId,String time) {
         data = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
                 "<Package>" +
                 "<EnvelopInfo>" +
@@ -183,7 +185,6 @@ public class BackHefang {
                 "</BussinessData>" +
                 "</DataInfo>" +
                 "</Package>";
-//        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param2(data));
         ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 }

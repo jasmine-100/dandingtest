@@ -138,7 +138,7 @@ public class ApiClient {
     static void setForm(Object body){
         if(body!=null){
             try{
-                System.out.println(body);
+//                System.out.println(body);
                 post.setHeader("Content-Type", "application/x-www-form-urlencoded");
                 Map<String,Object> map = JavaBeanUtils.convertBeanToMap(body);
                 List<NameValuePair> paramList = new ArrayList<NameValuePair>();

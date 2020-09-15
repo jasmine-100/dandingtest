@@ -13,12 +13,12 @@ import java.io.IOException;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2009141759000212";  // 系统内部核放单编号
+    String etpsPreentNo = "HF2009151408000228";  // 系统内部核放单编号
     String SeqNo = "Y"+etpsPreentNo;  // 预录入编号
     String businessId = "QD"+etpsPreentNo;  // 核放单号
 
     @Test
-    public void hefangPass() throws IOException, InterruptedException {
+    public void hefangPass() throws InterruptedException {
         // 核放单：调用成功
         callPass();
         Thread.sleep(1000);
@@ -32,15 +32,20 @@ public class HefangApi {
     }
 
     @Test
-    public void callPass() throws IOException {
+    public void callPass() {
         BackHefangHezhu.callPass(etpsPreentNo,SeqNo);
     }
     @Test
-    public void backExaminePass() throws IOException {
-        BackHefang.backExaminePass(SeqNo,businessId);
+    public void backExaminePass() {
+        BackHefang.backExaminePass(SeqNo,businessId,"2020-09-15 10:20:30");
     }
     @Test
-    public void backCheckPass() throws IOException {
-        BackHefang.backCheckPass(SeqNo,businessId);
+    public void backCheckPass() {
+        BackHefang.backCheckPass(SeqNo,businessId,"2020-09-15 12:20:30");
+    }
+
+    @Test
+    public void backCancel(){
+        BackHefang.backCancel(SeqNo,businessId,"2020-09-15 15:20:10");
     }
 }
