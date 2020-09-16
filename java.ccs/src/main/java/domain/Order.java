@@ -51,7 +51,6 @@ public class Order {
 
     String expressCode;
     List<Item> itemList;
-//    List<origGoodsInfo> origGoodsInfoList;
 
     String logisticsNo;
     String notifyUrl;
@@ -106,45 +105,4 @@ public class Order {
         this.thirdIdentify = "";
     }
 
-    String goodsName;
-    String systemGlobalSn;//全局单号
-    String outTradeNo;
-    double goodsSumAmount;
-    String merchantCode;
-
-    // OMS订单上报实体类
-    public Order(String systemGlobalSn,String outOrderNo,String declareOrderNo,String routeCode) {
-//        this.goodsName = "testGood";
-        this.systemGlobalSn = systemGlobalSn;
-        this.declareOrderNo = declareOrderNo;
-        this.outOrderNo = outOrderNo;
-        this.routeCode = routeCode;
-        this.outTradeNo = outOrderNo;
-        this.firstIdentify = "";
-        this.secondIdentify = "";
-        this.thirdIdentify = "";
-        this.discount = 6;
-        this.feeAmount = 11;
-        this.taxAmount = 12;
-        this.insureAmount = 15;
-        this.goodsSumAmount = 100;
-        this.payTransactionAmount= goodsSumAmount+feeAmount+taxAmount+insureAmount-discount;
-        this.senderName = "奶粉厂家";
-        this.buyerIdNumber = "330110199912102236";
-        this.buyerName = "Lily";
-        this.buyerTelNumber = "15566669999";
-        this.payChannel = "wechatpay";
-        this.declarePayNo = "PN" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        this.tradePayNo = "TPN" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        this.tradeTime = System.currentTimeMillis();
-        this.merchantCode = "";
-        this.payTransactionId = "";
-        this.verDept= "";
-        this.payWay = "";
-        this.recpCode = "";
-        this.recpName = "";
-        this.recpAccount = "";
-        this.payRequestMessage = "";
-        this.payResponseMessage = "";
-    }
 }

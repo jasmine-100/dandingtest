@@ -50,10 +50,10 @@ public class OrdersApi {
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("JHKY09101743","SKU09101743",3,9));
-        items.add(new Item("SKA205","SKA205",10,2));
-        items.add(new Item("JHKY200914091330","SKU200914091330",10,2));
-        items.add(new Item("JHKY200914091143","SKU200914091143",10,2));
-        items.add(new Item("JHKY200914090547","SKU200914090547",10,2));
+        items.add(new Item("SKA205","SKA205",1,2));
+        items.add(new Item("JHKY200914091330","SKU200914091330",2,2));
+        items.add(new Item("JHKY200914091143","SKU200914091143",9,2));
+        items.add(new Item("JHKY200914090547","SKU200914090547",100,2));
 
         // 组装申报单
         Order order = new Order("xiaoyuer","小鱼儿",outOrderNo,declareOrderno,"SF","SF"+str,"xiaohei",items);
@@ -62,7 +62,7 @@ public class OrdersApi {
         ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);
 
         //回执订单申报结果
-//        dingdanBack(declareOrderno);
+        dingdanBack(declareOrderno);
 
         //回执清单申报结果
         qingdanBack(declareOrderno);
@@ -72,16 +72,16 @@ public class OrdersApi {
      * 步骤二：订单申报回执
      * 回传时间格式：年月日时分秒毫秒
      */
-    public void dingdanBack(String orderno) throws IOException, InterruptedException {
+    public void dingdanBack(String orderno){
         // 口岸：处理成功
         BackDingdanKouan.backPass(orderno,"2020-8-06");
 //        Thread.sleep(1000);
         // 总署：逻辑校验通过
-        BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,"20200806090000001");
+        BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 //        Thread.sleep(1000);
         // 总署:新增申报成功
-        BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,"20200807100000000");
-        Thread.sleep(3000);
+        BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
+//        Thread.sleep(3000);
     }
 
     /**
@@ -97,19 +97,19 @@ public class OrdersApi {
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
-        BackQingdanZongshu.backLogic(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810130000001");
+        BackQingdanZongshu.backLogic(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 //        Thread.sleep(1000);
 
         // 回执新增申报成功报文
-        BackQingdanZongshu.backAddOk(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810140000001");
+        BackQingdanZongshu.backAddOk(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 //        Thread.sleep(1000);
 
         //回执放行报文
-        BackQingdanZongshu.backPass(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200810150000001");
+        BackQingdanZongshu.backPass(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200916110030001");
 //        Thread.sleep(1000);
 
         // 回执：税金
-        BackTax.backTaxrd(invtNo,100,5.2,3.6,"20200831114735001");
+        BackTax.backTaxrd(invtNo,100,5.2,3.6,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 
     }
 

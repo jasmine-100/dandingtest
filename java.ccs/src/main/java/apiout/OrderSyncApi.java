@@ -1,9 +1,11 @@
 package apiout;
 
 import client.ApiClient;
-import domain.Order;
 import jxc.BaseParam;
 import org.junit.jupiter.api.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @Author： jasmine
@@ -15,8 +17,10 @@ public class OrderSyncApi {
     // 推送OMS订单上报
     @Test
     public void orderSync(){
-        Order order = new Order("DO2009151625109271959","FYH20200915162510","FYH20200915162510","jxc");
+        OrderOms order = new OrderOms("DO"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()),
+                "FYH202009161024","FYH202009161024","jxc");
         ApiClient.doPostJson(BaseParam.URL_DECLARE,null,null,order);
 //        ApiClient.doPostJson("http://192.168.20.212:8083/xhr/order/syncDockerOrder",null,null,order);
     }
+
 }

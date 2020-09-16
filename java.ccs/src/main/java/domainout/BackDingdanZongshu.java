@@ -15,15 +15,15 @@ public class BackDingdanZongshu {
     static String data = null;
 
     // 总署回执：正常的回执
-    public static void declareAddOk(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void declareAddOk(String orderno, String ebpCode, String ebcCode, String returnTime) {
         modelZongshu(orderno, ebpCode, ebcCode, "2", "新增申报成功", returnTime);
     }
-    public static void logicOk(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void logicOk(String orderno, String ebpCode, String ebcCode, String returnTime) {
         modelZongshu(orderno, ebpCode, ebcCode, "120", "[Code:1800;Desc:逻辑校验通过]", returnTime);
     }
 
     // 申报失败的回执
-    public static void errorCompany(String orderno, String ebpCode, String ebcCode, String returnTime) throws IOException {
+    public static void errorCompany(String orderno, String ebpCode, String ebcCode, String returnTime)  {
         modelZongshu(orderno, ebpCode, ebcCode, "100", "[Code:13035;Desc:支付企业不一致]", returnTime);
     }
 
@@ -38,7 +38,7 @@ public class BackDingdanZongshu {
      * @param returnTime   海关回执时间
      * @throws IOException
      */
-    public static void modelZongshu(String orderno, String ebpCode, String ebcCode, String returnStatus, String returnInfo, String returnTime) throws IOException {
+    public static void modelZongshu(String orderno, String ebpCode, String ebcCode, String returnStatus, String returnInfo, String returnTime)  {
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB312Message xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"479237c3-ec79-4d05-bced-3f3299e64c57\">" +
                 "    <OrderReturn>" +

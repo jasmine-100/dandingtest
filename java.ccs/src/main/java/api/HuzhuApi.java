@@ -14,7 +14,7 @@ import java.io.IOException;
 public class HuzhuApi {
 
     // ccs系统内核注单 编号
-    String EtpsPreentNo = "HZ2009151500000285";
+    String EtpsPreentNo = "HZ2009160949000288";
     // 预录入核注单号
     String SeqNo = "Y"+EtpsPreentNo;
     String bondInvtNo = "QD"+EtpsPreentNo;
