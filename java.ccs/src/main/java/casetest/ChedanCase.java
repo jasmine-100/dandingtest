@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class ChedanCase {
     // 取撤单列表的撤单申报编号，去掉CD
-    String orderNo = "2009151000000346";
+    String orderNo = "2009161436000394";
 
     // 回执：新增申报成功
     @Test

@@ -30,7 +30,7 @@ public class OrdersApi {
 
     @Test
     public void test(){
-        for (int i=0;i<3;i++){
+        for (int i=0;i<4;i++){
             pushOrder();
         }
     }
@@ -62,7 +62,7 @@ public class OrdersApi {
         ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);
 
         //回执订单申报结果
-        dingdanBack(declareOrderno);
+//        dingdanBack(declareOrderno);
 
         //回执清单申报结果
         qingdanBack(declareOrderno);
