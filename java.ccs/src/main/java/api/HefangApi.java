@@ -4,8 +4,6 @@ import domainout.BackHefang;
 import domainout.BackHefangHezhu;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
 /**
  * @Author： jasmine
  * @Description :
@@ -13,39 +11,30 @@ import java.io.IOException;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2009161746000230";  // 系统内部核放单编号
-    String SeqNo = "Y"+etpsPreentNo;  // 预录入编号
+    String etpsPreentNo = "HF2009171628000244";  // 系统内部核放单编号
+    String seqNo = "Y"+etpsPreentNo;  // 预录入编号
     String businessId = "QD"+etpsPreentNo;  // 核放单号
 
-    @Test
-    public void hefangPass() throws InterruptedException {
-        // 核放单：调用成功
-        callPass();
-        Thread.sleep(1000);
-
-        // 核放单：审核通过
-        backExaminePass();
-        Thread.sleep(1000);
-
-        // 核放单：过卡回执
-        backCheckPass();
-    }
-
-    @Test
+    @Test // 调用成功
     public void callPass() {
-        BackHefangHezhu.callPass(etpsPreentNo,SeqNo);
+        BackHefangHezhu.callPass(etpsPreentNo, seqNo);
     }
-    @Test
+    @Test  // 审核通过
     public void backExaminePass() {
-        BackHefang.backExaminePass(SeqNo,businessId,"2020-09-15 10:20:30");
+        BackHefang.backExaminePass(seqNo,businessId,"2020-09-15 10:20:30");
     }
-    @Test
+    @Test  // 过卡回执
     public void backCheckPass() {
-        BackHefang.backCheckPass(SeqNo,businessId,"2020-09-15 12:20:30");
+        BackHefang.backCheckPass(seqNo,businessId,"2020-09-15 12:20:30");
     }
 
-    @Test
+    @Test  // 退单
     public void backCancel(){
-        BackHefang.backCancel(SeqNo,businessId,"2020-09-15 15:20:10");
+        BackHefang.backQuit(seqNo,businessId,"2020-09-15 15:20:10");
+    }
+
+    @Test  // 异常
+    public void backError(){
+        BackHefangHezhu.callFail(etpsPreentNo);
     }
 }

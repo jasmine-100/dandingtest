@@ -29,4 +29,15 @@ public class BackHefangHezhu {
                 "</CommonResponeMessage>";
         ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
+
+    public static void callFail(String EtpsPreentNo){
+        String data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
+                "<CommonResponeMessage>" +
+                "<EtpsPreentNo>"+EtpsPreentNo+"</EtpsPreentNo>" +
+                "<CheckInfo>核放单类型为5或6时：绑定类型、关联单证类型、关联单证编号应为空</CheckInfo>" +
+                "<DealFlag>-1</DealFlag>" +
+                "</CommonResponeMessage>";
+        ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
+    }
+
 }

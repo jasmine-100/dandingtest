@@ -4,8 +4,6 @@ import domainout.BackHefangHezhu;
 import domainout.BackHezhu;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
 /**
  * @Author： jasmine
  * @Description :
@@ -14,29 +12,35 @@ import java.io.IOException;
 public class HuzhuApi {
 
     // ccs系统内核注单 编号
-    String EtpsPreentNo = "HZ2009161745000295";
+    String etpsPreentNo = "HZ2009171606000321";
     // 预录入核注单号
-    String SeqNo = "Y"+EtpsPreentNo;
-    String bondInvtNo = "QD"+EtpsPreentNo;
+    String seqNo = "Y"+ etpsPreentNo;
+    String bondInvtNo = "QD"+ etpsPreentNo;
 
     @Test
-    public void both(){
+    public void callPass(){
         // 核放单：调用成功
-        BackHefangHezhu.callPass(EtpsPreentNo,SeqNo);
-        // 核放单：未核扣、审核通过
-        BackHezhu.backHezhuPass(EtpsPreentNo,SeqNo,bondInvtNo);
+        BackHefangHezhu.callPass(etpsPreentNo, seqNo);
     }
-
     @Test
-    public void backHezhuPass()  {
+    public void backHezhuPass(){
+        // 核放单：未核扣、审核通过
+        BackHezhu.backHezhuPass(etpsPreentNo, seqNo,bondInvtNo);
+    }
+    @Test
+    public void backHezhuSuccess()  {
         // 核注单：已核扣、审核通过
-        BackHezhu.backHezhuSuccess(EtpsPreentNo,SeqNo,bondInvtNo);
+        BackHezhu.backHezhuSuccess(etpsPreentNo, seqNo,bondInvtNo);
     }
 
     // 退单
     @Test
-    public void backError(){
-        BackHezhu.backError(EtpsPreentNo,SeqNo,bondInvtNo);
+    public void backCancel(){
+        BackHezhu.backError(etpsPreentNo, seqNo,bondInvtNo);
     }
-
+    // 异常(推送不成功)
+    @Test
+    public void backError(){
+        BackHefangHezhu.callFail(etpsPreentNo);
+    }
 }

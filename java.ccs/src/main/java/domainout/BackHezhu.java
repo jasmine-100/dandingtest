@@ -16,31 +16,76 @@ import java.util.Date;
 public class BackHezhu {
     static String data = null;
 
+    // 报文入库成功
+    public static void backAccept(String etpsPreentNo,String businessId){
+        declareModel(etpsPreentNo,businessId);
+    }
+
     // 未核扣、审核通过
     public static void backHezhuPass(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo){
-        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,0,0,5);
+        examineModel(etpsInnerInvtNo,invtPreentNo,bondInvtNo,0,0,5);
     }
 
     // 已核扣、审核通过
     public static void backHezhuSuccess(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo) {
-        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,2,0,1);
+        examineModel(etpsInnerInvtNo,invtPreentNo,bondInvtNo,2,0,1);
     }
 
+    // 未核扣，审核失败
     public static void backError(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo){
-        function(etpsInnerInvtNo,invtPreentNo,bondInvtNo,0,2,3);
+        examineModel(etpsInnerInvtNo,invtPreentNo,bondInvtNo,0,2,3);
+    }
+
+    static void declareModel(String etpsPreentNo,String businessId){
+        data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
+                "<Package xmlns=\"http://www.w3.org/2000/09/xmldsig#\">" +
+                    "<EnvelopInfo>" +
+                        "<version>1.0</version>" +
+                        "<message_id>CUS0000E0100002020072314111900191970628</message_id>" +
+                        "<file_name>CUS0000E0100002020072314111900191970628.INV</file_name>" +
+                        "<message_type>INV201</message_type>" +
+                        "<sender_id>CUS0000</sender_id>" +
+                        "<receiver_id>E010000</receiver_id>" +
+                    "</EnvelopInfo>" +
+                    "<DataInfo>" +
+                        "<PocketInfo>" +
+                            "<pocket_id>QD292420E000007507-eefade82752a4f5b9828c66177fb0627</pocket_id>" +
+                            "<total_pocket_qty>1</total_pocket_qty>" +
+                            "<cur_pocket_no>1</cur_pocket_no>" +
+                            "<is_unstructured/>" +
+                        "</PocketInfo>" +
+                        "<BussinessData>" +
+                            "<INV201>" +
+                                "<HdeApprResult>" +
+                                "<etpsPreentNo>"+etpsPreentNo+"</etpsPreentNo>" +
+                                "<businessId>"+businessId+"</businessId>" +
+                                "<tmsCnt>0</tmsCnt>" +
+                                "<typecd>1</typecd>" +
+                                "<manageResult>Y</manageResult>" +
+                                "<manageDate>2020-07-23 14:11:13</manageDate>" +
+                                "<rmk/>" +
+                                "</HdeApprResult>" +
+                                "<CheckInfo>" +
+                                "<note>报文入库成功</note>" +
+                                "</CheckInfo>" +
+                            "</INV201>" +
+                        "</BussinessData>" +
+                    "</DataInfo>" +
+                "</Package>";
+        ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 
     /**
-     *
+     * 核注清单审核报文
      * @param etpsInnerInvtNo 企业内部编码
      * @param invtPreentNo 预录入核注编号
      * @param bondInvtNo 核注清单编号
      * @param vrfdedMarkcd 0-未核扣，2-已核扣
-     * @param invtStucd 2-退单;0-审核通过
+     * @param invtStucd 0-审核通过,2-退单
      * @param manageResult 1-通过（已核扣）；2-转人工；3-退单；4-预核扣；5-通过（未核扣）
      * @throws IOException
      */
-    static void function(String etpsInnerInvtNo,String invtPreentNo,String bondInvtNo,int vrfdedMarkcd,int invtStucd,int manageResult) {
+    static void examineModel(String etpsInnerInvtNo, String invtPreentNo, String bondInvtNo, int vrfdedMarkcd, int invtStucd, int manageResult) {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
                 "<Package xmlns=\"http://www.w3.org/2000/09/xmldsig#\">" +
@@ -167,7 +212,6 @@ public class BackHezhu {
                         "</BussinessData>" +
                     "</DataInfo>" +
                 "</Package>";
-//        new ApiClient(BaseParam.URL_BACKMOCK).doPostForm(new Param(data));
         ApiClient.doPostForm(BaseParam.URL_BACKMOCK,null,null,new Param(data));
     }
 

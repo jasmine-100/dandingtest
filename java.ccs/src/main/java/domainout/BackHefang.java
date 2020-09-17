@@ -9,20 +9,20 @@ import java.io.IOException;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 核放单回执
  * @Date : Created in 2020/8/10 9:40
  */
 public class BackHefang {
     static String data = null;
 
-    // 核放单回执：审核通过
+    // 审核通过
     public static void backExaminePass(String etpsPreentNo,String businessId,String time) {
         backExamine(etpsPreentNo,businessId,1,1,time);
     }
 
-    // 核放单回执：作废
-    public static void backCancel(String etpsPreentNo,String businessId,String time) {
-        backExamine(etpsPreentNo,businessId,3,3,time);
+    // 退单
+    public static void backQuit(String etpsPreentNo, String businessId, String time) {
+        backExamine(etpsPreentNo,businessId,1,3,time);
     }
 
     /**
