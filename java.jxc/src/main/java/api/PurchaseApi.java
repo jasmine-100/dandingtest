@@ -37,7 +37,7 @@ public class PurchaseApi {
     }
 
     // 采购单审核通过
-    public static void examine(String purchaseId) throws Exception {
+    public static void examine(String purchaseId){
         ApiClient.doPostForm(BaseParam.PURCHASE_EXAMINE+"?purOrderId="+purchaseId,null,Cookie.getCookie(),null);
     }
 

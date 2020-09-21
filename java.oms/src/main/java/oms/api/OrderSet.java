@@ -26,7 +26,7 @@ public class OrderSet {
         String orderno = "JOS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         List<Item> items = new ArrayList<>();
-        items.add(new Item("","OUT1600676341794",1,100));
+        items.add(new Item("","OUT1600679279797",1,100));
 
         //组装订单项
         Order order = new Order(orderno,"916",items,10,20,5);
