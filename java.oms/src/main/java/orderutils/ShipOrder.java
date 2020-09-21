@@ -14,13 +14,13 @@ public class ShipOrder {
 static  String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
 
 //模拟运单回执
-public static void shipBackPush(String orderno) throws IOException {
+public static void shipBackPush(String orderno){
 ShipBack shipBack = new ShipBack(orderno);
     ApiClient.doPostForm(url,null,null,shipBack);
 }
 
 //模拟运单回执
-public static void shipBackPush(String orderno,String shipCompany,String shipCode,String operateDate) throws IOException {
+public static void shipBackPush(String orderno,String shipCompany,String shipCode,String operateDate) {
 ShipBack shipBack = new ShipBack(orderno,shipCompany,shipCode,operateDate);
     ApiClient.doPostForm(url,null,null,shipBack);
 }

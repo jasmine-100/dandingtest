@@ -19,8 +19,6 @@ import java.util.List;
  * @Date : Created in 2020/7/24 11:21
  */
 public class SnBackApi {
-    String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
-    ApiClient client = new ApiClient(url);
 
     String whCode = "01";
     String hzid = "GL01";
@@ -39,7 +37,7 @@ public class SnBackApi {
         ParamsWms params = new ParamsWms(XmlUtil.objToXml(snData), ServiceType.SN_BACK,"1.0");
 
         //接口推送
-        client.doPostForm(params);
+        ApiClient.doPostForm("http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive",null,null,params);
     }
 
 }

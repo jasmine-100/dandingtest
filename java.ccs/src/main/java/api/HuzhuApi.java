@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 public class HuzhuApi {
 
     // ccs系统内核注单 编号
-    String etpsPreentNo = "HZ2009171606000321";
+    String etpsPreentNo = "HZ2009211151000344";
     // 预录入核注单号
     String seqNo = "Y"+ etpsPreentNo;
     String bondInvtNo = "QD"+ etpsPreentNo;

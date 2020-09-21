@@ -27,24 +27,26 @@ public class OrderSetApiBaoshui {
 
     // 保税订单
     @Test
-    public void orderSet() throws Exception {
+    public void orderSet() {
         //组装商品列表
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("SPC1596433033872","",2,1));
 
-        OrderSet.orderSet(orderNo,"869",items);
+        Order order = new Order(orderNo,"916",items,10,20,5);
+
+        ApiClient.doPostJson(Data.URL,null,null,order) ;
 
     }
     //推送海关支付信息
     @Test
-    public void pushPayInfo() throws IOException {
+    public void pushPayInfo() {
         Pay.payInfoPush(orderNo);
     }
 
 
     //推送订单回执
     @Test
-    public void pushDeclareBack() throws IOException {
+    public void pushDeclareBack() {
         //逻辑校验通过
         DeclareOrder.declareLogicPass(orderNo);
         //新增申报成功
@@ -53,7 +55,7 @@ public class OrderSetApiBaoshui {
 
     //推送清单回执
     @Test
-    public void pushListBack() throws IOException {
+    public void pushListBack() {
         ListOrder.listLogicPass(orderNo);
         ListOrder.listAddSuccess(orderNo);
         ListOrder.listSuccess(orderNo);
@@ -65,7 +67,7 @@ public class OrderSetApiBaoshui {
 
     //推送运单回执
     @Test
-    public void pushShipBack() throws IOException {
+    public void pushShipBack(){
         ShipOrder.shipBackPush(orderNo);
     }
 

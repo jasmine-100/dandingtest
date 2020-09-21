@@ -15,7 +15,7 @@ public class Pay {
 public static String url = "http://pangu.admintest.yang800.cn/docking/api/customs/pay/info/upload";
 
 //模拟推送海关支付信息
-public static void payInfoPush(String orderNo) throws IOException {
+public static void payInfoPush(String orderNo) {
 PayInfo payInfo = new PayInfo(orderNo);
     ApiClient.doPostJson(url,null,null,payInfo);
 }

@@ -21,8 +21,6 @@ public class DeliverBackApi {
     //发货单回执--奇门接口
     @Test
     public void deliverBack() throws Exception {
-        String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
-        ApiClient client = new ApiClient(url);
 
         String whCode = "01";
         String hzid = "GL01";
@@ -38,7 +36,7 @@ public class DeliverBackApi {
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), ServiceType.DELIVER_BACK, "1.0");
 
         System.out.println(param);
-        ApiClient.doPostXml(url, param, null, null);
+        ApiClient.doPostXml("http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receiv", param, null, null);
     }
 
 

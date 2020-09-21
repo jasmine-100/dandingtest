@@ -1,6 +1,7 @@
 package wms.api;
 
 import client.ApiClient;
+import com.google.protobuf.Api;
 import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 import wms.domain.ParamsWms;
@@ -18,9 +19,6 @@ import java.util.List;
  * @Date : Created in 2020/7/24 10:59
  */
 public class OutboundBackApi {
-
-    String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
-    ApiClient client = new ApiClient(url);
 
     String whCode = "01";
     String hzid = "GL01";
@@ -40,7 +38,7 @@ public class OutboundBackApi {
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), ServiceType.OUTBOUND_BACK, "1.0");
 
         //接口推送
-        client.doPostForm(param);
+        ApiClient.doPostForm("http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive",null,null,param);
 
     }
 }
