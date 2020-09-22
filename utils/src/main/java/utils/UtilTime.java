@@ -18,10 +18,10 @@ public class UtilTime {
      * @param time  yyyyMMddHHmmss 格式
      * @return 返回时间戳
      */
-    public static long getTime(String time){
+    public static long getTime(String pattern,String time){
         Date date = null;
         try {
-            date = new SimpleDateFormat("yyyyMMddHHmmss").parse(time);
+            date = new SimpleDateFormat(pattern).parse(time);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -33,6 +33,7 @@ public class UtilTime {
 
     @Test
     public void test(){
-        System.out.println(getTime("20200901131310"));
+        System.out.println(getTime("yyyyMMddHHmmss","20200901100101"));
+        System.out.println(getTime("yyyy.MM.dd","2020.9.1"));
     }
 }

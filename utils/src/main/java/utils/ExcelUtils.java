@@ -1,45 +1,35 @@
-package api;
+package utils;
 
-import jxl.Workbook;
 import jxl.Cell;
 import jxl.Sheet;
+import jxl.Workbook;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author： jasmine
  * @Description :
- * @Date : Created in 2020/9/21 17:57
+ * @Date : Created in 2020/9/22 9:15
  */
-public class GoodBatch {
+public class ExcelUtils {
 
     // 读取excel
-    public void readExcel(String pathname,int row){
+    public static void getExcel(String pathname){
         try {
             Workbook workbook = Workbook.getWorkbook(new File(pathname));
             Sheet sheet = workbook.getSheet(0);
-            for (int i=row;i<sheet.getRows();i++){
+            for (int i=0;i<sheet.getRows();i++){
                 for (int j=0;j<sheet.getColumns();j++){
                     Cell cell = sheet.getCell(j,i);
                     System.out.print(cell.getContents());
                 }
-                System.out.println("");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    // 连接数据库并写入数据
-    public void writeDataBase(){
-
-    }
-
-
-    @Test
-    public void test(){
-        readExcel("C:/Users/jasmine/Desktop/jxc.xls",0);
-    }
 }
