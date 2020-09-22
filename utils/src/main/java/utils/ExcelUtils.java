@@ -3,6 +3,9 @@ package utils;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -27,6 +30,23 @@ public class ExcelUtils {
                     System.out.print(cell.getContents());
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 写入excel
+    public static void writeExcel(String filepath,int sheetIndex,int row ,int col,String str){
+        WritableWorkbook workbook1 = null;
+        try {
+            Workbook workbook = Workbook.getWorkbook(new File(filepath));
+            workbook1 = Workbook.createWorkbook(new File(filepath),workbook);
+            WritableSheet sheet1 = workbook1.getSheet(sheetIndex);
+            Label label = new Label(col,row,str);
+            sheet1.addCell(label);
+            workbook1.write();
+            workbook1.close();
+            workbook.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

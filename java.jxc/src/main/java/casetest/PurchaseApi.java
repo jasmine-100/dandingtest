@@ -4,18 +4,14 @@ import client.ApiClient;
 import com.alibaba.fastjson.JSONObject;
 import domainout.stockin.PurOrderItem;
 import domainout.stockin.PurchaseOrder;
-import domainout.stockin.StoOrderItem;
-import domainout.stockin.StockinOrder;
-import jxl.Cell;
 import jxl.Range;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.junit.jupiter.api.Test;
+import utils.ExcelUtils;
 import utils.UtilTime;
-
 import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -37,9 +33,8 @@ public class PurchaseApi {
         try {
             Workbook workbook = Workbook.getWorkbook(new File(BaseParam.FILEPATH));
             Sheet sheet = workbook.getSheet(1);
-            Range[] ranges = sheet.getMergedCells();
-            outer:for (int i =1; i < sheet.getRows(); i++) {// 单一商品
-                Cell cell = sheet.getCell(9,i);
+            outer:for (int i =1; i <sheet.getRows(); i++) {// 单一商品
+                Range[] ranges = sheet.getMergedCells();
                 inner:for(Range range:ranges){
                     if (i>=range.getTopLeft().getRow() && i<=range.getBottomRight().getRow()){
                         continue outer ;  //判断为合并单元格，即跳出
@@ -61,9 +56,12 @@ public class PurchaseApi {
                 PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems,supplier,curreny,deliverTime,payMethod,type,rate);
 //                    System.out.println(JSON.toJSON(purchaseOrder));
                 String response = ApiClient.doPostJson(BaseParam.PURCHASE_ADD,null, BaseParam.getCookie(),purchaseOrder);
-
+                // 获取采购单号
+                String purchaseId = getPurchaseId(response);
+                // 写入采购单号
+                ExcelUtils.writeExcel(BaseParam.FILEPATH,1,i,0,purchaseId);
                 // 审核
-                ApiClient.doPostForm(BaseParam.PURCHASE_EXAMINE+"?purOrderId="+getPurchaseId(response),null, BaseParam.getCookie(),null);
+                examine(purchaseId);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -98,8 +96,12 @@ public class PurchaseApi {
                 PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems, supplier, curreny, deliverTime, payMethod, type, rate);
 //                System.out.println(JSON.toJSON(purchaseOrder));
                 String response = ApiClient.doPostJson(BaseParam.PURCHASE_ADD, null, BaseParam.getCookie(), purchaseOrder);
+                // 获取采购单号
+                String purchaseId = getPurchaseId(response);
+                // 写入采购单号
+                ExcelUtils.writeExcel(BaseParam.FILEPATH,1,index,0,purchaseId);
                 // 审核
-                ApiClient.doPostForm(BaseParam.PURCHASE_EXAMINE+"?purOrderId="+getPurchaseId(response),null, BaseParam.getCookie(),null);
+                examine(purchaseId);
             }
         } catch (Exception e) {
             e.printStackTrace();
