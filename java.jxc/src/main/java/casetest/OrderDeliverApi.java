@@ -1,4 +1,4 @@
-package api;
+package casetest;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
