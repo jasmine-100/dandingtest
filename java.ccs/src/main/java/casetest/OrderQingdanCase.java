@@ -31,7 +31,7 @@ public class OrderQingdanCase {
     }
     // 测试用例：清单回执--放行
     @Test
-    public void backPass()  {
+    public void backPass() {
         BackQingdanZongshu.backPass(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,Data.invtNo,"20200817160000001");
 //        BackQingdanZongshu.backPass("DOS0910142536",Data.ebpCode,Data.ebcCode,Data.agentCode,"QD20200910142547","20200817160000001");
     }
@@ -44,12 +44,12 @@ public class OrderQingdanCase {
     // 常见的错误回执报文
     // 测试用例：总署回执--清单和订单表体不一致(申报终止,可重推)
     @Test
-    public void errorItem()  {
+    public void errorItem() {
         BackQingdanZongshu.errorItem(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,Data.invtNo,"20200817180000001");
     }
     // 测试用例：总署回执--海关超限(申报失败,不可重推)
     @Test
-    public void errorLimit() throws Exception {
+    public void errorLimit(){
         BackQingdanZongshu.errorLimit(Data.declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,Data.invtNo,"20200817190000001");
     }
 

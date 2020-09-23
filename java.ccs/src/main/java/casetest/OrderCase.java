@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class OrderCase {
     @Test
-    public void testMore() throws Exception {
+    public void testMore() {
         for (int i =0;i<2;i++){
             orderSet();
         }
@@ -26,7 +26,7 @@ public class OrderCase {
 
     // 下单
     @Test
-    public void orderSet() throws Exception {
+    public void orderSet()  {
         String str = new SimpleDateFormat("MMddHHmmssSSS").format(new Date());
 
         // 添加商品项
