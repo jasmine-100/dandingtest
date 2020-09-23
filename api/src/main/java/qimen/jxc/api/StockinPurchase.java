@@ -75,9 +75,21 @@ public class StockinPurchase {
     public void wmsBack(){
         try {
             Sheet sheet = Workbook.getWorkbook(new File(Data.FILEPATH)).getSheet(0);
+            Range[] ranges = sheet.getMergedCells();
 
+            // 回执单一商品
+            outer:for (int i = 1; i < sheet.getRows(); i++) {
+                inner:for (Range range : ranges) {
+                    if (i >= range.getTopLeft().getRow() && i <= range.getBottomRight().getRow()) {
+                        continue outer;
+                    }
+                }
 
-//            BackStockin.backStockin(billType,orderId,Data.sku,num/5,1,"","","","ZP",1);
+            }
+
+            // 回执多商品
+
+            BackStockin.backStockin("CGRKD",orderId,Data.sku,num/5,1,"","","","ZP",1);
         }catch (Exception e){
             e.printStackTrace();
         }
