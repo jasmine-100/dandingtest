@@ -21,7 +21,7 @@ public class GoodApi {
     @Test
     public void goodAdd() {
         try {
-            Workbook workbook = Workbook.getWorkbook(new File(TestData.FILEPATH));
+            Workbook workbook = Workbook.getWorkbook(new File(Data.FILEPATH));
             Sheet sheet = workbook.getSheet(0);
             for (int i =1; i < sheet.getRows(); i++) {
                 String goodname = sheet.getCell(0,i).getContents();
@@ -34,7 +34,7 @@ public class GoodApi {
 
                 Good good = new Good(goodno,barcode,goodname,brand,isbatch,type,price);
 //                System.out.println(JSON.toJSON(good));
-                ApiClient.doPostJson(TestData.GOOD_ADD,null, TestData.getCookie(),good);
+                ApiClient.doPostJson(Data.GOOD_ADD,null, Data.getCookie(),good);
             }
         } catch (IOException e) {
             e.printStackTrace();

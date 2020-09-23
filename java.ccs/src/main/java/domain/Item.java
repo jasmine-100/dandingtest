@@ -26,13 +26,11 @@ public class Item {
         this.unitPrice = unitPrice;
     }
 
-    public Item(String itemNo,int count, double unitPrice) {
-        this.recordNo = "";
+    public Item(String recordNo,String itemNo,String count, String unitPrice) {
+        this.recordNo = recordNo;
         this.itemNo = itemNo;
-        this.itemName = "外部商品";
-        this.count = count;
-        this.itemLink = "http://www.taobao.com";
-        this.unitPrice = unitPrice;
+        this.count = Integer.parseInt(count);
+        this.unitPrice = Double.parseDouble(unitPrice);
     }
 
 }

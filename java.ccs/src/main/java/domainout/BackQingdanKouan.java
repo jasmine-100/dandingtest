@@ -36,7 +36,7 @@ public class BackQingdanKouan {
                         "<list>" +
                             "<jkfResult>" +
                                 "<companyCode>"+companyCode+"</companyCode>" +
-                                "<businessNo>"+orderId+"</businessNo>" +
+                                "<businessNo>"+declareOrderNo+"</businessNo>" +
                                 "<businessType>PERSONAL_GOODS_DECLAR</businessType>" +
                                 "<declareType>1</declareType>" +
                                 "<chkMark>"+status+"</chkMark>" +

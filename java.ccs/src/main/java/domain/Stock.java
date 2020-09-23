@@ -17,7 +17,7 @@ import java.util.Date;
 public class Stock {
     double avgPrice; //平均美元单价
     int currCode;  //币值
-    int customsBookId;  //账册的数据库id
+    String customsBookId;  //账册的数据库id
     int declarePrice;  //申报单价
     int enable;
     String firstUnit;
@@ -38,7 +38,7 @@ public class Stock {
     String  secondUnit;
     int totalAmt;
 
-    public Stock(String goodsSeqNo,String goodsName, String productId, int customsBookId){
+    public Stock(String goodsSeqNo,String goodsName, String productId, String customsBookId){
         this.avgPrice = 10;
         this.currCode = 142;
         this.customsBookId = customsBookId;
@@ -49,7 +49,7 @@ public class Stock {
         this.goodsSeqNo = goodsSeqNo;
         this.goodsUnit = "001";
         this.hsCode = "3304990039";
-        this.inDate = UtilTime.getTime("20200901102030");
+        this.inDate = UtilTime.getTime("yyyyMMddHHmmss","20200901102030");
         this.inLegalQty = 1000;
         this.inQty = 1000;
         this.firstUnit = "011";

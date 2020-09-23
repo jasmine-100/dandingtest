@@ -21,20 +21,15 @@ import java.util.List;
  */
 public class PurchaseApi {
 
-    @Test
-    public void test(){
-        purchaseAdd();
-        purchaseAdds();
-    }
-
-    // 单一商品采购单
+    // 采购单
     @Test
     public void purchaseAdd() {
         try {
-            Workbook workbook = Workbook.getWorkbook(new File(TestData.FILEPATH));
+            Workbook workbook = Workbook.getWorkbook(new File(Data.FILEPATH));
             Sheet sheet = workbook.getSheet(1);
+            Range[] ranges = sheet.getMergedCells();
+
             outer:for (int i =1; i <sheet.getRows(); i++) {// 单一商品
-                Range[] ranges = sheet.getMergedCells();
                 inner:for(Range range:ranges){
                     if (i>=range.getTopLeft().getRow() && i<=range.getBottomRight().getRow()){
                         continue outer ;  //判断为合并单元格，即跳出
@@ -55,26 +50,15 @@ public class PurchaseApi {
                 long deliverTime = UtilTime.getTime("yyyy.MM.dd",sheet.getCell(6,i).getContents());
                 PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems,supplier,curreny,deliverTime,payMethod,type,rate);
 //                    System.out.println(JSON.toJSON(purchaseOrder));
-                String response = ApiClient.doPostJson(TestData.PURCHASE_ADD,null, TestData.getCookie(),purchaseOrder);
+                String response = ApiClient.doPostJson(Data.PURCHASE_ADD,null, Data.getCookie(),purchaseOrder);
                 // 获取采购单号
                 String purchaseId = getPurchaseId(response);
                 // 写入采购单号
-                ExcelUtils.writeExcel(TestData.FILEPATH,1,i,0,purchaseId);
+                ExcelUtils.writeExcel(Data.FILEPATH,1,i,0,purchaseId);
                 // 审核
                 examine(purchaseId);
             }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 
-    // 多商品订单
-    @Test
-    public void purchaseAdds(){
-        try {
-            Workbook workbook = Workbook.getWorkbook(new File(TestData.FILEPATH));
-            Sheet sheet = workbook.getSheet(1);
-            Range[] ranges = sheet.getMergedCells();
             for(int m=0;m<ranges.length/7;m++) {// 多商品
                 Range range = ranges[m];
                 int index = range.getTopLeft().getRow();
@@ -95,15 +79,15 @@ public class PurchaseApi {
                 }
                 PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems, supplier, curreny, deliverTime, payMethod, type, rate);
 //                System.out.println(JSON.toJSON(purchaseOrder));
-                String response = ApiClient.doPostJson(TestData.PURCHASE_ADD, null, TestData.getCookie(), purchaseOrder);
+                String response = ApiClient.doPostJson(Data.PURCHASE_ADD, null, Data.getCookie(), purchaseOrder);
                 // 获取采购单号
                 String purchaseId = getPurchaseId(response);
                 // 写入采购单号
-                ExcelUtils.writeExcel(TestData.FILEPATH,1,index,0,purchaseId);
+                ExcelUtils.writeExcel(Data.FILEPATH,1,index,0,purchaseId);
                 // 审核
                 examine(purchaseId);
             }
-        } catch (Exception e) {
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -119,7 +103,7 @@ public class PurchaseApi {
 
     // 采购单审核通过
     public static void examine(String purchaseId){
-        ApiClient.doPostForm(TestData.PURCHASE_EXAMINE+"?purOrderId="+purchaseId,null, TestData.getCookie(),null);
+        ApiClient.doPostForm(Data.PURCHASE_EXAMINE+"?purOrderId="+purchaseId,null, Data.getCookie(),null);
     }
 
 }

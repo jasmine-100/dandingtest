@@ -23,6 +23,6 @@ public class StockinApi {
         StockinOrder stockinOrder = new StockinOrder("LSPUAO0N1X",purchaseId,stoOrderItems);
 
         // 接口推送
-        ApiClient.doPostJson(TestData.STOCKIN_ADD,null, TestData.getCookie(),stockinOrder);
+        ApiClient.doPostJson(Data.STOCKIN_ADD,null, Data.getCookie(),stockinOrder);
     }
 }

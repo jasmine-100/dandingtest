@@ -21,7 +21,7 @@ import java.util.List;
 public class OrderDeliverApi {
 
     @Test
-    public void deliverOrder() throws IOException {
+    public void deliverOrder() {
         //组装商品项
         List<OrderSku> orderSkus = new ArrayList<>();
         orderSkus.add(new OrderSku("DTNF07061102",10));

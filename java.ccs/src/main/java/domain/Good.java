@@ -20,7 +20,7 @@ public class Good {
     String brand;  //品牌
     String brandEn; //品牌（英语）
     String composition;  //成分
-    int customsBookId;  //账册的数据库id
+    String customsBookId;  //账册的数据库id
     double declarePrice;  //备案价格
     String declareUnit;  //申报单位
     int enable;  //
@@ -46,7 +46,7 @@ public class Good {
     int taxRate;
     int vatRate;
 
-    public Good(String skuId,String goodsName, String productId, int customsBookId) {
+    public Good(String skuId,String goodsName, String productId, String customsBookId) {
         this.skuId = skuId;
         this.productId = productId;
         this.goodsRecordName =goodsName;
