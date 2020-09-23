@@ -18,28 +18,28 @@ public class BackChedan {
     static String returnInfo;
 
     // 撤单回执：申报
-    public static void backShenbao(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime) throws IOException {
+    public static void backShenbao(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime)  {
         returnStatus = "2";
         returnInfo = "新增申报成功";
         backFunction(orderno, ebpCode, ebcCode, agentCode, returnStatus, returnInfo, returnTime);
     }
 
     // 撤单回执：逻辑校验通过
-    public static void backLogicpass(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime) throws IOException {
+    public static void backLogicpass(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime)  {
         returnStatus = "120";
         returnInfo = "[Code:1800;Desc:逻辑校验通过]";
         backFunction(orderno, ebpCode, ebcCode, agentCode, returnStatus, returnInfo, returnTime);
     }
 
     // 撤单回执：撤单成功
-    public static void backChedanSuccess(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime) throws IOException {
+    public static void backChedanSuccess(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime)  {
         returnStatus = "399";
         returnInfo = "[Code:2300;Desc:审核通过],撤单申请审核通过,清单已成功撤单";
         backFunction(orderno, ebpCode, ebcCode, agentCode, returnStatus, returnInfo, returnTime);
     }
 
     // 撤单回执：申报失败
-    public static void backChedanFail(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime) throws IOException {
+    public static void backChedanFail(String orderno, String ebpCode, String ebcCode, String agentCode, String returnTime) {
         returnStatus = "-451";
         returnInfo = "申报失败";
         backFunction(orderno, ebpCode, ebcCode, agentCode, returnStatus, returnInfo, returnTime);
