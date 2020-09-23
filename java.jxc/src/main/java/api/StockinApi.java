@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class StockinApi {
     // 添加入库单
-    public static void stockin(String purchaseId,String procode,int num) throws Exception {
+    public static void stockin(String purchaseId,String procode,int num)  {
         // 入库单商品项
         List<StoOrderItem> stoOrderItems = new LinkedList<>();
         stoOrderItems.add(new StoOrderItem(procode,num));
