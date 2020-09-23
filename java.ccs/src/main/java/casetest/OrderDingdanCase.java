@@ -1,6 +1,5 @@
 package casetest;
 
-import api.Data;
 import domainout.BackDingdanZongshu;
 import org.junit.jupiter.api.Test;
 
