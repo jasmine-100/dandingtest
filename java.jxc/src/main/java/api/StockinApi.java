@@ -1,4 +1,4 @@
-package casetest;
+package api;
 
 import client.ApiClient;
 import domainout.stockin.StoOrderItem;
