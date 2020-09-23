@@ -1,5 +1,6 @@
 package casetest;
 
+import api.Data;
 import client.ApiClient;
 import jxc.BaseParam;
 import domain.Item;
@@ -36,7 +37,7 @@ public class OrderCase {
 
         // 组装申报单
 //        Order order = new Order("xiaoyuer","小鱼儿",outOrderno,"SF",Data.logiticsNo,Data.routeCode,items);
-        Order order = new Order("xiaoyuer","小鱼儿",Data.declareOrderNo,Data.declareOrderNo,"SF",Data.logiticsNo,Data.routeCode,items);
+        Order order = new Order("xiaoyuer","小鱼儿", Data.declareOrderNo,Data.declareOrderNo,"SF",Data.logiticsNo,Data.routeCode,items);
 //        Order order = new Order("xiaoyuer","小鱼儿",outOrderno,"SF",Data.logiticsNo,Data.routeCode,"浙江省","杭州市","江干区",items);
         //接口：推送申报单
         ApiClient.doPostJson(BaseParam.URL_ORDER,null,null,order);

@@ -1,9 +1,8 @@
 package casetest;
 
+import api.Data;
 import domainout.BackDingdanZongshu;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 
 /**
  * @Author： jasmine

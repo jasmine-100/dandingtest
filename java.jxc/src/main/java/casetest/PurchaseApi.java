@@ -31,7 +31,7 @@ public class PurchaseApi {
     @Test
     public void purchaseAdd() {
         try {
-            Workbook workbook = Workbook.getWorkbook(new File(BaseParam.FILEPATH));
+            Workbook workbook = Workbook.getWorkbook(new File(TestData.FILEPATH));
             Sheet sheet = workbook.getSheet(1);
             outer:for (int i =1; i <sheet.getRows(); i++) {// 单一商品
                 Range[] ranges = sheet.getMergedCells();
@@ -55,11 +55,11 @@ public class PurchaseApi {
                 long deliverTime = UtilTime.getTime("yyyy.MM.dd",sheet.getCell(6,i).getContents());
                 PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems,supplier,curreny,deliverTime,payMethod,type,rate);
 //                    System.out.println(JSON.toJSON(purchaseOrder));
-                String response = ApiClient.doPostJson(BaseParam.PURCHASE_ADD,null, BaseParam.getCookie(),purchaseOrder);
+                String response = ApiClient.doPostJson(TestData.PURCHASE_ADD,null, TestData.getCookie(),purchaseOrder);
                 // 获取采购单号
                 String purchaseId = getPurchaseId(response);
                 // 写入采购单号
-                ExcelUtils.writeExcel(BaseParam.FILEPATH,1,i,0,purchaseId);
+                ExcelUtils.writeExcel(TestData.FILEPATH,1,i,0,purchaseId);
                 // 审核
                 examine(purchaseId);
             }
@@ -72,7 +72,7 @@ public class PurchaseApi {
     @Test
     public void purchaseAdds(){
         try {
-            Workbook workbook = Workbook.getWorkbook(new File(BaseParam.FILEPATH));
+            Workbook workbook = Workbook.getWorkbook(new File(TestData.FILEPATH));
             Sheet sheet = workbook.getSheet(1);
             Range[] ranges = sheet.getMergedCells();
             for(int m=0;m<ranges.length/7;m++) {// 多商品
@@ -95,11 +95,11 @@ public class PurchaseApi {
                 }
                 PurchaseOrder purchaseOrder = new PurchaseOrder(purOrderItems, supplier, curreny, deliverTime, payMethod, type, rate);
 //                System.out.println(JSON.toJSON(purchaseOrder));
-                String response = ApiClient.doPostJson(BaseParam.PURCHASE_ADD, null, BaseParam.getCookie(), purchaseOrder);
+                String response = ApiClient.doPostJson(TestData.PURCHASE_ADD, null, TestData.getCookie(), purchaseOrder);
                 // 获取采购单号
                 String purchaseId = getPurchaseId(response);
                 // 写入采购单号
-                ExcelUtils.writeExcel(BaseParam.FILEPATH,1,index,0,purchaseId);
+                ExcelUtils.writeExcel(TestData.FILEPATH,1,index,0,purchaseId);
                 // 审核
                 examine(purchaseId);
             }
@@ -119,7 +119,7 @@ public class PurchaseApi {
 
     // 采购单审核通过
     public static void examine(String purchaseId){
-        ApiClient.doPostForm(BaseParam.PURCHASE_EXAMINE+"?purOrderId="+purchaseId,null, BaseParam.getCookie(),null);
+        ApiClient.doPostForm(TestData.PURCHASE_EXAMINE+"?purOrderId="+purchaseId,null, TestData.getCookie(),null);
     }
 
 }

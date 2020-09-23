@@ -1,4 +1,4 @@
-package casetest;
+package api;
 
 import domainout.BackTax;
 import domainout.BackTuiHuo;
@@ -11,7 +11,7 @@ import java.io.IOException;
  * @Description : 退货流程--回执海关放行
  * @Date : Created in 2020/8/4 15:12
  */
-public class TuihuoCase {
+public class OrderTuihuoApi {
 
     // 取退货单列表的退货单号，去掉TH
     String orderNo = "20091615240402";
@@ -19,7 +19,7 @@ public class TuihuoCase {
     // 回执：待人工审核
     @Test
     public void backExamine() throws Exception {
-        BackTuiHuo.backExamine(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200816070000001");
+        BackTuiHuo.backExamine(orderNo, Data.ebpCode,Data.ebcCode,Data.agentCode,"20200816070000001");
     }
     // 回执：放行
     @Test

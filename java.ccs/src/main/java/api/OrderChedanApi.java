@@ -1,8 +1,7 @@
-package casetest;
+package api;
 
 import domainout.BackChedan;
 import domainout.BackTax;
-import domainout.BackTuiHuo;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -12,14 +11,14 @@ import java.io.IOException;
  * @Description : 撤单--回执 流程
  * @Date : Created in 2020/8/4 17:58
  */
-public class ChedanCase {
+public class OrderChedanApi {
     // 取撤单列表的撤单申报编号，去掉CD
     String orderNo = "2009161436000394";
 
     // 回执：新增申报成功
     @Test
     public void backShenbao() throws IOException {
-        BackChedan.backShenbao(orderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806160000001");
+        BackChedan.backShenbao(orderNo, Data.ebpCode,Data.ebcCode,Data.agentCode,"20200806160000001");
     }
     // 回执：逻辑校验通过
     @Test

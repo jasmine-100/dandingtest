@@ -1,11 +1,10 @@
 package casetest;
 
+import api.Data;
 import domainout.BackQingdanKouan;
 import domainout.BackQingdanZongshu;
 import domainout.BackTax;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 
 /**
  * @Author： jasmine

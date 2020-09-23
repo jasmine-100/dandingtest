@@ -1,7 +1,6 @@
 package casetest;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
 import domainout.good.Good;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -22,7 +21,7 @@ public class GoodApi {
     @Test
     public void goodAdd() {
         try {
-            Workbook workbook = Workbook.getWorkbook(new File(BaseParam.FILEPATH));
+            Workbook workbook = Workbook.getWorkbook(new File(TestData.FILEPATH));
             Sheet sheet = workbook.getSheet(0);
             for (int i =1; i < sheet.getRows(); i++) {
                 String goodname = sheet.getCell(0,i).getContents();
@@ -35,7 +34,7 @@ public class GoodApi {
 
                 Good good = new Good(goodno,barcode,goodname,brand,isbatch,type,price);
 //                System.out.println(JSON.toJSON(good));
-                ApiClient.doPostJson(BaseParam.GOOD_ADD,null, BaseParam.getCookie(),good);
+                ApiClient.doPostJson(TestData.GOOD_ADD,null, TestData.getCookie(),good);
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -8,7 +8,7 @@ import java.util.Map;
  * @Description :
  * @Date : Created in 2020/8/25 10:13
  */
-public class BaseParam {
+public class TestData {
 
     // 测试环境域名
     public static String BASE_URL = "http://logistics-api-fat.yang800.com";
@@ -35,6 +35,4 @@ public class BaseParam {
     }
 
     public static String FILEPATH = "file/purchase.xls";
-    public static String FILEPATH2 = "file/purchase2.xls";
-
 }

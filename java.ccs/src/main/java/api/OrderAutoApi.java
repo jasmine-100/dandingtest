@@ -1,32 +1,23 @@
 package api;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
 import jxc.BaseParam;
 import domain.Item;
 import domain.Order;
 import domainout.*;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @Author： jasmine
  * @Description : CCS申报单完整流程：推送申报单--申报订单-申报清单--回执电子税单
  * @Date : Created in 2020/7/20 12:23
  */
-public class OrdersApi {
-    // 电商平台编码
-    static String ebpCode = "1234650123";
-    // 电商企业编码
-    static String ebcCode= "1234650123";
-    // 此项要配置，不要改
-    static String agentCode = "330766K00W";
+public class OrderAutoApi {
 
     @Test
     public void test(){
@@ -77,10 +68,10 @@ public class OrdersApi {
         BackDingdanKouan.backPass(orderno,"2020-8-06");
 //        Thread.sleep(1000);
         // 总署：逻辑校验通过
-        BackDingdanZongshu.logicOk(orderno,ebcCode,ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
+        BackDingdanZongshu.logicOk(orderno, Data.ebpCode,Data.ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 //        Thread.sleep(1000);
         // 总署:新增申报成功
-        BackDingdanZongshu.declareAddOk(orderno,ebcCode,ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
+        BackDingdanZongshu.declareAddOk(orderno,Data.ebpCode,Data.ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 //        Thread.sleep(3000);
     }
 
@@ -92,20 +83,20 @@ public class OrdersApi {
         String invtNo = "QD"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         // 口岸回执：处理成功
-        BackQingdanKouan.backPass(declareOrderNo,agentCode,"2020-8-16");
+        BackQingdanKouan.backPass(declareOrderNo,Data.agentCode,"2020-8-16");
 //        Thread.sleep(1000);
 
         //回执逻辑校验通过报文
         //回传时间格式：年月日时分秒毫秒
-        BackQingdanZongshu.backLogic(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
+        BackQingdanZongshu.backLogic(declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 //        Thread.sleep(1000);
 
         // 回执新增申报成功报文
-        BackQingdanZongshu.backAddOk(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
+        BackQingdanZongshu.backAddOk(declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
 //        Thread.sleep(1000);
 
         //回执放行报文
-        BackQingdanZongshu.backPass(declareOrderNo,ebcCode,ebpCode,agentCode,invtNo,"20200916110030001");
+        BackQingdanZongshu.backPass(declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,invtNo,"20200916110030001");
 //        Thread.sleep(1000);
 
         // 回执：税金
