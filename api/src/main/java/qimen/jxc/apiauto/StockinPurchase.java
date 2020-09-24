@@ -1,4 +1,4 @@
-package qimen.jxc.api;
+package qimen.jxc.apiauto;
 
 import client.ApiClient;
 import jxl.Range;
@@ -9,6 +9,7 @@ import qimen.domain.Param;
 import qimen.domain.stockin.EntryOrder;
 import qimen.domain.stockin.OrderData;
 import qimen.domain.stockin.OrderLine;
+import qimen.jxc.api.Data;
 import utils.XmlUtil;
 import wms.domain.ParamsWms;
 import wms.domain.deliver.Product;
@@ -56,7 +57,7 @@ public class StockinPurchase {
             ApiClient.doPostXml(Data.url, new Param("entryorder.create", Data.customerId), null, XmlUtil.objToXml(orderData));
         }
 
-        for(int i=1;i<=ranges.length/3;i++){
+        for(int i=0;i<ranges.length/3;i++){
             Range range = ranges[i*3];
             int index = range.getTopLeft().getRow();
 
@@ -79,7 +80,7 @@ public class StockinPurchase {
     @Test
     public void wmsBack(){
         try {
-            Sheet sheet = Workbook.getWorkbook(new File(Data.FILEPATH)).getSheet(0);
+            Sheet sheet = Workbook.getWorkbook(new File(Data.FILEPATH)).getSheet(1);
             Range[] ranges = sheet.getMergedCells();
 
             // 回执单一商品
@@ -107,9 +108,26 @@ public class StockinPurchase {
             }
 
             // 回执多商品
-            for(int i=0;i<ranges.length/3;i++){
+            for(int m=0;m< ranges.length/3;m++){
+                Range range = ranges[m*3];
+                int index = range.getTopLeft().getRow();
 
-
+                List<Product> products = new LinkedList<>();
+                for (int i=index ;i<= range.getBottomRight().getRow();i++){
+                    String sku = sheet.getCell(3,i).getContents();
+                    int num = Integer.parseInt(sheet.getCell(4,i).getContents());
+                    String batchCode = sheet.getCell(5,i).getContents();
+                    String batchValue1 = sheet.getCell(6,i).getContents();
+                    String batchValue2 = sheet.getCell(7,i).getContents();
+                    String inventoryType = sheet.getCell(8,i).getContents();
+                    products.add(new Product(sku,batchCode,num,batchValue1,batchValue2,inventoryType));
+                }
+                String orderId = sheet.getCell(0,index).getContents();
+                int batchNo = Integer.parseInt(sheet.getCell(1,index).getContents());
+                int confirm = Integer.parseInt(sheet.getCell(2,index).getContents());
+                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"CGRKD",confirm,batchNo,products);
+                ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
+                ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
             }
         }catch (Exception e){
             e.printStackTrace();
