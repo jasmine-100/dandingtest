@@ -60,7 +60,7 @@ public class PurchaseApi {
             }
 
             for(int m=0;m<ranges.length/7;m++) {// 多商品
-                Range range = ranges[m];
+                Range range = ranges[m*7];
                 int index = range.getTopLeft().getRow();
                 String type = sheet.getCell(1, index).getContents();
                 String supplier = sheet.getCell(2, index).getContents();
