@@ -1,4 +1,4 @@
-package qimen.jxc.api;
+package qimen.jxc;
 
 /**
  * @Author： jasmine
