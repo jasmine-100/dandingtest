@@ -6,15 +6,17 @@ import jxl.Sheet;
 import jxl.Workbook;
 import org.junit.jupiter.api.Test;
 import qimen.domain.Param;
+import qimen.domain.returnorder.RequestOrderReturn;
+import qimen.domain.returnorder.ReturnOrder;
 import qimen.domain.stockin.EntryOrder;
 import qimen.domain.stockin.OrderData;
 import qimen.domain.stockin.OrderLine;
+import qimen.domain.stockin.SenderInfo;
 import qimen.jxc.api.Data;
 import utils.XmlUtil;
 import wms.domain.ParamsWms;
 import wms.domain.deliver.Product;
 import wms.domain.stockin.StockinData;
-import wms.jxc.BackStockin;
 import wms.jxc.BaseParams;
 
 import java.io.File;
@@ -29,7 +31,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/9/23 17:21
  */
-public class StockinPurchase {
+public class StockinTuihuo {
 
     // 采购入库单
     @Test
@@ -47,33 +49,33 @@ public class StockinPurchase {
             List<OrderLine> orderLines = new ArrayList<>();
             String sku = sheet.getCell(2,i).getContents();
             int num = Integer.parseInt(sheet.getCell(3,i).getContents());
-            orderLines.add(new OrderLine(sku, num, ""));
+            orderLines.add(new OrderLine("",sku,num,"",""));
 
             String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
             String whCode = sheet.getCell(0,i).getContents();
-            String supplier = sheet.getCell(1,i).getContents();
-            EntryOrder entryOrder = new EntryOrder(orderno,whCode, "CGRK", supplier);
-            OrderData orderData = new OrderData(entryOrder, orderLines);
-            ApiClient.doPostXml(Data.url, new Param("entryorder.create", Data.customerId), null, XmlUtil.objToXml(orderData));
+            ReturnOrder returnOrder = new ReturnOrder(orderno,whCode,"THRK","",new SenderInfo("浙江省","杭州市","西湖区"));
+            // 组装body消息体
+            RequestOrderReturn request = new RequestOrderReturn(returnOrder,orderLines);
+            ApiClient.doPostXml(Data.url,new Param("returnorder.create",Data.customerId),null, XmlUtil.objToXml(request));
         }
 
-        for(int i=0;i<ranges.length/2;i++){
-            Range range = ranges[i*2];
+        for(int m=0;m<ranges.length/2;m++){
+            Range range = ranges[m*2];
             int index = range.getTopLeft().getRow();
 
             List<OrderLine> orderLines = new ArrayList<>();
-            for(int j=index;j<=range.getBottomRight().getRow();j++){
-                String sku = sheet.getCell(2,j).getContents();
-                int num = Integer.parseInt(sheet.getCell(3,j).getContents()) ;
-                orderLines.add(new OrderLine(sku, num, ""));
+            for(int i=index;i<=range.getBottomRight().getRow();i++){
+                String sku = sheet.getCell(2,i).getContents();
+                int num = Integer.parseInt(sheet.getCell(3,i).getContents());
+                orderLines.add(new OrderLine("",sku,num,"",""));
             }
 
             String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
             String whCode = sheet.getCell(0,index).getContents();
-            String supplier = sheet.getCell(1,index).getContents();
-            EntryOrder entryOrder = new EntryOrder(orderno,whCode, "CGRK", supplier);
-            OrderData orderData = new OrderData(entryOrder, orderLines);
-            ApiClient.doPostXml(Data.url, new Param("entryorder.create", Data.customerId), null, XmlUtil.objToXml(orderData));
+            ReturnOrder returnOrder = new ReturnOrder(orderno,whCode,"THRK","",new SenderInfo("浙江省","杭州市","西湖区"));
+            // 组装body消息体
+            RequestOrderReturn request = new RequestOrderReturn(returnOrder,orderLines);
+            ApiClient.doPostXml(Data.url,new Param("returnorder.create",Data.customerId),null, XmlUtil.objToXml(request));
         }
     }
 
@@ -102,7 +104,7 @@ public class StockinPurchase {
                 String orderId = sheet.getCell(0,i).getContents();
                 int batchNo = Integer.parseInt(sheet.getCell(1,i).getContents());
                 int confirm = Integer.parseInt(sheet.getCell(2,i).getContents());
-                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"CGRKD",confirm,batchNo,products);
+                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"SOTHRKD",confirm,batchNo,products);
                 ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
                 ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
             }
@@ -125,7 +127,7 @@ public class StockinPurchase {
                 String orderId = sheet.getCell(0,index).getContents();
                 int batchNo = Integer.parseInt(sheet.getCell(1,index).getContents());
                 int confirm = Integer.parseInt(sheet.getCell(2,index).getContents());
-                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"CGRKD",confirm,batchNo,products);
+                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"SOTHRKD",confirm,batchNo,products);
                 ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
                 ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
             }

@@ -14,7 +14,6 @@ import utils.XmlUtil;
 import wms.domain.ParamsWms;
 import wms.domain.deliver.Product;
 import wms.domain.stockin.StockinData;
-import wms.jxc.BackStockin;
 import wms.jxc.BaseParams;
 
 import java.io.File;
@@ -29,7 +28,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/9/23 17:21
  */
-public class StockinPurchase {
+public class StockinDiaobo {
 
     // 采购入库单
     @Test
@@ -52,7 +51,7 @@ public class StockinPurchase {
             String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
             String whCode = sheet.getCell(0,i).getContents();
             String supplier = sheet.getCell(1,i).getContents();
-            EntryOrder entryOrder = new EntryOrder(orderno,whCode, "CGRK", supplier);
+            EntryOrder entryOrder = new EntryOrder(orderno,whCode, "DBRK", supplier);
             OrderData orderData = new OrderData(entryOrder, orderLines);
             ApiClient.doPostXml(Data.url, new Param("entryorder.create", Data.customerId), null, XmlUtil.objToXml(orderData));
         }
@@ -64,14 +63,14 @@ public class StockinPurchase {
             List<OrderLine> orderLines = new ArrayList<>();
             for(int j=index;j<=range.getBottomRight().getRow();j++){
                 String sku = sheet.getCell(2,j).getContents();
-                int num = Integer.parseInt(sheet.getCell(3,j).getContents()) ;
+                int num = Integer.parseInt(sheet.getCell(3,j).getContents());
                 orderLines.add(new OrderLine(sku, num, ""));
             }
 
             String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
             String whCode = sheet.getCell(0,index).getContents();
             String supplier = sheet.getCell(1,index).getContents();
-            EntryOrder entryOrder = new EntryOrder(orderno,whCode, "CGRK", supplier);
+            EntryOrder entryOrder = new EntryOrder(orderno,whCode, "DBRK", supplier);
             OrderData orderData = new OrderData(entryOrder, orderLines);
             ApiClient.doPostXml(Data.url, new Param("entryorder.create", Data.customerId), null, XmlUtil.objToXml(orderData));
         }
@@ -102,7 +101,7 @@ public class StockinPurchase {
                 String orderId = sheet.getCell(0,i).getContents();
                 int batchNo = Integer.parseInt(sheet.getCell(1,i).getContents());
                 int confirm = Integer.parseInt(sheet.getCell(2,i).getContents());
-                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"CGRKD",confirm,batchNo,products);
+                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"DBRKD",confirm,batchNo,products);
                 ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
                 ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
             }
@@ -125,7 +124,7 @@ public class StockinPurchase {
                 String orderId = sheet.getCell(0,index).getContents();
                 int batchNo = Integer.parseInt(sheet.getCell(1,index).getContents());
                 int confirm = Integer.parseInt(sheet.getCell(2,index).getContents());
-                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"CGRKD",confirm,batchNo,products);
+                StockinData stockinData = new StockinData(orderId, "GLB",BaseParams.hzid,"DBRKD",confirm,batchNo,products);
                 ParamsWms paramsWms = new ParamsWms(XmlUtil.objToXml(stockinData),"wms.stockin.update", "1.0");
                 ApiClient.doPostForm(BaseParams.URL_BACK,null,null,paramsWms);
             }
