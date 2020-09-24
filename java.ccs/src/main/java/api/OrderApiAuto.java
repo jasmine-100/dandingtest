@@ -60,8 +60,8 @@ public class OrderApiAuto {
                 qingdanBack(declareOrderno,ebpCode,ebcCode,agentCode);
             }
 
-            for(int i=0;i<ranges.length/5;i++){ //多商品申报单
-                Range range = ranges[i];
+            for(int i=0;i< ranges.length/8;i++){ //多商品申报单
+                Range range = ranges[i*8];
                 int index = range.getTopLeft().getRow();
                 // 组装商品项
                 List<Item> items = new ArrayList<Item>();
@@ -97,13 +97,13 @@ public class OrderApiAuto {
         try {
             // 口岸：处理成功
             BackDingdanKouan.backPass(declareOrderNo,"2020-8-06");
-            Thread.sleep(1000);
+            Thread.sleep(100);
             // 总署：逻0辑校验通过
             BackDingdanZongshu.logicOk(declareOrderNo, ebpCode,ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
-            Thread.sleep(1000);
+            Thread.sleep(100);
             // 总署:新增申报成功
             BackDingdanZongshu.declareAddOk(declareOrderNo,ebpCode,ebcCode,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
-            Thread.sleep(3000);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -120,15 +120,15 @@ public class OrderApiAuto {
             //回执逻辑校验通过报文
             //回传时间格式：年月日时分秒毫秒
             BackQingdanZongshu.backLogic(declareOrderNo,ebpCode,ebcCode,agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
-            Thread.sleep(1000);
+            Thread.sleep(100);
 
             // 回执新增申报成功报文
             BackQingdanZongshu.backAddOk(declareOrderNo,ebpCode,ebcCode,agentCode,invtNo,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
-            Thread.sleep(1000);
+            Thread.sleep(100);
 
             //回执放行报文
             BackQingdanZongshu.backPass(declareOrderNo,ebpCode,ebcCode,agentCode,invtNo,"20200916110030001");
-            Thread.sleep(1000);
+            Thread.sleep(100);
 
             // 回执：税金
             BackTax.backTaxrd(invtNo,100,5.2,3.6,new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
