@@ -62,7 +62,7 @@ public class BackQingdanZongshu {
      * @throws IOException
      */
     public static void modelData(String declareOrderNo, String ebpCode, String ebcCode, String agentCode, String invtNo, String returnStatus, String returnInfo, String returntime) {
-//        String orderSn = CcsOrder.getOrderSn(declareOrderNo);
+        String orderSn = CcsOrder.getOrderSn(declareOrderNo);
         data = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                 "<CEB622Message" +
                 "    xmlns=\"http://www.chinaport.gov.cn/ceb\" version=\"1.0\" guid=\"c988cb9e-ea4b-463a-87c4-36e3d24aa7d9\">" +
@@ -72,7 +72,7 @@ public class BackQingdanZongshu {
                 "        <ebpCode>"+ebpCode+"</ebpCode>" +
                 "        <ebcCode>"+ebcCode+"</ebcCode>" +
                 "        <agentCode>"+agentCode+"</agentCode>" +
-                "        <copNo>"+declareOrderNo+"</copNo>" +
+                "        <copNo>"+orderSn+"</copNo>" +
                 "        <preNo>B20200615494000227</preNo>" +
                 "        <invtNo>"+invtNo+"</invtNo>" +
                 "        <returnStatus>"+returnStatus+"</returnStatus>" +
