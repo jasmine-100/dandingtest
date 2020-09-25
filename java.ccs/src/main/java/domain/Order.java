@@ -23,6 +23,7 @@ public class Order {
     String payChannel;
     String tradePayNo;//支付交易流水号
     long tradeTime;//交易时间|付款时间
+    String outTradeNo; // 上游交易流水号
 
     String routeCode;//申报路由编码
     String firstIdentify;//申报路由标识1
@@ -48,6 +49,7 @@ public class Order {
 
     int grossWeight;//毛重
     int netWeight;//净重
+    String customsCode;
 
     String expressCode;
     List<Item> itemList;
@@ -61,6 +63,7 @@ public class Order {
     double payTransactionAmount;//支付单总金额
     String payTransactionId;//验核机构交易流水号
     String payWay;//海关订单支付方式
+    String merchantCode;// 商户号
     String recpAccount;//收款渠道下的账号
     String recpCode;//验核机构名称
     String verDept;//收款企业社会信用代码
@@ -69,6 +72,10 @@ public class Order {
     // 实体类
     public Order(String tenantOuterId,String tenantName,String outOrderNo,String declareOrderNo, String expressCode, String logisticsNo,
                  String routeCode,List<Item> itemList) {
+        this.outTradeNo = "PN"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+        this.merchantCode = "MC2009250949000038";
+        this.customsCode = "JINYI";
+        this.recpAccount = "";
         this.tenantOuterId = tenantOuterId;
         this.tenantName = tenantName;
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
