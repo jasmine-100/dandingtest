@@ -52,7 +52,7 @@ public class OrderApiAuto {
                 // 组装商品项
                 List<Item> items = new ArrayList<Item>();
                 for (int j = index; j <= range.getBottomRight().getRow(); j++) {
-                    goodItems(items, sheet, i);
+                    goodItems(items, sheet, j);
                 }
                 //接口：推送申报单和回执
                 pushOrder(sheet,index,items);
