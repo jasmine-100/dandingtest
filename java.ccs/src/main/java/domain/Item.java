@@ -25,12 +25,4 @@ public class Item {
         this.itemLink = "http://www.taobao.com";
         this.unitPrice = unitPrice;
     }
-
-    public Item(String recordNo,String itemNo,String count, String unitPrice) {
-        this.recordNo = recordNo;
-        this.itemNo = itemNo;
-        this.count = Integer.parseInt(count);
-        this.unitPrice = Double.parseDouble(unitPrice);
-    }
-
 }

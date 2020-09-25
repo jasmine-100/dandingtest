@@ -66,8 +66,8 @@ public class OrderApiAuto {
     public List<Item> goodItems(List<Item> items, Sheet sheet, int row) {
         String productId = sheet.getCell(8, row).getContents();
         String sku = sheet.getCell(9, row).getContents();
-        String price = sheet.getCell(10, row).getContents();
-        String num = sheet.getCell(11, row).getContents();
+        double price = Double.parseDouble(sheet.getCell(10, row).getContents());
+        int num = Integer.parseInt(sheet.getCell(11, row).getContents());
         items.add(new Item(productId, sku, num, price));
         return items;
     }
