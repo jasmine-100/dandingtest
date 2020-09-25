@@ -28,7 +28,7 @@ public class TestStockin {
         ModelWmsBack.backStockin("DBRKD");
     }
 
-
+    // 退货入库单
     @Test
     public void orderTuihuo() {//推单
         ModelOrder.stockinTuihuo();
