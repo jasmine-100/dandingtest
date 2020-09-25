@@ -17,18 +17,9 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:23
  */
 public class OrderCase {
-    @Test
-    public void testMore() {
-        for (int i =0;i<2;i++){
-            orderSet();
-        }
-    }
-
     // 下单
     @Test
     public void orderSet()  {
-        String str = new SimpleDateFormat("MMddHHmmssSSS").format(new Date());
-
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("JHKY09091056","SKU09091056",3,9));
