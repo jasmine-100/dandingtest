@@ -19,12 +19,6 @@ public class Order {
     String declareOrderNo;
     String declarePayNo; //支付申报流水号
     String outOrderNo;
-
-    String payChannel;
-    String tradePayNo;//支付交易流水号
-    long tradeTime;//交易时间|付款时间
-    String outTradeNo; // 上游交易流水号
-
     String routeCode;//申报路由编码
     String firstIdentify;//申报路由标识1
     String secondIdentify;//申报路由标识2
@@ -33,7 +27,6 @@ public class Order {
     String buyerIdNumber;
     String buyerName;
     String buyerTelNumber;
-
     String consigneeProvince;
     String consigneeCity;
     String consigneeDistrict;
@@ -41,22 +34,22 @@ public class Order {
     String consigneeEmail;
     String consigneeName;
     String consigneeTel;
-
     double discount;  // 优惠
     double feeAmount;  // 运费
     double taxAmount;  // 税费
     double insureAmount;  // 保费
-
     int grossWeight;//毛重
     int netWeight;//净重
-    String customsCode;
-
     String expressCode;
     List<Item> itemList;
-
     String logisticsNo;
     String notifyUrl;
 
+    String payChannel;//支付渠道
+    String customsCode;//
+    String tradePayNo;//支付交易流水号
+    long tradeTime;//交易时间|付款时间
+    String outTradeNo; // 上游交易流水号
     String payInfoDataCheckFlag;//是否开启海关179备查，1
     String payRequestMessage;//支付请求原始数据
     String payResponseMessage;//支付返回原始数据
@@ -75,7 +68,6 @@ public class Order {
         this.outTradeNo = "PN"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
         this.merchantCode = "MC2009250949000038";
         this.customsCode = "JINYI";
-        this.recpAccount = "";
         this.tenantOuterId = tenantOuterId;
         this.tenantName = tenantName;
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
