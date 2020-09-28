@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="jxc" parallel="false">
+    <test name="jxc">
+        <classes>
+            <class name="qimen.jxc.TestStockin" />
+            <class name="qimen.jxc.TestStockout"/>
+        </classes>
+    </test>
+</suite>

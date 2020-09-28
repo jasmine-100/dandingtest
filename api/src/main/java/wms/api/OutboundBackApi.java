@@ -1,8 +1,7 @@
 package wms.api;
 
 import client.ApiClient;
-import com.google.protobuf.Api;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import utils.XmlUtil;
 import wms.domain.ParamsWms;
 import wms.domain.ServiceType;

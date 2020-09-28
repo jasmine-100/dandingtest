@@ -1,7 +1,6 @@
 package wms.jxc;
 
 import client.ApiClient;
-import org.junit.jupiter.api.Test;
 import utils.XmlUtil;
 import wms.domain.ParamsWms;
 import wms.domain.deliver.DeliverData;

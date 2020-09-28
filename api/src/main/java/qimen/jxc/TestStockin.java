@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
  */
 public class TestStockin {
     // 采购入库单
-    @Test
+    @Test(description = "采购入库单")
     public void orderPurchase() {//推单
         ModelOrder.stockinPurchaseDiaobo("CGRK");
     }
