@@ -1,4 +1,4 @@
-package apiout;
+package api.oms;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;

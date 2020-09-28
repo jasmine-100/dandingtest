@@ -62,6 +62,8 @@ public class Order {
     String verDept;//收款企业社会信用代码
     String recpName;//收款企业工商备案名称
 
+    String systemGlobalSn;//全局单号
+
     // 实体类
     public Order(String tenantOuterId,String tenantName,String outOrderNo,String declareOrderNo, String expressCode, String logisticsNo,
                  String routeCode,List<Item> itemList) {
