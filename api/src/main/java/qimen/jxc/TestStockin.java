@@ -12,13 +12,20 @@ public class TestStockin {
     // 采购入库、调拨入库单
     @Test(dataProvider = "billtype")
     public void orderPurchase(String billType) {//推单
-        ModelOrder.stockinPurchaseDiaobo(billType);
+
+        if(billType.equals("THRK")){
+            ModelOrder.stockinTuihuo(billType);
+        }else{
+            ModelOrder.stockinPurchaseDiaobo(billType);
+        }
     }
+
     @DataProvider(name = "billtype")
     public Object[] getBilltype(){
-        Object[] objects = {"CGRK","DBRK"};//采购和调拨入库单
+        Object[] objects = {"CGRK","DBRK","THRK"};//采购和调拨入库单
         return objects;
     }
+
     @Test
     public void backPurchase() {//回执采购入库单
         ModelWmsBack.backStockin("CGRKD");
@@ -26,12 +33,6 @@ public class TestStockin {
     @Test
     public void backDiaobo() {//回执调拨入库单
         ModelWmsBack.backStockin("DBRKD");
-    }
-
-    // 退货入库单
-    @Test
-    public void orderTuihuo() {//推单
-        ModelOrder.stockinTuihuo();
     }
     @Test
     public void backTuihuo() {//回执

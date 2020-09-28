@@ -129,7 +129,7 @@ public class ModelOrder {
         }
     }
     // 入库：退货
-    public static void stockinTuihuo() {
+    public static void stockinTuihuo(String billType) {
         try {
             Sheet sheet  = Workbook.getWorkbook(new File(Data.FILEPATH)).getSheet(0);
             Range[] ranges = sheet.getMergedCells();
@@ -147,7 +147,7 @@ public class ModelOrder {
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
                 String whCode = sheet.getCell(0,i).getContents();
-                ReturnOrder returnOrder = new ReturnOrder(orderno,whCode,"THRK","",new SenderInfo("浙江省","杭州市","西湖区"));
+                ReturnOrder returnOrder = new ReturnOrder(orderno,whCode,billType,"",new SenderInfo("浙江省","杭州市","西湖区"));
                 // 组装body消息体
                 RequestOrderReturn request = new RequestOrderReturn(returnOrder,orderLines);
                 ApiClient.doPostXml(Data.url,new Param("returnorder.create",Data.customerId),null, XmlUtil.objToXml(request));

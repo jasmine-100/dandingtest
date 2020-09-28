@@ -1,6 +1,7 @@
 package qimen.jxc;
 
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
@@ -10,28 +11,26 @@ import org.testng.annotations.Test;
  */
 public class TestStockout {
 
-    // 发货出库单
-    @Test
-    public void orderDeliver(){
-        ModelOrder.orderStockout("JYCK","SF");
+    @Test(dataProvider = "params")
+    public void order(String billType,String expressCode){
+        ModelOrder.orderStockout(billType,expressCode);
     }
-    // 批发出库单(物流公司为德邦)
-    @Test
-    public void orderOutbound(){
-        ModelOrder.orderStockout("JYCK","DBL");
+
+    @DataProvider(name = "params")
+    public Object[][] params(){
+        Object[][] objects = {
+                {"JYCK","SF"},//发货单
+                {"JYCK","DBL"},//批发出库单
+                {"DBCK","SF"}};//调拨出库单
+        return objects;
     }
+
     // 发货出库、批发出库回执
     @Test
     public void back(){
         ModelWmsBack.backStockoutOrder();
     }
 
-
-    // 调拨出库单(ordertype为DBCK)
-    @Test
-    public void orderDiaobo(){
-        ModelOrder.orderStockout("DBCK","SF");
-    }
     // 调拨出库回执
     @Test
     public void backDiaobo(){
