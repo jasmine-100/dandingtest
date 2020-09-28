@@ -3,7 +3,7 @@
     <test name="jxc">
         <classes>
             <class name="qimen.jxc.TestStockin" />
-            <class name="qimen.jxc.TestStockout"/>
+            <class name="qimen.jxc.TestStockout" />
         </classes>
     </test>
 </suite>

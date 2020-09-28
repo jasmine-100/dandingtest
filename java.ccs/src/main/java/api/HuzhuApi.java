@@ -2,7 +2,7 @@ package api;
 
 import domainout.BackHefangHezhu;
 import domainout.BackHezhu;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 /**
  * @Author： jasmine

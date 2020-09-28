@@ -2,7 +2,7 @@ package apiout;
 
 import client.ApiClient;
 import jxc.BaseParam;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

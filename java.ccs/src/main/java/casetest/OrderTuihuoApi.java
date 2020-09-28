@@ -3,7 +3,7 @@ package casetest;
 import casetest.Data;
 import domainout.BackTax;
 import domainout.BackTuiHuo;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 

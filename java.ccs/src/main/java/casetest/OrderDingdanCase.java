@@ -1,7 +1,7 @@
 package casetest;
 
 import domainout.BackDingdanZongshu;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 /**
  * @Author： jasmine

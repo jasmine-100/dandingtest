@@ -3,7 +3,7 @@ package casetest;
 import casetest.Data;
 import domainout.BackChedan;
 import domainout.BackTax;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 /**
  * @Author： jasmine
