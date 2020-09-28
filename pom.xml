@@ -13,9 +13,7 @@
         <module>java.oms</module>
         <module>java.ccs</module>
         <module>java.jxc</module>
-        <module>api.v3</module>
         <module>api</module>
-        <module>com.ccs.order</module>
     </modules>
 
     <dependencies>
