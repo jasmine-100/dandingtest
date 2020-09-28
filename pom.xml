@@ -15,7 +15,6 @@
         <module>java.jxc</module>
         <module>api.v3</module>
         <module>api</module>
-        <module>999</module>
     </modules>
 
     <dependencies>
