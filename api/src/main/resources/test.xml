@@ -2,8 +2,8 @@
 <suite name="jxc" parallel="false">
     <test name="jxc">
         <classes>
-            <class name="qimen.jxc.TestStockin" />
-            <class name="qimen.jxc.TestStockout" />
+            <class name="qimen.api.jxc.TestStockin" />
+            <class name="qimen.api.jxc.TestStockout" />
         </classes>
     </test>
 </suite>
