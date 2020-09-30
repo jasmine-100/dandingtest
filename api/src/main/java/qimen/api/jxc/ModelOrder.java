@@ -96,7 +96,7 @@ public class ModelOrder {
                 List<qimen.domain.stockin.OrderLine> orderLines = new ArrayList<>();
                 String sku = sheet.getCell(2,i).getContents();
                 int num = Integer.parseInt(sheet.getCell(3,i).getContents());
-                orderLines.add(new qimen.domain.stockin.OrderLine(sku, num, ""));
+                orderLines.add(new qimen.domain.stockin.OrderLine(1,sku, num, ""));
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
                 String whCode = sheet.getCell(0,i).getContents();
@@ -114,7 +114,7 @@ public class ModelOrder {
                 for(int j=index;j<=range.getBottomRight().getRow();j++){
                     String sku = sheet.getCell(2,j).getContents();
                     int num = Integer.parseInt(sheet.getCell(3,j).getContents());
-                    orderLines.add(new qimen.domain.stockin.OrderLine(sku, num, ""));
+                    orderLines.add(new qimen.domain.stockin.OrderLine(j,sku, num, ""));
                 }
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
@@ -143,7 +143,7 @@ public class ModelOrder {
                 List<qimen.domain.stockin.OrderLine> orderLines = new ArrayList<>();
                 String sku = sheet.getCell(2,i).getContents();
                 int num = Integer.parseInt(sheet.getCell(3,i).getContents());
-                orderLines.add(new qimen.domain.stockin.OrderLine("",sku,num,"",""));
+                orderLines.add(new qimen.domain.stockin.OrderLine(1,"",sku,num,"",""));
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
                 String whCode = sheet.getCell(0,i).getContents();
@@ -161,7 +161,7 @@ public class ModelOrder {
                 for(int i=index;i<=range.getBottomRight().getRow();i++){
                     String sku = sheet.getCell(2,i).getContents();
                     int num = Integer.parseInt(sheet.getCell(3,i).getContents());
-                    orderLines.add(new qimen.domain.stockin.OrderLine("",sku,num,"",""));
+                    orderLines.add(new qimen.domain.stockin.OrderLine(i,"",sku,num,"",""));
                 }
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());

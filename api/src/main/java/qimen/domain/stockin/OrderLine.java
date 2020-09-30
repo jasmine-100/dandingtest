@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderLine {
 
-     String orderLineNo;
+     int orderLineNo;
      String ownerCode;
      String itemCode;
      String itemId;
@@ -32,8 +32,8 @@ public class OrderLine {
     String subSourceOrderCode;
 
     // 推送采购入库单实体类
-    public OrderLine(String itemCode,int qty, String batchCode) {
-        this.orderLineNo = "";
+    public OrderLine(int i,String itemCode,int qty, String batchCode) {
+        this.orderLineNo = i;
         this.ownerCode = "";
         this.itemCode = itemCode;
         this.itemId = itemCode;
@@ -48,8 +48,8 @@ public class OrderLine {
     }
 
     // 退货入库订单实体类
-    public OrderLine(String ownerCode,String itemCode,int qty, String inventoryType,String batchCode) {
-        this.orderLineNo = "";
+    public OrderLine(int i,String ownerCode,String itemCode,int qty, String inventoryType,String batchCode) {
+        this.orderLineNo = i;
         this.ownerCode = ownerCode;
         this.itemCode = itemCode;
         this.itemId = itemCode;
@@ -59,8 +59,8 @@ public class OrderLine {
     }
 
     // 推送发货单实体类
-    public OrderLine(String ownerCode, String itemCode, int planQty, String batchCode) {
-        this.orderLineNo = "";
+    public OrderLine(int i,String ownerCode, String itemCode, int planQty, String batchCode) {
+        this.orderLineNo = i;
         this.ownerCode = ownerCode;
         this.itemCode = itemCode;
         this.itemId = itemCode;

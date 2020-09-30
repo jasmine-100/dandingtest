@@ -43,7 +43,7 @@ public class Stock {
         this.currCode = 142;
         this.customsBookId = customsBookId;
         this.declarePrice = 10;
-        this.enable = 1;
+//        this.enable = 1;
         this.goodsModel = "规格";
         this.goodsName = goodsName;
         this.goodsSeqNo = goodsSeqNo;
@@ -53,8 +53,8 @@ public class Stock {
         this.inLegalQty = 1000;
         this.inQty = 1000;
         this.firstUnit = "011";
-        this.invtGoodsNo = "";
-        this.invtNo = "";
+//        this.invtGoodsNo = "";
+//        this.invtNo = "";
         this.originCountry = "142";
         this.productId = productId;
         this.remark = "";

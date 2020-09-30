@@ -70,14 +70,11 @@ public class Good {
         this.height = 9;
 //        this.opinion = 1;  // 没有起作用
         this.originCountry = "142";
-        this.reason = "原因";
         this.recordFinishTime = System.currentTimeMillis();
         this.recordFunction = "食用";
         this.recordStatus = 0;
         this.recordUsage = "暂无";
         this.secondUnit = "012";
         this.secondUnitAmount = "1";
-        this.taxRate = 0;
-        this.vatRate = 0;
     }
 }
