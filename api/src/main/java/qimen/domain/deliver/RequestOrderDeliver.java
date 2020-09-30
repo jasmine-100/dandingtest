@@ -1,7 +1,5 @@
 package qimen.domain.deliver;
 
-import qimen.domain.stockin.OrderLine;
-
 import javax.xml.bind.annotation.*;
 import java.util.List;
 

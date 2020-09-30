@@ -41,11 +41,11 @@ public class ModelOrder {
                         continue outer;
                     }
                 }
-                List<OrderLine> orderLines = new ArrayList<>();
+                List<qimen.domain.deliver.OrderLine> orderLines = new ArrayList<>();
                 String sku = sheet.getCell(2,i).getContents();
                 int qty = Integer.parseInt(sheet.getCell(3,i).getContents());
                 String batchCode = sheet.getCell(4,i).getContents();
-                orderLines.add(new OrderLine(1,"",sku,qty,batchCode));
+                orderLines.add(new qimen.domain.deliver.OrderLine(1,"",sku,qty,batchCode));
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
                 String whCode = sheet.getCell(0,i).getContents();
@@ -60,12 +60,12 @@ public class ModelOrder {
                 Range range = ranges[m*2];
                 int index = range.getTopLeft().getRow();
 
-                List<OrderLine> orderLines = new ArrayList<>();
+                List<qimen.domain.deliver.OrderLine> orderLines = new ArrayList<>();
                 for(int i=index;i<=range.getBottomRight().getRow();i++){
                     String sku = sheet.getCell(2,i).getContents();
                     int qty = Integer.parseInt(sheet.getCell(3,i).getContents());
                     String batchCode = sheet.getCell(4,i).getContents();
-                    orderLines.add(new OrderLine(i,"",sku,qty,batchCode));
+                    orderLines.add(new qimen.domain.deliver.OrderLine(i,"",sku,qty,batchCode));
                 }
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
