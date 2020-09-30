@@ -65,7 +65,7 @@ public class ModelOrder {
                     String sku = sheet.getCell(2,i).getContents();
                     int qty = Integer.parseInt(sheet.getCell(3,i).getContents());
                     String batchCode = sheet.getCell(4,i).getContents();
-                    orderLines.add(new qimen.domain.deliver.OrderLine(i,"",sku,qty,batchCode));
+                    orderLines.add(new qimen.domain.deliver.OrderLine(i-index+1,"",sku,qty,batchCode));
                 }
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
