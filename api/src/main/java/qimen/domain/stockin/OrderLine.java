@@ -71,5 +71,4 @@ public class OrderLine {
         this.actualPrice = 10;
         this.batchCode = batchCode;
     }
-
 }

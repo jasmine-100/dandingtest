@@ -1,5 +1,6 @@
 package qimen.domain.deliver;
 
+import qimen.domain.stockin.OrderLine;
 import qimen.domain.stockin.SenderInfo;
 
 import javax.xml.bind.annotation.XmlAccessType;

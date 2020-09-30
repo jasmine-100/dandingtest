@@ -6,13 +6,13 @@ import jxl.Sheet;
 import jxl.Workbook;
 import qimen.domain.Param;
 import qimen.domain.deliver.DeliveryOrder;
-import qimen.domain.deliver.OrderLine;
 import qimen.domain.deliver.ReceiverInfo;
 import qimen.domain.deliver.RequestOrderDeliver;
 import qimen.domain.returnorder.RequestOrderReturn;
 import qimen.domain.returnorder.ReturnOrder;
 import qimen.domain.stockin.EntryOrder;
 import qimen.domain.stockin.OrderData;
+import qimen.domain.stockin.OrderLine;
 import qimen.domain.stockin.SenderInfo;
 import utils.XmlUtil;
 
@@ -45,7 +45,7 @@ public class ModelOrder {
                 String sku = sheet.getCell(2,i).getContents();
                 int qty = Integer.parseInt(sheet.getCell(3,i).getContents());
                 String batchCode = sheet.getCell(4,i).getContents();
-                orderLines.add(new OrderLine("",sku,qty,batchCode));
+                orderLines.add(new OrderLine(1,"",sku,qty,batchCode));
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
                 String whCode = sheet.getCell(0,i).getContents();
@@ -65,7 +65,7 @@ public class ModelOrder {
                     String sku = sheet.getCell(2,i).getContents();
                     int qty = Integer.parseInt(sheet.getCell(3,i).getContents());
                     String batchCode = sheet.getCell(4,i).getContents();
-                    orderLines.add(new OrderLine("",sku,qty,batchCode));
+                    orderLines.add(new OrderLine(i,"",sku,qty,batchCode));
                 }
 
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
