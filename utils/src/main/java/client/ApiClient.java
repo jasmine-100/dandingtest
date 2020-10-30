@@ -129,7 +129,7 @@ public class ApiClient {
                 }
                 String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
                 post = new HttpPost(url+"?"+str);
-//            System.out.println(url+"?"+str);
+            System.out.println(url+"?"+str);
             } catch (Exception e) {
                 e.printStackTrace();
             }

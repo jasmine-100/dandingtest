@@ -5,6 +5,7 @@ import jxl.Range;
 import jxl.Sheet;
 import jxl.Workbook;
 import qimen.domain.Param;
+import qimen.domain.deliver.Cancel;
 import qimen.domain.deliver.DeliveryOrder;
 import qimen.domain.deliver.ReceiverInfo;
 import qimen.domain.deliver.RequestOrderDeliver;
@@ -30,7 +31,7 @@ import java.util.List;
 public class ModelOrder {
 
     // 推送出库单：发货出库、批发出库、调拨出库
-    public static void orderStockout(String orderType, String expressCode){
+    public static void orderStockout(String orderType, String logisticsCode){
         try {
             Sheet sheet = Workbook.getWorkbook(new File(Data.FILEPATH)).getSheet(2);
             Range[] ranges = sheet.getMergedCells();
@@ -50,9 +51,11 @@ public class ModelOrder {
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
                 String whCode = sheet.getCell(0,i).getContents();
                 String shopNick = sheet.getCell(1,i).getContents();
-                DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,orderType,whCode, shopNick,orderLines,expressCode,new SenderInfo(),new ReceiverInfo());
+                DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,orderType,whCode, shopNick,orderLines,logisticsCode,new SenderInfo(),new ReceiverInfo());
 
                 RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
+//                System.out.println(new Param("deliveryorder.create",Data.customerId));
+//                System.out.println(XmlUtil.objToXml(deliverData));
                 ApiClient.doPostXml(Data.url,new Param("deliveryorder.create",Data.customerId),null, XmlUtil.objToXml(deliverData));
             }
 
@@ -71,7 +74,7 @@ public class ModelOrder {
                 String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
                 String whCode = sheet.getCell(0,index).getContents();
                 String shopNick = sheet.getCell(1,index).getContents();
-                DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",whCode, shopNick,orderLines,expressCode,new SenderInfo(),new ReceiverInfo());
+                DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",whCode, shopNick,orderLines,logisticsCode,new SenderInfo(),new ReceiverInfo());
 
                 RequestOrderDeliver deliverData = new RequestOrderDeliver(deliveryOrder,orderLines);
                 ApiClient.doPostXml(Data.url,new Param("deliveryorder.create",Data.customerId),null, XmlUtil.objToXml(deliverData));
@@ -174,5 +177,10 @@ public class ModelOrder {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public static void cancelOrder(String orderNo) throws Exception {
+        Cancel cancel = new Cancel(orderNo,"JYCK","01","02");
+        ApiClient.doPostXml(Data.url,new Param("order.cancel",Data.customerId),null, XmlUtil.objToXml(cancel));
     }
 }

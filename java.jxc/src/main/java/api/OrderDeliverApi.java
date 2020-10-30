@@ -6,7 +6,7 @@ import com.google.protobuf.Api;
 import domainout.deliver.Deliver;
 import domainout.deliver.Order;
 import domainout.deliver.OrderSku;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import utils.JsonUtils;
 
 import java.io.IOException;

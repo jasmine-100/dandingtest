@@ -87,7 +87,7 @@ public class OrderApiAuto {
         String ebcCode = sheet.getCell(6, row).getContents();
         String agentCode = sheet.getCell(7, row).getContents();
         Order order = new Order("xiaoyuer", "小鱼儿", outOrderNo, declareOrderno, expressCode, logiticsNo, routeCode, items);
-
+        System.out.println(order);
         ApiClient.doPostJson(BaseParam.URL_ORDER, null, null, order);
 
         dingdanBack(declareOrderno, ebpCode, ebcCode);

@@ -9,6 +9,12 @@ import org.testng.annotations.Test;
  * @Date : Created in 2020/9/23 17:21
  */
 public class TestStockin {
+
+    @Test
+    public void purchaseStockin(){
+        ModelOrder.stockinPurchaseDiaobo("CGRK");
+    }
+
     // 采购入库、调拨入库单
     @Test(dataProvider = "billtype")
     public void orderPurchase(String billType) {//推单

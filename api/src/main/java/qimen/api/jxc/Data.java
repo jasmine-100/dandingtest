@@ -12,6 +12,6 @@ public class Data {
     public static String url = "http://outtest.order.yang800.cn/qimen/api";
 
     //yang-test的外部店铺的outkey（去掉QM）
-    public static String customerId = "DS15879577775092";
+    public static String customerId = "C1590459235731";//"DS15879577775092";
 
 }

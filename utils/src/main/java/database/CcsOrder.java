@@ -18,10 +18,10 @@ public class CcsOrder {
         Statement statement = null;
         ResultSet resultSet = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://10.99.111.83:3306/ccs_order","root","ENPInr4GJRefShEI");
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("SELECT sn from ccs_customs_inventory_2020q3 WHERE declare_order_no=\""+declareOrderNo+"\"");
+            resultSet = statement.executeQuery("SELECT sn from ccs_customs_inventory_2020q4 WHERE declare_order_no=\""+declareOrderNo+"\"");
             while (resultSet.next()){
                 orderSn = resultSet.getString("sn");
             }

@@ -41,9 +41,10 @@ public class Good {
         this.expirationDate = expirationDate;
     }
 
-    public Good(String proCode, String barcode,String proName,String brandCode,String isbatch,String type,String retailPrice) {
+    public Good(String proCode, String barcode,String proName,String brandCode,String brandName,String isbatch,String type,String retailPrice) {
         this.proCode = proCode;
         this.barcode = barcode;
+        this.brandName = brandName;
         this.proName = proName;
         this.type = type;//完税商品
         this.isbatch = isbatch;//0无批次；1有批次

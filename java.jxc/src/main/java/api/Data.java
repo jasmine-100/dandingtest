@@ -12,7 +12,8 @@ public class Data {
 
     // 测试环境域名
     public static String BASE_URL = "http://logistics-api-fat.yang800.com";
-
+    // 压测环境域名
+//    public static String BASE_URL = "";
     // 开发环境域名
 //    public static String BASE_URL = "http://dev.front-api.yang800.cn:9001";
 
@@ -30,7 +31,7 @@ public class Data {
 
     public static Map<String,Object> getCookie(){
         Map<String,Object> map = new HashMap<String,Object>();
-        map.put("Cookie","web-token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkZCIsInN1YiI6Imphc21pbmUxMCIsImF1ZCI6IioueWFuZzgwMC5jb20iLCJleHAiOjE2MDA4ODQ0NDEsIm5iZiI6MTYwMDg1MDI0MSwiaWF0IjoxNjAwODUyMDQxLCJqdGkiOiIyOGY4MDllOS05OGE2LTQ5MTctYTNjZS05ODliN2YwMTEwZjEiLCJ1c2VyIjp7InVzZXJJZCI6MTQ0LCJ1c2VyTmFtZSI6Imphc21pbmUxMCIsInN1cGVyVXNlciI6dHJ1ZSwicm9sZXMiOltdLCJzeXN0ZW0iOiJPTVNfU1VQUExZIiwibG9naW5UaW1lIjoxNjAwODUyMDQxNDA0LCJ2YWxpZFRpbWUiOjE2MDA4ODQ0NDE0MDQsInJlZnJlc2hUaW1lIjoxNjAwODYyODQxNDA0LCJleHRlbmQiOnsidXNlcklkIjoxNDQsInVzZXJOYW1lIjoiamFzbWluZTEwIiwibWFzdGVyIjp0cnVlfX19.4RYKO8G8n_d9IY1OAFPRyrARV9HKCDSq3lPRT7qCJiI");
+        map.put("Cookie","_ga=GA1.2.1004578877.1598319387; web-token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkZCIsInN1YiI6Imphc21pbmUiLCJhdWQiOiIqLnlhbmc4MDAuY29tIiwiZXhwIjoxNjAzMTkzMjE1LCJuYmYiOjE2MDMxNTkwMTUsImlhdCI6MTYwMzE2MDgxNSwianRpIjoiYTk2NDUwNGEtYmM4OC00Yzk5LWIzNGItNDYxOGY1NTBiYWZkIiwidXNlciI6eyJ1c2VySWQiOjMsInVzZXJOYW1lIjoiamFzbWluZSIsInN1cGVyVXNlciI6dHJ1ZSwicm9sZXMiOltdLCJzeXN0ZW0iOiJPTVNfU1VQUExZIiwibG9naW5UaW1lIjoxNjAzMTYwODE1NzEyLCJ2YWxpZFRpbWUiOjE2MDMxOTMyMTU3MTIsInJlZnJlc2hUaW1lIjoxNjAzMTcxNjE1NzEyLCJleHRlbmQiOnsidXNlcklkIjozLCJ1c2VyTmFtZSI6Imphc21pbmUiLCJtYXN0ZXIiOnRydWV9fX0.WjEJAaeT2ClJbLWtx3eEs8AHrDOlXQ0L4lI7G-qvepU");
         return map;
     }
 

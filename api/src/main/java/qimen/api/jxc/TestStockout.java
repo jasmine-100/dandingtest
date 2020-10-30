@@ -3,6 +3,7 @@ package qimen.api.jxc;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import qimen.domain.deliver.Cancel;
 
 /**
  * @Author： jasmine
@@ -37,4 +38,8 @@ public class TestStockout {
         ModelWmsBack.backStockoutDiaobo();
     }
 
+    @Test
+    public void cancelOrder() throws Exception {
+        ModelOrder.cancelOrder("200610-335351317121261");
+    }
 }

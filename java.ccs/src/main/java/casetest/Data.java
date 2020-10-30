@@ -18,9 +18,9 @@ public class Data {
     // 清关企业编码，需要开发配置，不要改
     public static String agentCode = "330766K00W";
 
-    static String str = "09251355";
+    static String str = "JOSy5dq9g4weq";
     // 申报单号
-    public static String declareOrderNo = "DS"+str;
+    public static String declareOrderNo = "JOSy5dq9g4weq";//"DS"+str;
     // 清单号
     public static String invtNo = "QD"+str;
     // 运单号
