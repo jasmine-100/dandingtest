@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
  * @Description :
  * @Date : Created in 2020/8/7 17:46
  */
-public class HuzhuApi {
+public class HezhuApi {
 
     // ccs系统内核注单 编号
     String etpsPreentNo = "HZ2009211151000344";

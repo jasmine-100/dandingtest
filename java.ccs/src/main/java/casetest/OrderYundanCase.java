@@ -15,13 +15,13 @@ public class OrderYundanCase {
 
     // 测试用例：清单回执--新增申报成功
     @Test
-    public void backAddOk()  {
+    public static void backAddOk()  {
         BackYundanZongshu.backAddOk(Data.logiticsNo,Data.agentCode,"20200817150000001");
     }
 
     // 测试用例：清单回执--逻辑校验通过
     @Test
-    public void backLogic()  {
+    public static void backLogic()  {
         BackYundanZongshu.backLogic(Data.logiticsNo,Data.agentCode,"20200817140000001");
     }
 

@@ -13,10 +13,10 @@ import java.util.List;
  * @Description : 批量下单
  * @Date : Created in 2020/8/17 15:23
  */
-public class OrderCase {
+public class OrderSet {
     // 下单
     @Test
-    public void orderSet()  {
+    public static void orderSet()  {
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
         items.add(new Item("JHKY09091056","SKU09091056",3,9));
