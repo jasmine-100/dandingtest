@@ -13,15 +13,17 @@ import org.testng.annotations.Test;
  */
 public class OrderYundanCase {
 
-    // 测试用例：清单回执--逻辑校验通过
-    @Test
-    public void backLogic()  {
-        BackYundanZongshu.backLogic(Data.logiticsNo,Data.agentCode,"20200817140000001");
-    }
     // 测试用例：清单回执--新增申报成功
     @Test
     public void backAddOk()  {
         BackYundanZongshu.backAddOk(Data.logiticsNo,Data.agentCode,"20200817150000001");
     }
+
+    // 测试用例：清单回执--逻辑校验通过
+    @Test
+    public void backLogic()  {
+        BackYundanZongshu.backLogic(Data.logiticsNo,Data.agentCode,"20200817140000001");
+    }
+
 
 }
