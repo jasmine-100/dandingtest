@@ -132,7 +132,7 @@ public class OrderApiAuto {
             Thread.sleep(100);
 
             // 回执：税金
-            BackTax.backTaxrd(invtNo, 100, 5.2, 3.6, new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
+            BackTax.backTaxrd(invtNo, ebcCode,100, 5.2, 3.6, new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()));
         } catch (Exception e) {
             e.printStackTrace();
         }

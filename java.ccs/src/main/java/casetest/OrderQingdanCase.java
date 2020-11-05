@@ -36,7 +36,7 @@ public class OrderQingdanCase {
     // 测试用例：清单回执-税费
     @Test
     public void backTax()  {
-        BackTax.backTaxrd(Data.invtNo,600.6,10,30,"20200817170000001");
+        BackTax.backTaxrd(Data.invtNo,Data.ebcCode,600.6,10,30,"20200817170000001");
     }
 
     // 常见的错误回执报文
