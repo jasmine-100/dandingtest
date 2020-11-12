@@ -15,7 +15,7 @@ import java.io.IOException;
 public class OrderTuihuoApi {
 
     // 取退货单列表的退货单号，去掉TH
-    String orderNo = "20091615240402";
+    String orderNo = "20111211230504";
 
     // 回执：待人工审核
     @Test

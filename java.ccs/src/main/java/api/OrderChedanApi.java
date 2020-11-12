@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
  */
 public class OrderChedanApi {
     // 取撤单列表的撤单申报编号，去掉CD
-    String orderNo = "2009161436000394";
+    String orderNo = "2011121159000494";
 
     // 回执：新增申报成功
     @Test
