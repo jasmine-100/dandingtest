@@ -19,7 +19,7 @@ public class OrderSet {
     public static void orderSet()  {
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("JHY11051404","SKU11051404",3,9));
+//        items.add(new Item("JHY1116140501","SKU1116140501",3,9));
         items.add(new Item("JHY10131610","SKU10131610",10,2));
 
         // 组装申报单

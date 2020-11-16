@@ -18,13 +18,13 @@ public class Data {
     // 清关企业编码，需要开发配置，不要改
     public static String agentCode = "330766K00W";
 
-    static String str = "11121825";
+    static String str = "11116J1523";
     // 外部单号
     public static String outOrderNo = "JOS"+str;
     // 申报单号
     public static String declareOrderNo = "DOS"+str;//"DS"+str;
     // 清单号
-    public static String invtNo = "QD1"+str;
+    public static String invtNo = "QD"+str;
     // 运单号
     public static String logiticsNo = "SF"+str;
 
@@ -45,7 +45,5 @@ public class Data {
 //    public static String invtNo = "QD"+declareOrderNo;
 //    // 运单号
 //    public static String logiticsNo = "SF"+declareOrderNo;
-
-
 
 }
