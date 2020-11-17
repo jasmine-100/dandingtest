@@ -19,8 +19,9 @@ public class OrderSet {
     public static void orderSet()  {
         // 添加商品项
         List<Item> items = new ArrayList<Item>();
-//        items.add(new Item("JHY1116140501","SKU1116140501",3,9));
+        items.add(new Item("JHY10131611","SKU10131611",3,9));
         items.add(new Item("JHY10131610","SKU10131610",10,2));
+        items.add(new Item("JHY10131612","SKU10131612",7,2.3));
 
         // 组装申报单
 //        Order order = new Order("xiaoyuer","小鱼儿",outOrderno,"SF",Data.logiticsNo,Data.routeCode,items);

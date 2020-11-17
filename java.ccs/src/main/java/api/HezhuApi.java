@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class HezhuApi {
 
     // ccs系统内核注单 编号
-    String etpsPreentNo = "HZ2011161105000813";
+    String etpsPreentNo = "HZ2011171454000831";
     // 预录入核注单号
     String seqNo = "Y"+ etpsPreentNo;
     String bondInvtNo = "QD"+ etpsPreentNo;

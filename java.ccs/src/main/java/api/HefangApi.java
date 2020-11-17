@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2009171636000247";  // 系统内部核放单编号
+    String etpsPreentNo = "HF2011171412000450";  // 系统内部核放单编号
     String seqNo = "Y"+etpsPreentNo;  // 预录入编号
     String businessId = "QD"+etpsPreentNo;  // 核放单号
 
