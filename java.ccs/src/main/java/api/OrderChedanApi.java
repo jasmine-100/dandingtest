@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 public class OrderChedanApi {
     // 取撤单列表的撤单申报编号，去掉CD
     String orderNo = "2011161737000498";
+    String invtNo = "";
 
     // 回执：新增申报成功
     @Test
@@ -32,7 +33,7 @@ public class OrderChedanApi {
     // 作废税金
     @Test
     public void backTax(){
-        BackTax.backTaxCancel(Data.invtNo,"20200806190000001");
+        BackTax.backTaxCancel(invtNo,"20200806190000001");
     }
 
     // 回执申报失败
