@@ -52,7 +52,7 @@ public class OrderCase {
 
     // 运单回执
     @Test
-    public void yundanBackAddOk()  {// 新增申报成功
+    public void yundanBackAddOk()  { // 新增申报成功
         BackYundanZongshu.backAddOk(logiticsNo,Data.agentCode,"20201115150000001");
     }
     @Test
