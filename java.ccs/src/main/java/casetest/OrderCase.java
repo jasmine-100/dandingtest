@@ -18,12 +18,12 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String str = "202011191042";
+    String str = "202011191058";
     String declareOrderNo = "DOS"+str;
     String outOrderNo = "JOS"+str;
     String logiticsNo = "SF"+str;
     String invtNo = "QD"+str;
-    String routeCode = "xiaohei2";//xiaohei1 支付单运单；xiaohei2 订单清单；xiaohei3 清单
+    String routeCode = "xiaohei1";//xiaohei1 支付单运单；xiaohei2 订单清单；xiaohei3 清单
 
     @Test
     public void orderSet(){
