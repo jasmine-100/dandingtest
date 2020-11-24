@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java.ccs" />
         <module name="api" />
         <module name="java.jxc" />
-        <module name="java.oms" />
+        <module name="java.ccs" />
+        <module name="java.wms" />
         <module name="utils" />
+        <module name="java.oms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
