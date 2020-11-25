@@ -21,7 +21,7 @@ public class GoodApi {
     public void addGood(){
         String skuCode = "JHY"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         List<ErpSku> skus = new ArrayList<>();
-        skus.add(new ErpSku(Data.warehouseCode,Data.cargoCode,skuCode,"我是测试商品","1","WAHAHA","娃哈哈","1","150","10","20"));
+        skus.add(new ErpSku(Data.warehouseCode,Data.cargoCode,skuCode,"小面包","1","PANPAN","盼盼","1","150","10","20"));
         Good good = new Good(skus);
 
         ApiClient.doPostJson(Data.addGoodUrl,null,null,good);
