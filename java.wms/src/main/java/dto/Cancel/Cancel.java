@@ -1,10 +1,13 @@
 package dto.Cancel;
 
+import lombok.Data;
+
 /**
  * @Author： jasmine
  * @Description :
  * @Date : Created in 2020/11/25 18:03
  */
+@Data
 public class Cancel {
     String warehouseCode;
     String cargoCode;

@@ -13,7 +13,7 @@ public class CancelApi {
 
     @Test
     public void cancelOrder(){
-        String orderno = "";
+        String orderno = "JOT20201125180632";
         Cancel cancel = new Cancel(Data.warehouseCode,Data.cargoCode,orderno);
 
         ApiClient.doPostJson(Data.cancelOrderUrl,null,null,cancel);
