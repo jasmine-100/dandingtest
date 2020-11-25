@@ -22,7 +22,7 @@ public class StockinApi {
     public void addStockinOrder(){
         String soNo = "JIN"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         List<DetailParam> detailParams = new ArrayList<>();
-        detailParams.add(new DetailParam("JHY20201124171718",10));
+        detailParams.add(new DetailParam("JHY20201125102218",10));
         HdrParam hdrParam = new HdrParam(soNo,Data.warehouseCode,Data.cargoCode);
         StockinOrder stockinOrder = new StockinOrder(detailParams,hdrParam);
 
