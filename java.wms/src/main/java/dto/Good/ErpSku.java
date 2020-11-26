@@ -20,6 +20,7 @@ public class ErpSku {
     String lifeCycle;
     String withdrawCycle;
     String warnCycle;
+    int height;
 
     public ErpSku(String warehouseCode, String cargoCode, String code, String name, String type, String brandCode, String brandName, String isLifeMgt, String lifeCycle, String withdrawCycle, String warnCycle) {
         this.warehouseCode = warehouseCode;
@@ -33,5 +34,6 @@ public class ErpSku {
         this.lifeCycle = lifeCycle;
         this.withdrawCycle = withdrawCycle;
         this.warnCycle = warnCycle;
+        this.height = 1;
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
  * @Date : Created in 2020/11/25 17:05
  */
 @Data
-public class Order {
+public class StockoutOrder {
     String soNo;
     String businessType;
     String warehouseCode;
@@ -27,7 +27,7 @@ public class Order {
     String receiverMan;
     String saleShopId;
 
-    public Order(String soNo, String warehouseCode, String cargoCode, String carrierCode, List<Detail> listDetail) {
+    public StockoutOrder(String soNo, String warehouseCode, String cargoCode, String carrierCode, List<Detail> listDetail) {
         this.soNo = soNo;
         this.businessType = "B2C";
         this.warehouseCode = warehouseCode;

@@ -11,13 +11,15 @@ import lombok.Data;
 public class DetailParam {
     String skuCode;
     String skuName;
+    int extNo;
     double volume;
     int expSkuQty;
     double grossWeight;
     double netWeight;
     double price;
 
-    public DetailParam(String skuCode, int expSkuQty) {
+    public DetailParam(String skuCode, int expSkuQty,int extNo) {
+        this.extNo = extNo;
         this.skuCode = skuCode;
 //        this.skuName = "";
 //        this.volume = volume;
