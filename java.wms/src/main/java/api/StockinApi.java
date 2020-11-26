@@ -28,4 +28,5 @@ public class StockinApi {
 
         ApiClient.doPostJson(Data.addStockinUrl,null,null,stockinOrder);
     }
+
 }
