@@ -18,13 +18,19 @@ import java.util.List;
 public class GoodApi {
 
     @Test
+    public void more(){
+        for (int i=0;i<2;i++){
+            addGood();
+        }
+    }
+
+    @Test
     public void addGood(){
-        String skuCode = "JHY"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String skuCode = "JHY"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
         List<ErpSku> skus = new ArrayList<>();
-        skus.add(new ErpSku(Data.warehouseCode,Data.cargoCode,skuCode,"小面包","1","PANPAN","盼盼","1","150","10","20"));
+        skus.add(new ErpSku(Data.warehouseCode,Data.cargoCode,skuCode,"小面包","1","PANPAN","盼盼","-1","","10","20"));
         Good good = new Good(skus);
 
         ApiClient.doPostJson(Data.addGoodUrl,null,null,good);
-
     }
 }

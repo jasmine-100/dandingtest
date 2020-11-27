@@ -13,7 +13,7 @@ public class StockoutCancelApi {
 
     @Test
     public void cancelOrder(){
-        String orderno = "JOT20201126161424";
+        String orderno = "JOT20201126164012";
         Cancel cancel = new Cancel(Data.warehouseCode,Data.cargoCode,orderno);
 
         ApiClient.doPostJson(Data.cancelOrderUrl,null,null,cancel);
