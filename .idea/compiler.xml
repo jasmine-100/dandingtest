@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
+        <module name="java.erp" />
         <module name="java.jxc" />
         <module name="java.ccs" />
         <module name="java.wms" />
@@ -20,6 +21,7 @@
       <module name="api.qimen" target="1.8" />
       <module name="api.v3" target="1.8" />
       <module name="api.wms" target="1.8" />
+      <module name="java.wms" target="1.8" />
       <module name="orderTest" target="1.8" />
     </bytecodeTargetLevel>
   </component>

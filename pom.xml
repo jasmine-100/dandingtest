@@ -15,6 +15,7 @@
         <module>java.jxc</module>
         <module>api</module>
         <module>wms</module>
+        <module>java.erp</module>
     </modules>
 
     <dependencies>
