@@ -23,17 +23,17 @@ public class StockoutOrder {
     String actualDate;
     String logisticsCompanyCode;//快递公司编码
     String logisticsNo;//单号
-    int orderType;// 1 销售出库；2调拨出库；3 C单出库；
+    int orderType;// 1 B单出库；2调拨出库；3 C单出库；
 
     List<SkuParam> skuParamList;
 
-    public StockoutOrder(String outOrderNo, String warehouseCode, String ownerCode,String logisticsCompanyCode, String logisticsNo, int orderType, List<SkuParam> skuParamList) {
+    public StockoutOrder(String outOrderNo, String warehouseCode, String ownerCode,String logisticsCompanyCode, String logisticsNo, int orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
         this.downstreamNo = "JO"+outOrderNo;
         this.outOrderNo = outOrderNo;
         this.warehouseCode = warehouseCode;
         this.ownerCode = ownerCode;
-        this.operationTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        this.actualDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.operationTime = operationTime;
+        this.actualDate = actualDate;
         this.logisticsCompanyCode = logisticsCompanyCode;
         this.logisticsNo = logisticsNo;
         this.orderType = orderType;

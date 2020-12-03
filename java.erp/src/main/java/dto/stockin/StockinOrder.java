@@ -23,13 +23,13 @@ public class StockinOrder {
     String orderType; // 1 采购；2 调拨
     List<SkuParam> skuParamList;
 
-    public StockinOrder(String inOrderNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList) {
-        this.downstreamNo = "JIN"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+    public StockinOrder(String inOrderNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
+        this.downstreamNo = "JIN"+inOrderNo;
         this.inOrderNo = inOrderNo;
         this.warehouseCode = warehouseCode;
         this.ownerCode = ownerCode;
-        this.operationTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        this.actualDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.operationTime = operationTime;
+        this.actualDate = actualDate;
         this.isConfirm = isConfirm;
         this.orderType = orderType;
         this.skuParamList = skuParamList;
