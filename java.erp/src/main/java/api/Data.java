@@ -13,9 +13,13 @@ public class Data {
 
     public static String urlStockout = url + "/ares-admin/open/dtOutStockCallback";
 
-//  大贸仓1-1-1
+    //  大贸仓1-1-1 & 大贸仓1-1-2
     public static String warehouseCode ="TJCQ028418";
     public static String ownerCode = "jasdamao";
+
+    //  保税仓1-1-1
+//    public static String warehouseCode ="TJCQbde08c";
+//    public static String ownerCode = "jasbaoshui";
 
     // 大贸仓2-1-1
 //    public static String warehouseCode ="TJCQde6c98";
@@ -24,4 +28,9 @@ public class Data {
     // 酱酱的保税云仓3
 //    public static String warehouseCode ="BJCQ911951";
 //    public static String ownerCode = "jjbs";
+
+    //  酱酱的保税云仓2
+//    public static String warehouseCode ="BJCQ911951";
+//    public static String ownerCode = "jjbs";
+
 }

@@ -63,7 +63,7 @@ public class ApiClient {
         client = HttpClients.createDefault();
         post = new HttpPost(url);
         String responseStr = null;
-//        System.out.println(url);
+        System.out.println(url);
 
         setParams(params);
         setHead(head);
@@ -129,7 +129,7 @@ public class ApiClient {
                 }
                 String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
                 post = new HttpPost(url+"?"+str);
-            System.out.println(url+"?"+str);
+//            System.out.println(url+"?"+str);
             } catch (Exception e) {
                 e.printStackTrace();
             }
