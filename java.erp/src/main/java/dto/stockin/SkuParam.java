@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class SkuParam {
     String goodsCode;
-    String batchCode; // 批次号
+    int batchCode; // 批次号
     int  actualQuantity; // 入库数量
     int skuQuality;// 1 正品；2 次品
 //    String inventoryType;// 1 正品；2 次品
@@ -18,7 +18,7 @@ public class SkuParam {
     String manufDate;// 生产日期
     String expireDate;
 
-    public SkuParam(String goodsCode, String batchCode, int actualQuantity, int skuQuality, int lineNo, String manufDate, String expireDate) {
+    public SkuParam(String goodsCode, int batchCode, int actualQuantity, int skuQuality, int lineNo, String manufDate, String expireDate) {
         this.goodsCode = goodsCode;
         this.batchCode = batchCode;
         this.actualQuantity = actualQuantity;
