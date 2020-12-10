@@ -38,7 +38,7 @@ public class StockinData {
     }
 
     public StockinData(String syncBillId, String warehouseCode, String HZID, String billType,int isConfirm,int batchNo, List<Product> products) {
-        BillId = "RELBRJ20012000950392";
+        BillId = "RELB"+syncBillId;
         OrigSystem = "Y800OMS";
         SyncBillId = syncBillId;
         WarehouseCode = warehouseCode;
