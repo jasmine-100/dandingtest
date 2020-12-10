@@ -1,4 +1,4 @@
-package wmsKunei.api;
+package wmsKunei;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
