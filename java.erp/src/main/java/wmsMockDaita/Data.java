@@ -18,14 +18,14 @@ public class Data {
     public static String ownerCode = "damao11";// 货主1
 //    public static String ownerCode = "damao12";// 货主2
 
-    //大贸仓2
+    // 大贸仓2
 //    public static String warehouseCode ="WHS5be238";
-//    public static String ownerCode = "baoshui11";// 货主1
-//    public static String ownerCode = "baoshui12";// 货主2
+//    public static String ownerCode = "damao21";// 货主1
 
     //保税仓1
 //    public static String warehouseCode ="TJCQd0f939";
-//    public static String ownerCode = "damao21";// 货主1
+//    public static String ownerCode = "baoshui11";// 货主1
+//    public static String ownerCode = "baoshui12";// 货主2
 
     //保税仓2
 //    public static String warehouseCode ="TSSee2bb6";
