@@ -5,12 +5,12 @@ import jxl.Range;
 import jxl.Sheet;
 import jxl.Workbook;
 import utils.XmlUtil;
-import wmsFuchun.dto.ParamsWms;
-import wmsFuchun.dto.deliver.DeliverData;
-import wmsFuchun.dto.deliver.Product;
-import wmsFuchun.dto.outbound.OutboundData;
-import wmsFuchun.dto.stockin.StockinData;
-import wmsFuchun.jxc.BaseParams;
+import wmsMockFuchun.dto.ParamsWms;
+import wmsMockFuchun.dto.deliver.DeliverData;
+import wmsMockFuchun.dto.deliver.Product;
+import wmsMockFuchun.dto.outbound.OutboundData;
+import wmsMockFuchun.dto.stockin.StockinData;
+import wmsMockFuchun.jxc.BaseParams;
 
 import java.io.File;
 import java.util.ArrayList;
