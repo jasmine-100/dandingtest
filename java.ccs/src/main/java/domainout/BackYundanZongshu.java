@@ -1,9 +1,8 @@
 package domainout;
 
 import client.ApiClient;
-import database.CcsOrder;
 import domain.Param;
-import jxc.BaseParam;
+import util.BaseParam;
 
 /**
  * @Author： jasmine

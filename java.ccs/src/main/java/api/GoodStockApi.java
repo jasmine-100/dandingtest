@@ -3,13 +3,12 @@ package api;
 import casetest.Data;
 import client.ApiClient;
 import domain.Stock;
-import jxc.BaseParam;
+import util.BaseParam;
 import domain.Good;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.testng.annotations.Test;
 import java.io.File;
-import java.util.Iterator;
 
 /**
  * @Author： jasmine

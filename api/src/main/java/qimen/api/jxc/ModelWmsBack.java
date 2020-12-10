@@ -5,12 +5,12 @@ import jxl.Range;
 import jxl.Sheet;
 import jxl.Workbook;
 import utils.XmlUtil;
-import wms.domain.ParamsWms;
-import wms.domain.deliver.DeliverData;
-import wms.domain.deliver.Product;
-import wms.domain.outbound.OutboundData;
-import wms.domain.stockin.StockinData;
-import wms.jxc.BaseParams;
+import wmsFuchun.dto.ParamsWms;
+import wmsFuchun.dto.deliver.DeliverData;
+import wmsFuchun.dto.deliver.Product;
+import wmsFuchun.dto.outbound.OutboundData;
+import wmsFuchun.dto.stockin.StockinData;
+import wmsFuchun.jxc.BaseParams;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -2,7 +2,7 @@ package api;
 
 import casetest.Data;
 import client.ApiClient;
-import jxc.BaseParam;
+import util.BaseParam;
 import domain.Item;
 import domain.Order;
 import domainout.*;

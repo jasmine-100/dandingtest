@@ -2,9 +2,8 @@ package domainout;
 
 import client.ApiClient;
 import domain.Param;
-import jxc.BaseParam;
+import util.BaseParam;
 import domain.GoodWare;
-import domain.Param2;
 
 import java.io.IOException;
 

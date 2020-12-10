@@ -2,7 +2,7 @@ package domainout;
 
 import client.ApiClient;
 import domain.Param;
-import jxc.BaseParam;
+import util.BaseParam;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;

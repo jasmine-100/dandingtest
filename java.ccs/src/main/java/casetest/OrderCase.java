@@ -4,12 +4,10 @@ import client.ApiClient;
 import domain.Item;
 import domain.Order;
 import domainout.*;
-import jxc.BaseParam;
+import util.BaseParam;
 import org.testng.annotations.Test;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,7 +16,7 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String str = "202011201618";
+    String str = "202012101516";
     String declareOrderNo = "DOS"+str;
     String outOrderNo = "JOS"+str;
     String logiticsNo = "SF"+str;

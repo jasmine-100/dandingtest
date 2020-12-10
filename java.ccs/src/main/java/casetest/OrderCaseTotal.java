@@ -7,7 +7,7 @@ import domainout.BackDingdanZongshu;
 import domainout.BackQingdanZongshu;
 import domainout.BackTax;
 import domainout.BackYundanZongshu;
-import jxc.BaseParam;
+import util.BaseParam;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
