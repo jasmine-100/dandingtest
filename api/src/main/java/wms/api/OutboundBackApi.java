@@ -18,9 +18,6 @@ import java.util.List;
  * @Date : Created in 2020/7/24 10:59
  */
 public class OutboundBackApi {
-
-    String whCode = "01";
-    String hzid = "GL01";
     String orderno = "JOB2020001";
 
     //出库单回执
@@ -31,13 +28,13 @@ public class OutboundBackApi {
         products.add(new Product("JHK000123", "100236", 10, "2020-1-2", "2020-9-1", "ZP"));
 
 //组装bizdata
-        OutboundData outboundData = new OutboundData(orderno, whCode, hzid, "SF", "QTCK", 1.68, products);
+        OutboundData outboundData = new OutboundData(orderno, Data.whCode, Data.ownerCode, "SF", "QTCK", 1.68, products);
 
 //组装请求参数
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), ServiceType.OUTBOUND_BACK, "1.0");
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.bstockout.update", "1.0");
 
         //接口推送
-        ApiClient.doPostForm("http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive",null,null,param);
+        ApiClient.doPostForm(Data.URL,null,null,param);
 
     }
 }

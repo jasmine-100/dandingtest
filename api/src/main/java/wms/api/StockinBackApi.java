@@ -22,19 +22,16 @@ public class StockinBackApi {
     //采购入库单回执
     @Test
     public void orderBack1() throws Exception {
-        String url = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
-        String whCode = "01";
-        String hzid = "GL01";
         String orderno = "PS100239902";
 
         List<Product> products = new ArrayList<>();
         products.add(new Product("JHK000123", "000123", 100, "2020-1-1", "2023-6-6", "ZP"));
 
-        StockinData wmsRequestRoot = new StockinData(orderno, whCode, hzid, BillType.CAIGOU, 1,1, products);
+        StockinData wmsRequestRoot = new StockinData(orderno, Data.whCode, Data.ownerCode, "CGRK", 1,1, products);
 
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), ServiceType.STOCKIN_BACK, "1.0");
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), "wms.stockin.update", "1.0");
 
-        ApiClient.doPostXml(url, param, null, null);
+        ApiClient.doPostXml(Data.URL, param, null, null);
     }
 
 

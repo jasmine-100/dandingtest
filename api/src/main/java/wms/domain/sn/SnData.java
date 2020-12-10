@@ -15,7 +15,7 @@ public class SnData {
  String SyncBillId;
  String WarehouseCode;
  String HZID;
- String OrderType;
+ String OrderType;  //01 入库  02出库
  int PageSize;
  int CurrentPage;
  int TotalPage;

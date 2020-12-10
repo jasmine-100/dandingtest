@@ -31,13 +31,13 @@ public class SnBackApi {
         products.add(new Product("JHK000123"));
 
         //组装bizdata
-        SnData snData = new SnData(orderno,whCode,hzid, OrderType.STOCKIN,products);
+        SnData snData = new SnData(orderno,Data.whCode,Data.ownerCode,"01",products);
 
         //组装请求参数
-        ParamsWms params = new ParamsWms(XmlUtil.objToXml(snData), ServiceType.SN_BACK,"1.0");
+        ParamsWms params = new ParamsWms(XmlUtil.objToXml(snData), "wms.sn.update","1.0");
 
         //接口推送
-        ApiClient.doPostForm("http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive",null,null,params);
+        ApiClient.doPostForm(Data.URL,null,null,params);
     }
 
 }
