@@ -2,7 +2,10 @@ package wmsMockDaita.dto.stockin;
 
 import lombok.Data;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @Author： jasmine
@@ -22,7 +25,7 @@ public class StockinOrder {
     List<SkuParam> skuParamList;
     String backFlag;
 
-    public StockinOrder(String inOrderNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList,String operationTime,String actualDate,String backFlag) {
+    public StockinOrder(String inOrderNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
         this.downstreamNo = "JIN"+inOrderNo;
         this.inOrderNo = inOrderNo;
         this.warehouseCode = warehouseCode;
@@ -32,6 +35,6 @@ public class StockinOrder {
         this.isConfirm = isConfirm;
         this.orderType = orderType;
         this.skuParamList = skuParamList;
-        this.backFlag = backFlag;
+        this.backFlag = new SimpleDateFormat("hhmmssSSS").format(new Date());
     }
 }

@@ -3,6 +3,8 @@ package wmsMockDaita.dto.stockout;
 import wmsMockDaita.dto.stockin.SkuParam;
 import lombok.Data;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,7 +28,7 @@ public class StockoutOrder {
     List<SkuParam> skuParamList;
     String backFlag;
 
-    public StockoutOrder(String outOrderNo, String warehouseCode, String ownerCode,String logisticsCompanyCode, String logisticsNo, int orderType, List<SkuParam> skuParamList,String operationTime,String actualDate,String backFlag) {
+    public StockoutOrder(String outOrderNo, String warehouseCode, String ownerCode,String logisticsCompanyCode, String logisticsNo, int orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
         this.downstreamNo = "JO"+outOrderNo;
         this.outOrderNo = outOrderNo;
         this.warehouseCode = warehouseCode;
@@ -37,6 +39,6 @@ public class StockoutOrder {
         this.logisticsNo = logisticsNo;
         this.orderType = orderType;
         this.skuParamList = skuParamList;
-        this.backFlag = backFlag;
+        this.backFlag = new SimpleDateFormat("hhmmssSSS").format(new Date());
     }
 }
