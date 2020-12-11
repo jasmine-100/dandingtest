@@ -8,9 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
+        <module name="java.oms" />
         <module name="java.erp" />
         <module name="utils" />
-        <module name="java.oms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

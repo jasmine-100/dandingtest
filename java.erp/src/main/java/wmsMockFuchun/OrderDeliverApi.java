@@ -15,7 +15,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/24 9:01
  */
-public class DeliverBackApi {
+public class OrderDeliverApi {
 
     //发货单回执--奇门接口
     @Test
@@ -32,8 +32,7 @@ public class DeliverBackApi {
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.cstockout.update", "1.0");
 
         System.out.println(param);
-        ApiClient.doPostXml(Data.URL, param, null, null);
+        ApiClient.doPostForm(Data.URL, param, null, null);
     }
-
 
 }

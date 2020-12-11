@@ -79,7 +79,7 @@ public class ApiClient {
         return responseStr;
     }
 
-    public static String doPostXml(String URL,Object params,Map<String,Object> head,Object body) throws Exception {
+    public static String doPostXml(String URL,Object params,Map<String,Object> head,Object body) {
         url = URL;
         client = HttpClients.createDefault();
         post = new HttpPost(url);
@@ -89,9 +89,13 @@ public class ApiClient {
         setHead(head);
         setXml(body);
 
-        response = client.execute(post);
-        responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
-        System.out.println(responseStr);
+        try {
+            response = client.execute(post);
+            responseStr = EntityUtils.toString(response.getEntity(),"utf-8");
+            System.out.println(responseStr);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return responseStr;
     }
 

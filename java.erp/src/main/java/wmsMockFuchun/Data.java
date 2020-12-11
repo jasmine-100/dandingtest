@@ -8,7 +8,7 @@ package wmsMockFuchun;
 public class Data {
 
     // 富春wms-->OMS 接口地址
-//    public static String URL = "http://depottest.yang800.cn/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
+//    public static String URL = "http://depottest.yang800.com/xhr/depot/message/fuchun/1.0/FUCHUN/receive";
     // 富春WMS-ERP
     public static String URL = "http://ares-admin.yang800.cn/ares-admin/open/fcCallback";
 

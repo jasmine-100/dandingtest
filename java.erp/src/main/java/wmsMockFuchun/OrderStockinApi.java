@@ -15,20 +15,20 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/23 17:35
  */
-public class StockinBackApi {
+public class OrderStockinApi {
 
     //采购入库单回执
     @Test
-    public void orderBack1() throws Exception {
+    public void orderBack1() {
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product("G1607425274829", "201033", 10, "2020-1-1", "2023-6-6", "ZP"));
+        products.add(new Product("G1607589928737", "201033", 10, "2020-1-1", "2023-6-6", "1"));
 
-        StockinData wmsRequestRoot = new StockinData("ET202012101050120753597824", Data.whCode, Data.ownerCode, "CGRK", 1,1, products);
+        StockinData wmsRequestRoot = new StockinData("ET202012111046300776613457", Data.whCode, Data.ownerCode, "CGRK", 1,1, products);
 
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), "wms.stockin.update", "1.0");
+        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), "wms.purchaseorderinfo.update", "1.0");
 
-        ApiClient.doPostXml(Data.URL, param, null, null);
+        ApiClient.doPostForm(Data.URL, param, null, null);
     }
 
 }

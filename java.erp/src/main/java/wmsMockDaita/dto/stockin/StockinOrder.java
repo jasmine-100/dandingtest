@@ -20,8 +20,9 @@ public class StockinOrder {
     int isConfirm; // 1 中间态；0 终结态
     String orderType; // 1 采购；2 调拨
     List<SkuParam> skuParamList;
+    String backFlag;
 
-    public StockinOrder(String inOrderNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
+    public StockinOrder(String inOrderNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList,String operationTime,String actualDate,String backFlag) {
         this.downstreamNo = "JIN"+inOrderNo;
         this.inOrderNo = inOrderNo;
         this.warehouseCode = warehouseCode;
@@ -31,5 +32,6 @@ public class StockinOrder {
         this.isConfirm = isConfirm;
         this.orderType = orderType;
         this.skuParamList = skuParamList;
+        this.backFlag = backFlag;
     }
 }
