@@ -17,17 +17,16 @@ import java.util.List;
  * @Date : Created in 2020/7/24 10:59
  */
 public class OrderOutboundApi {
-    String orderno = "JOB2020001";
 
     //出库单回执
     @Test
     public void outboundBack() throws IOException {
         //组装商品
         List<Product> products = new ArrayList<>();
-        products.add(new Product("JHK000123", "100236", 10, "2020-1-2", "2020-9-1", "ZP"));
+        products.add(new Product("G1607667598237", "20201210", 10, "2020-1-2", "2020-9-1", "ZP"));
 
         //组装bizdata
-        OutboundData outboundData = new OutboundData(orderno, Data.whCode, Data.ownerCode, "SF", "QTCK", 1.68, products);
+        OutboundData outboundData = new OutboundData("OB202012112004590679193046", Data.whCode, Data.ownerCode, "SF", "QTCK", 1.68, products);
 
         //组装请求参数
         ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.issueorderinfo.update", "1.0");
