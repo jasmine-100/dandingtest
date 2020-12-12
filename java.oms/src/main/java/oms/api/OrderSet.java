@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSON;
 import oms.domain.Item;
 import oms.domain.Order;
 import orderutils.Pay;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
