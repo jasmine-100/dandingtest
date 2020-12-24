@@ -15,20 +15,9 @@ public class Data {
 
     //  大贸仓1
     public static String warehouseCode ="111111";
-    public static String ownerCode = "damao11";// 货主1
-//    public static String ownerCode = "damao12";// 货主2
+    public static String ownerCode = "hahaDamao1";
 
-    // 大贸仓2
-//    public static String warehouseCode ="TJCQ703622";
-//    public static String ownerCode = "damao21";// 货主1
-
-    //保税仓1
-//    public static String warehouseCode ="BJCQe73e3d";
-//    public static String ownerCode = "baoshui11";// 货主1
-//    public static String ownerCode = "baoshui12";// 货主2
-
-    //保税仓2
-//    public static String warehouseCode ="HDSc08873";
-//    public static String ownerCode = "baoshui21";// 货主1
-
+    // 保税仓
+//    public static String warehouseCode ="DT-W1";
+//    public static String ownerCode = "hahaHuozhu";
 }
