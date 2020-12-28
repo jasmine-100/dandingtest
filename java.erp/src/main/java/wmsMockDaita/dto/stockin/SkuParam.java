@@ -22,7 +22,6 @@ public class SkuParam {
         this.batchCode = batchCode;
         this.actualQuantity = actualQuantity;
         this.inventoryType = inventoryType;
-//        this.inventoryType = inventoryType;
         this.lineNo = lineNo;
         this.productionDate = productionDate;
         this.expireDate = expireDate;
