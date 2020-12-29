@@ -1,6 +1,7 @@
 package wmsMockDaita.dto.stockin;
 
 import lombok.Data;
+import utils.UtilsTime;
 
 /**
  * @Author： jasmine
@@ -15,7 +16,7 @@ public class SkuParam {
     int inventoryType;// 1 正品；2 次品
     int lineNo;
     String productionDate;// 生产日期
-    String expireDate;
+    String expireDate; // 失效日期
 
     public SkuParam(String goodsCode, String batchCode, int actualQuantity, int inventoryType, int lineNo, String productionDate, String expireDate) {
         this.goodsCode = goodsCode;
@@ -26,4 +27,15 @@ public class SkuParam {
         this.productionDate = productionDate;
         this.expireDate = expireDate;
     }
+
+    public SkuParam(String goodsCode, String batchCode, int actualQuantity, int inventoryType, int lineNo, String productionDate, int days) {
+        this.goodsCode = goodsCode;
+        this.batchCode = batchCode;
+        this.actualQuantity = actualQuantity;
+        this.inventoryType = inventoryType;
+        this.lineNo = lineNo;
+        this.productionDate = productionDate;
+        this.expireDate = UtilsTime.addDate(productionDate,days);
+    }
+
 }

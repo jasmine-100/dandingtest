@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -31,9 +33,30 @@ public class UtilsTime {
         return timestamp;
     }
 
+    /**
+     * 推算日期（当前日期以前或以后多少天）
+     * @param date 初始日期 yyyy-MM-dd
+     * @param days
+     * @return 目标日期
+     */
+    public static String addDate(String date,int days){
+        LocalDate targetDate = null;
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(date,formatter);
+
+        if(days>=0){
+            targetDate = localDate.plusDays(days);
+        }else{
+            targetDate = localDate.minusDays(-days);
+        }
+        return targetDate.toString();
+    }
+
     @Test
     public void test(){
-        System.out.println(getTime("yyyyMMddHHmmss","20200901100101"));
-        System.out.println(getTime("yyyy.MM.dd","2020.9.1"));
+//        System.out.println(getTime("yyyyMMddHHmmss","20200901100101"));
+//        System.out.println(getTime("yyyy.MM.dd","2020.9.1"));
+        System.out.println(addDate("2020-10-10",10));
     }
 }
