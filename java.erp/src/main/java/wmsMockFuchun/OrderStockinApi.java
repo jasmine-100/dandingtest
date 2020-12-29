@@ -2,7 +2,7 @@ package wmsMockFuchun;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import utils.XmlUtil;
+import utils.UtilsXml;
 import wmsMockFuchun.dto.ParamsWms;
 import wmsMockFuchun.dto.deliver.Product;
 import wmsMockFuchun.dto.stockin.StockinData;
@@ -26,7 +26,7 @@ public class OrderStockinApi {
 
         StockinData wmsRequestRoot = new StockinData("ET202012111046300776613457", Data.whCode, Data.ownerCode, "CGRK", 1,1, products);
 
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(wmsRequestRoot), "wms.purchaseorderinfo.update", "1.0");
+        ParamsWms param = new ParamsWms(UtilsXml.objToXml(wmsRequestRoot), "wms.purchaseorderinfo.update", "1.0");
 
         ApiClient.doPostForm(Data.URL, param, null, null);
     }

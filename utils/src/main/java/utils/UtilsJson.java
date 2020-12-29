@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSONObject;
  * @Description :
  * @Date : Created in 2020/7/20 12:39
  */
-public class JsonUtils {
+public class UtilsJson {
 
     public static Object getJsonStr(String jsonStr,String key){
         JSONObject jsondata = JSONObject.parseObject(jsonStr);

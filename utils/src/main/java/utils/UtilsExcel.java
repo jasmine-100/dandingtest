@@ -16,7 +16,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/9/22 9:15
  */
-public class ExcelUtils {
+public class UtilsExcel {
 
     // 读取excel
     public static void getExcel(String pathname){

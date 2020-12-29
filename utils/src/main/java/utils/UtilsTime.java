@@ -12,7 +12,7 @@ import java.util.Date;
  * @Description : 常用时间戳工具
  * @Date : Created in 2020/9/4 11:10
  */
-public class UtilTime {
+public class UtilsTime {
 
     /**
      * @param time  yyyyMMddHHmmss 格式

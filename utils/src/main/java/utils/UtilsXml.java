@@ -10,7 +10,7 @@ import java.io.StringWriter;
  * @Description :
  * @Date : Created in 2020/7/22 17:53
  */
-public class XmlUtil {
+public class UtilsXml {
 
     public static String objToXml(Object object){
         StringWriter stringWriter = new StringWriter();

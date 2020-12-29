@@ -11,7 +11,7 @@ import jxl.Range;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.testng.annotations.Test;
-import utils.ExcelUtils;
+import utils.UtilsExcel;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -79,9 +79,9 @@ public class OrderApiAuto {
         String outOrderNo = "JOS" + str;
         String declareOrderno = "DS" + str;
         String logiticsNo = "sf" + str;
-        ExcelUtils.writeExcel(Data.FILEPATH, 1, row, 0, outOrderNo);
-        ExcelUtils.writeExcel(Data.FILEPATH, 1, row, 1, declareOrderno);
-        ExcelUtils.writeExcel(Data.FILEPATH, 1, row, 3, logiticsNo);
+        UtilsExcel.writeExcel(Data.FILEPATH, 1, row, 0, outOrderNo);
+        UtilsExcel.writeExcel(Data.FILEPATH, 1, row, 1, declareOrderno);
+        UtilsExcel.writeExcel(Data.FILEPATH, 1, row, 3, logiticsNo);
         String expressCode = sheet.getCell(2, row).getContents();
         String routeCode = sheet.getCell(4, row).getContents();
         String ebpCode = sheet.getCell(5, row).getContents();

@@ -2,7 +2,7 @@ package wmsMockFuchun;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import utils.XmlUtil;
+import utils.UtilsXml;
 import wmsMockFuchun.dto.ParamsWms;
 import wmsMockFuchun.dto.deliver.Product;
 import wmsMockFuchun.dto.outbound.OutboundData;
@@ -29,7 +29,7 @@ public class OrderOutboundApi {
         OutboundData outboundData = new OutboundData("OB202012112004590679193046", Data.whCode, Data.ownerCode, "SF", "QTCK", 1.68, products);
 
         //组装请求参数
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(outboundData), "wms.issueorderinfo.update", "1.0");
+        ParamsWms param = new ParamsWms(UtilsXml.objToXml(outboundData), "wms.issueorderinfo.update", "1.0");
 
         //接口推送
         ApiClient.doPostForm(Data.URL,param,null,null);

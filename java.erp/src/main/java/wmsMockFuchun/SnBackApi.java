@@ -2,7 +2,7 @@ package wmsMockFuchun;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import utils.XmlUtil;
+import utils.UtilsXml;
 import wmsMockFuchun.dto.ParamsWms;
 import wmsMockFuchun.dto.sn.Product;
 import wmsMockFuchun.dto.sn.SnData;
@@ -28,7 +28,7 @@ public class SnBackApi {
         SnData snData = new SnData(orderno,Data.whCode,Data.ownerCode,"01",products);
 
         //组装请求参数
-        ParamsWms params = new ParamsWms(XmlUtil.objToXml(snData), "wms.sn.update","1.0");
+        ParamsWms params = new ParamsWms(UtilsXml.objToXml(snData), "wms.sn.update","1.0");
 
         //接口推送
         ApiClient.doPostForm(Data.URL,null,null,params);

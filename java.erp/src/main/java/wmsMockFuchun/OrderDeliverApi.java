@@ -2,7 +2,7 @@ package wmsMockFuchun;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import utils.XmlUtil;
+import utils.UtilsXml;
 import wmsMockFuchun.dto.ParamsWms;
 import wmsMockFuchun.dto.deliver.DeliverData;
 import wmsMockFuchun.dto.deliver.Product;
@@ -29,7 +29,7 @@ public class OrderDeliverApi {
         DeliverData deliverData = new DeliverData(orderno, Data.whCode, "ZTO", 1.68, Data.ownerCode, products);
 
         //组装请求参数
-        ParamsWms param = new ParamsWms(XmlUtil.objToXml(deliverData), "wms.cstockout.update", "1.0");
+        ParamsWms param = new ParamsWms(UtilsXml.objToXml(deliverData), "wms.cstockout.update", "1.0");
 
         System.out.println(param);
         ApiClient.doPostForm(Data.URL, param, null, null);
