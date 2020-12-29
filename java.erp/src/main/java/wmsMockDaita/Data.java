@@ -14,8 +14,12 @@ public class Data {
     public static String urlStockout = url + "/ares-admin/open/dtOutStockCallback";
 
     //  大贸仓1
-    public static String warehouseCode ="111111";
+    public static String warehouseCode ="111111";//wms编码
     public static String ownerCode = "hahaDamao1";
+
+    //  保税仓1
+//    public static String warehouseCode ="123456";//wms编码
+//    public static String ownerCode = "hahaBaoshui1";
 
     // 保税仓
 //    public static String warehouseCode ="DT-W1";
