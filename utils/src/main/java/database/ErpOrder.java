@@ -1,5 +1,7 @@
 package database;
 
+import utils.UtilsTime;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,10 +18,10 @@ public class ErpOrder {
         boolean flag = false;
         String sql = null;
         if (type.equals("in")){
-            sql = "UPDATE erp_in_order_202101 SET `status` = 15 WHERE in_order_no= '"+orderNo+"'";
+            sql = "UPDATE erp_in_order_"+ UtilsTime.getDate() +" SET `status` = 15 WHERE in_order_no= '"+orderNo+"'";
         }
         if (type.equals("out")){
-            sql = "UPDATE erp_out_order_202101 SET `status` = 15 WHERE out_order_no= '"+orderNo+"'";
+            sql = "UPDATE erp_out_order_"+ UtilsTime.getDate() +" SET `status` = 15 WHERE out_order_no= '"+orderNo+"'";
         }
 
         String orderSn = null;
