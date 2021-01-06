@@ -10,8 +10,8 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description : 没有调通，待2.0开发
- * @Date : Created in 2020/12/12 14:08
+ * @Description : ERP内部的新版OMS下单接口
+ * @Date : Created in 2021/01/06 14:08
  */
 public class OrderSet {
 

@@ -11,5 +11,4 @@ public class Data {
 
     public static String OrderUrl = URL + "/channelOrder/submit";
 
-
 }
