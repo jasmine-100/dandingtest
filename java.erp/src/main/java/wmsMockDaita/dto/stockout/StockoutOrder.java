@@ -29,7 +29,7 @@ public class StockoutOrder {
     String backFlag;
 
     public StockoutOrder(String outOrderNo, String warehouseCode, String ownerCode,String logisticsCompanyCode, String logisticsNo, int orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
-        this.downstreamNo = "JO"+outOrderNo;
+        this.downstreamNo = "JOT"+outOrderNo;
         this.outOrderNo = outOrderNo;
         this.warehouseCode = warehouseCode;
         this.ownerCode = ownerCode;

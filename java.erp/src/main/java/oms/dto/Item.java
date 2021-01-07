@@ -18,7 +18,6 @@ public class Item {
     public Item(String itemCode,String batchCode,double unitPrice, int count) {
         this.batchCode = batchCode;
         this.itemCode = itemCode;
-//        this.itemName = itemName;
         this.unitPrice = unitPrice;
         this.count = count;
     }

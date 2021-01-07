@@ -58,14 +58,14 @@ public class Order {
     long payDeclareTime;
     long promiseTime;
 
-    public Order(String outOrderNo,List<Item> itemList,String expressCode, String expressNo) {
+    public Order(String outOrderNo,List<Item> itemList,String expressCode, String expressNo,String appCode,String outShopCode) {
         this.outOrderNo = outOrderNo;
         this.outPayNo = "OPN1606982954413";
-        this.outShopCode = "webB2C336";
+        this.outShopCode = outShopCode;
         this.orderTime = System.currentTimeMillis();
         this.key = "webB2CwebB2C336OON1606982954410";
         this.saleChannel = "B2CSC";
-        this.appCode = "webB2C";
+        this.appCode = appCode;
         this.remark = "备注";
         this.declareOrderNo = outOrderNo;
         this.declarePayNo = "DPN1606982954416";
