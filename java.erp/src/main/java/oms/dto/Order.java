@@ -1,6 +1,10 @@
 package oms.dto;
 
 import lombok.Data;
+import utils.UtilsTime;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,8 +16,8 @@ import java.util.List;
 public class Order {
     // 单据信息
     String outOrderNo;
-    String outPayNo;
     String outShopCode;
+    String outPayNo;
     long orderTime;
     String key;
     String saleChannel;
@@ -49,6 +53,7 @@ public class Order {
     String senderName;
     String senderMobile;
     // 支付信息
+    String payNo;
     String merchantCode;
     String payChannel;
     String payerName;
@@ -59,22 +64,24 @@ public class Order {
     long promiseTime;
 
     public Order(String outOrderNo,List<Item> itemList,String expressCode, String expressNo,String appCode,String outShopCode) {
+        String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.outOrderNo = outOrderNo;
-        this.outPayNo = "OPN1606982954413";
+        this.outPayNo = "OPN"+str;
         this.outShopCode = outShopCode;
-        this.orderTime = System.currentTimeMillis();
+        this.orderTime = UtilsTime.getTime("yyyyMMddHHmmss","20210101120000");
         this.key = "webB2CwebB2C336OON1606982954410";
-        this.saleChannel = "B2CSC";
+        this.saleChannel = "V2";
         this.appCode = appCode;
         this.remark = "备注";
         this.declareOrderNo = outOrderNo;
-        this.declarePayNo = "DPN1606982954416";
+        this.declarePayNo = "DPN"+str;
+        this.payNo = "PN"+str;
         this.declareCode = "PDD";
         this.merchantCode = "wechatpay";
         this.itemList = itemList;
         this.packageMaterial = "DT";
         this.goodsAmount = itemList.stream().reduce(0.0,(x,y)->x+(y.getUnitPrice()*y.getCount()),Double::sum);
-        this.shipAmount = 10;
+        this.shipAmount = 0;
         this.taxAmount = 20;
         this.discount = 1;
         this.expressCode = expressCode;

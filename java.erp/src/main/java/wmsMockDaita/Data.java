@@ -15,8 +15,8 @@ public class Data {
 
     //  大贸仓1
     public static String warehouseCode ="111111";//wms编码
-//    public static String ownerCode = "hahaDamao1";
-    public static String ownerCode = "hahaDamao2";
+    public static String ownerCode = "hahaDamao1";
+//    public static String ownerCode = "hahaDamao2";
 
     //  保税仓1
 //    public static String warehouseCode ="123456";//wms编码
