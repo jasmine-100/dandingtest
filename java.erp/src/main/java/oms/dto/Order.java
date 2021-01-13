@@ -26,7 +26,7 @@ public class Order {
     // 申报单信息
     String declareOrderNo;
     String declarePayNo;
-    String declareCode;
+    String declareCode; //申报路径编码
     // 商品信息
     List<Item> itemList;
     String packageMaterial;
@@ -62,6 +62,7 @@ public class Order {
     long payTime;
     long payDeclareTime;
     long promiseTime;
+    String customsCode;//口岸
 
     public Order(String outOrderNo,List<Item> itemList,String expressCode, String expressNo,String appCode,String outShopCode) {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -76,10 +77,9 @@ public class Order {
         this.declareOrderNo = outOrderNo;
         this.declarePayNo = "DPN"+str;
         this.payNo = "PN"+str;
-        this.declareCode = "PDD";
-        this.merchantCode = "wechatpay";
         this.itemList = itemList;
         this.packageMaterial = "DT";
+        this.customsCode = "JINYI";//金义口岸
         this.goodsAmount = itemList.stream().reduce(0.0,(x,y)->x+(y.getUnitPrice()*y.getCount()),Double::sum);
         this.shipAmount = 0;
         this.taxAmount = 20;
@@ -100,6 +100,8 @@ public class Order {
         this.senderName = "齐吉吉";
         this.senderMobile = "15866660000";
         this.payChannel = "wechatpay";
+        this.declareCode = "PathErpV2";//申报路径编码
+        this.merchantCode = "MC2009250949000038"; // 付款商户号
         this.payerName = "jasmine";
         this.payerCardId = "330159666623012236";
         this.payAmount = this.goodsAmount+this.shipAmount+this.taxAmount-this.discount;

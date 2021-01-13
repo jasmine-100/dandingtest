@@ -15,9 +15,9 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String str = "202012101518";
-    String declareOrderNo = "DOS"+str;
-    String outOrderNo = "JOS"+str;
+    String str = "JOS20210113132905";
+    String declareOrderNo = str;
+    String outOrderNo = str;
     String logiticsNo = "SF"+str;
     String invtNo = "QD"+str;
     String routeCode = "xiaohei2";//xiaohei1 支付单运单；xiaohei2 订单清单；xiaohei3 清单
@@ -36,7 +36,7 @@ public class OrderCase {
     // 订单回执
     @Test
     public void dingdanBackAddOk(){ // 新增申报成功
-        BackDingdanZongshu.declareAddOk(declareOrderNo,Data.ebpCode,Data.ebcCode,"20200818150000001");
+        BackDingdanZongshu.declareAddOk(declareOrderNo,Data.ebpCode,Data.ebcCode,"20210113150000001");
     }
     @Test
     public void dingdanBackLogic(){ // 逻辑校验通过
@@ -50,11 +50,11 @@ public class OrderCase {
     // 运单回执
     @Test
     public void yundanBackAddOk()  { // 新增申报成功
-        BackYundanZongshu.backAddOk(logiticsNo,Data.agentCode,"20201115150000001");
+        BackYundanZongshu.backAddOk(logiticsNo,Data.agentCode,"20210113150000001");
     }
     @Test
     public void yundanBackLogic()  { // 逻辑校验通过
-        BackYundanZongshu.backLogic(logiticsNo,Data.agentCode,"20201116140000001");
+        BackYundanZongshu.backLogic(logiticsNo,Data.agentCode,"20210113160000001");
     }
 
     // 清单回执
