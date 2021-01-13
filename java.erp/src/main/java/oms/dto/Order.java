@@ -99,11 +99,11 @@ public class Order {
         this.senderAddress = "彩虹路100号";
         this.senderName = "齐吉吉";
         this.senderMobile = "15866660000";
+        this.payerName = "jasmine";
+        this.payerCardId = "330159666623012236";
         this.payChannel = "wechatpay";
         this.declareCode = "PathErpV2";//申报路径编码
         this.merchantCode = "MC2009250949000038"; // 付款商户号
-        this.payerName = "jasmine";
-        this.payerCardId = "330159666623012236";
         this.payAmount = this.goodsAmount+this.shipAmount+this.taxAmount-this.discount;
         this.payTime = System.currentTimeMillis();
         this.payDeclareTime = System.currentTimeMillis();

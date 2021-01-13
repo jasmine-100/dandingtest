@@ -15,9 +15,9 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String str = "JOS20210113132905";
-    String declareOrderNo = str;
-    String outOrderNo = str;
+    String str = "20210113190944";
+    String declareOrderNo = "JOS"+str;
+    String outOrderNo = "JOS"+str;
     String logiticsNo = "SF"+str;
     String invtNo = "QD"+str;
     String routeCode = "xiaohei2";//xiaohei1 支付单运单；xiaohei2 订单清单；xiaohei3 清单
