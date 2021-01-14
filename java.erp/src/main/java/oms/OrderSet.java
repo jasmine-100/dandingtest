@@ -24,7 +24,7 @@ public class OrderSet {
         String expressNo = "SF"+str;
 
         List<Item> items = new ArrayList<>();
-        items.add(new Item("SKU2101121851","",10.5,1));
+        items.add(new Item("SKU2101141536","",10.5,1));
 //        items.add(new Item("SKU202101111600","",21,1));
         Order order = new Order(orderNo,items,"SF",expressNo,"V2","8075d0d391d63805b6920cb67002599b");
 

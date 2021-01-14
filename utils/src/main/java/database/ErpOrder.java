@@ -4,8 +4,9 @@ import utils.UtilsTime;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @Author： jasmine
@@ -18,10 +19,10 @@ public class ErpOrder {
         boolean flag = false;
         String sql = null;
         if (type.equals("in")){
-            sql = "UPDATE erp_in_order_"+ UtilsTime.getDate() +" SET `status` = 15 WHERE in_order_no= '"+orderNo+"'";
+            sql = "UPDATE erp_in_order_"+ getDate() +" SET `status` = 15 WHERE in_order_no= '"+orderNo+"'";
         }
         if (type.equals("out")){
-            sql = "UPDATE erp_out_order_"+ UtilsTime.getDate() +" SET `status` = 15 WHERE out_order_no= '"+orderNo+"'";
+            sql = "UPDATE erp_out_order_"+ getDate() +" SET `status` = 15 WHERE out_order_no= '"+orderNo+"'";
         }
 
         String orderSn = null;
@@ -43,5 +44,17 @@ public class ErpOrder {
             }
         }
         return flag;
+    }
+
+    /**
+     * 2020年第一季度格式：202001
+     * @return 当前年+季度
+     */
+    public static String getDate(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        int year = calendar.get(Calendar.YEAR);
+        int reason = (calendar.get(Calendar.MONTH+1)+2)/3;
+        return year+"0"+reason;
     }
 }

@@ -53,19 +53,10 @@ public class UtilsTime {
         return targetDate.toString();
     }
 
-    public static String getDate(){
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        int year = calendar.get(Calendar.YEAR);
-        int reason = (calendar.get(Calendar.MONTH+1)+2)/3;
-        return year+"0"+reason;
-    }
-
     @Test
     public void test(){
 //        System.out.println(getTime("yyyyMMddHHmmss","20200901100101"));
 //        System.out.println(getTime("yyyy.MM.dd","2020.9.1"));
         System.out.println(addDate("2020-10-10",10));
-        System.out.println(getDate());
     }
 }

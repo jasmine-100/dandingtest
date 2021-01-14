@@ -3,6 +3,8 @@ package database;
 import org.testng.annotations.Test;
 
 import java.sql.*;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @Author： jasmine
@@ -21,7 +23,7 @@ public class CcsOrder {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://10.99.111.83:3306/ccs_order","root","ENPInr4GJRefShEI");
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("SELECT sn from ccs_customs_inventory_2020q4 WHERE declare_order_no=\""+declareOrderNo+"\"");
+            resultSet = statement.executeQuery("SELECT sn from ccs_customs_inventory_"+getDate()+" WHERE declare_order_no=\""+declareOrderNo+"\"");
             while (resultSet.next()){
                 orderSn = resultSet.getString("sn");
             }
@@ -37,6 +39,18 @@ public class CcsOrder {
             }
         }
         return orderSn;
+    }
+
+    /**
+     * 2020年第一季度格式：2020q1
+     * @return 当前年+季度
+     */
+    public static String getDate(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        int year = calendar.get(Calendar.YEAR);
+        int reason = (calendar.get(Calendar.MONTH+1)+2)/3;
+        return year+"q"+reason;
     }
 
     @Test
