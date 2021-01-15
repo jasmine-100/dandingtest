@@ -1,4 +1,4 @@
-package oms.dto;
+package oms.dto.order;
 
 import lombok.Data;
 import utils.UtilsTime;
@@ -13,7 +13,7 @@ import java.util.List;
  * @Date : Created in 2020/12/12 14:09
  */
 @Data
-public class Order {
+public class OrderDTO {
     // 单据信息
     String outOrderNo;
     String outShopCode;
@@ -64,7 +64,7 @@ public class Order {
     long promiseTime;
     String customsCode;//口岸
 
-    public Order(String outOrderNo,List<Item> itemList,String expressCode, String expressNo,String appCode,String outShopCode) {
+    public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode, String expressNo, String appCode, String outShopCode) {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.outOrderNo = outOrderNo;
         this.outPayNo = "OPN"+str;

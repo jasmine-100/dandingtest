@@ -1,8 +1,8 @@
 package oms;
 
 import client.ApiClient;
-import oms.dto.Item;
-import oms.dto.Order;
+import oms.dto.order.Item;
+import oms.dto.order.OrderDTO;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
@@ -26,7 +26,7 @@ public class OrderSet {
         List<Item> items = new ArrayList<>();
         items.add(new Item("SKU2101141536","",10.5,1));
 //        items.add(new Item("SKU202101111600","",21,1));
-        Order order = new Order(orderNo,items,"SF",expressNo,"V2","8075d0d391d63805b6920cb67002599b");
+        OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2","8ce310a0407cc30b0163d11b7628942a");
 
         ApiClient.doPostJson(Data.OrderUrl,null,null,order);
     }

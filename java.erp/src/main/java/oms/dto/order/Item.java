@@ -1,4 +1,4 @@
-package oms.dto;
+package oms.dto.order;
 
 import lombok.Data;
 
