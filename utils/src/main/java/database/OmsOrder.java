@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 实体仓和渠道关联平台
  * @Date : Created in 2021/1/12 19:07
  */
 public class OmsOrder {
@@ -23,7 +23,7 @@ public class OmsOrder {
      * @return
      */
     // 在数据库中添加实体仓和渠道的对应关系
-    public static String insertPlatform(String wareCode,String channelCode){
+    public static boolean insertPlatform(String wareCode,String channelCode){
         String orderSn = null;
         Connection connection = null;
         Statement statement = null;
@@ -44,12 +44,12 @@ public class OmsOrder {
                 throwables.printStackTrace();
             }
         }
-        return orderSn;
+        return flag;
     }
 
     @Test
     public void test(){
-        insertPlatform("121","V2");
+        insertPlatform("DTS6a3036","V2");
     }
 
 }

@@ -15,16 +15,16 @@ public class Data {
 
     // 哈哈科技有限公司
     //  大贸仓1
-//    public static String warehouseCode ="01141458";//wms编码
-//    public static String ownerCode = "HahaWanshui";
+    public static String warehouseCode ="01141458";//wms编码
+    public static String ownerCode = "HahaWanshui";
     //  保税仓1
 //    public static String warehouseCode ="01141457";//wms编码
 //    public static String ownerCode = "HahaBaoshui";
 
     // 哈哈股份有限公司
     // 完税仓1
-    public static String warehouseCode ="111111";//wms编码
-    public static String ownerCode = "hahaDamao1";
+//    public static String warehouseCode ="111111";//wms编码
+//    public static String ownerCode = "hahaDamao1";
 //    public static String ownerCode = "hahaDamao2";
     // 保税仓1
 //    public static String warehouseCode ="123456";//wms编码
