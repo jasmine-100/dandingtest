@@ -4,7 +4,7 @@ import client.ApiClient;
 import com.alibaba.fastjson.JSON;
 import oms.dto.V2Order.OrderBiz;
 import oms.dto.V2Order.Item;
-import oms.dto.V2Order.OrderOrigin;
+import oms.dto.V2Order.OrderDTO;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
@@ -25,9 +25,9 @@ public class OrderSetV2 {
         String orderNo = "JOS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         // 商品列表
         List<Item> items = new ArrayList<>();
-        items.add(new Item("SKU2101141536","国产香蕉",100.23,1,0,0,0));
+        items.add(new Item("SKU2101121328","进口咖啡",100.23,1,0,0,0));
         // 订单
-        OrderOrigin order = new OrderOrigin(orderNo,Data.accessCode,items);
+        OrderDTO order = new OrderDTO(orderNo,Data.accessCode,items);
         System.out.println(JSON.toJSONString(order));
         //报文
         OrderBiz orderBiz = new OrderBiz(JSON.toJSONString(order),Data.partnerId,Data.token);

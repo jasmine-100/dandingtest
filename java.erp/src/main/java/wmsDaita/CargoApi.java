@@ -1,8 +1,8 @@
-package wmsKunei;
+package wmsDaita;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import wmsKunei.dto.cargo.Cargo;
+import wmsDaita.dto.cargo.Cargo;
 
 /**
  * @Author： jasmine

@@ -1,4 +1,4 @@
-package wmsKunei.dto.stockin;
+package wmsDaita.dto.stockin;
 
 import lombok.Data;
 

@@ -10,7 +10,7 @@ import java.util.List;
  * @Date : Created in 2021/1/15 10:06
  */
 @Data
-public class OrderOrigin {
+public class OrderDTO {
     String orderNo;
     String accessCode;
     boolean bonded;
@@ -27,7 +27,7 @@ public class OrderOrigin {
     String tradeNo;
     List<Item> itemList;
 
-    public OrderOrigin(String orderNo, String accessCode, List<Item> itemList) {
+    public OrderDTO(String orderNo, String accessCode, List<Item> itemList) {
         this.orderNo = orderNo;
         this.accessCode = accessCode;
         this.bonded = false;

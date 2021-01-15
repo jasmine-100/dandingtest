@@ -1,9 +1,9 @@
-package wmsKunei;
+package wmsDaita;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import wmsKunei.dto.stockout.Detail;
-import wmsKunei.dto.stockout.StockoutOrder;
+import wmsDaita.dto.stockout.Detail;
+import wmsDaita.dto.stockout.StockoutOrder;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

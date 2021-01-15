@@ -1,10 +1,10 @@
-package wmsKunei;
+package wmsDaita;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import wmsKunei.dto.stockin.DetailParam;
-import wmsKunei.dto.stockin.HdrParam;
-import wmsKunei.dto.stockin.StockinOrder;
+import wmsDaita.dto.stockin.DetailParam;
+import wmsDaita.dto.stockin.HdrParam;
+import wmsDaita.dto.stockin.StockinOrder;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

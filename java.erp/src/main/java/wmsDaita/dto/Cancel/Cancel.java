@@ -1,4 +1,4 @@
-package wmsKunei.dto.Cancel;
+package wmsDaita.dto.Cancel;
 
 import lombok.Data;
 

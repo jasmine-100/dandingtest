@@ -1,9 +1,9 @@
-package wmsKunei;
+package wmsDaita;
 
 import client.ApiClient;
 import org.testng.annotations.Test;
-import wmsKunei.dto.Good.ErpSku;
-import wmsKunei.dto.Good.Good;
+import wmsDaita.dto.Good.ErpSku;
+import wmsDaita.dto.Good.Good;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

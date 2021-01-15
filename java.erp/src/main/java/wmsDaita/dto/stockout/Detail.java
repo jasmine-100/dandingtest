@@ -1,4 +1,4 @@
-package wmsKunei.dto.stockout;
+package wmsDaita.dto.stockout;
 
 import lombok.Data;
 

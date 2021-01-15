@@ -1,4 +1,4 @@
-package wmsKunei.dto.Good;
+package wmsDaita.dto.Good;
 
 import lombok.Data;
 

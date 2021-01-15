@@ -1,4 +1,4 @@
-package wmsKunei.dto.cargo;
+package wmsDaita.dto.cargo;
 
 import lombok.Data;
 
