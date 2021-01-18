@@ -25,7 +25,7 @@ public class SnBackApi {
         products.add(new Product("JHK000123"));
 
         //组装bizdata
-        SnData snData = new SnData(orderno,Data.whCode,Data.ownerCode,"01",products);
+        SnData snData = new SnData(orderno,Data.warehouseCode,Data.ownerCode,"01",products);
 
         //组装请求参数
         ParamsWms params = new ParamsWms(UtilsXml.objToXml(snData), "wms.sn.update","1.0");

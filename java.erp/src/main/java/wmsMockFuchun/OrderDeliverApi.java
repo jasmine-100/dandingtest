@@ -26,7 +26,7 @@ public class OrderDeliverApi {
         products.add(new Product("JHK000123", "100236", 10, "2020-1-2", "2020-9-1", "ZP"));
 
         //组装bizdata
-        DeliverData deliverData = new DeliverData(orderno, Data.whCode, "ZTO", 1.68, Data.ownerCode, products);
+        DeliverData deliverData = new DeliverData(orderno, Data.warehouseCode, "ZTO", 1.68, Data.ownerCode, products);
 
         //组装请求参数
         ParamsWms param = new ParamsWms(UtilsXml.objToXml(deliverData), "wms.cstockout.update", "1.0");

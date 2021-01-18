@@ -22,9 +22,9 @@ public class OrderStockinApi {
     public void orderBack1() {
 
         List<Product> products = new ArrayList<>();
-        products.add(new Product("G1607589928737", "201033", 10, "2020-1-1", "2023-6-6", "1"));
+        products.add(new Product("SKU2101141457", "201033001", 2000, "2021-01-01", "2021-01-31", "ZP"));
 
-        StockinData wmsRequestRoot = new StockinData("ET202012111046300776613457", Data.whCode, Data.ownerCode, "CGRK", 1,1, products);
+        StockinData wmsRequestRoot = new StockinData("ET202101181752480793064403", Data.warehouseCode, Data.ownerCode, "CGRK", 0,1, products);
 
         ParamsWms param = new ParamsWms(UtilsXml.objToXml(wmsRequestRoot), "wms.purchaseorderinfo.update", "1.0");
 

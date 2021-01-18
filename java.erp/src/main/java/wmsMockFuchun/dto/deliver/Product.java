@@ -18,7 +18,7 @@ public class Product {
      String Sku;
      String BatchCode;
      int Qty;
-     String InventoryType;
+     String InventoryType;//ZP正品；CP次品
      String Memo;
      String BatchValue1;
      String BatchValue2;

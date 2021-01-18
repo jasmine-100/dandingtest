@@ -26,7 +26,7 @@ public class OrderOutboundApi {
         products.add(new Product("G1607667598237", "20201210", 10, "2020-1-2", "2020-9-1", "ZP"));
 
         //组装bizdata
-        OutboundData outboundData = new OutboundData("OB202012112004590679193046", Data.whCode, Data.ownerCode, "SF", "QTCK", 1.68, products);
+        OutboundData outboundData = new OutboundData("OB202012112004590679193046", Data.warehouseCode, Data.ownerCode, "SF", "QTCK", 1.68, products);
 
         //组装请求参数
         ParamsWms param = new ParamsWms(UtilsXml.objToXml(outboundData), "wms.issueorderinfo.update", "1.0");

@@ -12,7 +12,12 @@ public class Data {
     // 富春WMS-ERP
     public static String URL = "http://ares-admin.yang800.cn/ares-admin/open/fcCallback";
 
-    public static String whCode = "TJCQef4e1d";
-    public static String ownerCode = "damao11";
+    // 哈哈科技有限公司
+    //  大贸仓1
+    public static String warehouseCode ="01141458";//wms编码
+    public static String ownerCode = "HahaWanshui";
+    //  保税仓1
+//    public static String warehouseCode ="01141457";//wms编码
+//    public static String ownerCode = "HahaBaoshui";
 
 }

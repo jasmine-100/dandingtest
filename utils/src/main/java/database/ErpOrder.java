@@ -54,7 +54,8 @@ public class ErpOrder {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         int year = calendar.get(Calendar.YEAR);
-        int reason = (calendar.get(Calendar.MONTH+1)+2)/3;
+        int month = Calendar.MONTH+1;
+        int reason = month%3==0?month/3:month/3+1;
         return year+"0"+reason;
     }
 }

@@ -24,9 +24,9 @@ public class OrderSet {
         String expressNo = "SF"+str;
 
         List<Item> items = new ArrayList<>();
-        items.add(new Item("SKU2101141536","",10.5,1));
-//        items.add(new Item("SKU202101111600","",21,1));
-        OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",Data.accessCode);
+        items.add(new Item("SKU2101141536","",50,1));
+        OrderDTO order = new OrderDTO(orderNo,items,"sf",expressNo,"V2",Data.accessCode);
+//        OrderDTO order = new OrderDTO(orderNo,items,null,null,"V2",Data.accessCode);
 
         ApiClient.doPostJson(Data.OrderUrl,null,null,order);
     }

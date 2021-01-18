@@ -74,14 +74,14 @@ public class OrderDTO {
         this.saleChannel = "V2";
         this.appCode = appCode;
         this.remark = "消费者的备注--快点儿发货哦";
-        this.declareOrderNo = outOrderNo;
+        this.declareOrderNo = "DS"+outOrderNo;
         this.declarePayNo = "DPN"+str;
         this.payNo = "PN"+str;
         this.itemList = itemList;
         this.packageMaterial = "DT";
         this.customsCode = "JINYI";//金义口岸
         this.goodsAmount = itemList.stream().reduce(0.0,(x,y)->x+(y.getUnitPrice()*y.getCount()),Double::sum);
-        this.shipAmount = 0;
+        this.shipAmount = 10.5;
         this.taxAmount = 20;
         this.discount = 1;
         this.expressCode = expressCode;
@@ -105,8 +105,8 @@ public class OrderDTO {
         this.declareCode = "PathErpV2";//申报路径编码
         this.merchantCode = "MC2009250949000038"; // 付款商户号
         this.payAmount = this.goodsAmount+this.shipAmount+this.taxAmount-this.discount;
-        this.payTime = System.currentTimeMillis();
+        this.payTime = UtilsTime.getTime("yyyyMMddHHmmss","20210102150000");
         this.payDeclareTime = System.currentTimeMillis();
-        this.promiseTime = System.currentTimeMillis();
+        this.promiseTime = UtilsTime.getTime("yyyyMMddHHmmss","20210103130000");
     }
 }
