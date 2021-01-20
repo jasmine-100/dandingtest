@@ -27,7 +27,7 @@ public class OrderSetV2 {
         List<Item> items = new ArrayList<>();
         items.add(new Item("SKU2101121328","进口咖啡",100.23,1,0,0,0));
         // 订单
-        OrderDTO order = new OrderDTO(orderNo,Data.accessCode,items);
+        OrderDTO order = new OrderDTO(orderNo,Data.accessCode1,items);
         System.out.println(JSON.toJSONString(order));
         //报文
         OrderBiz orderBiz = new OrderBiz(JSON.toJSONString(order),Data.partnerId,Data.token);

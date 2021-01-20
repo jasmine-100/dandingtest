@@ -17,12 +17,11 @@ import java.util.Date;
 public class OmsOrder {
 
     /**
-     *
+     * 在数据库中添加实体仓和渠道的对应关系
      * @param wareCode 实体仓编码
      * @param channelCode 渠道编码
      * @return
      */
-    // 在数据库中添加实体仓和渠道的对应关系
     public static boolean insertPlatform(String wareCode,String channelCode){
         String orderSn = null;
         Connection connection = null;
@@ -46,6 +45,31 @@ public class OmsOrder {
         }
         return flag;
     }
+
+    public static boolean insertExpress(String expressCode,String mapCode){
+        Connection connection = null;
+        Statement statement = null;
+        boolean flag = false;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://rm-uf6tn16nrn673xbb0bo.mysql.rds.aliyuncs.com:3306/oms_channel","oms","Oms#2020");
+            statement = connection.createStatement();
+            String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            flag = statement.execute("INSERT INTO o_mapping_code VALUES(0,'express','"+expressCode+"','KD100','"+mapCode+"',null,null,'"+time+"','"+time+"',0,0,0);");
+        }catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (Exception throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return flag;
+    }
+
+
 
     @Test
     public void test(){

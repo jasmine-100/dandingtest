@@ -17,16 +17,11 @@ public class OrderDTO {
     // 单据信息
     String outOrderNo;
     String outShopCode;
-    String outPayNo;
     long orderTime;
     String key;
     String saleChannel;
     String appCode;
     String remark;
-    // 申报单信息
-    String declareOrderNo;
-    String declarePayNo;
-    String declareCode; //申报路径编码
     // 商品信息
     List<Item> itemList;
     String packageMaterial;
@@ -52,8 +47,13 @@ public class OrderDTO {
     String senderAddress;
     String senderName;
     String senderMobile;
+    // 申报单信息
+    String declareOrderNo;
+    String declarePayNo;// 支付申报流水号
+    String declareCode; //申报路径编码
     // 支付信息
-    String payNo;
+    String outPayNo;
+    String payNo;//第三方支付流水号
     String merchantCode;
     String payChannel;
     String payerName;
@@ -67,6 +67,7 @@ public class OrderDTO {
     public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode, String expressNo, String appCode, String outShopCode) {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.outOrderNo = outOrderNo;
+        this.declareOrderNo = outOrderNo;
         this.outPayNo = "OPN"+str;
         this.outShopCode = outShopCode;
         this.orderTime = UtilsTime.getTime("yyyyMMddHHmmss","20210101120000");
@@ -74,7 +75,6 @@ public class OrderDTO {
         this.saleChannel = "V2";
         this.appCode = appCode;
         this.remark = "消费者的备注--快点儿发货哦";
-        this.declareOrderNo = "DS"+outOrderNo;
         this.declarePayNo = "DPN"+str;
         this.payNo = "PN"+str;
         this.itemList = itemList;
@@ -93,10 +93,10 @@ public class OrderDTO {
         this.receiverName = "李哈哈";
         this.receiverMobile = "15966663333";
         this.receiverCardId = "330110200012135502";
-        this.senderProvince = "河北省";
-        this.senderCity = "石家庄市";
-        this.senderDistrict = "长安区";
-        this.senderAddress = "彩虹路100号";
+//        this.senderProvince = "河北省";
+//        this.senderCity = "石家庄市";
+//        this.senderDistrict = "长安区";
+//        this.senderAddress = "彩虹路100号";
         this.senderName = "齐吉吉";
         this.senderMobile = "15866660000";
         this.payerName = "jasmine";
@@ -106,7 +106,7 @@ public class OrderDTO {
         this.merchantCode = "MC2009250949000038"; // 付款商户号
         this.payAmount = this.goodsAmount+this.shipAmount+this.taxAmount-this.discount;
         this.payTime = UtilsTime.getTime("yyyyMMddHHmmss","20210102150000");
-        this.payDeclareTime = System.currentTimeMillis();
+        this.payDeclareTime = UtilsTime.getTime("yyyyMMddHHmmss","20210105160000");
         this.promiseTime = UtilsTime.getTime("yyyyMMddHHmmss","20210103130000");
     }
 }

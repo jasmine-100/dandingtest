@@ -15,8 +15,9 @@ public class Item {
     double unitPrice;
     int count;
 
-    public Item(String itemCode,String batchCode,double unitPrice, int count) {
+    public Item(String itemCode,String itemName,String batchCode,double unitPrice, int count) {
         this.batchCode = batchCode;
+        this.itemName = itemName;
         this.itemCode = itemCode;
         this.unitPrice = unitPrice;
         this.count = count;
