@@ -32,7 +32,7 @@ public class OmsOrder {
             connection = DriverManager.getConnection("jdbc:mysql://rm-uf6tn16nrn673xbb0bo.mysql.rds.aliyuncs.com:3306/oms_order","oms","Oms#2020");
             statement = connection.createStatement();
             String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-            flag = statement.execute("INSERT INTO o_way_bill_platform VALUES('0','"+wareCode+"','"+channelCode+"','DEFAULT','"+time+"','"+time+"',0,0,0);");
+            flag = statement.execute("INSERT INTO o_way_bill_platform VALUES('0','"+wareCode+"',null,'"+channelCode+"','DEFAULT','"+time+"','"+time+"',0,0,0);");
         }catch (Exception e){
             e.printStackTrace();
         } finally {
@@ -46,6 +46,7 @@ public class OmsOrder {
         return flag;
     }
 
+    // 添加快递
     public static boolean insertExpress(String expressCode,String mapCode){
         Connection connection = null;
         Statement statement = null;
@@ -68,8 +69,6 @@ public class OmsOrder {
         }
         return flag;
     }
-
-
 
     @Test
     public void test(){

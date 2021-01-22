@@ -38,6 +38,7 @@ public class ApiClient {
      static HttpPost post = null;
      static HttpResponse response= null;
 
+     // form表单
     public static String doPostForm(String URL,Object params,Map<String,Object> head,Object body){
         url = URL;
         client = HttpClients.createDefault();
@@ -58,6 +59,7 @@ public class ApiClient {
         return responseStr;
     }
 
+    // json格式
     public static String doPostJson(String URL,Object params,Map<String,Object> head,Object body){
         url = URL;
         client = HttpClients.createDefault();
@@ -79,6 +81,7 @@ public class ApiClient {
         return responseStr;
     }
 
+    // xml格式
     public static String doPostXml(String URL,Object params,Map<String,Object> head,Object body) {
         url = URL;
         client = HttpClients.createDefault();

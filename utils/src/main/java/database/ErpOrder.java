@@ -15,6 +15,7 @@ import java.util.Date;
  */
 public class ErpOrder {
 
+    // 出入库单状态变更：待出库/待入库-->出库中/入库中
     public static boolean updateStatus(String orderNo,String type){
         boolean flag = false;
         String sql = null;
