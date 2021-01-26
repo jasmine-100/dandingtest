@@ -17,7 +17,7 @@ import java.util.List;
  * @Date : Created in 2020/12/24 16:51
  */
 public class WmsStockoutApi extends Data {
-    String orderno = "OB202101191631240693944808";
+    String orderno = "OB202101261752020376691226";
 
     @Test
     public void updateStatusOut(){
