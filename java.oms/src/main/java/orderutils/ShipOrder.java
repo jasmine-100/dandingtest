@@ -3,8 +3,6 @@ package orderutils;
 import client.ApiClient;
 import oms.domain.ShipBack;
 
-import java.io.IOException;
-
 /**
  * @Author： jasmine
  * @Description : 推送运单回执

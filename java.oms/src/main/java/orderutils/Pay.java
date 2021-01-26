@@ -1,10 +1,7 @@
 package orderutils;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
 import oms.domain.PayInfo;
-
-import java.io.IOException;
 
 /**
  * @Author： jasmine

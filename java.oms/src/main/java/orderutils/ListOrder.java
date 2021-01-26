@@ -3,8 +3,6 @@ package orderutils;
 import client.ApiClient;
 import oms.domain.ListBack;
 
-import java.io.IOException;
-
 /**
  * @Author： jasmine
  * @Description : 海关清单回执
