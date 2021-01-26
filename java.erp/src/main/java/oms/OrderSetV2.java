@@ -17,7 +17,7 @@ import java.util.List;
  * @Description : V2标准的渠道接口，下单
  * @Date : Created in 2021/1/15 9:48
  */
-public class OrderSetV2 {
+public class OrderSetV2 extends Data {
 
     @Test
     public static void orderSet(){
@@ -27,13 +27,13 @@ public class OrderSetV2 {
         List<Item> items = new ArrayList<>();
         items.add(new Item("SKU2101121328","进口咖啡",100.23,1,0,0,0));
         // 订单
-        OrderDTO order = new OrderDTO(orderNo,Data.accessCode1,items);
+        OrderDTO order = new OrderDTO(orderNo,accessCode1,items);
         System.out.println(JSON.toJSONString(order));
         //报文
-        OrderBiz orderBiz = new OrderBiz(JSON.toJSONString(order),Data.partnerId,Data.token);
+        OrderBiz orderBiz = new OrderBiz(JSON.toJSONString(order),partnerId,token);
         System.out.println(orderBiz);
 
-        ApiClient.doPostForm(Data.V2Url,orderBiz,null,null);
+        ApiClient.doPostForm(V2Url,orderBiz,null,null);
     }
 
 }

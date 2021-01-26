@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  * @Description :
  * @Date : Created in 2021/1/20 11:45
  */
-public class DataPrepare {
+public class DataPrepare{
 
     // 在数据库中添加实体仓和渠道的对应关系
     @Test
