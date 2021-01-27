@@ -1,7 +1,6 @@
 package client.dto;
 
 import client.GatewayHttpClient;
-import client.dto.LoginToken;
 import com.alibaba.fastjson.JSON;
 import org.junit.Before;
 

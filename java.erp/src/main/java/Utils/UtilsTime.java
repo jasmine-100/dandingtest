@@ -1,7 +1,6 @@
 package Utils;
 
-import org.testng.annotations.Test;
-
+import org.junit.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

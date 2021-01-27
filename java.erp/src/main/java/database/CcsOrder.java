@@ -1,7 +1,6 @@
 package database;
 
-import org.testng.annotations.Test;
-
+import org.junit.Test;
 import java.sql.*;
 import java.util.Calendar;
 import java.util.Date;
