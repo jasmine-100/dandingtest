@@ -23,10 +23,10 @@ public class OrderSet extends Data {
 
     @Test
     public void order1(){ // 哈哈科技的黑店
-        items.add(new Item("SKU2101141536",null,"",50,1));//完税
+        items.add(new Item("SKU2101281833",null,"",50,1));//完税
 //        items.add(new Item("SKU202101191448",null,"",50,1));//完税
 //        items.add(new Item("SKU2001181133",null,"",50,3));//保税
-//        items.add(new Item("SKU2101121328",null,"",30,2));//保税
+//        items.add(new Item("SKU202101281433",null,"",30,2));//保税
         OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",accessCode1);
 //        OrderDTO order = new OrderDTO(orderNo,items,null,null,"V2",Data.accessCode1);
 
@@ -41,6 +41,5 @@ public class OrderSet extends Data {
 
         ApiClient.doPostJson(OrderUrl,null,null,order);
     }
-
 
 }
