@@ -15,7 +15,7 @@ import java.util.List;
  * @Date : Created in 2020/11/28 17:40
  */
 public class WmsStockinApi extends Data {
-    String orderno = "ET202101281627440247643515";
+    String orderno = "ET202101291943290706597932";
 
     @Test
     public void updateStatusIn(){
@@ -25,20 +25,21 @@ public class WmsStockinApi extends Data {
     @Test
     public void backStockin(){
         List<SkuParam> skuParams = new ArrayList<>();
-        skuParams.add(new SkuParam("SKU2101141454","210115001",2,1,1,"2021-01-01","2022-01-25"));
-        skuParams.add(new SkuParam("SKU2101141454","210115002",6,1,1,"2021-01-01","2022-01-26"));
-        skuParams.add(new SkuParam("SKU2101141454","210115003",5,1,1,"2021-01-01","2022-01-27"));
-        skuParams.add(new SkuParam("SKU2101141455","210115004",3,2,1,"2021-01-01","2022-01-20"));
-        skuParams.add(new SkuParam("SKU2101141455","210115005",7,2,1,"2021-01-01","2022-01-21"));
-        skuParams.add(new SkuParam("SKU2101141455","210115006",2,2,1,"2021-01-01","2022-01-22"));
-        skuParams.add(new SkuParam("SKU2101141456","210115007",4,1,1,"2021-01-01","2022-01-23"));
-        skuParams.add(new SkuParam("SKU2101141456","210115008",5,1,1,"2021-01-01","2022-01-24"));
-        skuParams.add(new SkuParam("SKU2101141456","210115009",2,2,1,"2021-01-01","2022-01-25"));
-        skuParams.add(new SkuParam("SKU2101141457","210115010",5,1,1,"2021-01-01","2022-01-26"));
-        skuParams.add(new SkuParam("SKU2101141457","210115011",4,2,1,"2021-01-01","2022-01-27"));
-        skuParams.add(new SkuParam("SKU2101141457","210115012",1,2,1,"2021-01-01","2022-01-28"));
+        skuParams.add(new SkuParam("SKU2101141461","210128001",1000,1,1,"2021-01-01","2022-02-25"));
+//        skuParams.add(new SkuParam("SKU2101141454","210128001",100,1,1,"2021-01-01","2022-02-25"));
+//        skuParams.add(new SkuParam("SKU2101141454","210128002",200,2,1,"2021-01-01","2022-02-26"));
+//        skuParams.add(new SkuParam("SKU2101141454","210128003",100,1,1,"2021-01-01","2022-02-20"));
+//        skuParams.add(new SkuParam("SKU2101141454","210128004",100,2,1,"2021-01-01","2022-02-21"));
+//        skuParams.add(new SkuParam("SKU2101141455","210128001",50,1,1,"2021-01-01","2022-02-25"));
+//        skuParams.add(new SkuParam("SKU2101141455","210128002",50,2,1,"2021-01-01","2022-02-26"));
+//        skuParams.add(new SkuParam("SKU2101141455","210128003",100,1,1,"2021-01-01","2022-02-20"));
+//        skuParams.add(new SkuParam("SKU2101141455","210128004",100,2,1,"2021-01-01","2022-02-21"));
+//        skuParams.add(new SkuParam("SKU2101141457","210128001",30,1,1,"2021-01-01","2022-02-25"));
+//        skuParams.add(new SkuParam("SKU2101141457","210128002",20,2,1,"2021-01-01","2022-02-26"));
+//        skuParams.add(new SkuParam("SKU2101141457","210128003",30,1,1,"2021-01-01","2022-02-20"));
+//        skuParams.add(new SkuParam("SKU2101141457","210128004",20,2,1,"2021-01-01","2022-02-21"));
 
-        StockinOrder stockinOrder = new StockinOrder(orderno,warehouseCode,ownerCode,0,"1",skuParams,"2020-10-10 12:00:00","2020-10-20 15:00:00");
+        StockinOrder stockinOrder = new StockinOrder(orderno,warehouseCode,ownerCode,0,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
 
         ApiClient.doPostJson(urlStockin,null,null,stockinOrder);
     }
