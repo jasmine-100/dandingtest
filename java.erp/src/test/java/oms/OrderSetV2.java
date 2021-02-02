@@ -2,9 +2,10 @@ package oms;
 
 import client.ApiClient;
 import com.alibaba.fastjson.JSON;
-import oms.orderV2.Item;
-import oms.orderV2.OrderBiz;
-import oms.orderV2.OrderDTO;
+import oms.v2.ApiV2ServiceName;
+import oms.v2.orderV2.Item;
+import Utils.OrderBiz;
+import oms.v2.orderV2.OrderDTO;
 import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
@@ -30,7 +31,7 @@ public class OrderSetV2 extends Data {
         OrderDTO order = new OrderDTO(orderNo,accessCode1,items);
         System.out.println(JSON.toJSONString(order));
         //报文
-        OrderBiz orderBiz = new OrderBiz(JSON.toJSONString(order),partnerId,token);
+        OrderBiz orderBiz = new OrderBiz(JSON.toJSONString(order), ApiV2ServiceName.ORDER_OUT_SET,partnerId,token);
         System.out.println(orderBiz);
 
         ApiClient.doPostForm(V2Url,orderBiz,null,null);

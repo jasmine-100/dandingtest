@@ -1,4 +1,4 @@
-package oms.orderV2;
+package oms.v2.orderV2;
 
 import lombok.Data;
 

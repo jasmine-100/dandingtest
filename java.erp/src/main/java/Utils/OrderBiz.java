@@ -1,8 +1,7 @@
-package oms.orderV2;
+package Utils;
 
 import com.google.common.io.BaseEncoding;
 import lombok.Data;
-import Utils.MD5Util;
 
 /**
  * @Author： jasmine
@@ -17,10 +16,10 @@ public class OrderBiz {
     String partnerId;
     String serviceName;
 
-    public OrderBiz(String originData,String partnerId,String token) {
+    public OrderBiz(String originData,String serviceName,String partnerId,String token) {
         this.v = "2.0";
         this.partnerId = partnerId;
-        this.serviceName = "order.out.set";
+        this.serviceName = serviceName;
         this.bizData = BaseEncoding.base64().encode(originData.getBytes());
         this.sign = getSign(v,partnerId,serviceName,bizData,token);
     }
