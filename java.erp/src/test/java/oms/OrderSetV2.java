@@ -1,10 +1,9 @@
 package oms;
 
 import client.ApiClient;
-import com.alibaba.fastjson.JSON;
 import oms.v2.ApiV2ServiceName;
 import oms.v2.orderV2.Item;
-import Utils.OrderBiz;
+import Utils.BizData;
 import oms.v2.orderV2.OrderDTO;
 import org.testng.annotations.Test;
 
@@ -26,12 +25,11 @@ public class OrderSetV2 extends Data {
         String orderNo = "JOS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         // 商品列表
         List<Item> items = new ArrayList<>();
-        items.add(new Item("SKU2101121328","进口咖啡",100.23,1,0,0,0));
+        items.add(new Item("SKU02011134","进口咖啡",100.23,1,0,0,0));
         // 订单
         OrderDTO order = new OrderDTO(orderNo,accessCode1,items);
-        System.out.println(JSON.toJSONString(order));
         //报文
-        OrderBiz orderBiz = new OrderBiz(JSON.toJSONString(order), ApiV2ServiceName.ORDER_OUT_SET,partnerId,token);
+        BizData orderBiz = new BizData(order, ApiV2ServiceName.ORDER_OUT_SET,partnerId,token);
         System.out.println(orderBiz);
 
         ApiClient.doPostForm(V2Url,orderBiz,null,null);
