@@ -17,7 +17,7 @@ public class Data {
     //  金义完税仓
     public static String warehouseCode ="DT_JYWMS1230";//wms编码
     // wms完税货主
-//    public static String ownerCode = "hahaWmsWanshui";
+    public static String ownerCode = "hahaWmsWanshui";
     // 金义货主2
-    public static String ownerCode = "JinyiHuozhu2";
+//    public static String ownerCode = "JinyiHuozhu2";
 }

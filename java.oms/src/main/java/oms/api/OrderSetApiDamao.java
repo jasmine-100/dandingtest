@@ -4,7 +4,7 @@ import client.ApiClient;
 import oms.domain.Item;
 import oms.domain.Order;
 import orderutils.ShipOrder;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,8 +15,8 @@ import java.util.List;
  * @Description : OMS接口：大贸订单推送--发货
  * @Date : Created in 2020/7/20 11:20
  */
-public class OrderSetApiDamao {
-    String orderNo = "JOS20200728150903";
+public class OrderSetApiDamao extends Data {
+    String orderNo = "JOS20200728150904";
 
     // 大贸订单
     @Test
@@ -31,7 +31,7 @@ public class OrderSetApiDamao {
         Order order = new Order(orderNo,"1026",items,10,20,5);
 
         //接口推送订单
-        ApiClient.doPostJson("http://pangu.admintest.yang800.cn/docking/api/order/push",null,null,order);
+        ApiClient.doPostJson(URL,null,null,order);
     }
 
     //推送运单回执

@@ -1,7 +1,7 @@
 package outchannel.websc.api;
 
 import client.ApiClient;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import outchannel.websc.domain.Params;
 import outchannel.websc.domain.Item;
 import outchannel.websc.domain.Order;

@@ -7,7 +7,7 @@ import orderutils.DeclareOrder;
 import orderutils.ListOrder;
 import orderutils.Pay;
 import orderutils.ShipOrder;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.List;
  * @Description : OMS接口：保税订单推送--推送支付单--订单回执--清单回执--运单回执
  * @Date : Created in 2020/7/20 11:20
  */
-public class OrderSetApiBaoshui {
+public class OrderSetApiBaoshui extends Data {
 //    String orderNo = "JS20200803175010";
     String orderNo = "JS"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
@@ -32,7 +32,7 @@ public class OrderSetApiBaoshui {
 
         Order order = new Order(orderNo,"916",items,10,20,5);
 
-        ApiClient.doPostJson(Data.URL,null,null,order) ;
+        ApiClient.doPostJson(URL,null,null,order) ;
 
     }
     //推送海关支付信息
