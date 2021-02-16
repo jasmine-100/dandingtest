@@ -32,7 +32,7 @@ public class Stockout {
         this.upstreamNo = orderno;
         this.addTime = System.currentTimeMillis();
         this.payTime =  System.currentTimeMillis();
-        this.expectTime = UtilsTime.getTime("yyyyMMdd","2021-03-10");
+        this.expectTime = UtilsTime.getTime("yyyyMMdd","20210310");
         this.logicWarehouseCode = warehouseCode;
         this.ownerCode = ownerCode;
         this.shopCode = "123";

@@ -30,7 +30,7 @@ public class StockoutApi extends Data {
 
     @Test
     public void orderCancel(){
-        String orderno = "";
+        String orderno = "QM20210216152603";
         OrderCancel orderCancel = new OrderCancel(orderno,"-2",warehouseCode,ownerCode);
         Params params = new Params(orderno,"8",orderCancel);
 
