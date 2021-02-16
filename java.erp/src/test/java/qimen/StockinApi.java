@@ -31,7 +31,7 @@ public class StockinApi extends Data {
 
     @Test
     public void stockinCancel(){
-        String orderno = "QM20210216115027";
+        String orderno = "QM20210216115001";
         OrderCancel orderCancel = new OrderCancel(orderno,"-1",warehouseCode,ownerCode);
         Params params = new Params(orderno,"8",orderCancel);
 
