@@ -16,19 +16,17 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/11/24 17:20
  */
-public class StockinApi {
+public class StockinApi extends Data {
 
     @Test
     public void addStockinOrder(){
         String soNo = "JIN"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         List<DetailParam> detailParams = new ArrayList<>();
         detailParams.add(new DetailParam("JHY20201127093940700",100,1));
-//        detailParams.add(new DetailParam("JHY20201127094007723",2000,2));
-//        detailParams.add(new DetailParam("JHY20201127094008291",3000,3));
-        HdrParam hdrParam = new HdrParam(soNo,Data.warehouseCode,Data.cargoCode);
+        HdrParam hdrParam = new HdrParam(soNo,warehouseCode,cargoCode);
         StockinOrder stockinOrder = new StockinOrder(detailParams,hdrParam);
 
-        ApiClient.doPostJson(Data.addStockinUrl,null,null,stockinOrder);
+        ApiClient.doPostJson(addStockinUrl,null,null,stockinOrder);
     }
 
 }

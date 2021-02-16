@@ -1,5 +1,6 @@
 package qimen.dto.stockin;
 
+import Utils.UtilsTime;
 import lombok.Data;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class Stockin {
     String upstreamNo;
     String logicWarehouseCode;
     String ownerCode;
-    List<InOrderDetailParamList> inOrderDetailParamList;
+    List<InOrderDetailParam> inOrderDetailParamList;
     BusinessValue businessValue;
     ReceiveSendInfoParam receiveSendInfoParam;
     String remark;
@@ -16,12 +17,12 @@ public class Stockin {
     int isBack;
     int tradeType;
     int type;// 1 采购入库；2调拨入库；3 退货入库
-    int expectTime;
+    long expectTime;
     String businessNo;
     String origSystem;
     int approvalStatus;
 
-    public Stockin(String orderNo,int orderType,String outShopId,String warehouseCode, String ownerCode, List<InOrderDetailParamList> inOrderDetailParamList) {
+    public Stockin(String orderNo,int orderType,String outShopId,String warehouseCode, String ownerCode, List<InOrderDetailParam> inOrderDetailParamList) {
         this.upstreamNo = orderNo;
         this.businessNo = orderNo;
         this.logicWarehouseCode = warehouseCode;
@@ -34,7 +35,7 @@ public class Stockin {
         this.isBack = 1;
         this.tradeType = 2;
         this.type = orderType;
-        this.expectTime = 0;
+        this.expectTime = UtilsTime.getTime("yyyyMMddHHmmss","2021-02-30 00:00:00");
         this.origSystem = "OMS";
         this.approvalStatus = 1;
     }

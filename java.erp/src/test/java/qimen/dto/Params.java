@@ -12,9 +12,9 @@ public class Params {
     String sourceSystemCode;
     String targetSystemCode;
 
-    public Params(String businessNo, String dateType,String methodType, Object sourceData) {
+    public Params(String businessNo,String methodType, Object sourceData) {
         this.businessNo = businessNo;
-        this.dateType = dateType;
+        this.dateType = "1";
         this.methodType = methodType;
         this.sourceData = JSON.toJSONString(sourceData);
         this.sourceSystemCode = "QM";
