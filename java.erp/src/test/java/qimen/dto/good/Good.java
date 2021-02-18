@@ -22,7 +22,7 @@ public class Good {
         this.sku = sku;
         this.goodsName = goodsName;
         this.barcode = barcode;
-        this.batchManagement = 12;
+        this.batchManagement = 2;
         this.grossWeight = 10;
         this.netWeight = 9;
         this.height = 17;

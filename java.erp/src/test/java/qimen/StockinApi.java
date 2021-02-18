@@ -17,12 +17,13 @@ public class StockinApi extends Data {
     @Test
     public void stockinOrder(){
         String orderno = "QM"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+//        String orderno = "QM20210218114546";
 
         // 组装商品信息
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
-        detailParamLists.add(new InOrderDetailParam("SKM02161756","RMB",10,100));
+        detailParamLists.add(new InOrderDetailParam("SKM20210218102951","RMB",10,100));
         // 组装单据信息
-        Stockin stockin = new Stockin(orderno,1,outShopId,warehouseCode,ownerCode,detailParamLists);
+        Stockin stockin = new Stockin(orderno,3,outShopId,warehouseCode,ownerCode,detailParamLists);
         // 组装接口参数
         Params params = new Params(orderno,"4",stockin);
 
@@ -31,7 +32,7 @@ public class StockinApi extends Data {
 
     @Test
     public void stockinCancel(){
-        String orderno = "QM20210216115001";
+        String orderno = "QM20210218114546";
         OrderCancel orderCancel = new OrderCancel(orderno,"-1",warehouseCode,ownerCode);
         Params params = new Params(orderno,"8",orderCancel);
 

@@ -12,9 +12,10 @@ public class GoodApi extends Data {
 
     @Test
     public void goodAdd(){
-        String no = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        Good good = new Good("SKM02161757","薯片","0216175733",warehouseCode,ownerCode);
-        Params params = new Params(no,"3",good);
+//        String goodNo = "SKM"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String goodNo = "SKM20210218155423";
+        Good good = new Good(goodNo,"鼠标",goodNo,warehouseCode,ownerCode);
+        Params params = new Params(goodNo,"3",good);
 
         ApiClient.doPostJson(URL,null,null,params);
     }

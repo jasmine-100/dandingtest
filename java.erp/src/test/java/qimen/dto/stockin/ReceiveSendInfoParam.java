@@ -19,6 +19,6 @@ public class ReceiveSendInfoParam {
         this.receiveAddress = "九和路金海城";
         this.receiveContactName = "小美美";
         this.receiveContactPhone = "15988880000";
-        this.logisticsCompanyCode = "";
+        this.logisticsCompanyCode = "SF";
     }
 }
