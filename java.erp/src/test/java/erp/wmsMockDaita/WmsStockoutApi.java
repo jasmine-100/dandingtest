@@ -1,10 +1,10 @@
-package wmsMockDaita;
+package erp.wmsMockDaita;
 
 import client.ApiClient;
 import database.ErpOrder;
+import erp.wmsMockDaita.dto.stockout.StockoutOrder;
 import org.testng.annotations.Test;
-import wmsMockDaita.dto.stockin.SkuParam;
-import wmsMockDaita.dto.stockout.StockoutOrder;
+import erp.wmsMockDaita.dto.stockin.SkuParam;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

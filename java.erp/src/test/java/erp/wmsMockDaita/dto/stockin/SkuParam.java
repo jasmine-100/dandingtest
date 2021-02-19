@@ -1,4 +1,4 @@
-package wmsMockDaita.dto.stockin;
+package erp.wmsMockDaita.dto.stockin;
 
 import lombok.Data;
 import Utils.UtilsTime;

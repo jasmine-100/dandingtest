@@ -1,4 +1,4 @@
-package wmsMockFuchun;
+package erp.wmsMockFuchun;
 
 /**
  * @Author： jasmine

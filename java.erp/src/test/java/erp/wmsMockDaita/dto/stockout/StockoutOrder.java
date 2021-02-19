@@ -1,6 +1,6 @@
-package wmsMockDaita.dto.stockout;
+package erp.wmsMockDaita.dto.stockout;
 
-import wmsMockDaita.dto.stockin.SkuParam;
+import erp.wmsMockDaita.dto.stockin.SkuParam;
 import lombok.Data;
 
 import java.text.SimpleDateFormat;

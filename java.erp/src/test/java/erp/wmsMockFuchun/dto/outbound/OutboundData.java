@@ -1,6 +1,6 @@
-package wmsMockFuchun.dto.outbound;
+package erp.wmsMockFuchun.dto.outbound;
 
-import wmsMockFuchun.dto.deliver.Product;
+import erp.wmsMockFuchun.dto.deliver.Product;
 
 import javax.xml.bind.annotation.*;
 import java.text.SimpleDateFormat;

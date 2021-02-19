@@ -1,4 +1,4 @@
-package wmsMockDaita;
+package erp.wmsMockDaita;
 
 /**
  * @Author： jasmine

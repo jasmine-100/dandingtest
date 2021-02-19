@@ -1,4 +1,4 @@
-package wmsMockFuchun.dto;
+package erp.wmsMockFuchun.dto;
 
 import lombok.Data;
 

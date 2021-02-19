@@ -1,10 +1,10 @@
-package wmsMockDaita;
+package erp.wmsMockDaita;
 
 import client.ApiClient;
 import database.ErpOrder;
+import erp.wmsMockDaita.dto.stockin.SkuParam;
+import erp.wmsMockDaita.dto.stockin.StockinOrder;
 import org.testng.annotations.Test;
-import wmsMockDaita.dto.stockin.SkuParam;
-import wmsMockDaita.dto.stockin.StockinOrder;
 
 import java.util.ArrayList;
 import java.util.List;

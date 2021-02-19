@@ -1,4 +1,4 @@
-package wmsMockFuchun.dto.stockin;
+package erp.wmsMockFuchun.dto.stockin;
 
 /**
  * @Author： jasmine
