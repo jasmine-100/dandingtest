@@ -1,4 +1,4 @@
-package client.dto;
+package client.gatewayDTO;
 
 import lombok.Data;
 
