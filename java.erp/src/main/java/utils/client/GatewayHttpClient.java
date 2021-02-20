@@ -1,6 +1,6 @@
-package client;
+package utils.client;
 
-import Utils.MD5Util;
+import utils.util.MD5Util;
 import com.alibaba.fastjson.JSON;
 import com.github.kevinsawicki.http.HttpRequest;
 import lombok.Getter;

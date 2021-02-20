@@ -1,7 +1,7 @@
 package oms;
 
-import client.GatewayHttpClient;
-import client.gatewayDTO.BaseTest;
+import utils.client.GatewayHttpClient;
+import utils.client.gatewayDTO.BaseTest;
 import oms.account.Account;
 import org.testng.annotations.Test;
 

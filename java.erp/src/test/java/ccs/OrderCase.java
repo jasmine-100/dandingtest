@@ -3,7 +3,7 @@ package ccs;
 import ccs.dto.Item;
 import ccs.dto.Order;
 import ccs.dtoBack.*;
-import client.ApiClient;
+import utils.client.ApiClient;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;

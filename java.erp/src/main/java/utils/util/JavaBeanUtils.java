@@ -1,4 +1,4 @@
-package Utils;
+package utils.util;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

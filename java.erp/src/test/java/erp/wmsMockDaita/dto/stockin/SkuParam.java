@@ -1,7 +1,7 @@
 package erp.wmsMockDaita.dto.stockin;
 
 import lombok.Data;
-import Utils.UtilsTime;
+import utils.util.UtilsTime;
 
 /**
  * @Author： jasmine

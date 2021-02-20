@@ -1,6 +1,6 @@
 package qimen;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import org.junit.Test;
 import qimen.dto.Params;
 import qimen.dto.cancel.OrderCancel;
@@ -21,9 +21,9 @@ public class StockinApi extends Data {
 
         // 组装商品信息
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
-        detailParamLists.add(new InOrderDetailParam("SKM20210218102951","RMB",10,100));
+        detailParamLists.add(new InOrderDetailParam("SK210220152624","RMB",10,100));
         // 组装单据信息
-        Stockin stockin = new Stockin(orderno,3,outShopId,warehouseCode,ownerCode,detailParamLists);
+        Stockin stockin = new Stockin(orderno,1,outShopId,warehouseCode,ownerCode,detailParamLists);
         // 组装接口参数
         Params params = new Params(orderno,"4",stockin);
 

@@ -1,4 +1,4 @@
-package Utils;
+package utils.util;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

@@ -1,4 +1,4 @@
-package database;
+package utils.database;
 
 import org.junit.Test;
 

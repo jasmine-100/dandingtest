@@ -1,6 +1,6 @@
-package client.apiclientDTO;
+package utils.client.apiclientDTO;
 
-import Utils.JavaBeanUtils;
+import utils.util.JavaBeanUtils;
 import com.alibaba.fastjson.JSON;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;

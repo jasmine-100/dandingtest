@@ -1,9 +1,9 @@
 package erp.wmsMockFuchun;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import erp.wmsMockFuchun.dto.ParamsWms;
 import org.testng.annotations.Test;
-import Utils.UtilsXml;
+import utils.util.UtilsXml;
 import erp.wmsMockFuchun.dto.deliver.DeliverData;
 import erp.wmsMockFuchun.dto.deliver.Product;
 

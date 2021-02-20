@@ -1,6 +1,6 @@
 package wmsDaita;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import org.testng.annotations.Test;
 import wmsDaita.dto.cargo.Cargo;
 

@@ -1,8 +1,7 @@
 package oms;
 
-import Utils.BizData;
-import client.ApiClient;
-import com.alibaba.fastjson.JSON;
+import utils.util.BizData;
+import utils.client.ApiClient;
 import oms.v2.ApiV2ServiceName;
 import oms.v2.orderV2Cancel.OrderCancel;
 import org.junit.Test;

@@ -1,8 +1,8 @@
-package client.gatewayDTO;
+package utils.client.gatewayDTO;
 
-import client.GatewayHttpClient;
-import com.alibaba.fastjson.JSON;
 import org.junit.Before;
+import utils.client.GatewayHttpClient;
+import com.alibaba.fastjson.JSON;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package outchannel.websc.api;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import org.junit.Test;
 import outchannel.websc.domain.Cancel;
 import outchannel.websc.domain.Params;

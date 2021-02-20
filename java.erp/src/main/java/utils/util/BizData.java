@@ -1,4 +1,4 @@
-package Utils;
+package utils.util;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.io.BaseEncoding;

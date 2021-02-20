@@ -1,4 +1,4 @@
-package erp.api.dto.good;
+package erp.dto;
 
 import lombok.Data;
 
@@ -14,7 +14,7 @@ public class Good {
     String barcode;//条形码
     String model;  // 规格型号
     String brandCode;//品牌编码
-    String type;//DUTY_PAID 完税
+    String type;//DUTY_PAID 完税;BONDED 保税
     double length;
     double width;
     double height;

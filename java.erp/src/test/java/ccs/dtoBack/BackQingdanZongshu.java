@@ -1,8 +1,8 @@
 package ccs.dtoBack;
 import ccs.dto.Param;
 import ccs.Data;
-import client.ApiClient;
-import database.CcsOrder;
+import utils.client.ApiClient;
+import utils.database.CcsOrder;
 
 import java.io.IOException;
 

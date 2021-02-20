@@ -1,11 +1,11 @@
 package erp.wmsMockFuchun;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import erp.wmsMockFuchun.dto.ParamsWms;
 import erp.wmsMockFuchun.dto.deliver.Product;
 import erp.wmsMockFuchun.dto.outbound.OutboundData;
 import org.testng.annotations.Test;
-import Utils.UtilsXml;
+import utils.util.UtilsXml;
 
 import java.io.IOException;
 import java.util.ArrayList;

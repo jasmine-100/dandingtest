@@ -1,9 +1,9 @@
 package oms;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import oms.v2.ApiV2ServiceName;
 import oms.v2.orderV2.Item;
-import Utils.BizData;
+import utils.util.BizData;
 import oms.v2.orderV2.OrderDTO;
 import org.testng.annotations.Test;
 

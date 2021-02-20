@@ -1,7 +1,7 @@
 package ccs.dto;
 
 import lombok.Data;
-import Utils.UtilsTime;
+import utils.util.UtilsTime;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

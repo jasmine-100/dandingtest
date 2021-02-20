@@ -3,7 +3,7 @@ package ccs.dtoBack;
 import ccs.Data;
 import ccs.dto.GoodWare;
 import ccs.dto.Param;
-import client.ApiClient;
+import utils.client.ApiClient;
 
 import java.io.IOException;
 

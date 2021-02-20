@@ -1,6 +1,6 @@
 package qimen;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import org.junit.Test;
 import qimen.dto.Params;
 import qimen.dto.cancel.OrderCancel;

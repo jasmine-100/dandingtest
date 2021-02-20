@@ -3,7 +3,7 @@ package ccs.api;
 import ccs.Data;
 import ccs.dto.Good;
 import ccs.dto.Stock;
-import client.ApiClient;
+import utils.client.ApiClient;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.testng.annotations.Test;

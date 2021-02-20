@@ -1,6 +1,6 @@
 package oms;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import oms.order.Item;
 import oms.order.OrderDTO;
 import org.testng.annotations.Test;

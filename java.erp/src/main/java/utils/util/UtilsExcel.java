@@ -1,4 +1,4 @@
-package Utils;
+package utils.util;
 
 import jxl.Cell;
 import jxl.Sheet;
@@ -8,8 +8,6 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @Author： jasmine

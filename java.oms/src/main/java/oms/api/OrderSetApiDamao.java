@@ -1,6 +1,6 @@
 package oms.api;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import oms.domain.Item;
 import oms.domain.Order;
 import orderutils.ShipOrder;

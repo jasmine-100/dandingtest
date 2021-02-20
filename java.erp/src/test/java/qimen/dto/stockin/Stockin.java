@@ -1,6 +1,6 @@
 package qimen.dto.stockin;
 
-import Utils.UtilsTime;
+import utils.util.UtilsTime;
 import lombok.Data;
 import java.util.List;
 

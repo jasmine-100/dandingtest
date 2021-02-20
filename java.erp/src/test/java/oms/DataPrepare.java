@@ -1,6 +1,6 @@
 package oms;
 
-import database.OmsOrder;
+import utils.database.OmsOrder;
 import org.testng.annotations.Test;
 
 /**

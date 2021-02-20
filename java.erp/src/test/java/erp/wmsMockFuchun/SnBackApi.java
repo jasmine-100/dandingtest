@@ -1,10 +1,10 @@
 package erp.wmsMockFuchun;
 
-import client.ApiClient;
+import utils.client.ApiClient;
 import erp.wmsMockFuchun.dto.ParamsWms;
 import erp.wmsMockFuchun.dto.sn.Product;
 import org.testng.annotations.Test;
-import Utils.UtilsXml;
+import utils.util.UtilsXml;
 import erp.wmsMockFuchun.dto.sn.SnData;
 
 import java.util.ArrayList;
