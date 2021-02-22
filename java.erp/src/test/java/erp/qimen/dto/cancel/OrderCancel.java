@@ -1,4 +1,4 @@
-package qimen.dto.cancel;
+package erp.qimen.dto.cancel;
 
 import lombok.Data;
 

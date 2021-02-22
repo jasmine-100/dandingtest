@@ -1,4 +1,4 @@
-package qimen.dto.stockout;
+package erp.qimen.dto.stockout;
 
 import lombok.Data;
 

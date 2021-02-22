@@ -1,4 +1,4 @@
-package qimen.dto.stockin;
+package erp.qimen.dto.stockin;
 
 import lombok.Data;
 

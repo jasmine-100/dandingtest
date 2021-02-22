@@ -1,4 +1,4 @@
-package qimen.dto;
+package erp.qimen.dto;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;

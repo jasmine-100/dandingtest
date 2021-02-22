@@ -1,4 +1,4 @@
-package qimen.dto.good;
+package erp.qimen.dto.good;
 
 import lombok.Data;
 

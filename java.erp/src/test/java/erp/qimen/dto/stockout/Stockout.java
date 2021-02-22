@@ -1,8 +1,8 @@
-package qimen.dto.stockout;
+package erp.qimen.dto.stockout;
 
+import erp.qimen.dto.stockin.BusinessValue;
 import utils.util.UtilsTime;
 import lombok.Data;
-import qimen.dto.stockin.BusinessValue;
 
 import java.util.List;
 

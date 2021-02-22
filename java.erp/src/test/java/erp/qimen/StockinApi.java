@@ -1,11 +1,11 @@
-package qimen;
+package erp.qimen;
 
+import erp.qimen.dto.cancel.OrderCancel;
+import erp.qimen.dto.stockin.InOrderDetailParam;
+import erp.qimen.dto.stockin.Stockin;
 import utils.client.ApiClient;
 import org.junit.Test;
-import qimen.dto.Params;
-import qimen.dto.cancel.OrderCancel;
-import qimen.dto.stockin.InOrderDetailParam;
-import qimen.dto.stockin.Stockin;
+import erp.qimen.dto.Params;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class StockinApi extends Data {
 
         // 组装商品信息
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
-        detailParamLists.add(new InOrderDetailParam("SK210220152624","RMB",10,100));
+        detailParamLists.add(new InOrderDetailParam("SK210222112519","RMB",10,100));
         // 组装单据信息
         Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists);
         // 组装接口参数

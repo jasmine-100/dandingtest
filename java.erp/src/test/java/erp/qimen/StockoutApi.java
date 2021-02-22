@@ -1,11 +1,11 @@
-package qimen;
+package erp.qimen;
 
+import erp.qimen.dto.cancel.OrderCancel;
+import erp.qimen.dto.stockout.OutOrderDetailFrom;
+import erp.qimen.dto.stockout.Stockout;
 import utils.client.ApiClient;
 import org.junit.Test;
-import qimen.dto.Params;
-import qimen.dto.cancel.OrderCancel;
-import qimen.dto.stockout.OutOrderDetailFrom;
-import qimen.dto.stockout.Stockout;
+import erp.qimen.dto.Params;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
