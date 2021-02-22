@@ -23,7 +23,7 @@ public class StockinApi extends Data {
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
         detailParamLists.add(new InOrderDetailParam("SK210220152624","RMB",10,100));
         // 组装单据信息
-        Stockin stockin = new Stockin(orderno,1,outShopId,warehouseCode,ownerCode,detailParamLists);
+        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists);
         // 组装接口参数
         Params params = new Params(orderno,"4",stockin);
 
