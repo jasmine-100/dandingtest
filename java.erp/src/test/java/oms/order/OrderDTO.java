@@ -74,7 +74,7 @@ public class OrderDTO {
         this.key = "webB2CwebB2C336OON1606982954410";
         this.saleChannel = "V2";
         this.appCode = appCode;
-        this.remark = "消费者的备注--快点儿发货哦";
+        this.remark = null;
         this.declarePayNo = "DPN"+str;
         this.payNo = "PN"+str;
         this.itemList = itemList;

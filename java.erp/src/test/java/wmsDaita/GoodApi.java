@@ -2,8 +2,8 @@ package wmsDaita;
 
 import utils.client.ApiClient;
 import org.testng.annotations.Test;
-import wmsDaita.dto.Good.ErpSku;
-import wmsDaita.dto.Good.Good;
+import wmsDaita.dto.good.ErpSku;
+import wmsDaita.dto.good.Good;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

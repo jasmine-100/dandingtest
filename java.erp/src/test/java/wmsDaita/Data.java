@@ -23,4 +23,8 @@ public class Data {
     public static String warehouseCode = "DT-W1";
     public static String cargoCode = "JASMINE";
 
+    // 带网关的域名地址
+//    public static String gatewayURL = "http://danding-gateway.yang800.cn";
+    public static String rongqiUri = "/dt-wms-portal/container/add";
+
 }

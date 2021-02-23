@@ -29,9 +29,9 @@ public abstract class BaseTest {
         client = testClient;
         if (client.getLoginFlag()){
             Map<String,String> param = new HashMap<>();
-            param.put("userName","哈哈科技有限公司");
+            param.put("userName","小花花");
             param.put("password","Abc123");
-            String result = GatewayHttpClient.send(client,"/ucenter-account/customer/login",param,"");
+            String result = GatewayHttpClient.send(client,"/ucenter-account/customer/login","",param);
             LoginToken loginToken = JSON.parseObject(result,LoginToken.class);
             accessToken = loginToken.getData().getAccessToken();
         }else {

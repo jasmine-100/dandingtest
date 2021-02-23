@@ -30,7 +30,7 @@ public class GatewayHttpClient {
         this.clientSecret = clientSecret;
         this.loginFlag = loginFlag;
     }
-    public static String send(GatewayHttpClient client, String uri, Object obj, String token) {
+    public static String send(GatewayHttpClient client, String uri, String token, Object obj) {
         String body = JSON.toJSONString(obj);
 
         Long timestamp = System.currentTimeMillis();

@@ -20,6 +20,7 @@ public class Data {
     public static String partnerId = "V2"; // 应用级别的id
     public static String token = "V2"; // 应用级别的密钥
 
+    //  网关地址域名
     // 添加充值账单
     public static String uri_account = "/account-web/accountCharge/userChargeSave";
 }

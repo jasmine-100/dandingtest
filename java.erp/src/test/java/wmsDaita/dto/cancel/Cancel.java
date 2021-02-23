@@ -1,4 +1,4 @@
-package wmsDaita.dto.Cancel;
+package wmsDaita.dto.cancel;
 
 import lombok.Data;
 
