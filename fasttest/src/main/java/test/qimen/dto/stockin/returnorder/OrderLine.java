@@ -1,4 +1,4 @@
-package test.qimen.dto.stockin.purchase;
+package test.qimen.dto.stockin.returnorder;
 
 import lombok.Data;
 
@@ -13,22 +13,21 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderLine {
+    int orderLineNo;
     String inventoryType;
     String itemCode;
     String itemId;
-     int orderLineNo;
-     String ownerCode;
-     int planQty;
-     String remark;
+    String ownerCode;
+    int planQty;
+    String batchCode;
 
-    public OrderLine(String ownerCode, String itemCode, String inventoryType, int planQty) {
+    public OrderLine(String itemCode,String inventoryType, int planQty,String ownerCode) {
         this.inventoryType = inventoryType;
         this.itemCode = itemCode;
         this.itemId = itemCode;
         this.orderLineNo = 1;
         this.ownerCode = ownerCode;
         this.planQty = planQty;
-        this.remark = "一个备注";
     }
 
 }

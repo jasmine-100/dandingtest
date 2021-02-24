@@ -26,7 +26,7 @@ public class DataSet {
     public static void setXml(HttpPost post,Object body){
         //组装body参数(xml格式)
         if (body != null){
-            System.out.println(body);
+            System.out.println(UtilsXml.objToXml(body));
             //组装xml参数
             HttpEntity entity2 = new StringEntity(UtilsXml.objToXml(body),"utf-8");// 解决中文乱码问题
             post.addHeader("Context-Type","text/xml;charset=UTF-8");
@@ -63,7 +63,7 @@ public class DataSet {
         }
     }
 
-    public static void setParams(HttpPost post,String url,Object params){
+    public static HttpPost setParams(HttpPost post,String url,Object params){
         //组装params参数
         if(params!=null){
             Map<String,Object> map = null;
@@ -75,20 +75,22 @@ public class DataSet {
                 }
                 String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
                 post = new HttpPost(url+"?"+str);
-//            System.out.println(url+"?"+str);
+            System.out.println(url+"?"+str);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+        return post;
     }
 
-    public static void setHead(HttpPost post,Map<String,Object> head){
+    public static HttpPost setHead(HttpPost post,Map<String,Object> head){
         //组装head参数
         if(head!=null) {
             for (String key : head.keySet()) {
                 post.addHeader(key,head.get(key).toString());
             }
         }
+        return post;
     }
 
 }

@@ -1,6 +1,4 @@
-package test.qimen.dto.stockinreturn;
-
-import test.qimen.dto.stockin.purchase.SenderInfo;
+package test.qimen.dto.stockin.returnorder;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,7 +12,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 public class ReturnOrder {
     String returnOrderCode;
     String warehouseCode;
-    String orderType;
+    String orderType; // THRK 退货入库
     String preDeliveryOrderCode;
     String preDeliveryOrderId;
     String logisticsCode;

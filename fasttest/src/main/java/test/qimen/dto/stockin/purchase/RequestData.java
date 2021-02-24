@@ -1,6 +1,10 @@
 package test.qimen.dto.stockin.purchase;
 
+import lombok.Data;
+
 import javax.xml.bind.annotation.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -8,9 +12,10 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/24 13:45
  */
+@Data
 @XmlRootElement(name = "request")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class OrderData {
+public class RequestData {
 
      EntryOrder entryOrder;
 
@@ -18,11 +23,14 @@ public class OrderData {
     @XmlElement(name = "orderLine")
      List<OrderLine> orderLines;
 
-    public OrderData() {
+    ExtendProps extendProps;
+
+    public RequestData() {
     }
 
-    public OrderData(EntryOrder entryOrder, List<OrderLine> orderLines) {
+    public RequestData(EntryOrder entryOrder, List<OrderLine> orderLines) {
         this.entryOrder = entryOrder;
         this.orderLines = orderLines;
+        this.extendProps = new ExtendProps("浙江省金华市金东区","CG"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()));
     }
 }

@@ -25,10 +25,10 @@ public class Param {
         this.app_key = "24869601";
         this.method = method;
         this.sign_method = "md5";
-        this.customerId = "DS15879577775092";
+        this.customerId = "ERPTEST";
         this.format = "xml";
         this.timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        this.sign = "6C362B9F3C756BDED8BBF58E2FB29CF0";
+        this.sign = "1CA34165AEB3F513A79940727F3D3F21";
         this.v = "2.0";
     }
 

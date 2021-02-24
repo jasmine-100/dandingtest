@@ -3,7 +3,6 @@ package test.qimen;
 import org.testng.annotations.Test;
 import test.qimen.dto.Param;
 import test.qimen.dto.stockout.deliver.*;
-import test.qimen.dto.stockoutdeliver.*;
 import utils.client.ApiClient;
 
 import java.text.SimpleDateFormat;
@@ -20,7 +19,7 @@ public class StockoutDeliverApi extends Data {
 
     @Test
     public void order(){
-        String orderno = "QMO"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String orderno = "QMOC"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         // 接口参数
         Param param = new Param("deliveryorder.create");

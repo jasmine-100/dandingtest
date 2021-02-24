@@ -73,7 +73,7 @@ public class ApiClient {
         post = new HttpPost(url);
         String responseStr = null;
 
-        DataSet.setParams(post,url,params);
+        post = DataSet.setParams(post,url,params);
         DataSet.setHead(post,head);
         DataSet.setXml(post,body);
 

@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author： jasmine
@@ -12,26 +13,29 @@ import java.util.Date;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class EntryOrder {
-     String entryOrderCode;
-     String purchaseOrderCode;// 采购单号
-     String ownerCode;
-     String warehouseCode;
-     String orderType;
-     String expectStartTime;
-     String supplierCode;
-     String supplierName;
-     SenderInfo senderInfo;
+    String entryOrderCode;
+    String orderCreateTime;
+    String orderType; // CGRK 采购入库；
+    String warehouseCode;
+    String ownerCode;
+    String purchaseOrderCode;// 采购单号
+    String supplierCode;
+    String supplierName;
+    SenderInfo senderInfo;
+    int totalOrderLines;
+    String remark;
 
-
-    public EntryOrder(String entryOrderCode, String warehouseCode, String orderType, String supplierCode) {
+    public EntryOrder(String entryOrderCode, String warehouseCode, String ownerCode, String orderType, String supplierCode, List<OrderLine> orderLines) {
         this.entryOrderCode = entryOrderCode;
-        this.purchaseOrderCode = "P"+entryOrderCode;
-        this.ownerCode = "";
+        this.orderCreateTime = "2021-01-02 10:00:00";
+        this.purchaseOrderCode = "P" + entryOrderCode;
         this.warehouseCode = warehouseCode;
+        this.ownerCode = ownerCode;
         this.orderType = orderType;
-        this.expectStartTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.supplierCode = supplierCode;
         this.supplierName = "";
-        this.senderInfo = new SenderInfo("浙江省","杭州市","江干区");;
+        this.senderInfo = new SenderInfo();
+        this.totalOrderLines = orderLines.size();
+        this.remark = "早点儿发货哦";
     }
 }

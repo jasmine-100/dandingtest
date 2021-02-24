@@ -1,7 +1,6 @@
-package test.qimen.dto.stockinreturn;
+package test.qimen.dto.stockin.returnorder;
 
 import lombok.Data;
-import test.qimen.dto.stockin.purchase.OrderLine;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
@@ -14,18 +13,21 @@ import java.util.List;
 @Data
 @XmlRootElement(name = "request")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RequestOrderReturn {
+public class RequestData {
     ReturnOrder returnOrder;
 
     @XmlElementWrapper(name = "orderLines")
     @XmlElement(name = "orderLine")
     List<OrderLine> orderLines;
 
-    public RequestOrderReturn(ReturnOrder returnOrder, List<OrderLine> orderLines) {
+    ExtendProps extendProps;
+
+    public RequestData(ReturnOrder returnOrder, List<OrderLine> orderLines) {
         this.returnOrder = returnOrder;
         this.orderLines = orderLines;
+        this.extendProps = new ExtendProps(orderLines);
     }
 
-    public RequestOrderReturn() {
+    public RequestData() {
     }
 }
