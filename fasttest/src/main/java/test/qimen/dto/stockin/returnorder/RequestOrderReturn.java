@@ -1,7 +1,7 @@
-package qimen.domain.returnorder;
+package test.qimen.dto.stockinreturn;
 
 import lombok.Data;
-import qimen.domain.stockin.OrderLine;
+import test.qimen.dto.stockin.purchase.OrderLine;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;

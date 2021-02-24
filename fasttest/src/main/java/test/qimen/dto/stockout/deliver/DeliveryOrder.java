@@ -1,6 +1,5 @@
-package qimen.domain.deliver;
+package test.qimen.dto.stockout.deliver;
 
-import qimen.domain.stockin.SenderInfo;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.text.SimpleDateFormat;
@@ -17,7 +16,7 @@ public class DeliveryOrder {
     String deliveryOrderCode;
     String preDeliveryOrderCode;
     String preDeliveryOrderId;
-    String orderType;
+    String orderType; // JYCK-快递支持：C单出库 ；JYCK-快递不支持：B单出库 ；QTCK=B单出库
     String warehouseCode;
     String orderFlag;
     String sourcePlatformCode;

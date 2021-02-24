@@ -1,4 +1,4 @@
-package qimen.domain.stockin;
+package test.qimen.dto.stockin.purchase;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;

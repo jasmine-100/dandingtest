@@ -1,4 +1,4 @@
-package qimen.domain.deliver;
+package test.qimen.dto.stockout.deliver;
 
 import lombok.Data;
 

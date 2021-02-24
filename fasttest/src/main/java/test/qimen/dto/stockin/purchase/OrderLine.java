@@ -1,4 +1,4 @@
-package qimen.domain.stockin;
+package test.qimen.dto.stockin.purchase;
 
 import lombok.Data;
 

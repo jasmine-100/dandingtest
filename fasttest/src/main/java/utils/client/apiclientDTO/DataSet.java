@@ -10,6 +10,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import utils.util.JavaBeanUtils;
+import utils.util.UtilsXml;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class DataSet {
         if (body != null){
             System.out.println(body);
             //组装xml参数
-            HttpEntity entity2 = new StringEntity(body.toString(),"utf-8");// 解决中文乱码问题
+            HttpEntity entity2 = new StringEntity(UtilsXml.objToXml(body),"utf-8");// 解决中文乱码问题
             post.addHeader("Context-Type","text/xml;charset=UTF-8");
             post.setEntity(entity2);
         }

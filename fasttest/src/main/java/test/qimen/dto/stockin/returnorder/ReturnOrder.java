@@ -1,6 +1,6 @@
-package qimen.domain.returnorder;
+package test.qimen.dto.stockinreturn;
 
-import qimen.domain.stockin.SenderInfo;
+import test.qimen.dto.stockin.purchase.SenderInfo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

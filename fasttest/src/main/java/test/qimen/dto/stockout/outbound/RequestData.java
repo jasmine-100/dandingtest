@@ -1,5 +1,4 @@
-package qimen.domain.deliver;
-
+package test.qimen.dto.stockout.outbound;
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
@@ -10,17 +9,17 @@ import java.util.List;
  */
 @XmlRootElement(name = "request")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RequestOrderDeliver {
+public class RequestData {
      DeliveryOrder deliveryOrder;
 
     @XmlElementWrapper(name = "orderLines")
     @XmlElement(name = "orderLine")
      List<OrderLine> orderLines;
 
-    public RequestOrderDeliver() {
+    public RequestData() {
     }
 
-    public RequestOrderDeliver(DeliveryOrder deliveryOrder, List<OrderLine> orderLines) {
+    public RequestData(DeliveryOrder deliveryOrder, List<OrderLine> orderLines) {
         this.deliveryOrder = deliveryOrder;
         this.orderLines = orderLines;
     }
