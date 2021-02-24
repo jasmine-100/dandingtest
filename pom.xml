@@ -9,9 +9,6 @@
   <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>java.oms</module>
-        <module>api</module>
-        <module>java.erp</module>
         <module>fasttest</module>
     </modules>
 

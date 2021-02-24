@@ -27,7 +27,8 @@ public class StockinPurchaseApi extends Data {
         List<OrderLine> orderLines = new ArrayList<>();
         orderLines.add(new OrderLine(ownerCode,"QSKU20210224182139",ownerCode,100));
 
-        EntryOrder entryOrder = new EntryOrder(orderno,logicWarehouCode,ownerCode,"JYCK","1",orderLines);
+        EntryOrder entryOrder = new EntryOrder(orderno,logicWarehouCode,ownerCode,"CGRK","1",orderLines);//采购入库
+//        EntryOrder entryOrder = new EntryOrder(orderno,logicWarehouCode,ownerCode,"DBRK","1",orderLines);//调拨入库
         RequestData requestData = new RequestData(entryOrder,orderLines);
 
         ApiClient.doPostXml(URL,param,null,requestData);

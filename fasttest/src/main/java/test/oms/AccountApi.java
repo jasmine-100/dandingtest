@@ -18,4 +18,5 @@ public class AccountApi extends BaseTest {
         Account account = new Account();
         GatewayHttpClient.send(client,Data.uri_account,accessToken,account);
     }
+
 }

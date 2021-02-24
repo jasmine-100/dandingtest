@@ -30,7 +30,7 @@ public class StockoutDeliverApi extends Data {
 
         SenderInfo senderInfo = new SenderInfo();
         ReceiverInfo receiverInfo = new ReceiverInfo();
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,"",orderLines,"DB",senderInfo,receiverInfo);
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"DB",senderInfo,receiverInfo);//发货出库
 
         RequestData requestData = new RequestData(deliveryOrder,orderLines);
 

@@ -25,6 +25,7 @@ public class Data {
 
     // 带网关的域名地址
 //    public static String gatewayURL = "http://danding-gateway.yang800.cn";
-    public static String rongqiUri = "/dt-wms-portal/container/add";
+    public static String rongqiUri = "/dt-wms-portal/container/add";//添加容器
+    public static String kuweiUri = "/dt-wms-portal/location/create";//添加库位
 
 }

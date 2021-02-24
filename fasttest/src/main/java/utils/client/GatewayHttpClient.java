@@ -67,6 +67,7 @@ public class GatewayHttpClient {
         try{
             HttpRequest httpRequest = HttpRequest.post(client.getHost() + uri).headers(headers).send(body);
             if (httpRequest.ok()){
+//                System.out.println(httpRequest.body());
                 return (httpRequest.body());
             }else {
                 return ("HTTP状态码：" + httpRequest.code());

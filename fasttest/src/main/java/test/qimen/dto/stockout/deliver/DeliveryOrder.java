@@ -48,7 +48,7 @@ public class DeliveryOrder {
 
     String remark;
 
-    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode, String shopNick, List<OrderLine> orderLines, String logisticsCode, SenderInfo senderInfo, ReceiverInfo receiverInfo) {
+    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode, List<OrderLine> orderLines, String logisticsCode, SenderInfo senderInfo, ReceiverInfo receiverInfo) {
         this.deliveryOrderCode = deliveryOrderCode;
         this.preDeliveryOrderCode = "20200701";
         this.preDeliveryOrderId = "";
@@ -63,7 +63,7 @@ public class DeliveryOrder {
         this.placeOrderTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.payTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.payNo = "4200000594202006309194038449";
-        this.shopNick = shopNick;
+        this.shopNick = "";
         this.sellerNick = "小仓库";
         this.buyerNick = "大买家";
         this.operatorName = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());

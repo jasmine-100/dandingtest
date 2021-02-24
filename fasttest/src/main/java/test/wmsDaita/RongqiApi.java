@@ -11,19 +11,22 @@ import utils.client.gatewayDTO.BaseTest;
  * @Date : Created in 2021/2/23 14:25
  */
 public class RongqiApi extends BaseTest {
+    int startno = 25;
+    int endno = 28;
+    int temp = startno;
 
     @Test
     public void addRongqis(){
-        for (int i=3;i<10;i++){
-            addRongqi(i);
+        for (int i=startno;i<endno;i++){
+            temp = i;
+            addRongqi();
         }
     }
 
     @Test
-    public void addRongqi(int i){
+    public void addRongqi(){
         this.login();
-//        int i = 2;
-        RongQi rongQi = new RongQi("rq"+i,"容器"+i);
+        RongQi rongQi = new RongQi("rq"+temp,"容器"+temp);
         GatewayHttpClient.send(client,Data.rongqiUri,accessToken,rongQi);
     }
 

@@ -15,7 +15,7 @@ import java.util.List;
 public class EntryOrder {
     String entryOrderCode;
     String orderCreateTime;
-    String orderType; // CGRK 采购入库；
+    String orderType; // DBRK 调拨入库；其他都是采购入库，常规CGRK
     String warehouseCode;
     String ownerCode;
     String purchaseOrderCode;// 采购单号

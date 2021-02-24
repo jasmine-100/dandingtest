@@ -23,19 +23,19 @@ public class OrderLine {
     String unit;
 
     // 推送出库单实体类
-    public OrderLine(int orderLineNo, String ownerCode, String itemCode, String itemName, int planQty, String inventoryType, String batchCode, String unit) {
-        this.orderLineNo = orderLineNo;
+    public OrderLine(String ownerCode, String itemCode, int planQty, String inventoryType, String batchCode) {
+        this.orderLineNo = 1;
         this.ownerCode = ownerCode;
         this.itemCode = itemCode;
         this.itemId = itemCode;
-        this.itemName = itemName;
+        this.itemName = "";
         this.planQty = planQty;
         this.actualQty = 0;
         this.purchasePrice = 0;
         this.retailPrice = 0;
         this.inventoryType = inventoryType;
         this.batchCode = batchCode;
-        this.unit = unit;
+        this.unit = "个";
     }
 
 }

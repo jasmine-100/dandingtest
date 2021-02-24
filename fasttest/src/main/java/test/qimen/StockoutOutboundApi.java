@@ -26,12 +26,12 @@ public class StockoutOutboundApi extends Data {
 
         // 接口报文体
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(1,ownerCode,"","",1,"ZP","","个"));
+        orderLines.add(new OrderLine(ownerCode,"QSKU20210224182139",1,"ZP","LOT210224000016"));
 
         SenderInfo senderInfo = new SenderInfo();
         ReceiverInfo receiverInfo = new ReceiverInfo();
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK",logicWarehouCode,"SF",senderInfo,receiverInfo);
-//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"PTCK",logicWarehouCode,"SF",senderInfo,receiverInfo);
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK",logicWarehouCode,"ZTO",senderInfo,receiverInfo);//调拨出库
+//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"PTCK",logicWarehouCode,"ZTO",senderInfo,receiverInfo);//销售出库
 
         RequestData requestData = new RequestData(deliveryOrder,orderLines);
 
