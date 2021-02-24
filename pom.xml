@@ -12,6 +12,7 @@
         <module>java.oms</module>
         <module>api</module>
         <module>java.erp</module>
+        <module>fasttest</module>
     </modules>
 
     <dependencies>
