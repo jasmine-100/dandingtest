@@ -26,7 +26,7 @@ public class StockinReturnApi extends Data {
         Param param = new Param("returnorder.create");
 
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine("","ZP",1,ownerCode));
+        orderLines.add(new OrderLine("QSKU20210224182139","ZP",10,ownerCode));
 
         ReturnOrder returnOrder = new ReturnOrder(orderno,logicWarehouCode,"THRK","SF",new SenderInfo());
         RequestData requestData = new RequestData(returnOrder,orderLines);
