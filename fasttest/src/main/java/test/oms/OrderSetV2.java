@@ -1,9 +1,9 @@
 package test.oms;
 
 import org.testng.annotations.Test;
-import test.oms.v2.ApiV2ServiceName;
-import test.oms.v2.orderV2.Item;
-import test.oms.v2.orderV2.OrderDTO;
+import test.oms.dto.v2.ApiV2ServiceName;
+import test.oms.dto.v2.orderV2.Item;
+import test.oms.dto.v2.orderV2.OrderDTO;
 import utils.client.ApiClient;
 import utils.util.BizData;
 

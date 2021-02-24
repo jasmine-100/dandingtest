@@ -1,8 +1,8 @@
 package test.oms;
 
 import org.testng.annotations.Test;
-import test.oms.v2.ApiV2ServiceName;
-import test.oms.v2.orderV2Cancel.OrderCancel;
+import test.oms.dto.v2.ApiV2ServiceName;
+import test.oms.dto.v2.orderV2Cancel.OrderCancel;
 import utils.client.ApiClient;
 import utils.util.BizData;
 

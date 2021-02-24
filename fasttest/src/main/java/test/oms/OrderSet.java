@@ -1,8 +1,8 @@
 package test.oms;
 
 import org.testng.annotations.Test;
-import test.oms.order.Item;
-import test.oms.order.OrderDTO;
+import test.oms.dto.order.Item;
+import test.oms.dto.order.OrderDTO;
 import utils.client.ApiClient;
 
 import java.text.SimpleDateFormat;

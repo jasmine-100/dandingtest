@@ -2,11 +2,11 @@ package test.ccs;
 
 import org.testng.annotations.Test;
 import test.ccs.dto.Item;
-import test.ccs.dto.Order;
-import test.ccs.dtoBack.BackDingdanZongshu;
-import test.ccs.dtoBack.BackQingdanZongshu;
-import test.ccs.dtoBack.BackTax;
-import test.ccs.dtoBack.BackYundanZongshu;
+import test.ccs.dto.order.Order;
+import test.ccs.dto.back.BackDingdanZongshu;
+import test.ccs.dto.back.BackQingdanZongshu;
+import test.ccs.dto.back.BackTax;
+import test.ccs.dto.back.BackYundanZongshu;
 import utils.client.ApiClient;
 
 import java.text.SimpleDateFormat;

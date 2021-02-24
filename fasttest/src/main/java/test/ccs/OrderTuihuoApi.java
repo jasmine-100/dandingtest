@@ -1,8 +1,8 @@
 package test.ccs;
 
 import org.testng.annotations.Test;
-import test.ccs.dtoBack.BackTax;
-import test.ccs.dtoBack.BackTuiHuo;
+import test.ccs.dto.back.BackTax;
+import test.ccs.dto.back.BackTuiHuo;
 
 import java.io.IOException;
 

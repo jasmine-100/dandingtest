@@ -1,8 +1,8 @@
 package test.ccs;
 
 import org.testng.annotations.Test;
-import test.ccs.dtoBack.BackHefang;
-import test.ccs.dtoBack.BackHefangHezhu;
+import test.ccs.dto.back.BackHefang;
+import test.ccs.dto.back.BackHefangHezhu;
 
 /**
  * @Author： jasmine

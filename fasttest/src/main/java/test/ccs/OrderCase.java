@@ -2,8 +2,9 @@ package test.ccs;
 
 import org.testng.annotations.Test;
 import test.ccs.dto.Item;
-import test.ccs.dto.Order;
-import test.ccs.dtoBack.*;
+import test.ccs.dto.back.*;
+import test.ccs.dto.order.Order;
+import test.ccs.back.*;
 import utils.client.ApiClient;
 
 import java.util.ArrayList;

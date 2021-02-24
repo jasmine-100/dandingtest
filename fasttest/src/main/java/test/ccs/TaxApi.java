@@ -1,7 +1,7 @@
 package test.ccs;
 
 import org.testng.annotations.Test;
-import test.ccs.dtoBack.BackTax;
+import test.ccs.dto.back.BackTax;
 
 import java.io.IOException;
 

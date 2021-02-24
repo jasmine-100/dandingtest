@@ -1,8 +1,8 @@
 package test.ccs;
 
 import org.testng.annotations.Test;
-import test.ccs.dtoBack.BackChedan;
-import test.ccs.dtoBack.BackTax;
+import test.ccs.dto.back.BackChedan;
+import test.ccs.dto.back.BackTax;
 
 /**
  * @Author： jasmine
