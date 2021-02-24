@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
         <module name="java.oms" />
-        <module name="java.erp" />
+        <module name="erp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
