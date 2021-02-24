@@ -31,6 +31,7 @@ public class StockoutOutboundApi extends Data {
         SenderInfo senderInfo = new SenderInfo();
         ReceiverInfo receiverInfo = new ReceiverInfo();
         DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK",logicWarehouCode,"SF",senderInfo,receiverInfo);
+//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"PTCK",logicWarehouCode,"SF",senderInfo,receiverInfo);
 
         RequestData requestData = new RequestData(deliveryOrder,orderLines);
 

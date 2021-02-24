@@ -13,7 +13,7 @@ import java.util.Date;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DeliveryOrder {
     String deliveryOrderCode;
-    String orderType; // DBCK=调拨出库;B2BCK=销售出库
+    String orderType; // DBCK=调拨出库;其他都是 销售出库，常用PTCK
     String warehouseCode;
     String buyerMessage;
     String sellerMessage;

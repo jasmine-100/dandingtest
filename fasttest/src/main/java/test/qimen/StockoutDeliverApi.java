@@ -26,11 +26,11 @@ public class StockoutDeliverApi extends Data {
 
         // 接口报文体
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(1,ownerCode,"",1,""));
+        orderLines.add(new OrderLine(1,ownerCode,"QSKU20210224182139",1,"LOT210224000016"));
 
         SenderInfo senderInfo = new SenderInfo();
         ReceiverInfo receiverInfo = new ReceiverInfo();
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,"",orderLines,"SF",senderInfo,receiverInfo);
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,"",orderLines,"DB",senderInfo,receiverInfo);
 
         RequestData requestData = new RequestData(deliveryOrder,orderLines);
 
