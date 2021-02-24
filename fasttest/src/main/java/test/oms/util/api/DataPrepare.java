@@ -1,4 +1,4 @@
-package test.oms;
+package test.oms.util.api;
 
 import org.testng.annotations.Test;
 import utils.database.OmsOrder;

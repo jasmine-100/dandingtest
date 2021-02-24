@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import test.oms.dto.v2.ApiV2ServiceName;
 import test.oms.dto.v2.orderV2.Item;
 import test.oms.dto.v2.orderV2.OrderDTO;
+import test.oms.dto.v2.orderV2Cancel.OrderCancel;
 import utils.client.ApiClient;
 import utils.util.BizData;
 
@@ -17,7 +18,7 @@ import java.util.List;
  * @Description : V2标准的渠道接口，下单
  * @Date : Created in 2021/1/15 9:48
  */
-public class OrderSetV2 extends Data {
+public class OrderV2 extends Data {
 
     @Test
     public static void orderSet(){
@@ -33,6 +34,16 @@ public class OrderSetV2 extends Data {
         System.out.println(orderBiz);
 
         ApiClient.doPostForm(V2Url,orderBiz,null,null);
+    }
+
+    @Test
+    public void orderCancel() {
+        String orderNo = "JOS20210202115931";
+        OrderCancel orderCancel = new OrderCancel(accessCode1,orderNo);
+        BizData orderBiz = new BizData(orderCancel, ApiV2ServiceName.ORDER_CANCEL,partnerId,token);
+
+        ApiClient.doPostForm(V2Url,orderBiz,null,null);
+
     }
 
 }
