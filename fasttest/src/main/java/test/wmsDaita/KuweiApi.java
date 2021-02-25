@@ -7,9 +7,6 @@ import test.wmsDaita.dto.Kuwei.Kuwei;
 import utils.client.GatewayHttpClient;
 import utils.client.gatewayDTO.BaseTest;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * @Author： jasmine
  * @Description :
@@ -21,21 +18,21 @@ public class KuweiApi extends BaseTest {
     public void kuquAdd(){ //添加库区
         this.login();
         Kuqu kuqu = new Kuqu("KqJx00002","拣选区","11","AVL");
-        GatewayHttpClient.send(client,Data.kuquUri,accessToken,kuqu);
+        GatewayHttpClient.send(client,"/dt-wms-portal/zone/create",accessToken,kuqu);
     }
 
     @Test
     public void hangdaoAdd(){// 添加巷道
         this.login();
         Hangdao hangdao = new Hangdao("HdJx00002","KqJx00002");
-        GatewayHttpClient.send(client,Data.hangdaoUri,accessToken,hangdao);
+        GatewayHttpClient.send(client,"/dt-wms-portal/tunnel/create",accessToken,hangdao);
     }
 
     @Test
     public void kuweiAdd(){ // 添加库位
         this.login();
         Kuwei kuwei = new Kuwei("KwJx00002","KqJx00002","HdJx00002");
-        GatewayHttpClient.send(client,Data.kuweiUri,accessToken,kuwei);
+        GatewayHttpClient.send(client,"/dt-wms-portal/location/create",accessToken,kuwei);
     }
 
 }

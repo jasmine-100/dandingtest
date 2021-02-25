@@ -27,7 +27,7 @@ public class RongqiApi extends BaseTest {
     public void addRongqi(){
         this.login();
         RongQi rongQi = new RongQi("rq"+temp,"容器"+temp);
-        GatewayHttpClient.send(client,Data.rongqiUri,accessToken,rongQi);
+        GatewayHttpClient.send(client,"/dt-wms-portal/container/add",accessToken,rongQi);
     }
 
 }
