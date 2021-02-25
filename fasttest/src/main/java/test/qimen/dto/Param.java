@@ -22,10 +22,10 @@ public class Param {
      String v;
 
     public Param(String method) {
-        this.app_key = "24869601";
+        this.app_key = "23782426";
         this.method = method;
         this.sign_method = "md5";
-        this.customerId = "ERPTEST";
+        this.customerId = "ERPOMSTEST";
         this.format = "xml";
         this.timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.sign = "1CA34165AEB3F513A79940727F3D3F21";
