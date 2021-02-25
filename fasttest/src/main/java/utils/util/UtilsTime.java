@@ -84,8 +84,8 @@ public class UtilsTime {
     public void test(){
 //        System.out.println(getTime("yyyyMMddHHmmss","20200901100101"));
 //        System.out.println(getTime("yyyy.MM.dd","2020.9.1"));
-//        System.out.println(addDate("2020-10-10",10));
-        System.out.println(daysBetween("2020-10-10","2022-10-20"));
-        System.out.println(daysBetween("2021-02-05","2022-10-20"));
+        System.out.println(addDate("2021-01-02",200));
+//        System.out.println(daysBetween("2020-10-10","2022-10-20"));
+//        System.out.println(daysBetween("2021-02-05","2022-10-20"));
     }
 }
