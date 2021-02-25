@@ -26,9 +26,9 @@ public class StockinReturnApi extends Data {
         Param param = new Param("returnorder.create");
 
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine("QSKU20210224182139","ZP",100,ownerCode));
-        orderLines.add(new OrderLine("QSKU20210224211314","CP",100,ownerCode));
-        orderLines.add(new OrderLine("QSKU20210224211344","ZP",100,ownerCode));
+        orderLines.add(new OrderLine("QSKU210225210304","ZP",100,ownerCode));
+//        orderLines.add(new OrderLine("QSKU20210224211314","CP",100,ownerCode));
+//        orderLines.add(new OrderLine("QSKU20210224211344","ZP",100,ownerCode));
 
         ReturnOrder returnOrder = new ReturnOrder(orderno,logicWarehouCode,"THRK","SF",new SenderInfo());//退货入库
         RequestData requestData = new RequestData(returnOrder,orderLines);

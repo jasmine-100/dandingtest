@@ -11,5 +11,4 @@ public class Data {
 
     public static String logicWarehouCode = "JHS26c6a1jinyiQimen";//qimen
     public static String ownerCode = "jinyiQimen";//奇门金义货主
-
 }

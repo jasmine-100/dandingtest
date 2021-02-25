@@ -31,7 +31,7 @@ public class KuweiApi extends BaseTest {
     @Test
     public void kuweiAdd(){ // 添加库位
         this.login();
-        Kuwei kuwei = new Kuwei("KwJx000024","KqJx00002","HdJx00002");//正品库位
+        Kuwei kuwei = new Kuwei("KwJx000026","KqJx00002","HdJx00002");//正品库位
 //        Kuwei kuwei = new Kuwei("KwJx000011","KqJx00001","HdJx00001");//次品库位
         GatewayHttpClient.send(client,"/dt-wms-portal/location/create",accessToken,kuwei);
     }
