@@ -21,6 +21,9 @@ public class Cancel {
     String ownerCode;
     String cancelReason;
 
+    public Cancel() {
+    }
+
     public Cancel(String orderCode, String orderType, String warehouseCode, String ownerCode) {
         this.orderCode = orderCode;
         this.orderType = orderType;

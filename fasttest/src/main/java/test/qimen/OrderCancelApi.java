@@ -14,7 +14,7 @@ public class OrderCancelApi extends Data{
 
     @Test
     public void orderCancel(){
-        String orderno = "";
+        String orderno = "QMOB20210226143946";
 
         Param param = new Param("order.cancel");
 

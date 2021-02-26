@@ -30,8 +30,8 @@ public class StockoutOutboundApi extends Data {
 
         SenderInfo senderInfo = new SenderInfo();
         ReceiverInfo receiverInfo = new ReceiverInfo();
-//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK",logicWarehouCode,"ZTO",senderInfo,receiverInfo);//调拨出库
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"PTCK",logicWarehouCode,"ZTO",senderInfo,receiverInfo);//销售出库
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"DBCK",logicWarehouCode,"ZTO",senderInfo,receiverInfo);//调拨出库
+//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"PTCK",logicWarehouCode,"ZTO",senderInfo,receiverInfo);//销售出库
 
         RequestData requestData = new RequestData(deliveryOrder,orderLines);
 
