@@ -19,21 +19,23 @@ public class StockoutDeliverApi extends Data {
 
     @Test
     public void order(){
-        String orderno = "QMOC"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String orderno = "QMOC"+ str;
 
         // 接口参数
         Param param = new Param("deliveryorder.create");
 
         // 接口报文体
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(1,ownerCode,"QSKU210225210304","奇门外部商品",1,null));
+        orderLines.add(new OrderLine(1,ownerCode,"SKU2101141460","奇门外部商品",1,null));
 
-        SenderInfo senderInfo = new SenderInfo();
-        ReceiverInfo receiverInfo = new ReceiverInfo();
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"ZTO",senderInfo,receiverInfo);//C单出库
-//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"DB",senderInfo,receiverInfo);//B单出库
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"ZTO","ZTO"+str);//C单出库
+//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"DB");//B单出库
 
-        RequestData requestData = new RequestData(deliveryOrder,orderLines);
+        // 保税订单--保税信息
+        ExtendProps extendProps = new ExtendProps(orderno,0,10,5,0,0,deliveryOrder,orderLines);
+
+        RequestData requestData = new RequestData(deliveryOrder,orderLines,extendProps);
 
         ApiClient.doPostXml(URL,param,null,requestData);
 

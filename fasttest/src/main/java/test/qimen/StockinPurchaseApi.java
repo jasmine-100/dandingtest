@@ -25,7 +25,7 @@ public class StockinPurchaseApi extends Data {
         Param param = new Param("entryorder.create");
 
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(ownerCode,"QSKU210225210304",ownerCode,100));
+        orderLines.add(new OrderLine(ownerCode,"SKU2101141460",ownerCode,1000));
 //        orderLines.add(new OrderLine(ownerCode,"QSKU20210224211314",ownerCode,200));
 //        orderLines.add(new OrderLine(ownerCode,"QSKU20210224211344",ownerCode,300));
 

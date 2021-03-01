@@ -12,10 +12,10 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class RequestData {
      DeliveryOrder deliveryOrder;
-
     @XmlElementWrapper(name = "orderLines")
     @XmlElement(name = "orderLine")
      List<OrderLine> orderLines;
+    ExtendProps extendProps;
 
     public RequestData() {
     }
@@ -23,5 +23,11 @@ public class RequestData {
     public RequestData(DeliveryOrder deliveryOrder, List<OrderLine> orderLines) {
         this.deliveryOrder = deliveryOrder;
         this.orderLines = orderLines;
+    }
+
+    public RequestData(DeliveryOrder deliveryOrder, List<OrderLine> orderLines,ExtendProps extendProps) {
+        this.deliveryOrder = deliveryOrder;
+        this.orderLines = orderLines;
+        this.extendProps = extendProps;
     }
 }

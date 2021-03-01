@@ -1,5 +1,7 @@
 package test.qimen.dto.stockout.deliver;
 
+import lombok.Data;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.text.SimpleDateFormat;
@@ -11,6 +13,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2020/7/24 18:25
  */
+@Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DeliveryOrder {
     String deliveryOrderCode;
@@ -26,7 +29,7 @@ public class DeliveryOrder {
     String createTime;
     String placeOrderTime;
     String payTime;
-    String payNo;
+    String payNo;//4200对应微信支付；2021对应支付宝
     String shopNick;
     String sellerNick;
     String buyerNick;
@@ -36,9 +39,9 @@ public class DeliveryOrder {
     double itemAmount;
     double discountAmount;
     int freight;
-    String logisticsCode;
+    String logisticsCode;//快递公司
     String logisticsName;
-    String expressCode;
+    String expressCode;//运单号
     String operateTime;
     String isUrgency;
     String invoiceFlag;
@@ -48,7 +51,7 @@ public class DeliveryOrder {
 
     String remark;
 
-    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode, List<OrderLine> orderLines, String logisticsCode, SenderInfo senderInfo, ReceiverInfo receiverInfo) {
+    public DeliveryOrder(String deliveryOrderCode, String orderType, String warehouseCode, List<OrderLine> orderLines, String logisticsCode,String expressCode) {
         this.deliveryOrderCode = deliveryOrderCode;
         this.preDeliveryOrderCode = "20200701";
         this.preDeliveryOrderId = "";
@@ -74,12 +77,12 @@ public class DeliveryOrder {
         this.totalAmount = this.itemAmount+this.freight+this.arAmount-this.discountAmount;
         this.logisticsCode = logisticsCode;
         this.logisticsName = "";
-        this.expressCode = "";
+        this.expressCode = expressCode;
         this.operateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.isUrgency = "N";
         this.invoiceFlag = "N";
-        this.senderInfo = senderInfo;
-        this.receiverInfo = receiverInfo;
+        this.senderInfo = new SenderInfo();
+        this.receiverInfo =new ReceiverInfo();
         this.remark = "你好备注";
     }
 }

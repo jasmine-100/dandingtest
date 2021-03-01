@@ -21,7 +21,7 @@ public class GoodApi extends Data{
         Param param = new Param("singleitem.synchronize");
 
         String sku = "QSKU"+new SimpleDateFormat("yyMMddHHmmss").format(new Date());
-        Good good = new Good("add",logicWarehouCode,ownerCode,new Item(sku,"台式机","SO"+sku));
+        Good good = new Good("add",logicWarehouCode,ownerCode,new Item(sku,"苹果手机","SO"+sku));
 
         ApiClient.doPostXml(URL,param,null,good);
     }
