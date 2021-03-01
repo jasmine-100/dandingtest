@@ -21,12 +21,12 @@ public class OrderLine {
     String batchCode;
 
     // 推送发货单实体类
-    public OrderLine(int i,String ownerCode, String itemCode, int planQty, String batchCode) {
+    public OrderLine(int i,String ownerCode, String itemCode, String itemName,int planQty, String batchCode) {
         this.orderLineNo = i;
         this.ownerCode = ownerCode;
         this.itemCode = itemCode;
         this.itemId = itemCode;
-        this.itemName = "";
+        this.itemName = itemName;
         this.planQty = planQty;
         this.sourceOrderCode = "";
         this.subSourceOrderCode = "";
