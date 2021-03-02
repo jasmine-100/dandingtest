@@ -36,7 +36,7 @@ public class WmsStockinApi extends Data {
 //        skuParams.add(new SkuParam("SKU2101141456","2021021802004",1000,2,1,"2020-10-10","2022-10-10"));
 //        skuParams.add(new SkuParam("SKU2101141456","2021021802005",1000,2,1,"2020-10-10","2022-10-10"));
 
-        StockinOrder stockinOrder = new StockinOrder(orderno,warehouseCode,ownerCode,0,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
+        StockinOrder stockinOrder = new StockinOrder(orderno,"",warehouseCode,ownerCode,0,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
 
         ApiClient.doPostJson(urlStockin,null,null,stockinOrder);
     }

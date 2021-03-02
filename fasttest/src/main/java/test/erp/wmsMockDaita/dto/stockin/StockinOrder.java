@@ -24,8 +24,8 @@ public class StockinOrder {
     List<SkuParam> skuParamList;
     String backFlag;
 
-    public StockinOrder(String inOrderNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
-        this.downstreamNo = "JIN"+inOrderNo;
+    public StockinOrder(String inOrderNo,String downstreamNo, String warehouseCode, String ownerCode, int isConfirm, String orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
+        this.downstreamNo = downstreamNo;
         this.inOrderNo = inOrderNo;
         this.warehouseCode = warehouseCode;
         this.ownerCode = ownerCode;

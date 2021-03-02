@@ -23,9 +23,9 @@ public class OrderSet extends Data {
 
     @Test
     public void order1(){ // 哈哈科技有限公司，黑店
-//        items.add(new Item("SKU02011134",null,"",50,1));//保税：税费0
-        items.add(new Item("SKU2101281833",null,"",50,1));//保税：税费大于0
-//        items.add(new Item("SKU01311458",null,"",50,3));//完税
+//        items.add(new Item("SKU02011134","外部保税商品1","",50,1));//保税：税费0
+//        items.add(new Item("SKU2101281833","外部保税商品","",50,1));//保税：税费大于0
+        items.add(new Item("SKU01311458","外部完税商品","",50,3));//完税
         OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",accessCode1);
 //        OrderDTO order = new OrderDTO(orderNo,items,null,null,"V2",Data.accessCode1);
 

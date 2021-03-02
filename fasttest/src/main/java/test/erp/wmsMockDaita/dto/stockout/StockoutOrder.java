@@ -28,8 +28,8 @@ public class StockoutOrder {
     List<SkuParam> skuParamList;
     String backFlag;
 
-    public StockoutOrder(String outOrderNo, String warehouseCode, String ownerCode,String logisticsCompanyCode, String logisticsNo, int orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
-        this.downstreamNo = "JOT"+outOrderNo;
+    public StockoutOrder(String outOrderNo,String downstreamNo, String warehouseCode, String ownerCode,String logisticsCompanyCode, String logisticsNo, int orderType, List<SkuParam> skuParamList,String operationTime,String actualDate) {
+        this.downstreamNo = downstreamNo;
         this.outOrderNo = outOrderNo;
         this.warehouseCode = warehouseCode;
         this.ownerCode = ownerCode;
