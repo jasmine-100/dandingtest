@@ -19,7 +19,7 @@ public class OrderDTO {
     String outShopCode;
     long orderTime;
     String key;
-    String saleChannel;
+    String saleChannel;//B2CSC但丁商城，
     String appCode;
     String remark;
     // 商品信息
@@ -64,7 +64,7 @@ public class OrderDTO {
     long promiseTime;
     String customsCode;//口岸
 
-    public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode, String expressNo, String appCode, String outShopCode) {
+    public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode,String saleChannel, String expressNo, String appCode, String outShopCode) {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.outOrderNo = outOrderNo;
         this.declareOrderNo = outOrderNo;
@@ -72,7 +72,7 @@ public class OrderDTO {
         this.outShopCode = outShopCode;
         this.orderTime = UtilsTime.getTime("yyyyMMddHHmmss","20210101120000");
         this.key = "webB2CwebB2C336OON1606982954410";
-        this.saleChannel = "V2";
+        this.saleChannel = saleChannel;
         this.appCode = appCode;
         this.remark = null;
         this.declarePayNo = "DPN"+str;

@@ -24,7 +24,7 @@ public class CcsOrder {
         ResultSet resultSet = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://10.99.111.83:3306/ccs_order","root","ENPInr4GJRefShEI");
+            connection = DriverManager.getConnection("jdbc:mysql://10.98.149.233:3306/ccs_order","mysql","x66as9tT8Cl2FHA1");
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT sn from ccs_customs_inventory_"+getDate()+" WHERE declare_order_no=\""+declareOrderNo+"\"");
             while (resultSet.next()){

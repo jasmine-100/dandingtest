@@ -25,7 +25,7 @@ public class WmsStockinApi extends Data {
     @Test
     public void backStockin(){
         List<SkuParam> skuParams = new ArrayList<>();
-        skuParams.add(new SkuParam("SKM20210220103354","2021021801002",100,1,1,"2020-10-10","2022-10-10"));
+        skuParams.add(new SkuParam("SKM20210220103354","2021021801002",100,1,1,"2020-10-10","2022-10-10",true));
 //        skuParams.add(new SkuParam("SKU2101141455","2021021801002",1000,1,1,"2020-10-10","2022-10-10"));
 //        skuParams.add(new SkuParam("SKU2101141455","2021021801003",3000,1,1,"2020-10-10","2022-10-10"));
 //        skuParams.add(new SkuParam("SKU2101141455","2021021801004",2000,2,1,"2020-10-10","2022-10-10"));
