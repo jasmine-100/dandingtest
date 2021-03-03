@@ -40,4 +40,23 @@ public class Stockin {
         this.origSystem = "OMS";
         this.approvalStatus = 1;
     }
+
+    public Stockin(String orderNo,int orderType,String outShopId,String warehouseCode, String ownerCode, List<InOrderDetailParam> inOrderDetailParamList,ReceiveSendInfoParam receiveInfo) {
+        this.upstreamNo = orderNo;
+        this.businessNo = orderNo;
+        this.logicWarehouseCode = warehouseCode;
+        this.ownerCode = ownerCode;
+        this.inOrderDetailParamList = inOrderDetailParamList;
+        this.businessValue = new BusinessValue("THRK",outShopId,warehouseCode);
+        this.receiveSendInfoParam = receiveInfo;
+        this.remark = "奇门备注哈哈哈";
+        this.isPush = 1;
+        this.isBack = 1;
+        this.tradeType = 2;
+        this.type = orderType;
+        this.expectTime = UtilsTime.getTime("yyyyMMddHHmmss","2021-02-30 00:00:00");
+        this.origSystem = "OMS";
+        this.approvalStatus = 1;
+    }
+
 }

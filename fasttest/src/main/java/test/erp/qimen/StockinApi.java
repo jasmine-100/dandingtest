@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import test.erp.qimen.dto.Params;
 import test.erp.qimen.dto.cancel.OrderCancel;
 import test.erp.qimen.dto.stockin.InOrderDetailParam;
+import test.erp.qimen.dto.stockin.ReceiveSendInfoParam;
 import test.erp.qimen.dto.stockin.Stockin;
 import utils.client.ApiClient;
 
@@ -23,7 +24,9 @@ public class StockinApi extends Data {
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
         detailParamLists.add(new InOrderDetailParam("SK210222112519","RMB",10,100));
         // 组装单据信息
-        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists);
+//        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists);
+        ReceiveSendInfoParam receiveInfo = new ReceiveSendInfoParam("浙4","杭4","江4");
+        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists,receiveInfo);
         // 组装接口参数
         Params params = new Params(orderno,"4",stockin);
 

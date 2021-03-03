@@ -74,7 +74,7 @@ public class OrderDTO {
         this.key = "webB2CwebB2C336OON1606982954410";
         this.saleChannel = "KUAISHOU";
         this.appCode = appCode;
-        this.remark = null;
+        this.remark = "早点儿发货哦";
         this.declarePayNo = "DPN"+str;
         this.payNo = "PN"+str;
         this.itemList = itemList;
@@ -93,10 +93,10 @@ public class OrderDTO {
         this.receiverName = "李哈哈";
         this.receiverMobile = "15966663333";
         this.receiverCardId = "330110200012135502";
-//        this.senderProvince = "河北省";
-//        this.senderCity = "石家庄市";
-//        this.senderDistrict = "长安区";
-//        this.senderAddress = "彩虹路100号";
+        this.senderProvince = "河北省";
+        this.senderCity = "石家庄市";
+        this.senderDistrict = "长安区";
+        this.senderAddress = "彩虹路100号";
         this.senderName = "齐吉吉";
         this.senderMobile = "15866660000";
         this.payerName = "jasmine";
