@@ -30,4 +30,15 @@ public class ReceiverInfo {
         this.tel = "15966660000";
         this.mobile = "15818521909";
     }
+
+    public ReceiverInfo(String province,String city,String area) {
+        this.province = province;
+        this.city = city;
+        this.area = area;
+        this.detailAddress = "彩虹大道101号";
+        this.name = "陈小姐";
+        this.tel = "15966660000";
+        this.mobile = "15818521909";
+    }
+
 }

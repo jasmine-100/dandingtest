@@ -1,7 +1,7 @@
 package test.erp.wmsMockDaita;
 
 import org.testng.annotations.Test;
-import test.erp.wmsMockDaita.dto.stockin.SkuParam;
+import test.erp.wmsMockDaita.dto.stockout.SkuParam;
 import test.erp.wmsMockDaita.dto.stockout.StockoutOrder;
 import utils.client.ApiClient;
 import utils.database.ErpOrder;

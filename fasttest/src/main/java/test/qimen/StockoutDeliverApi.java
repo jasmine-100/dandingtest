@@ -29,13 +29,16 @@ public class StockoutDeliverApi extends Data {
         List<OrderLine> orderLines = new ArrayList<>();
         orderLines.add(new OrderLine(1,ownerCode,"SKU2101141460","奇门外部商品",1,null));
 
-        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"ZTO","ZTO"+str);//C单出库
-//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"DB");//B单出库
+        SenderInfo senderInfo = new SenderInfo("上海1","上海市","虹口区");
+        ReceiverInfo receiverInfo = new ReceiverInfo("北京1","北京市","朝阳区");
+//        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"ZTO","ZTO"+str,senderInfo,receiverInfo);//C单出库
+        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"DB","SF",senderInfo,receiverInfo);//B单出库
 
         // 保税订单--保税信息
-        ExtendProps extendProps = new ExtendProps(orderno,0,10,5,0,0,deliveryOrder,orderLines);
+//        ExtendProps extendProps = new ExtendProps(orderno,0,10,5,0,0,deliveryOrder,orderLines);
+//        RequestData requestData = new RequestData(deliveryOrder,orderLines,extendProps);
 
-        RequestData requestData = new RequestData(deliveryOrder,orderLines,extendProps);
+        RequestData requestData = new RequestData(deliveryOrder,orderLines,null);
 
         ApiClient.doPostXml(URL,param,null,requestData);
 

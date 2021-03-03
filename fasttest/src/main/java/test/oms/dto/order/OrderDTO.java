@@ -64,7 +64,7 @@ public class OrderDTO {
     long promiseTime;
     String customsCode;//口岸
 
-    public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode,String saleChannel, String expressNo, String appCode, String outShopCode) {
+    public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode,String expressNo, String appCode, String outShopCode,String province,String city,String district) {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.outOrderNo = outOrderNo;
         this.declareOrderNo = outOrderNo;
@@ -72,7 +72,7 @@ public class OrderDTO {
         this.outShopCode = outShopCode;
         this.orderTime = UtilsTime.getTime("yyyyMMddHHmmss","20210101120000");
         this.key = "webB2CwebB2C336OON1606982954410";
-        this.saleChannel = saleChannel;
+        this.saleChannel = "KUAISHOU";
         this.appCode = appCode;
         this.remark = null;
         this.declarePayNo = "DPN"+str;
@@ -86,9 +86,9 @@ public class OrderDTO {
         this.discount = 1;
         this.expressCode = expressCode;
         this.expressNo = expressNo;
-        this.receiverProvince = "浙江省";
-        this.receiverCity = "杭州市";
-        this.receiverDistrict = "江干区";
+        this.receiverProvince = province;
+        this.receiverCity = city;
+        this.receiverDistrict = district;
         this.receiverAddress = "九堡九和路科技城";
         this.receiverName = "李哈哈";
         this.receiverMobile = "15966663333";
