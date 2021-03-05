@@ -5,7 +5,7 @@ import test.oms.dto.v2.ApiV2ServiceName;
 import test.oms.dto.v2.orderV2.Item;
 import test.oms.dto.v2.orderV2.OrderDTO;
 import test.oms.dto.v2.orderV2Cancel.OrderCancel;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 import utils.util.BizData;
 
 import java.text.SimpleDateFormat;

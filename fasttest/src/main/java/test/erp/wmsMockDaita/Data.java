@@ -21,4 +21,11 @@ public class Data {
 
 //    String warehouseCode = "DT_HNWMS";//  海南保税仓的wms编码
 //    String ownerCode = "hainanHuozhu0222";// 海南奇门货主
+
+    //哈哈科技有限公司
+//    String warehouseCode = "JHSef054dHahaJinyiHuozhu";//哈哈金义仓库（强效期）
+//    String ownerCode = "HahaJinyiHuozhu";//哈哈金义货主（强效期）
+
+//    String warehouseCode = "JHS50d300HahaJinyiHuozhu2";//哈哈金义仓（非强效期）
+//    String ownerCode = "HahaJinyiHuozhu2";//哈哈金义货主2（非强效期）
 }

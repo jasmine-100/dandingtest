@@ -2,7 +2,7 @@ package test.wmsDaita;
 
 import org.testng.annotations.Test;
 import test.wmsDaita.dto.rq.RongQi;
-import utils.client.GatewayHttpClient;
+import utils.client.gatewayDTO.GatewayHttpClient;
 import utils.client.gatewayDTO.BaseTest;
 
 /**

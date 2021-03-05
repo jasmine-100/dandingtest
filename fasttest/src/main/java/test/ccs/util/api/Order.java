@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.testng.annotations.Test;
 import test.ccs.Data;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.io.IOException;
 

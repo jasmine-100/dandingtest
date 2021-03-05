@@ -1,4 +1,4 @@
-package utils.client;
+package utils.client.gatewayDTO;
 
 import com.alibaba.fastjson.JSON;
 import com.github.kevinsawicki.http.HttpRequest;

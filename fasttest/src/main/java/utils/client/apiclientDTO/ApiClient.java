@@ -1,4 +1,4 @@
-package utils.client;
+package utils.client.apiclientDTO;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;

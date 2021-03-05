@@ -70,7 +70,7 @@ public class OrderDTO {
         this.declareOrderNo = outOrderNo;
         this.outPayNo = "OPN"+str;
         this.outShopCode = outShopCode;
-        this.orderTime = UtilsTime.getTime("yyyyMMddHHmmss","20210101120000");
+        this.orderTime = UtilsTime.getTime("20210101120000");
         this.key = "webB2CwebB2C336OON1606982954410";
         this.saleChannel = "KUAISHOU";
         this.appCode = appCode;
@@ -109,8 +109,8 @@ public class OrderDTO {
         this.declareCode = "PathErpV2";//申报路径编码
         this.merchantCode = "MC2009250949000038"; // 付款商户号
         this.payAmount = this.goodsAmount+this.shipAmount+this.taxAmount-this.discount;
-        this.payTime = UtilsTime.getTime("yyyyMMddHHmmss","20210102150000");
-        this.payDeclareTime = UtilsTime.getTime("yyyyMMddHHmmss","20210105160000");
-        this.promiseTime = UtilsTime.getTime("yyyyMMddHHmmss","20210103130000");
+        this.payTime = UtilsTime.getTime("20210102150000");
+        this.payDeclareTime = UtilsTime.getTime("20210105160000");
+        this.promiseTime = UtilsTime.getTime("20210103130000");
     }
 }

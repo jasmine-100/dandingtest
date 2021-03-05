@@ -3,7 +3,7 @@ package test.erp.qimen;
 import org.testng.annotations.Test;
 import test.erp.qimen.dto.Params;
 import test.erp.qimen.dto.good.Good;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

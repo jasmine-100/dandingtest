@@ -44,7 +44,7 @@ public class Stock {
         this.goodsSeqNo = goodsSeqNo;
         this.goodsUnit = "001";
         this.hsCode = "3304990039";
-        this.inDate = UtilsTime.getTime("yyyyMMddHHmmss","20200901102030");
+        this.inDate = UtilsTime.getTime("20200901102030");
         this.inLegalQty = 1000;
         this.inQty = 1000;
         this.firstUnit = "011";

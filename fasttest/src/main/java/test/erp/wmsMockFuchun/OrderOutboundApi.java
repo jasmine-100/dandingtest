@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import test.erp.wmsMockFuchun.dto.ParamsWms;
 import test.erp.wmsMockFuchun.dto.deliver.Product;
 import test.erp.wmsMockFuchun.dto.outbound.OutboundData;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 import utils.util.UtilsXml;
 
 import java.io.IOException;

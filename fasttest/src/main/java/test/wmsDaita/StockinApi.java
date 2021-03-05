@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import test.wmsDaita.dto.stockin.DetailParam;
 import test.wmsDaita.dto.stockin.HdrParam;
 import test.wmsDaita.dto.stockin.StockinOrder;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

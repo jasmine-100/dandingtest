@@ -2,7 +2,7 @@ package test.wmsDaita;
 
 import org.testng.annotations.Test;
 import test.wmsDaita.dto.cancel.Cancel;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 /**
  * @Author： jasmine

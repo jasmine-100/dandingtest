@@ -2,7 +2,7 @@ package utils.client.gatewayDTO;
 
 import com.alibaba.fastjson.JSON;
 import org.testng.annotations.BeforeTest;
-import utils.client.GatewayHttpClient;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +18,7 @@ public abstract class BaseTest {
     //开发环境
     protected GatewayHttpClient devClient = new GatewayHttpClient("http://192.168.20.200:9195","96A63530DA0C49BB9FABB66ED40FB3C7","F6A99B36E4D24817AB037237454893D9",true);
     //测试环境
-    protected GatewayHttpClient testClient = new GatewayHttpClient("http://danding-gateway.yang800.cn","96A63530DA0C49BB9FABB66ED40FB3C7","F6A99B36E4D24817AB037237454893D9",true);
+    protected GatewayHttpClient testClient = new GatewayHttpClient("http://danding-gateway-pre.yang800.com","96A63530DA0C49BB9FABB66ED40FB3C7","F6A99B36E4D24817AB037237454893D9",true);
     //线上环境
     protected GatewayHttpClient onlineClient = new GatewayHttpClient("http://danding-gateway.yang800.com","9E514E70AD7D485986D687F64616C662","33F14542BB274284B63147E6C8F3DF9E",true);
     protected GatewayHttpClient client;
@@ -28,7 +28,7 @@ public abstract class BaseTest {
         client = testClient;
         if (client.getLoginFlag()){
             Map<String,String> param = new HashMap<>();
-            param.put("userName","小花花");
+            param.put("userName","哈哈科技有限公司");
             param.put("password","Abc123");
             String result = GatewayHttpClient.send(client,"/ucenter-account/customer/login","",param);
             LoginToken loginToken = JSON.parseObject(result,LoginToken.class);

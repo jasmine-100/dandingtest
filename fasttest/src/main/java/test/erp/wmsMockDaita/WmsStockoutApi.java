@@ -3,7 +3,7 @@ package test.erp.wmsMockDaita;
 import org.testng.annotations.Test;
 import test.erp.wmsMockDaita.dto.stockout.SkuParam;
 import test.erp.wmsMockDaita.dto.stockout.StockoutOrder;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 import utils.database.ErpOrder;
 
 import java.text.SimpleDateFormat;

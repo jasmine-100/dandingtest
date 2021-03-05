@@ -20,10 +20,10 @@ public class UtilsTime {
      * @param time  yyyyMMddHHmmss 格式
      * @return 返回时间戳
      */
-    public static long getTime(String pattern,String time){
+    public static long getTime(String time){
         java.util.Date date = null;
         try {
-            date = new SimpleDateFormat(pattern).parse(time);
+            date = new SimpleDateFormat("yyyyMMddHHmmss").parse(time);
         } catch (ParseException e) {
             e.printStackTrace();
         }

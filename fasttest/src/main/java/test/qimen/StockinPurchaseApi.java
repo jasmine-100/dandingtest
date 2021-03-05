@@ -5,7 +5,7 @@ import test.qimen.dto.Param;
 import test.qimen.dto.stockin.purchase.EntryOrder;
 import test.qimen.dto.stockin.purchase.OrderLine;
 import test.qimen.dto.stockin.purchase.RequestData;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

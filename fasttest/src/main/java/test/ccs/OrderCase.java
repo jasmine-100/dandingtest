@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import test.ccs.dto.Item;
 import test.ccs.dto.back.*;
 import test.ccs.dto.order.Order;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import test.qimen.dto.Param;
 import test.qimen.dto.good.Good;
 import test.qimen.dto.good.Item;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

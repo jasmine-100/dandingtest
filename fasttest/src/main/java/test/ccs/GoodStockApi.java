@@ -3,10 +3,9 @@ package test.ccs;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.testng.annotations.Test;
-import test.ccs.Data;
 import test.ccs.dto.Good;
 import test.ccs.dto.Stock;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.io.File;
 

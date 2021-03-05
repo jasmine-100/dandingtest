@@ -3,7 +3,7 @@ package test.wmsDaita;
 import org.testng.annotations.Test;
 import test.wmsDaita.dto.good.ErpSku;
 import test.wmsDaita.dto.good.Good;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

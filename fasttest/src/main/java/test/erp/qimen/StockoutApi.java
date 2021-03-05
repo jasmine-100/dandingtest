@@ -5,7 +5,7 @@ import test.erp.qimen.dto.Params;
 import test.erp.qimen.dto.cancel.OrderCancel;
 import test.erp.qimen.dto.stockout.OutOrderDetailFrom;
 import test.erp.qimen.dto.stockout.Stockout;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

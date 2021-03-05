@@ -3,7 +3,7 @@ package test.oms;
 import org.testng.annotations.Test;
 import test.oms.dto.order.Item;
 import test.oms.dto.order.OrderDTO;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

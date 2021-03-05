@@ -80,7 +80,7 @@ public class Order {
         this.outOrderNo = outOrderNo;
         this.payChannel = "wechatpay";
         this.tradePayNo = "TPN" + str;
-        this.tradeTime = UtilsTime.getTime("yyyyMMddHHmmss","20201010120000");
+        this.tradeTime = UtilsTime.getTime("20201010120000");
         this.routeCode = routeCode;
         this.senderName = "奶粉厂家";
         this.buyerIdNumber = "330110199912102236";

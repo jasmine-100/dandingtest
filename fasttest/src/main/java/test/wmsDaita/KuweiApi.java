@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import test.wmsDaita.dto.Kuwei.Hangdao;
 import test.wmsDaita.dto.Kuwei.Kuqu;
 import test.wmsDaita.dto.Kuwei.Kuwei;
-import utils.client.GatewayHttpClient;
+import utils.client.gatewayDTO.GatewayHttpClient;
 import utils.client.gatewayDTO.BaseTest;
 
 /**

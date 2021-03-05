@@ -36,7 +36,7 @@ public class Stockin {
         this.isBack = 1;
         this.tradeType = 2;
         this.type = orderType;
-        this.expectTime = UtilsTime.getTime("yyyyMMddHHmmss","2021-02-30 00:00:00");
+        this.expectTime = UtilsTime.getTime("20210230000000");
         this.origSystem = "OMS";
         this.approvalStatus = 1;
     }
@@ -54,7 +54,7 @@ public class Stockin {
         this.isBack = 1;
         this.tradeType = 2;
         this.type = orderType;
-        this.expectTime = UtilsTime.getTime("yyyyMMddHHmmss","2021-02-30 00:00:00");
+        this.expectTime = UtilsTime.getTime("20210230000000");
         this.origSystem = "OMS";
         this.approvalStatus = 1;
     }

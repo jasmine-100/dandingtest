@@ -3,7 +3,7 @@ package test.erp.wmsMockDaita;
 import org.testng.annotations.Test;
 import test.erp.wmsMockDaita.dto.stockin.SkuParam;
 import test.erp.wmsMockDaita.dto.stockin.StockinOrder;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 import utils.database.ErpOrder;
 
 import java.util.ArrayList;

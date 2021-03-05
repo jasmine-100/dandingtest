@@ -6,7 +6,7 @@ import test.erp.qimen.dto.cancel.OrderCancel;
 import test.erp.qimen.dto.stockin.InOrderDetailParam;
 import test.erp.qimen.dto.stockin.ReceiveSendInfoParam;
 import test.erp.qimen.dto.stockin.Stockin;
-import utils.client.ApiClient;
+import utils.client.apiclientDTO.ApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
