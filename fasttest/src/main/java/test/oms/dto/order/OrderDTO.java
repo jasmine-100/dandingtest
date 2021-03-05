@@ -95,15 +95,17 @@ public class OrderDTO {
         this.receiverDistrict = district;
         this.receiverAddress = "九堡九和路科技城";
         //发货信息
-        this.senderName = "齐吉吉";
-        this.senderMobile = "15866660000";
-        this.senderProvince = "河北省";
-        this.senderCity = "石家庄市";
-        this.senderDistrict = "长安区";
-        this.senderAddress = "彩虹路100号";
+//        this.senderName = "齐吉吉";
+//        this.senderMobile = "15866660000";
+//        this.senderProvince = "河北省";
+//        this.senderCity = "石家庄市";
+//        this.senderDistrict = "长安区";
+//        this.senderAddress = "彩虹路100号";
+        //支付人信息
         this.payerName = "jasmine";
         this.payerCardId = "330159666623012236";
         this.payChannel = "wechatpay";
+
         this.declareCode = "PathErpV2";//申报路径编码
         this.merchantCode = "MC2009250949000038"; // 付款商户号
         this.payAmount = this.goodsAmount+this.shipAmount+this.taxAmount-this.discount;
