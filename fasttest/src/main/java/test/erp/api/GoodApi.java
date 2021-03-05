@@ -39,6 +39,7 @@ public class GoodApi extends BaseTest {
         // 采购价：添加采购价
         PurPrice purPrice = new PurPrice(supplierCode,goodId,"HKD",100,"20201010000000","20210510000000");
         GatewayHttpClient.send(client,"/ares-web/supplier/mixOnePriceWithGood",accessToken,purPrice);
+
     }
 
 }
