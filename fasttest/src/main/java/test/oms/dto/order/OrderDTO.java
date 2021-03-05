@@ -86,19 +86,21 @@ public class OrderDTO {
         this.discount = 1;
         this.expressCode = expressCode;
         this.expressNo = expressNo;
+        // 收货信息
+        this.receiverName = "李哈哈";
+        this.receiverMobile = "15966663333";
+        this.receiverCardId = "330110200012135502";
         this.receiverProvince = province;
         this.receiverCity = city;
         this.receiverDistrict = district;
         this.receiverAddress = "九堡九和路科技城";
-        this.receiverName = "李哈哈";
-        this.receiverMobile = "15966663333";
-        this.receiverCardId = "330110200012135502";
+        //发货信息
+        this.senderName = "齐吉吉";
+        this.senderMobile = "15866660000";
         this.senderProvince = "河北省";
         this.senderCity = "石家庄市";
         this.senderDistrict = "长安区";
         this.senderAddress = "彩虹路100号";
-        this.senderName = "齐吉吉";
-        this.senderMobile = "15866660000";
         this.payerName = "jasmine";
         this.payerCardId = "330159666623012236";
         this.payChannel = "wechatpay";

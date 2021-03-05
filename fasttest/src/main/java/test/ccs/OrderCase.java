@@ -15,10 +15,10 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String str = "20210303164840";
+    String str = "20210305110203";
     String declareOrderNo = "JOS"+str;
     String outOrderNo = "JOS"+str;
-    String logiticsNo = "ZTOMOCK1614761323389";
+    String logiticsNo = "ZTOMOCK1614913346648";
     String invtNo = "QD"+str;
     String routeCode = "xiaohei2";//xiaohei1 支付单运单；xiaohei2 订单清单；xiaohei3 清单
 
