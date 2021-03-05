@@ -16,11 +16,11 @@ import java.util.List;
 public class OrderDTO {
     // 单据信息
     String outOrderNo;
-    String outShopCode;
+    String outShopCode;//外部店铺授权的accessCode
     long orderTime;
     String key;
     String saleChannel;//B2CSC但丁商城，
-    String appCode;
+    String appCode;//渠道编码
     String remark;
     // 商品信息
     List<Item> itemList;
