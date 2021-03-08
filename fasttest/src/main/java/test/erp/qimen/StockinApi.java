@@ -22,11 +22,11 @@ public class StockinApi extends Data {
 
         // 组装商品信息
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
-        detailParamLists.add(new InOrderDetailParam("SK210222112519","RMB",10,100));
+        detailParamLists.add(new InOrderDetailParam("SK210308165426","RMB",10,100));
         // 组装单据信息
 //        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists);
-        ReceiveSendInfoParam receiveInfo = new ReceiveSendInfoParam("浙4","杭4","江4");
-        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists,receiveInfo);
+        ReceiveSendInfoParam receiveInfo = new ReceiveSendInfoParam("浙江省","杭州市","江干区");
+        Stockin stockin = new Stockin(orderno,1,"", logicWarehouseCode,ownerCode,detailParamLists,receiveInfo);
         // 组装接口参数
         Params params = new Params(orderno,"4",stockin);
 
@@ -36,7 +36,7 @@ public class StockinApi extends Data {
     @Test
     public void stockinCancel(){
         String orderno = "QM20210218114546";
-        OrderCancel orderCancel = new OrderCancel(orderno,"-1",warehouseCode,ownerCode);
+        OrderCancel orderCancel = new OrderCancel(orderno,"-1", logicWarehouseCode,ownerCode);
         Params params = new Params(orderno,"8",orderCancel);
 
         ApiClient.doPostJson(URL,null,null,params);

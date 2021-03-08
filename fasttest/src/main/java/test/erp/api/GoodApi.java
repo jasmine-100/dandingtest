@@ -27,7 +27,7 @@ public class GoodApi extends BaseTest {
         String supplierCode = "S642180";
 
         //添加货品
-        Good good = new Good(goodId,"哈密瓜","BR1611112740116","DUTY_PAID",100,"YES");
+        Good good = new Good(goodId,"大白兔","BR1611112740116","DUTY_PAID",100,"YES");
         GatewayHttpClient.send(client,"/ares-web/goods/save",accessToken,good);
 
         //采购价：添加供应商关联

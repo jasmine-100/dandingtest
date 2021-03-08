@@ -17,7 +17,7 @@ import java.util.List;
  * @Date : Created in 2020/12/24 16:51
  */
 public class WmsStockoutApi extends Data {
-    String orderno = "OB202102051331290333053832";
+    String orderno = "OB202103081759230878603412";
 
     @Test
     public void updateStatusOut(){
@@ -25,14 +25,11 @@ public class WmsStockoutApi extends Data {
     }
     @Test
     public void backStockout(){
-        String sku = "G1612339450609";
-        String bacthCode = "9500001";
+        String sku = "ID20210308175332";
+        String bacthCode = "202103081750";
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         List<SkuParam> skuParams = new ArrayList<>();
-//        skuParams.add(new SkuParam(sku,null,1,1,1,null,null));//完税
-        skuParams.add(new SkuParam(sku,bacthCode,1,1,1,null,null));//完税
-//        skuParams.add(new SkuParam(sku,null,1,1,1,"2020-10-10","2025-10-10"));//完税
-//        skuParams.add(new SkuParam(sku,bacthCode,1,1,1,"",""));//完税
+        skuParams.add(new SkuParam(sku,bacthCode,10,1,1,null,null));//完税
         StockoutOrder order = new StockoutOrder(orderno,"",warehouseCode,ownerCode,"SF","sf"+str,1,skuParams,"2020-12-01 10:00:00","2020-12-01 11:00:00");
 
         ApiClient.doPostJson(urlStockout,null,null,order);
