@@ -23,13 +23,12 @@ public abstract class BaseTest {
     protected GatewayHttpClient onlineClient = new GatewayHttpClient("http://danding-gateway.yang800.com","9E514E70AD7D485986D687F64616C662","33F14542BB274284B63147E6C8F3DF9E",true);
     protected GatewayHttpClient client;
 
-    @BeforeTest
-    public void login(){
+    public void login(String name,String pwd){
         client = testClient;
         if (client.getLoginFlag()){
             Map<String,String> param = new HashMap<>();
-            param.put("userName","哈哈科技有限公司");
-            param.put("password","Abc123");
+            param.put("userName",name);
+            param.put("password",pwd);
             String result = GatewayHttpClient.send(client,"/ucenter-account/customer/login","",param);
             LoginToken loginToken = JSON.parseObject(result,LoginToken.class);
             accessToken = loginToken.getData().getAccessToken();

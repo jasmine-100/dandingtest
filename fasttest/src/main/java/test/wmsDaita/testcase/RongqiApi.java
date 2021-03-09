@@ -1,5 +1,6 @@
 package test.wmsDaita.testcase;
 
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import test.wmsDaita.testcase.dto.rq.RongQi;
 import utils.client.gatewayDTO.GatewayHttpClient;
@@ -10,7 +11,7 @@ import utils.client.gatewayDTO.BaseTest;
  * @Description :
  * @Date : Created in 2021/2/23 14:25
  */
-public class RongqiApi extends BaseTest {
+public class RongqiApi extends LoginWms {
     int startno = 11;
     int endno =20;
     int temp = startno;
@@ -25,7 +26,6 @@ public class RongqiApi extends BaseTest {
 
     @Test
     public void addRongqi(){
-        this.login();
         RongQi rongQi = new RongQi("rq"+temp,"容器"+temp);
         GatewayHttpClient.send(client,"/dt-wms-portal/container/add",accessToken,rongQi);
     }
