@@ -2,7 +2,6 @@ package test.qimen.testcase;
 
 import org.testng.annotations.Test;
 import test.qimen.testcase.dto.Param;
-import test.qimen.dto.stockout.outbound.*;
 import test.qimen.testcase.dto.stockout.outbound.*;
 import utils.client.apiclientDTO.ApiClient;
 
