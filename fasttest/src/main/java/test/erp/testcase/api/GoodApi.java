@@ -1,5 +1,6 @@
 package test.erp.testcase.api;
 
+import com.alibaba.fastjson.JSONObject;
 import org.testng.annotations.Test;
 import test.erp.testcase.api.dto.good.Good;
 import test.erp.testcase.api.dto.good.PurPrice;
@@ -37,7 +38,13 @@ public class GoodApi extends LoginErp {
 
         // 采购价：添加采购价
         PurPrice purPrice = new PurPrice(supplierCode,goodId,"HKD",100,"20201010000000","20210510000000");
-        GatewayHttpClient.send(client,"/ares-web/supplier/mixOnePriceWithGood",accessToken,purPrice);
+        String response = GatewayHttpClient.send(client,"/ares-web/supplier/mixOnePriceWithGood",accessToken,purPrice);
+
+        //采购价：提交审核
+        JSONObject json = JSONObject.parseObject(response);
+        String msg = json.getString("message");//获取采购价id
+        System.out.println(json);
+        System.out.println(msg);
 
     }
 
