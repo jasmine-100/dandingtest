@@ -53,9 +53,9 @@ public class WmsStockinApi extends Data {
                 String bathcode = sheet.getCell(5,i).getContents();
                 SkuParam skuParam = new SkuParam(sku,bathcode,num,inventoryType,i,productDate,expireDate,false);
                 skuParams.add(skuParam);
-                System.out.println(skuParam);
+//                System.out.println(skuParam);
             }
-            StockinOrder stockinOrder = new StockinOrder("ET202103101012330805255279","ASN21031000000301","DT_MNWMS0308","JJCS",0,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
+            StockinOrder stockinOrder = new StockinOrder("ET202103101012330805255279","ASN210310000005","DT_MNWMS0308","JJCS",0,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
 
             ApiClient.doPostJson(urlStockin,null,null,stockinOrder);
         }catch (Exception e){
