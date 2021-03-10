@@ -42,8 +42,8 @@ public class GoodApi extends LoginErp {
 
         //采购价：提交审核
         JSONObject json = JSONObject.parseObject(response);
-        String msg = json.getString("message");//获取采购价id
         System.out.println(json);
+        String msg = json.getString("message");//获取采购价id
         System.out.println(msg);
 
     }
