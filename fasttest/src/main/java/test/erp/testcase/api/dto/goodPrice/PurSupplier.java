@@ -1,4 +1,4 @@
-package test.erp.testcase.api.dto.good;
+package test.erp.testcase.api.dto.goodPrice;
 
 import lombok.Data;
 
