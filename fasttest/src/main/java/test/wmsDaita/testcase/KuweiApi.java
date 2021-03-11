@@ -14,13 +14,13 @@ import utils.client.gatewayDTO.BaseTest;
  * @Date : Created in 2021/2/24 19:49
  */
 public class KuweiApi extends LoginWms {
-    String kuquCode = "KqJx000CP1";//次品库区
-    String hangdaoCode = "HdJx000CP1";//次品巷道
-    String kuweiCode = "KwJx000CP2";//次品库位
+//    String kuquCode = "KqJx000CP1";//次品库区
+//    String hangdaoCode = "HdJx000CP1";//次品巷道
+//    String kuweiCode = "KwJx000CP2";//次品库位
 
-//    String kuquCode = "KqJx000ZP2";//次品库区
-//    String hangdaoCode = "HdJx000ZP2";//次品巷道
-//    String kuweiCode = "KwJx000ZP2";//次品库位
+    String kuquCode = "KqJx000ZP2";//正品库区
+    String hangdaoCode = "HdJx000ZP2";//正品巷道
+    String kuweiCode = "KwJx000ZP2";//正品库位
 
     @Test
     public void kuquAdd(){ //添加库区
