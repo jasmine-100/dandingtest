@@ -11,8 +11,19 @@ import java.util.Date;
 public class GoodApi extends Data {
 
     @Test
-    public void goodAdd(){
-        String str = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
+    public void addGoods(){
+        for (int i=0;i<10;i++){
+            String goodNo = "SKU20210315" + i;
+            Good good = new Good(goodNo,"小仓鼠",goodNo, logicWarehouseCode,ownerCode);
+            Params params = new Params(goodNo,"3",good);
+
+            ApiClient.doPostJson(URL,null,null,params);
+        }
+    }
+
+    @Test
+    public void addGood(){
+        String str = new SimpleDateFormat("yyMMddHHmmssSSS").format(new Date());
         String goodNo = "SK" + str;
 //        String goodNo = "SK210222112519";
         Good good = new Good(goodNo,"小仓鼠",str, logicWarehouseCode,ownerCode);
