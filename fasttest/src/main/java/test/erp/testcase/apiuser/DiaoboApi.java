@@ -1,4 +1,4 @@
-package test.erp.testcase.api;
+package test.erp.testcase.apiuser;
 
 /**
  * @Author： jasmine

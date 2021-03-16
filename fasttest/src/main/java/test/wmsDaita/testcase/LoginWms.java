@@ -12,7 +12,7 @@ public class LoginWms extends BaseTest {
 
     @BeforeTest
     public void login(){
-        this.login("大白白","Abc123");
+        this.login("大白白","Abc123","/ucenter-account/customer/login");
     }
 
 }

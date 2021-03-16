@@ -1,4 +1,4 @@
-package test.erp.testcase.api;
+package test.erp.testcase.apiadmin;
 
 import org.testng.annotations.BeforeTest;
 import utils.client.gatewayDTO.BaseTest;
@@ -8,11 +8,11 @@ import utils.client.gatewayDTO.BaseTest;
  * @Description :
  * @Date : Created in 2021/3/9 17:02
  */
-public class LoginErp extends BaseTest {
+public class LoginErpAdmin extends BaseTest {
 
     @BeforeTest
     public void login(){
-        this.login("哈哈科技有限公司","Abc123");
+        this.login("admin","Abc123","/ucenter-account/admin/login");
     }
 
 }

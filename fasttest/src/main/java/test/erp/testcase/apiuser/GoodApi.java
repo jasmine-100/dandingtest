@@ -1,11 +1,11 @@
-package test.erp.testcase.api;
+package test.erp.testcase.apiuser;
 
 import com.alibaba.fastjson.JSONObject;
 import org.testng.annotations.Test;
-import test.erp.testcase.api.dto.good.Good;
-import test.erp.testcase.api.dto.goodPrice.PurPrice;
-import test.erp.testcase.api.dto.goodPrice.PurPriceSubmit;
-import test.erp.testcase.api.dto.goodPrice.PurSupplier;
+import test.erp.testcase.apiuser.dto.good.Good;
+import test.erp.testcase.apiuser.dto.goodPrice.PurPrice;
+import test.erp.testcase.apiuser.dto.goodPrice.PurPriceSubmit;
+import test.erp.testcase.apiuser.dto.goodPrice.PurSupplier;
 import utils.client.gatewayDTO.GatewayHttpClient;
 
 import java.text.SimpleDateFormat;
@@ -18,7 +18,7 @@ import java.util.List;
  * @Description :
  * @Date : Created in 2021/3/5 15:05
  */
-public class GoodApi extends LoginErp {
+public class GoodApi extends LoginErpUser {
 
     @Test
     public void addGood(){

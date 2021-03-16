@@ -1,4 +1,4 @@
-package test.erp.testcase.api.dto.goodPrice;
+package test.erp.testcase.apiuser.dto.goodPrice;
 
 import lombok.Data;
 import utils.util.UtilsTime;

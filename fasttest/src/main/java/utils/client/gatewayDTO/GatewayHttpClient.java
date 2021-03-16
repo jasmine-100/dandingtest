@@ -63,12 +63,13 @@ public class GatewayHttpClient {
         headers.put("sign",finalSign);
         headers.put("Content-Type", HttpRequest.CONTENT_TYPE_JSON);
         headers.put("accessToken",token);
-        System.out.println("header:" + JSON.toJSONString(headers));
+//        System.out.println("header:" + JSON.toJSONString(headers));
         try{
             HttpRequest httpRequest = HttpRequest.post(client.getHost() + uri).headers(headers).send(body);
             if (httpRequest.ok()){
-//                System.out.println(httpRequest.body());
-                return (httpRequest.body());
+                String response = httpRequest.body();
+                System.out.println(response);
+                return (response);
             }else {
                 return ("HTTP状态码：" + httpRequest.code());
             }

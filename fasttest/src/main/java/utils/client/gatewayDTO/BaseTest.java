@@ -1,8 +1,6 @@
 package utils.client.gatewayDTO;
 
 import com.alibaba.fastjson.JSON;
-import org.testng.annotations.BeforeTest;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,13 +21,13 @@ public abstract class BaseTest {
     protected GatewayHttpClient onlineClient = new GatewayHttpClient("http://danding-gateway.yang800.com","9E514E70AD7D485986D687F64616C662","33F14542BB274284B63147E6C8F3DF9E",true);
     protected GatewayHttpClient client;
 
-    public void login(String name,String pwd){
+    public void login(String name,String pwd,String uri){
         client = testClient;
         if (client.getLoginFlag()){
             Map<String,String> param = new HashMap<>();
             param.put("userName",name);
             param.put("password",pwd);
-            String result = GatewayHttpClient.send(client,"/ucenter-account/customer/login","",param);
+            String result = GatewayHttpClient.send(client,uri,"",param);
             LoginToken loginToken = JSON.parseObject(result,LoginToken.class);
             accessToken = loginToken.getData().getAccessToken();
         }else {
