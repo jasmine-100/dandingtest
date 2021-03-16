@@ -15,7 +15,7 @@ public class StockoutOrder extends LoginErpAdmin {
     @Test
     public void orderPush(){
         for (int i=0;i<2;i++){
-            StockoutPush stockoutPush = new StockoutPush("OB202103161829310506832598");
+            StockoutPush stockoutPush = new StockoutPush("OB202103161940130895537511");
             GatewayHttpClient.send(client,"/ares-admin/outOrder/audit",accessToken,stockoutPush);//审核
             GatewayHttpClient.send(client,"/ares-admin/outOrder/pushOutOrder",accessToken,stockoutPush);//推送
         }
@@ -24,7 +24,7 @@ public class StockoutOrder extends LoginErpAdmin {
     @Test
     public void orderCancel(){
         for (int i=0;i<2;i++){
-            StockoutCancel stockoutCancel = new StockoutCancel("OB202103161829310506832598");
+            StockoutCancel stockoutCancel = new StockoutCancel("OB202103160910200792483393");
             GatewayHttpClient.send(client,"/ares-admin/outOrder/revocation",accessToken,stockoutCancel);
         }
     }

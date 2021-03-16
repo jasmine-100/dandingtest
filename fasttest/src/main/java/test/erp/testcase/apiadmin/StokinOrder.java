@@ -16,7 +16,7 @@ public class StokinOrder extends LoginErpAdmin {
     @Test
     public void orderPush(){
         for(int i=0;i<2;i++) {
-            StockinPush stockinPush = new StockinPush("ET202102251544460079882600");
+            StockinPush stockinPush = new StockinPush("ET202103152207480366983729");
             GatewayHttpClient.send(client,"/ares-admin/inOrder/pushInOrder",accessToken,stockinPush);
         }
     }
@@ -25,7 +25,7 @@ public class StokinOrder extends LoginErpAdmin {
     @Test
     public void orderCancel(){
         for (int i=0;i<2;i++) {
-            StockinCancel stockinCancel = new StockinCancel("ET202103152207480366983729");
+            StockinCancel stockinCancel = new StockinCancel("ET202103161619100671976501");
             GatewayHttpClient.send(client, "/ares-admin/inOrder/revocation", accessToken, stockinCancel);
         }
     }
