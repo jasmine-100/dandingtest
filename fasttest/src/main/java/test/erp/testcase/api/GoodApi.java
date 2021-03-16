@@ -52,12 +52,12 @@ public class GoodApi extends LoginErp {
     public void addGoods(){
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
-        for(int i=1;i<=550;i++){
-            String goodId = "SKU03101635_"+i;
+        for(int i=1;i<=5;i++){
+            String goodId = "SKU03161311_"+i;
             String supplierCode = "S642180";
 
             //添加货品
-            Good good = new Good(goodId,"棒棒糖"+i,"BR1611112740116","DUTY_PAID",100,"NO");
+            Good good = new Good(goodId,"口香糖"+i,"BR1611112740116","DUTY_PAID",100,"NO");
             GatewayHttpClient.send(client,"/ares-web/goods/save",accessToken,good);
 
             //采购价：添加供应商关联
