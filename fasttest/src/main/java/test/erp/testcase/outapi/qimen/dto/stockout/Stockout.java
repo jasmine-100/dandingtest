@@ -26,6 +26,7 @@ public class Stockout {
     int isPush;
     int isBack;
     BusinessValue businessValue;
+    String packingMaterials;//包材
 
     public Stockout(String orderno, String warehouseCode, String ownerCode, int orderType,List<OutOrderDetailFrom> outOrderDetailFromList) {
         this.businessNo = orderno;
@@ -37,6 +38,7 @@ public class Stockout {
         this.ownerCode = ownerCode;
         this.shopCode = "123";
         this.shopName = "哈哈小店";
+        this.packingMaterials = "abc123";
         this.receiveSendInfoFrom = new ReceiveSendInfoFrom();
         this.outOrderDetailFromList = outOrderDetailFromList;
         this.origSystem = "QM";

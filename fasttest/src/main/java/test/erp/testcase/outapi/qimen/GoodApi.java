@@ -13,9 +13,9 @@ public class GoodApi extends Data {
 
     @Test
     public void addGoods(){
-        for (int i=0;i<10;i++){
-            String goodNo = "SKU20210315" + i;
-            Good good = new Good(goodNo,"小仓鼠",goodNo, logicWarehouseCode,ownerCode);
+        for (int i=0;i<5;i++){
+            String goodNo = "SKU20210316" + i;
+            Good good = new Good(goodNo,"手帕纸"+i,goodNo, logicWarehouseCode,ownerCode);
             Params params = new Params(goodNo,"3",good);
 
             ApiClient.doPostJson(URL,null,null,params);
