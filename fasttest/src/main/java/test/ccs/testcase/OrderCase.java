@@ -6,7 +6,9 @@ import test.ccs.testcase.dto.back.*;
 import test.ccs.testcase.dto.order.Order;
 import utils.client.apiclientDTO.ApiClient;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,11 +17,11 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String str = "20210305110203";
-    String declareOrderNo = "JOS"+str;
-    String outOrderNo = "JOS"+str;
-    String logiticsNo = "ZTOMOCK1614913346648";
-    String invtNo = "QD"+str;
+    String declareOrderNo = "JOS20210317171704";
+    String outOrderNo = declareOrderNo;
+//    String logiticsNo = "123"+new SimpleDateFormat("yyMMddHHmmss").format(new Date());
+    String logiticsNo = "sfMOCK1615974193175";
+    String invtNo = "QD"+declareOrderNo;
     String routeCode = "xiaohei2";//xiaohei1 支付单运单；xiaohei2 订单清单；xiaohei3 清单
 
     @Test
@@ -77,6 +79,18 @@ public class OrderCase {
     @Test
     public void qingdanBackTax()  { // 税费
         BackTax.backTaxrd(invtNo,Data.ebcCode,600.6,10,30,"20201120130000001");
+    }
+    @Test
+    public void qingdanErrorPayerId(){ //订购人身份证号码有误
+        BackQingdanZongshu.errorPayerId(declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,invtNo,"20201112150000001");
+    }
+    @Test
+    public void qingdanErrorPayerInfo(){ //订单购买人与支付单支付人名字或身份证号码不一致
+        BackQingdanZongshu.errorPayerInfo(declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,invtNo,"20201112150000001");
+    }
+    @Test
+    public void qingdanErrorPayerNoequal(){ //清单订购人和订单不一致
+        BackQingdanZongshu.errorPayerNoequal(declareOrderNo,Data.ebpCode,Data.ebcCode,Data.agentCode,invtNo,"20201112150000001");
     }
     @Test
     public void qingdanErrorItem() { // 清单和订单表体不一致(申报终止,可重推)

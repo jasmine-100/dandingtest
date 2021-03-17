@@ -41,6 +41,15 @@ public class BackQingdanZongshu {
     }
 
     // 申报失败的回执
+    public static void errorPayerId(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) {
+        modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1300;Desc:人工退单，订购人身份证号码有误]",returntime);
+    }
+    public static void errorPayerInfo(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) {
+        modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1327;Desc:订单购买人与支付单支付人名字或身份证号码不一致]",returntime);
+    }
+    public static void errorPayerNoequal(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) {
+        modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:13127;Desc:清单订购人和订单不一致，修改订购人后重新申报]",returntime);
+    }
     public static void errorLimit(String orderNo,String ebpCode,String ebcCode,String agentCode,String invtNo,String returntime) {
         modelData(orderNo,ebpCode,ebcCode,agentCode,invtNo,"100","[Code:1313;Desc:订购人购买超过年度限额,超过个人年度购买额度]",returntime);
     }
