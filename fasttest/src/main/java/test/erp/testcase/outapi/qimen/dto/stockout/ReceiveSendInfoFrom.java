@@ -19,7 +19,7 @@ public class ReceiveSendInfoFrom {
     String sendContactPhone;
 
     public ReceiveSendInfoFrom() {
-        this.logisticsCompanyCode = "SF";
+        this.logisticsCompanyCode = "SF100";
         this.receiveProvince = "浙江省";
         this.receiveCity = "杭州市";
         this.receiveDistrict = "西湖区";

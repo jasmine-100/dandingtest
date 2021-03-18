@@ -87,8 +87,8 @@ public class OrderDTO {
         this.expressCode = expressCode;
         this.expressNo = expressNo;
         // 收货信息
-        this.receiverName = "李哈哈";
-        this.receiverMobile = "15966663333";
+        this.receiverName = "~AgAAAACZM5UF/UWWnwA3pWsXY7a7U4aaFnBhudCLBZo=~Eelw//ms~10~~";
+        this.receiverMobile = "$X5JTusXbWCpy$AgAAAACZM5UG/UWWnwCVVhxFsnQoOdJwEhovk6QymiI=$10$$";
         this.receiverCardId = "330110200012135502";
         this.receiverProvince = province;
         this.receiverCity = city;

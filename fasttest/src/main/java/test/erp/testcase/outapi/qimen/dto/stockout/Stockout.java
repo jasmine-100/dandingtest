@@ -41,7 +41,7 @@ public class Stockout {
         this.packingMaterials = "abc123";
         this.receiveSendInfoFrom = new ReceiveSendInfoFrom();
         this.outOrderDetailFromList = outOrderDetailFromList;
-        this.origSystem = "QM";
+        this.origSystem = "QIMEN";
         this.buyerIDType = 1;
         this.type = orderType;
         this.tradeType = 2;
