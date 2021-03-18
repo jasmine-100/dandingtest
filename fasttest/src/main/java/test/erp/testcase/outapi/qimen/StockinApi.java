@@ -24,10 +24,8 @@ public class StockinApi extends Data {
         // 组装商品信息
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
         detailParamLists.add(new InOrderDetailParam("SKU202103160","RMB",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU202103161","RMB",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU202103162","RMB",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU202103163","RMB",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU202103164","RMB",10,1000));
+        detailParamLists.add(new InOrderDetailParam("SKU202103160","HKD",10,1000));
+//        detailParamLists.add(new InOrderDetailParam("SKU202103162","RMB",10,1000));
 
         // 组装单据信息
 //        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists);
