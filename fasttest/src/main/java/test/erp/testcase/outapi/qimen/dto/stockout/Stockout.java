@@ -14,6 +14,7 @@ public class Stockout {
     long payTime;
     long expectTime;
     String logicWarehouseCode;
+    String sourcePlatform;//渠道
     String ownerCode;
     String shopCode;
     String shopName;
@@ -36,12 +37,13 @@ public class Stockout {
         this.expectTime = UtilsTime.getTime("20210310000000");
         this.logicWarehouseCode = warehouseCode;
         this.ownerCode = ownerCode;
+        this.sourcePlatform = "";
         this.shopCode = "123";
         this.shopName = "哈哈小店";
         this.packingMaterials = "abc123";
         this.receiveSendInfoFrom = new ReceiveSendInfoFrom();
         this.outOrderDetailFromList = outOrderDetailFromList;
-        this.origSystem = "QIMEN";
+        this.origSystem = "QM";
         this.buyerIDType = 1;
         this.type = orderType;
         this.tradeType = 2;

@@ -15,7 +15,7 @@ public class Param {
      String app_key;
      String method; // deliveryorder.create 发货单；stockout.create 出库单；
      String sign_method;
-     String customerId;
+     String customerId;//店铺
      String format;
      String timestamp;
      String sign;
