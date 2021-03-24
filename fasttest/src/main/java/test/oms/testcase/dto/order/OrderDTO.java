@@ -81,9 +81,9 @@ public class OrderDTO {
         this.packageMaterial = "DT";
         this.customsCode = "JINYI";//金义口岸
         this.goodsAmount = itemList.stream().reduce(0.0,(x,y)->x+(y.getUnitPrice()*y.getCount()),Double::sum);
-        this.shipAmount = 10.5;
-        this.taxAmount = 20;
-        this.discount = 1;
+        this.shipAmount = 0;
+        this.taxAmount = 0;
+        this.discount = 0;
         this.expressCode = expressCode;
         this.expressNo = expressNo;
         // 收货信息
@@ -113,4 +113,5 @@ public class OrderDTO {
         this.payDeclareTime = UtilsTime.getTime("20210105160000");
         this.promiseTime = UtilsTime.getTime("20210103130000");
     }
+
 }
