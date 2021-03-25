@@ -6,7 +6,8 @@ public class Data {
     public String URL = "http://ares-admin.yang800.com/ares-admin/open/inEntrance";
 
     //erp内部wms回执接口
-    public static String url = "https://ares-admin.yang800.com";
+//    public static String url = "https://ares-admin.yang800.com";//预发环境
+    public static String url = "https://ares-admin.yang800.com.cn";//测试环境
     public static String urlStockin = url + "/ares-admin/open/dtInStockCallback";
     public static String urlStockout = url + "/ares-admin/open/dtOutStockCallback";
 
