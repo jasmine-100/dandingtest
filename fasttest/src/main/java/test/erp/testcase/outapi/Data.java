@@ -11,7 +11,6 @@ public class Data {
     public static String urlStockin = url + "/ares-admin/open/dtInStockCallback";
     public static String urlStockout = url + "/ares-admin/open/dtOutStockCallback";
 
-
     public String warehouseCode = "DT_JYWMS1230";//  金义完税仓
     // 哈哈科技有限公司
 //    public String logicWarehouseCode = "JHS71d3a7TuoguanQ";//托管仓(强效期)
