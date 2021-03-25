@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description :同步货品的接口
  * @Date : Created in 2021/2/24 17:54
  */
 public class GoodApi extends Data{

@@ -27,7 +27,7 @@ public abstract class BaseTest {
             Map<String,String> param = new HashMap<>();
             param.put("userName",name);
             param.put("password",pwd);
-            String result = GatewayHttpClient.send(client,uri,"",param);
+            String result = GatewayHttpClient.send(client,"/ucenter-account/current/userInfo","",param);
             LoginToken loginToken = JSON.parseObject(result,LoginToken.class);
             accessToken = loginToken.getData().getAccessToken();
         }else {

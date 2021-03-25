@@ -34,6 +34,7 @@ public class StockoutDeliverApi extends Data {
         DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouseCode,orderLines,"ZTO","ZTO"+str,senderInfo,receiverInfo);//C单出库
 //        DeliveryOrder deliveryOrder = new DeliveryOrder(orderno,"JYCK",logicWarehouCode,orderLines,"DB","SF",senderInfo,receiverInfo);//B单出库
 
+
         // 保税订单--保税信息
 //        ExtendProps extendProps = new ExtendProps(orderno,0,10,5,0,0,deliveryOrder,orderLines);
 //        RequestData requestData = new RequestData(deliveryOrder,orderLines,extendProps);

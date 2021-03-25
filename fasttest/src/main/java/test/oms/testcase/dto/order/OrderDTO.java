@@ -72,7 +72,7 @@ public class OrderDTO {
         this.outShopCode = outShopCode;
         this.orderTime = UtilsTime.getTime("20210101120000");
         this.key = "webB2CwebB2C336OON1606982954410";
-        this.saleChannel = "KUAISHOU";
+        this.saleChannel = "V2";
         this.appCode = appCode;
         this.remark = "早点儿发货哦";
         this.declarePayNo = "DPN"+str;

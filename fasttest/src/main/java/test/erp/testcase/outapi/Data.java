@@ -4,7 +4,6 @@ public class Data {
 
     //erp内部奇门接口
     public String URL = "http://ares-admin.yang800.com/ares-admin/open/inEntrance";
-//    String outShopId = "";// 店铺ID
 
     //erp内部wms回执接口
     public static String url = "https://ares-admin.yang800.com";
@@ -12,9 +11,8 @@ public class Data {
     public static String urlStockout = url + "/ares-admin/open/dtOutStockCallback";
 
 
-    // 哈哈科技有限公司
     public String warehouseCode = "DT_JYWMS1230";//  金义完税仓
-
+    // 哈哈科技有限公司
 //    public String logicWarehouseCode = "JHS71d3a7TuoguanQ";//托管仓(强效期)
 //    public String ownerCode = "TuoguanQ";//托管仓(强效期)
 
