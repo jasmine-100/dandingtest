@@ -34,6 +34,5 @@ public class WmsStockoutApi extends Data {
         StockoutOrder order = new StockoutOrder(orderno,"2121001",1,warehouseCode,ownerCode,"SF","sf"+str,1,skuParams,"2020-12-01 10:00:00","2020-12-01 11:00:00");
 
         ApiClient.doPostJson(urlStockout,null,null,order);
-
     }
 }
