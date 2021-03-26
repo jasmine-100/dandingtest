@@ -40,7 +40,10 @@ public class Data {
 //    public static String TESTBASE1 = "http://ccs.backend.uat.yang800.com";
 //    public static String TESTBASE2 = "http://ccs.fen.uat.yang800.com";
 
-    // 日常测试环境域名
+    // 预发环境
+//    public static String DOMAIN = "http://ccs.backend.daily.yang800.com";
+//    public static String DOMAINBACK = "http://ccs.fen.daily.yang800.com";
+    //测试环境
     public static String DOMAIN = "http://ccs.backend.daily.yang800.com";
     public static String DOMAINBACK = "http://ccs.fen.daily.yang800.com";
 

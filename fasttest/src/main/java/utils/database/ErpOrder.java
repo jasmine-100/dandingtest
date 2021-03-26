@@ -29,7 +29,7 @@ public class ErpOrder {
         Statement statement = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-//            connection = DriverManager.getConnection("jdbc:mysql://10.99.208.36/erp_order","mysql","JZeHrutBJxFUIy4B");//测试环境
+//            connection = DriverManager.getConnection("jdbc:mysql://10.97.118.199/erp_order","mysql","F9DFOweNU3C02oFA");//测试环境
             connection = DriverManager.getConnection("jdbc:mysql://10.98.149.233/erp_order","mysql","x66as9tT8Cl2FHA1");//预发环境
             statement = connection.createStatement();
             flag = statement.execute(sql);
