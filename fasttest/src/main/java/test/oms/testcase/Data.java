@@ -7,8 +7,8 @@ package test.oms.testcase;
  */
 public class Data {
 
-//    public static String URL = "http://oms.explorer.daily.yang800.com.cn";//测试环境
-    public static String URL = "http://oms.explorer.daily.yang800.com";//预发环境
+    public static String URL = "http://oms.explorer.daily.yang800.com.cn";//测试环境
+//    public static String URL = "http://oms.explorer.daily.yang800.com";//预发环境
     // OMS内部下单接口
     public static String OrderUrl = URL + "/channelOrder/submit";
 
