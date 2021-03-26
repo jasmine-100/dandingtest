@@ -22,6 +22,8 @@ public class StockoutApi extends Data {
         // 组装商品
         List<OutOrderDetailFrom> outOrderDetailFromList = new ArrayList<>();
         outOrderDetailFromList.add(new OutOrderDetailFrom("SKU03161311_4",null,1,10,10));
+//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU202103160",null,1,20,10));
+//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU202103163",null,1,30,10));
         // 组装单据
         Stockout stockout = new Stockout(orderNo, logicWarehouseCode,ownerCode,3,outOrderDetailFromList);
         // 组装参数

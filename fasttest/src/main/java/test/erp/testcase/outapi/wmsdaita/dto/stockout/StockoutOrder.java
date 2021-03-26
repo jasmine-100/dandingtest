@@ -38,7 +38,7 @@ public class StockoutOrder {
         this.orderType = orderType;
         this.isConfirm = isConfirm;
         this.skuParamList = skuParamList;
-        this.backFlag = "123";
-//        this.backFlag = new SimpleDateFormat("hhmmssSSS").format(new Date());
+//        this.backFlag = "123002111";
+        this.backFlag = new SimpleDateFormat("hhmmssSSS").format(new Date());
     }
 }
