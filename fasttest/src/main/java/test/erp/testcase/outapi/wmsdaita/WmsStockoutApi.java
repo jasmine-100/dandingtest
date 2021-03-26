@@ -18,7 +18,7 @@ import java.util.List;
  * @Date : Created in 2020/12/24 16:51
  */
 public class WmsStockoutApi extends Data {
-    String orderno = "OB202103251428470465441961";
+    String orderno = "OB202103260946230848371717";
 
     @Test
     public void updateStatusOut(){
@@ -26,8 +26,8 @@ public class WmsStockoutApi extends Data {
     }
     @Test
     public void backStockout(){
-        String sku = "SKU03161311_2";
-        String bacthCode = "20210316003001";
+        String sku = "SKU03161311_4";
+        String bacthCode = "21031613561";
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         List<SkuParam> skuParams = new ArrayList<>();
         skuParams.add(new SkuParam(sku,bacthCode,1,1,1,null,null));
