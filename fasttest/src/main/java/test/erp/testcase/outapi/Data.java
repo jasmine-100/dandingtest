@@ -2,14 +2,13 @@ package test.erp.testcase.outapi;
 
 public class Data {
 
-    //erp内部奇门接口
-    public String URL = "http://ares-admin.yang800.com/ares-admin/open/inEntrance";
+    //erp内部接口域名
+//    public static String url = "https://ares-admin.yang800.com";//预发环境
+    public static String url = "https://ares-admin.yang800.com.cn";//测试环境
 
-    //erp内部wms回执接口
-    public static String url = "https://ares-admin.yang800.com";//预发环境
-//    public static String url = "https://ares-admin.yang800.com.cn";//测试环境
-    public static String urlStockin = url + "/ares-admin/open/dtInStockCallback";
-    public static String urlStockout = url + "/ares-admin/open/dtOutStockCallback";
+    public static String URL = url+"/ares-admin/open/inEntrance";//erp内部:奇门下单接口
+    public static String urlStockin = url + "/ares-admin/open/dtInStockCallback";//erp内部:wms入库回执接口
+    public static String urlStockout = url + "/ares-admin/open/dtOutStockCallback";//erp内部:wms出库回执接口
 
     public String warehouseCode = "DT_JYWMS1230";//  金义完税仓
     // 哈哈科技有限公司
