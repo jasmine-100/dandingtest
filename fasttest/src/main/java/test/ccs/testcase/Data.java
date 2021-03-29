@@ -45,7 +45,7 @@ public class Data {
 //    public static String DOMAINBACK = "http://ccs.fen.daily.yang800.com";
     //测试环境
     public static String DOMAIN = "http://ccs.backend.daily.yang800.com";
-    public static String DOMAINBACK = "http://ccs.fen.daily.yang800.com";
+    public static String DOMAINBACK = "http://ccs.fat.yang800.com.cn";//测试环境
 
     // ccs下单系统域名
     public static String URL_ORDER = DOMAIN +"/xhr/order/submit";
