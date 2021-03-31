@@ -18,7 +18,7 @@ import java.util.List;
  * @Date : Created in 2020/12/24 16:51
  */
 public class WmsStockoutApi extends Data {
-    String orderno = "OB202103291500530503137553";
+    String orderno = "OB202103301532220748607915";
 
     @Test
     public void updateStatusOut(){
@@ -32,7 +32,7 @@ public class WmsStockoutApi extends Data {
 //        skuParams.add(new SkuParam("SKU202103160","LOT210317000017",2,1,1,null,null));
 //        skuParams.add(new SkuParam("SKU202103163","LOT210317000015",3,1,1,null,null));
 
-        StockoutOrder order = new StockoutOrder(orderno,"2121001",1,warehouseCode,ownerCode,"SF","sf"+str,1,skuParams,"2020-12-01 10:00:00","2020-12-01 11:00:00");
+        StockoutOrder order = new StockoutOrder(orderno,"2121001",0,warehouseCode,ownerCode,"SF","sf"+str,1,skuParams,"2020-12-01 10:00:00","2020-12-01 11:00:00");
 
         ApiClient.doPostJson(urlStockout,null,null,order);
     }
