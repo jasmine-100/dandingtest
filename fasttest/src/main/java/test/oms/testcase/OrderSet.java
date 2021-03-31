@@ -20,10 +20,6 @@ public class OrderSet extends Data {
     @Test
     public void orders(){
         for (int i=0;i<10;i++){
-            String str = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-            String orderNo = "JOS"+str;
-            String expressNo = "SF"+str;
-            List<Item> items = new ArrayList<>();
             order1();
         }
     }
