@@ -17,7 +17,7 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String declareOrderNo = "JOS20210331181332";
+    String declareOrderNo = "JOS20210401094229894";
     String outOrderNo = declareOrderNo;
 //    String logiticsNo = "123"+new SimpleDateFormat("yyMMddHHmmss").format(new Date());
     String logiticsNo = "sf"+declareOrderNo;

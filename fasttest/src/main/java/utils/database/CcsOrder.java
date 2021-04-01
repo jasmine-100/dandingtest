@@ -27,7 +27,9 @@ public class CcsOrder {
 //            connection = DriverManager.getConnection("jdbc:mysql://10.98.149.233:3306/ccs_order","mysql","x66as9tT8Cl2FHA1");//预发环境
             connection = DriverManager.getConnection("jdbc:mysql://10.97.118.199:3306/ccs_order","mysql","F9DFOweNU3C02oFA");//测试环境
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("SELECT sn from ccs_customs_inventory_"+getDate()+" WHERE declare_order_no=\""+declareOrderNo+"\"");
+            String sql = "SELECT sn from ccs_customs_inventory_"+getDate()+" WHERE declare_order_no=\""+declareOrderNo+"\"";
+            System.out.println(sql);
+            resultSet = statement.executeQuery(sql);
             while (resultSet.next()){
                 orderSn = resultSet.getString("sn");
             }
@@ -54,13 +56,13 @@ public class CcsOrder {
         calendar.setTime(new Date());
         int year = calendar.get(Calendar.YEAR);
         int month = Calendar.MONTH+1;
-        int reason = month%3==0?month/3:month/3+1;
+        int reason = month/3+1;
         return year+"q"+reason;
     }
 
     @Test
     public void test(){
-        System.out.println(getOrderSn("DOS0909150322"));
+        System.out.println(getOrderSn("JOS20210401092540324"));
     }
 
 }
