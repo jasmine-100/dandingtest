@@ -10,10 +10,10 @@ public class InOrderDetailParam {
     double unitPrice;
     int planQuantity;
 
-    public InOrderDetailParam(String sku, String billCurrency, double unitPrice, int planQuantity) {
+    public InOrderDetailParam(String sku, double unitPrice, int planQuantity) {
         this.sku = sku;
         this.goodsName = "";
-        this.billCurrency = billCurrency;
+        this.billCurrency = "RMB";
         this.unitPrice = unitPrice;
         this.planQuantity = planQuantity;
     }
