@@ -19,6 +19,7 @@ public class WmsStockinApi {
 
     @Test
     public void backStockin(){
+
         List<Sku> skuList = new ArrayList<>();
         skuList.add(new Sku("sku123",1));
         StockinDto stockinDto = new StockinDto("",true,skuList);
