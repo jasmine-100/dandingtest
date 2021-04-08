@@ -13,10 +13,10 @@ public class GoodApi extends Data {
 
     @Test
     public void addGoods(){
-        for (int i=1;i<=10;i++){
-            String goodNo = "SKU20210408" + i;
+        String str ="SKU"+ new SimpleDateFormat("yyMMddHHmmss").format(new Date());
+        for (int i=1;i<=5;i++){
+            String goodNo = str + i;
             Good good = new Good(goodNo,"口香糖1"+i,goodNo,1,logicWarehouseCode,ownerCode);
-            Good good = new Good(goodNo,"口香糖2"+i,goodNo,2,logicWarehouseCode,ownerCode);
             Params params = new Params(goodNo,"3",good);
 
             ApiClient.doPostJson(URL,null,null,params);

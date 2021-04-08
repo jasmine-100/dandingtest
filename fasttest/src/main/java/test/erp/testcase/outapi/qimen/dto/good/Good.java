@@ -13,7 +13,10 @@ public class Good {
     int height;
     int length;
     int width;
-    int shelfLife;
+    int shelfLife;//保质期天数
+    int noSellDate;//禁售天数
+    int noCollectDate;//禁收天数
+    int warningDate;//预警天数
     String logicWarehouseCode;
     String ownerCode;
     String origSystem;
@@ -23,6 +26,11 @@ public class Good {
         this.goodsName = goodsName;
         this.barcode = barcode;
         this.batchManagement = batchManagement;
+        if(batchManagement == 1){
+            this.noSellDate = 100;
+            this.noCollectDate = 200;
+            this.warningDate = 150;
+        }
         this.grossWeight = 10;
         this.netWeight = 9;
         this.height = 17;
