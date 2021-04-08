@@ -18,11 +18,11 @@ public class Good {
     String ownerCode;
     String origSystem;
 
-    public Good(String sku, String goodsName, String barcode, String warehouseCode, String ownerCode) {
+    public Good(String sku,String goodsName, String barcode,int batchManagement,String warehouseCode, String ownerCode) {
         this.sku = sku;
         this.goodsName = goodsName;
         this.barcode = barcode;
-        this.batchManagement = 2;
+        this.batchManagement = batchManagement;
         this.grossWeight = 10;
         this.netWeight = 9;
         this.height = 17;

@@ -15,11 +15,14 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="999" target="1.8" />
+      <module name="api" target="1.8" />
       <module name="api.qimen" target="1.8" />
       <module name="api.v3" target="1.8" />
       <module name="api.wms" target="1.8" />
       <module name="java.ccs" target="1.8" />
+      <module name="java.erp" target="1.8" />
       <module name="java.jxc" target="8" />
+      <module name="java.oms" target="8" />
       <module name="java.wms" target="1.8" />
       <module name="orderTest" target="1.8" />
       <module name="utils" target="1.8" />
