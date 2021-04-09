@@ -31,8 +31,8 @@ public class OrderSet extends Data {
         String expressNo = "SF"+str;
         List<Item> items = new ArrayList<>();
 
-        items.add(new Item("SKU02031035","外部保税商品","",1000,1));
-//        items.add(new Item("SKU2103021336","外部完税商品","",50,1));
+//        items.add(new Item("SKU02031035","外部保税商品","",1000,1));
+        items.add(new Item("SKU2103021336","外部完税商品","",50,1));
 //        items.add(new Item("JD03261519","京东小商品","",50,1));
         OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",accessCode1,"浙江省","杭州市","滨江");
 //        OrderDTO order = new OrderDTO(orderNo,items,"SF",saleChannel,null,"V2",accessCode1);
