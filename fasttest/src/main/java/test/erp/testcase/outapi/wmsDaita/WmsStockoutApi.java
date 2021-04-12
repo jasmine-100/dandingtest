@@ -18,7 +18,7 @@ import java.util.List;
  * @Date : Created in 2020/12/24 16:51
  */
 public class WmsStockoutApi extends Data {
-    String orderno = "OB202104082050140053179822";
+    String orderno = "OB202104121832350962586686";
 
     @Test
     public void updateStatusOut(){
@@ -28,10 +28,10 @@ public class WmsStockoutApi extends Data {
     public void backStockout(){
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         List<SkuParam> skuParams = new ArrayList<>();
-//        skuParams.add(new SkuParam("SKU2104082000161","21040820062",10,1,1,null,null));
-//        skuParams.add(new SkuParam("SKU2104082000162","21040820172",10,1,2,null,null));
-//        skuParams.add(new SkuParam("SKU2104082000163","21040820183",10,1,3,"2020-10-10","2022-10-10"));
-//        skuParams.add(new SkuParam("SKU2104082000164","21040820183",10,1,4,"2020-10-10","2022-10-10"));
+//        skuParams.add(new SkuParam("SKU2104121603162","21041218291",10,1,1,null,null));
+//        skuParams.add(new SkuParam("SKU2104121602141","21041216391",10,1,2,null,null));
+        skuParams.add(new SkuParam("SKU2104121602141","21041216391",10,1,1,"2020-10-10","2022-10-10"));
+        skuParams.add(new SkuParam("SKU2104121603162","21041218291",10,1,2,"2020-10-10","2022-10-10"));
 //        skuParams.add(new SkuParam("SKU2104082000165","21040820181",10,1,5,"2020-10-10","2022-10-10"));
 //        skuParams.add(new SkuParam("SKU2104082000301","21040820123",10,1,6,"2020-10-10","2022-10-10"));
 //        skuParams.add(new SkuParam("SKU2104082000302","21040820152",10,1,7,"2020-10-10","2022-10-10"));
@@ -39,8 +39,8 @@ public class WmsStockoutApi extends Data {
 //        skuParams.add(new SkuParam("SKU2104082000304","21040820162",10,1,9,"2020-10-10","2022-10-10"));
 //        skuParams.add(new SkuParam("SKU2104082000305","21040820173",10,1,10,"2020-10-10","2022-10-10"));
 
-        skuParams.add(new SkuParam("SKU2104082000161","21040820064",10,2,10,"2020-10-10","2022-10-10"));
-        skuParams.add(new SkuParam("SKU2104082000305","21040820174",10,2,10,"2020-10-10","2022-10-10"));
+//        skuParams.add(new SkuParam("SKU2104082000161","21040820064",10,2,10,"2020-10-10","2022-10-10"));
+//        skuParams.add(new SkuParam("SKU2104082000305","21040820174",10,2,10,"2020-10-10","2022-10-10"));
 
         StockoutOrder order = new StockoutOrder(orderno,"2121001",0,warehouseCode,ownerCode,"SF","sf"+str,1,skuParams,"2020-12-01 10:00:00","2020-12-01 11:00:00");
 

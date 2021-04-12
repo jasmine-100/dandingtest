@@ -32,7 +32,7 @@ public class WmsStockinApi extends Data {
     public void backStockin(){
         List<SkuParam> skuParams = new ArrayList<>();
         String str = new SimpleDateFormat("yyMMddHHmm").format(new Date());
-        String sku = "SKU2104121602141";
+        String sku = "SKU2104121603162";
         skuParams.add(new SkuParam(sku,str+1,100,1,1,"2020-10-10","2022-10-10",false));
         skuParams.add(new SkuParam(sku,str+2,200,1,2,null,null,false));
 //        skuParams.add(new SkuParam(sku,str+2,200,1,2,"2020-10-10","2022-10-10",false));
