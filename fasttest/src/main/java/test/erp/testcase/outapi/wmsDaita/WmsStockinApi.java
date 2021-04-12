@@ -21,7 +21,7 @@ import java.util.List;
  * @Date : Created in 2020/11/28 17:40
  */
 public class WmsStockinApi extends Data {
-    String orderno = "ET202104082002140157848510";
+    String orderno = "ET202104121604520262954021";
 
     @Test
     public void updateStatusIn(){
@@ -32,7 +32,7 @@ public class WmsStockinApi extends Data {
     public void backStockin(){
         List<SkuParam> skuParams = new ArrayList<>();
         String str = new SimpleDateFormat("yyMMddHHmm").format(new Date());
-        String sku = "SKU2104082000165";
+        String sku = "SKU2104121602141";
         skuParams.add(new SkuParam(sku,str+1,100,1,1,"2020-10-10","2022-10-10",false));
         skuParams.add(new SkuParam(sku,str+2,200,1,2,null,null,false));
 //        skuParams.add(new SkuParam(sku,str+2,200,1,2,"2020-10-10","2022-10-10",false));
@@ -41,7 +41,7 @@ public class WmsStockinApi extends Data {
         skuParams.add(new SkuParam(sku,str+5,10,1,5,"2020-10-10","2022-10-10",true));
         skuParams.add(new SkuParam(sku,str+6,20,2,6,"2020-10-10","2022-10-10",true));
 
-        StockinOrder stockinOrder = new StockinOrder(orderno,"KJ"+orderno,warehouseCode,ownerCode,1,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
+        StockinOrder stockinOrder = new StockinOrder(orderno,"ASN210412000004",warehouseCode,ownerCode,1,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
 
         ApiClient.doPostJson(urlStockin,null,null,stockinOrder);
     }

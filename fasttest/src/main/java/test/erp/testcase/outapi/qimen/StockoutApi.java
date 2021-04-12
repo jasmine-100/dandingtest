@@ -21,16 +21,16 @@ public class StockoutApi extends Data {
 //        String orderNo = "QM20210218115030";
         // 组装商品
         List<OutOrderDetailFrom> outOrderDetailFromList = new ArrayList<>();
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000161",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000162",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000163",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000164",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000165",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000301",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000302",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000303",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000304",null,1,10,10));
-//        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000305",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000161",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000162",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000163",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000164",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000165",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000301",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000302",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000303",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000304",null,1,10,10));
+        outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000305",null,1,10,10));
 
         outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000161",null,2,10,10));
         outOrderDetailFromList.add(new OutOrderDetailFrom("SKU2104082000305",null,2,10,10));

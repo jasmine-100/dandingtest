@@ -20,7 +20,7 @@ public class KuweiApi extends LoginWms {
 
     String kuquCode = "KqJx000ZP2";//正品库区
     String hangdaoCode = "HdJx000ZP2";//正品巷道
-    String kuweiCode = "KwJx000ZP7";//正品库位
+    String kuweiCode = "KwJx000ZP8";//正品库位
 
     @Test
     public void kuquAdd(){ //添加库区
