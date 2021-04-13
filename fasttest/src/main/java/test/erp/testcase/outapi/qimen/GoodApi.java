@@ -16,8 +16,8 @@ public class GoodApi extends Data {
         String str ="SKU"+ new SimpleDateFormat("yyMMddHHmmss").format(new Date());
         for (int i=1;i<=3;i++){
             String goodNo = str + i;
-//            Good good = new Good(goodNo,"咖啡"+i,goodNo,1,logicWarehouseCode,ownerCode);//开启效期
-            Good good = new Good(goodNo,"牛奶"+i,goodNo,2,logicWarehouseCode,ownerCode);//关闭效期
+            Good good = new Good(goodNo,"奶茶"+i,goodNo,1,logicWarehouseCode,ownerCode);//开启效期
+//            Good good = new Good(goodNo,"纸巾"+i,goodNo,2,logicWarehouseCode,ownerCode);//关闭效期
             Params params = new Params(goodNo,"3",good);
 
             ApiClient.doPostJson(URL,null,null,params);
