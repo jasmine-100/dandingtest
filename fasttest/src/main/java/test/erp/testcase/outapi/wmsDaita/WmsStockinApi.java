@@ -21,7 +21,7 @@ import java.util.List;
  * @Date : Created in 2020/11/28 17:40
  */
 public class WmsStockinApi extends Data {
-    String orderno = "ET202104121604520262954021";
+    String orderno = "ET202104131019070168316219";
 
     @Test
     public void updateStatusIn(){
@@ -31,11 +31,11 @@ public class WmsStockinApi extends Data {
     @Test
     public void backStockin(){
         List<SkuParam> skuParams = new ArrayList<>();
-        String str = new SimpleDateFormat("yyMMddHHmm").format(new Date());
-        String sku = "SKU2104121603162";
+        String str = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
+        String sku = "SKU2104131017501";
         skuParams.add(new SkuParam(sku,str+1,100,1,1,"2020-10-10","2022-10-10",false));
-        skuParams.add(new SkuParam(sku,str+2,200,1,2,null,null,false));
-//        skuParams.add(new SkuParam(sku,str+2,200,1,2,"2020-10-10","2022-10-10",false));
+//        skuParams.add(new SkuParam(sku,str+2,200,1,2,null,null,false));
+        skuParams.add(new SkuParam(sku,str+2,200,1,2,"2020-10-10","2022-10-10",false));
         skuParams.add(new SkuParam(sku,str+3,300,1,3,"2020-10-10","2022-10-10",false));
         skuParams.add(new SkuParam(sku,str+4,400,2,4,"2020-10-10","2022-10-10",false));
         skuParams.add(new SkuParam(sku,str+5,10,1,5,"2020-10-10","2022-10-10",true));

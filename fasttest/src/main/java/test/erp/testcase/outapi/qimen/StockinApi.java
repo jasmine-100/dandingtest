@@ -23,16 +23,12 @@ public class StockinApi extends Data {
 
         // 组装商品信息
         List<InOrderDetailParam> detailParamLists = new ArrayList<>();
-        detailParamLists.add(new InOrderDetailParam("SKU2104121602141",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121602142",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121602143",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121602144",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121602145",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121603161",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121603162",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121603163",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121603164",10,1000));
-        detailParamLists.add(new InOrderDetailParam("SKU2104121603165",10,1000));
+        detailParamLists.add(new InOrderDetailParam("SKU2104131017381",10,1000));
+        detailParamLists.add(new InOrderDetailParam("SKU2104131017382",10,1000));
+        detailParamLists.add(new InOrderDetailParam("SKU2104131017383",10,1000));
+        detailParamLists.add(new InOrderDetailParam("SKU2104131017501",10,1000));
+        detailParamLists.add(new InOrderDetailParam("SKU2104131017502",10,1000));
+        detailParamLists.add(new InOrderDetailParam("SKU2104131017503",10,1000));
 
         // 组装单据信息
 //        Stockin stockin = new Stockin(orderno,1,"",warehouseCode,ownerCode,detailParamLists);
