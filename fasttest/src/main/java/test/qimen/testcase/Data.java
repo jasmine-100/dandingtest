@@ -14,7 +14,9 @@ public class Data {
 
 //    String logicWarehouseCode = "BJCQb19b4chainanHuozhu0222";//海南奇门仓
 //    public static String ownerCode = "hainanHuozhu0222";//海南奇门货主
-    String logicWarehouseCode = "JHS597d78HahaJinyiQimen1";//金义奇门仓（强效期）
-    String ownerCode = "HahaJinyiQimen1";//哈哈金义奇门货主（强效期）
+//    String logicWarehouseCode = "JHS597d78HahaJinyiQimen1";//金义奇门仓（强效期）
+//    String ownerCode = "HahaJinyiQimen1";//哈哈金义奇门货主（强效期）
+    String logicWarehouseCode = "JHS71d3a7TuoguanQ";//金义奇门仓（强效期）
+    String ownerCode = "TuoguanQ";//哈哈金义奇门货主（强效期）
 
 }

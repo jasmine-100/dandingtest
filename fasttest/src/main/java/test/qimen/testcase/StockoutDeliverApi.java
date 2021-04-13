@@ -27,7 +27,7 @@ public class StockoutDeliverApi extends Data {
 
         // 接口报文体
         List<OrderLine> orderLines = new ArrayList<>();
-        orderLines.add(new OrderLine(1,ownerCode,"SK210308165426","奇门外部商品",1,null));
+        orderLines.add(new OrderLine(1,ownerCode,"SKU2104121602143","奇门外部商品",1,null));
 
         SenderInfo senderInfo = new SenderInfo("上海1","上海市","虹口区");
         ReceiverInfo receiverInfo = new ReceiverInfo("北京1","北京市","朝阳区");
