@@ -20,7 +20,7 @@ public class GoodApi extends Data {
 //            Good good = new Good(goodNo,"纸巾"+i,goodNo,2,logicWarehouseCode,ownerCode);//关闭效期
             Params params = new Params(goodNo,"3",good);
 
-            ApiClient.doPostJson(URL,null,null,params);
+            ApiClient.doPostJson(urlQimen,null,null,params);
         }
     }
 
@@ -32,7 +32,7 @@ public class GoodApi extends Data {
         Good good = new Good(goodNo,"咖啡豆",str, 1,logicWarehouseCode,ownerCode);
         Params params = new Params(goodNo,"3",good);
 
-        ApiClient.doPostJson(URL,null,null,params);
+        ApiClient.doPostJson(urlQimen,null,null,params);
     }
 
 }

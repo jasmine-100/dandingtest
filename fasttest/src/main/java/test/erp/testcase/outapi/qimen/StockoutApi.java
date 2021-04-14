@@ -28,7 +28,7 @@ public class StockoutApi extends Data {
         // 组装参数
         Params params = new Params(orderNo,"5",stockout);
 
-        ApiClient.doPostJson(URL,null,null,params);
+        ApiClient.doPostJson(urlQimen,null,null,params);
     }
 
     @Test
@@ -37,6 +37,6 @@ public class StockoutApi extends Data {
         OrderCancel orderCancel = new OrderCancel(orderno,"-2", logicWarehouseCode,ownerCode);
         Params params = new Params(orderno,"8",orderCancel);
 
-        ApiClient.doPostJson(URL,null,null,params);
+        ApiClient.doPostJson(urlQimen,null,null,params);
     }
 }

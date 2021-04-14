@@ -37,7 +37,7 @@ public class StockinApi extends Data {
         // 组装接口参数
         Params params = new Params(orderno,"4",stockin);
 
-        ApiClient.doPostJson(URL,null,null,params);
+        ApiClient.doPostJson(urlQimen,null,null,params);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class StockinApi extends Data {
         OrderCancel orderCancel = new OrderCancel(orderno,"-1", logicWarehouseCode,ownerCode);
         Params params = new Params(orderno,"8",orderCancel);
 
-        ApiClient.doPostJson(URL,null,null,params);
+        ApiClient.doPostJson(urlQimen,null,null,params);
     }
 
 }
