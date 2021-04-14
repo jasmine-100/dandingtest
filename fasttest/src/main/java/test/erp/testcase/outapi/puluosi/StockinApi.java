@@ -24,7 +24,7 @@ public class StockinApi extends Data {
         String orderno = "JIN"+str;
         List<Stockin.Good> goods = new ArrayList<>();
         goods.add(new Stockin.Good("G1618377054127","小火花","个",100));
-        Stockin stockin = new Stockin("PS123200001",orderno,ownerCode,logicWarehouseCode,"2021-05-01 10:00:00",goods);
+        Stockin stockin = new Stockin("PLS123200001",orderno,ownerCode,logicWarehouseCode,"2021-05-01 10:00:00",goods);
 
         ApiClient.doPostJson(urlPuluosi,null,null,stockin);
     }
