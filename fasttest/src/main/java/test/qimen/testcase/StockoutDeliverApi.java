@@ -42,7 +42,6 @@ public class StockoutDeliverApi extends Data {
         RequestData requestData = new RequestData(deliveryOrder,orderLines,null);
 
         ApiClient.doPostXml(URL,param,null,requestData);
-
     }
 
 }
