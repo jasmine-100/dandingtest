@@ -22,8 +22,8 @@ public class DiaoboApi extends Data {
         String str = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
         String orderno = "DO"+str;
         List<Diaobo.Good> goods = new ArrayList<>();
-        goods.add(new Diaobo.Good("","","",10,0,"",""));
-        Diaobo diaobo = new Diaobo(orderno,warehouseCode,ownerCode,"2021-04-10 10:00:00","浙江省杭州市上城区九堡科技园25幢2楼",goods);
+        goods.add(new Diaobo.Good("G1618377054127","",5,0,"",""));
+        Diaobo diaobo = new Diaobo("OP123466001",orderno,logicWarehouseCode,ownerCode,"2021-04-10 10:00:00","浙江省杭州市上城区九堡科技园25幢2楼",goods);
 
         ApiClient.doPostJson(urlPuluosi,null,null,diaobo);
     }

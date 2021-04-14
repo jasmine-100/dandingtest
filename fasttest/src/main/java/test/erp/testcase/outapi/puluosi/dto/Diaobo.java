@@ -18,11 +18,11 @@ public class Diaobo {
     private String method;
     private String appKey;
     private String appSecret;
-    private String sendNotice;//出库单号
+    private String sendNotice;//出库通知单号（即 出库单号）
     private String sourceCode;//来源系统
     private String customerId;//货主编码
     private String warehouseId;//逻辑仓编码
-    private String applyNo;//融资单号
+    private String applyNo;//融资单号（即 销售单号）
     private String expectDate;//预计送达时间
     private String note1;//备注
     private String sendAddress;//发货地址
@@ -31,16 +31,16 @@ public class Diaobo {
     private String consigneeAdress;//收货地址
     private List<Good> goodList;
 
-    public Diaobo(String orderno,String warehouseId,String customerId,String expectDate,String sendAddress, List<Good> goodList) {
+    public Diaobo(String applyNo,String sendNotice,String warehouseId,String customerId,String expectDate,String sendAddress, List<Good> goodList) {
         this.sign = "GDJFFKG++FD==";
         this.method = "wms.entry.out.notice";
         this.appKey = "asfgweg";
         this.appSecret = "appSecret";
-        this.sendNotice = orderno;
+        this.sendNotice = sendNotice;
         this.sourceCode = "80";
         this.customerId = customerId;
         this.warehouseId = warehouseId;
-        this.applyNo = "AN"+new SimpleDateFormat("yyMMddHHmmss").format(new Date());
+        this.applyNo = applyNo;
         this.expectDate = expectDate;
         this.note1 = "快点儿发货";
         this.sendAddress = sendAddress;
@@ -62,9 +62,9 @@ public class Diaobo {
         private String produceDate;//生产日期
         private String expireDate;//失效日期
 
-        public Good(String goodsNo, String goodsName, String batchId, int noticesendQty,int stockType, String produceDate, String expireDate) {
+        public Good(String goodsNo, String batchId, int noticesendQty,int stockType, String produceDate, String expireDate) {
             this.goodsNo = goodsNo;
-            this.goodsName = goodsName;
+            this.goodsName = null;
             this.unit = "个";
             this.batchId = batchId;
             this.noticesendQty = noticesendQty;
