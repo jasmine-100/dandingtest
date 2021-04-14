@@ -23,8 +23,8 @@ public class StockinApi extends Data {
         String str = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
         String orderno = "JIN"+str;
         List<Stockin.Good> goods = new ArrayList<>();
-        goods.add(new Stockin.Good("SKU"+str,"小火花","个",100));
-        Stockin stockin = new Stockin(orderno,ownerCode,logicWarehouseCode,"2021-05-01 10:00:00",goods);
+        goods.add(new Stockin.Good("G1618377054127","小火花","个",100));
+        Stockin stockin = new Stockin("PS123200001",orderno,ownerCode,logicWarehouseCode,"2021-05-01 10:00:00",goods);
 
         ApiClient.doPostJson(urlPuluosi,null,null,stockin);
     }

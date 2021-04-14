@@ -14,10 +14,10 @@ public class Stockin {
 
     private String appKey;
     private String appSecret;
-    private String applyNo;//融资单号
+    private String applyNo;//融资单号（即 上游采购单号）
     private String approveDate;//全款支付时间
     private String customerId;//货主编码
-    private String entryNotice;//入库单号
+    private String entryNotice;//入库通知单号（即 入库单号）
     private String method;//
     private String sourceCode;
     private String warehouseId;
@@ -25,13 +25,13 @@ public class Stockin {
 
     private List<Good> goodList;
 
-    public Stockin(String orderno,String customerId, String warehouseId, String approveDate, List<Good> goodList) {
+    public Stockin(String applyNo,String entryNotice,String customerId, String warehouseId, String approveDate, List<Good> goodList) {
         this.appKey = "69310916123999402868";
         this.appSecret = "kckcfnvyfbsh4flq19gg9p9q5aw0ch";
-        this.applyNo = "XJDC202104080002";
+        this.applyNo = applyNo;
         this.approveDate = approveDate;
         this.customerId = customerId;
-        this.entryNotice = orderno;
+        this.entryNotice = entryNotice;
         this.method = "wms.entry.in.notice";
         this.sourceCode = "170";
         this.warehouseId = warehouseId;
