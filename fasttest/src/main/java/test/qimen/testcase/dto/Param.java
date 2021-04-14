@@ -25,7 +25,7 @@ public class Param {
         this.app_key = "23782426";
         this.method = method;
         this.sign_method = "md5";
-        this.customerId = "ERPOMSTEST";
+        this.customerId = "ERPOMSTEST";//对应erp的 奇门黑店（企业账户：哈哈科技有限公司）
         this.format = "xml";
         this.timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.sign = "1CA34165AEB3F513A79940727F3D3F21";

@@ -28,14 +28,14 @@ public class Stockin {
     public Stockin(String applyNo,String entryNotice,String customerId, String warehouseId, String approveDate, List<Good> goodList) {
         this.appKey = "69310916123999402868";
         this.appSecret = "kckcfnvyfbsh4flq19gg9p9q5aw0ch";
+        this.sign = "0PNZ0+EIJZ1ZA3AMEG2P5W==";
+        this.method = "wms.entry.in.notice";
+        this.sourceCode = "170";
         this.applyNo = applyNo;
         this.approveDate = approveDate;
         this.customerId = customerId;
         this.entryNotice = entryNotice;
-        this.method = "wms.entry.in.notice";
-        this.sourceCode = "170";
         this.warehouseId = warehouseId;
-        this.sign = "0PNZ0+EIJZ1ZA3AMEG2P5W==";
         this.goodList = goodList;
     }
 
