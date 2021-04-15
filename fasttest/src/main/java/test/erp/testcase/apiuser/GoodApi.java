@@ -26,7 +26,8 @@ public class GoodApi extends LoginErpUser {
         String supplierCode = "S642180";
 
         //添加货品
-        Good good = new Good(goodId,"苹果","BR1611112740116","DUTY_PAID",100,"YES");
+//        Good good = new Good(goodId,"手帕纸","BR1611112740116","DUTY_PAID",100,"NO");
+        Good good = new Good(goodId,"酸奶","BR1611112740116","DUTY_PAID",100,"YES");
         GatewayHttpClient.send(client,"/ares-web/goods/save",accessToken,good);
 
         //采购价：添加供应商关联

@@ -21,7 +21,7 @@ import java.util.List;
  * @Date : Created in 2020/11/28 17:40
  */
 public class WmsStockinApi extends Data {
-    String orderno = "ET202104131732310926875842";
+    String orderno = "ET202104152040420910450146";
 
     @Test
     public void updateStatusIn(){
@@ -32,16 +32,15 @@ public class WmsStockinApi extends Data {
     public void backStockin(){
         List<SkuParam> skuParams = new ArrayList<>();
         String str = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
-        String sku = "SKU2104131731521";
-        skuParams.add(new SkuParam(sku,str+1,100,1,1,"2020-10-10","2022-10-10",false));
-//        skuParams.add(new SkuParam(sku,str+2,200,1,2,null,null,false));
-        skuParams.add(new SkuParam(sku,str+2,200,1,2,"2020-10-10","2022-10-10",false));
-        skuParams.add(new SkuParam(sku,str+3,300,1,3,"2020-10-10","2022-10-10",false));
-        skuParams.add(new SkuParam(sku,str+4,400,2,4,"2020-10-10","2022-10-10",false));
-        skuParams.add(new SkuParam(sku,str+5,10,1,5,"2020-10-10","2022-10-10",true));
-        skuParams.add(new SkuParam(sku,str+6,20,2,6,"2020-10-10","2022-10-10",true));
+        String sku = "SKU210415203850";
+        skuParams.add(new SkuParam(sku,str+1,700,1,1,"2020-10-10","2022-10-10",false));
+        skuParams.add(new SkuParam(sku,str+2,100,2,2,"2020-10-10","2022-10-10",false));
+//        skuParams.add(new SkuParam(sku,str+3,200,1,3,null,null,false));
+        skuParams.add(new SkuParam(sku,str+3,200,1,3,"2020-10-10","2022-10-10",false));
+        skuParams.add(new SkuParam(sku,str+4,80,1,4,"2020-10-10","2022-10-10",true));
+        skuParams.add(new SkuParam(sku,str+5,20,2,5,"2020-10-10","2022-10-10",true));
 
-        StockinOrder stockinOrder = new StockinOrder(orderno,"ASN210412000004",warehouseCode,ownerCode,1,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
+        StockinOrder stockinOrder = new StockinOrder(orderno,"ASN210415000009",warehouseCode,ownerCode,1,"1",skuParams,"2020-10-10 12:00:00","2021-01-27 10:00:00");
 
         ApiClient.doPostJson(urlStockin,null,null,stockinOrder);
     }
