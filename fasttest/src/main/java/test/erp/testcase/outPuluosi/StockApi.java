@@ -14,7 +14,8 @@ public class StockApi extends Data {
 
     @Test
     public void stock(){
-        Stock stock = new Stock("G1618377054127",ownerCode,logicWarehouseCode,0);
+//        Stock stock = new Stock("SKU210414164733,SKU210414164604",ownerCode,logicWarehouseCode,0);
+        Stock stock = new Stock("*",ownerCode,logicWarehouseCode,0);
 
         ApiClient.doPostJson(urlPuluosi,null,null,stock);
     }

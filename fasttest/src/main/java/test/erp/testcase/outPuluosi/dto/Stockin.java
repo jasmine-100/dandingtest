@@ -46,11 +46,11 @@ public class Stockin {
         private int num;//数量
         private String goodsName;//货品数量
 
-        public Good(String goodsNo, String goodsName, String unit, int num) {
+        public Good(String goodsNo,int num) {
             this.goodsNo = goodsNo;
-            this.unit = unit;
+            this.unit = "个";
             this.num = num;
-            this.goodsName = goodsName;
+            this.goodsName = null;
         }
     }
 }

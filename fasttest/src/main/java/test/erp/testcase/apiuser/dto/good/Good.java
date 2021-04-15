@@ -46,10 +46,10 @@ public class Good {
         this.remark = "我是商品";
         this.batchManagement = batchManagement;
         if(batchManagement.equals("YES")){
-            this.shelfLife = 365;
-            this.noSellDate = 100;
-            this.noCollectDate = 200;
-            this.warningDate = 50;
+            this.shelfLife = 700;
+            this.noSellDate = 10;
+            this.noCollectDate = 50;
+            this.warningDate = 30;
         }
     }
 }
