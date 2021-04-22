@@ -18,13 +18,13 @@ public abstract class BaseTest {
     //测试环境
     protected GatewayHttpClient testClient = new GatewayHttpClient("http://danding-gateway-test.yang800.com.cn","96A63530DA0C49BB9FABB66ED40FB3C7","F6A99B36E4D24817AB037237454893D9",true);
     //预发环境
-    protected GatewayHttpClient preClient = new GatewayHttpClient("http://danding-gateway-pre.yang800.com.cn","96A63530DA0C49BB9FABB66ED40FB3C7","F6A99B36E4D24817AB037237454893D9",true);
+    protected GatewayHttpClient preClient = new GatewayHttpClient("http://danding-gateway-pre.yang800.com","96A63530DA0C49BB9FABB66ED40FB3C7","F6A99B36E4D24817AB037237454893D9",true);
     //线上环境
     protected GatewayHttpClient onlineClient = new GatewayHttpClient("http://danding-gateway.yang800.com","9E514E70AD7D485986D687F64616C662","33F14542BB274284B63147E6C8F3DF9E",true);
     protected GatewayHttpClient client;
 
     public void login(String name,String pwd,String uri){
-        client = testClient;
+        client = preClient;
         if (client.getLoginFlag()){
             Map<String,String> param = new HashMap<>();
             param.put("userName",name);

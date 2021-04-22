@@ -22,15 +22,15 @@ public class Data {
 //    public String logicWarehouseCode = "JHS71d3a7TuoguanQ";//托管仓(强效期)
 //    public String ownerCode = "TuoguanQ";//托管仓(强效期)
 
-    public String logicWarehouseCode = "JHSd2adfeJinyiQ";//金义仓(强效期)
-    public String ownerCode = "JinyiQ";//金义仓(强效期)
+//    public String logicWarehouseCode = "JHSd2adfeJinyiQ";//金义仓(强效期)
+//    public String ownerCode = "JinyiQ";//金义仓(强效期)
 //
 //    public String logicWarehouseCode = "JHS48b9e1Jinyi";//金义仓(非强效期)
 //    public String ownerCode = "Jinyi";//金义仓(非强效期)
 
     //监管仓
-//    public String logicWarehouseCode = "JHSad014cjianguan";//普洛斯监管仓
-//    public String ownerCode = "jianguan";//监管货主
+    public String logicWarehouseCode = "JHSad014cjianguan";//普洛斯监管仓
+    public String ownerCode = "jianguan";//监管货主
 
 
 //    public String warehouseCode = "DT_HNWMS";//  海南保税仓的wms编码
