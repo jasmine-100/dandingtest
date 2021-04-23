@@ -51,7 +51,6 @@ public class BackDingdanZongshu {
                 "        <returnInfo>" + returnInfo + "</returnInfo>" +
                 "    </OrderReturn>" +
                 "</CEB312Message>";
-//        new ApiClient(BaseParam.URL_BACK).doPostForm(new Param(data));
         ApiClient.doPostForm(Data.URL_BACK,null,null,new Param(data));
     }
 }

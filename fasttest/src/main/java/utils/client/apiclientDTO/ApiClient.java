@@ -50,7 +50,6 @@ public class ApiClient {
         client = HttpClients.createDefault();
         post = new HttpPost(url);
         String responseStr = null;
-        System.out.println(url);
 
         DataSet.setParams(post,url,params);
         DataSet.setHead(post,head);

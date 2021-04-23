@@ -11,7 +11,7 @@ import test.ccs.testcase.dto.back.BackDingdanZongshu;
 import test.ccs.testcase.dto.back.BackQingdanZongshu;
 import test.ccs.testcase.dto.back.BackTax;
 import utils.client.apiclientDTO.ApiClient;
-import utils.util.UtilsExcel;
+import utils.util.UtilExcel;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -80,9 +80,9 @@ public class OrderApiAuto {
         String outOrderNo = "JOS" + str;
         String declareOrderno = "DS" + str;
         String logiticsNo = "sf" + str;
-        UtilsExcel.writeExcel(Data.FILEPATH, 1, row, 0, outOrderNo);
-        UtilsExcel.writeExcel(Data.FILEPATH, 1, row, 1, declareOrderno);
-        UtilsExcel.writeExcel(Data.FILEPATH, 1, row, 3, logiticsNo);
+        UtilExcel.writeExcel(Data.FILEPATH, 1, row, 0, outOrderNo);
+        UtilExcel.writeExcel(Data.FILEPATH, 1, row, 1, declareOrderno);
+        UtilExcel.writeExcel(Data.FILEPATH, 1, row, 3, logiticsNo);
         String expressCode = sheet.getCell(2, row).getContents();
         String routeCode = sheet.getCell(4, row).getContents();
         String ebpCode = sheet.getCell(5, row).getContents();

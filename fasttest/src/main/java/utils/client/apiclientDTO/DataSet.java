@@ -65,6 +65,7 @@ public class DataSet {
 
     public static HttpPost setParams(HttpPost post,String url,Object params){
         //组装params参数
+        String str = "";
         if(params!=null){
             Map<String,Object> map = null;
             try {
@@ -73,13 +74,13 @@ public class DataSet {
                 for (String key : map.keySet()) {
                     paramList.add(new BasicNameValuePair(key, map.get(key).toString()));
                 }
-                String str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
+                str = EntityUtils.toString(new UrlEncodedFormEntity(paramList, Consts.UTF_8));
                 post = new HttpPost(url+"?"+str);
-            System.out.println(url+"?"+str);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+        System.out.println(url+"?"+str);
         return post;
     }
 

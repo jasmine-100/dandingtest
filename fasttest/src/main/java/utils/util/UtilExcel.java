@@ -14,7 +14,7 @@ import java.io.File;
  * @Description :
  * @Date : Created in 2020/9/22 9:15
  */
-public class UtilsExcel {
+public class UtilExcel {
 
     // 读取excel
     public static void getExcel(String pathname){
