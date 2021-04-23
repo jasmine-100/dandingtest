@@ -11,7 +11,7 @@ import test.ccs.testcase.dto.back.BackTax;
  */
 public class OrderChedanApi {
     // 取撤单列表的撤单申报编号，去掉CD
-    String orderNo = "2011161737000498";
+    String orderNo = "2104231604000518";
     String invtNo = "";
 
     // 回执：新增申报成功

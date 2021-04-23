@@ -11,7 +11,7 @@ import test.ccs.testcase.dto.back.BackHefangHezhu;
  */
 public class HefangApi {
 
-    String etpsPreentNo = "HF2012011509000510";  // 系统内部核放单编号
+    String etpsPreentNo = "HF2104231652000525";  // 系统内部核放单编号
     String seqNo = "Y"+etpsPreentNo;  // 预录入编号
     String businessId = "QD"+etpsPreentNo;  // 核放单号
 
