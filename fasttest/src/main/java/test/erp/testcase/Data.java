@@ -16,8 +16,8 @@ public class Data {
     public String warehouseCode = "DT_JYWMS1230";//  金义完税仓
 
     // 哈哈科技有限公司
-//    public String logicWarehouseCode = "JHScb94e5Tuoguan";//托管仓(非强效期)
-//    public String ownerCode = "Tuoguan";//托管仓(非强效期)
+    public String logicWarehouseCode = "JHScb94e5Tuoguan";//托管仓(非强效期)
+    public String ownerCode = "Tuoguan";//托管仓(非强效期)
 
 //    public String logicWarehouseCode = "JHS71d3a7TuoguanQ";//托管仓(强效期)
 //    public String ownerCode = "TuoguanQ";//托管仓(强效期)
@@ -29,8 +29,8 @@ public class Data {
 //    public String ownerCode = "Jinyi";//金义仓(非强效期)
 
     //监管仓
-    public String logicWarehouseCode = "JHSad014cjianguan";//普洛斯监管仓
-    public String ownerCode = "jianguan";//监管货主
+//    public String logicWarehouseCode = "JHSad014cjianguan";//普洛斯监管仓
+//    public String ownerCode = "jianguan";//监管货主
 
 
 //    public String warehouseCode = "DT_HNWMS";//  海南保税仓的wms编码

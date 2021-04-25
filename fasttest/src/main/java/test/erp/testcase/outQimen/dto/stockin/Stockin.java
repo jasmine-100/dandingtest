@@ -7,11 +7,11 @@ import java.util.List;
 
 @Data
 public class Stockin {
-    String upstreamNo;
+    String upstreamNo;//奇门的上游单号
     String logicWarehouseCode;
     String ownerCode;
     List<InOrderDetailParam> inOrderDetailParamList;
-    BusinessValue businessValue;
+    BusinessValue businessValue;//入库单号
     ReceiveSendInfoParam receiveSendInfoParam;
     String remark;
     int isPush;
@@ -42,7 +42,7 @@ public class Stockin {
     }
 
     public Stockin(String orderNo,int orderType,String outShopId,String warehouseCode, String ownerCode, List<InOrderDetailParam> inOrderDetailParamList,ReceiveSendInfoParam receiveInfo) {
-        this.upstreamNo = orderNo;
+        this.upstreamNo = "S"+orderNo;
         this.businessNo = orderNo;
         this.logicWarehouseCode = warehouseCode;
         this.ownerCode = ownerCode;

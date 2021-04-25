@@ -24,7 +24,7 @@ public abstract class BaseTest {
     protected GatewayHttpClient client;
 
     public void login(String name,String pwd,String uri){
-        client = preClient;
+        client = testClient;
         if (client.getLoginFlag()){
             Map<String,String> param = new HashMap<>();
             param.put("userName",name);

@@ -17,6 +17,7 @@ public class OrderDTO {
     // 单据信息
     String outOrderNo;
     String outShopCode;//外部店铺授权的accessCode
+    String origOrderNo;//外部渠道的上游销售单号
     long orderTime;
     String key;
     String saleChannel;//B2CSC但丁商城，
@@ -68,6 +69,7 @@ public class OrderDTO {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.outOrderNo = outOrderNo;
         this.declareOrderNo = outOrderNo;
+        this.origOrderNo = "S"+outOrderNo;
         this.outPayNo = "OPN"+str;
         this.outShopCode = outShopCode;
         this.orderTime = UtilsTime.getTime("20210101120000");
