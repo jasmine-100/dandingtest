@@ -23,7 +23,7 @@ public class GoodApi extends LoginErpUser {
     // 添加新货品
     @Test
     public void addGoods() {
-        String supplierCode = "S305541";
+        String supplierCode = "S795776";
         String brandCode = "BR1619327050436";
 
         for(int i=1;i<=1;i++){
@@ -34,8 +34,8 @@ public class GoodApi extends LoginErpUser {
 //            Good good = new Good(goodId,"奶粉(有效期)",brandCode,"DUTY_PAID",100,"YES");
 
             String goodId ="SKU"+ new SimpleDateFormat("yyMMddHHmmss").format(new Date());
-//            Good good = new Good(goodId,"小熊熊饼干",brandCode,"DUTY_PAID",100,"YES");//完税
-            Good good = new Good(goodId,"【进口】手磨咖啡",brandCode,"BONDED",100,"YES");//保税
+            Good good = new Good(goodId,"小花花",brandCode,"DUTY_PAID",100,"YES");//完税
+//            Good good = new Good(goodId,"【进口】手磨咖啡",brandCode,"BONDED",100,"YES");//保税
 
             GatewayHttpClient.send(client,"/ares-web/goods/save",accessToken,good);
 

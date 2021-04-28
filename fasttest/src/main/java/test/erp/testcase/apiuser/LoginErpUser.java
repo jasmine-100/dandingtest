@@ -12,7 +12,7 @@ public class LoginErpUser extends BaseTest {
 
     @BeforeTest
     public void login(){
-        this.login("但丁云","Abc123","/ucenter-account/customer/login");
+        this.login("哈哈科技有限公司","Abc123","/ucenter-account/customer/login");
     }
 
 }
