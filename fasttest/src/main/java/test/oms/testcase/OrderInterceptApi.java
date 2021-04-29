@@ -7,7 +7,7 @@ import utils.client.gatewayDTO.GatewayHttpClient;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 创建预拦截订单
  * @Date : Created in 2021/4/29 13:10
  */
 public class OrderInterceptApi extends LoginErpUser {
