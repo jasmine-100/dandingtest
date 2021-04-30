@@ -32,9 +32,9 @@ public class OrderSet extends Data {
         String expressNo = "SF"+str;
         List<Item> items = new ArrayList<>();
 
-        items.add(new Item("SKU02031035","外部保税商品","",100,10));
-//        items.add(new Item("SKU04151505","外部完税商品","",50,10));
-//        items.add(new Item("JD03261519","京东小商品","",50,1));
+        items.add(new Item("SKU04301754","外部保税商品","",100,10));
+//        items.add(new Item("SKU04301752","外部完税商品","",50,10));
+//        items.add(new Item("JD04301453","京东小商品","",50,1));
         OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",accessCode1,"浙江省","杭州市","滨江");
 //        OrderDTO order = new OrderDTO(orderNo,items,"SF",saleChannel,null,"V2",accessCode1);
 
