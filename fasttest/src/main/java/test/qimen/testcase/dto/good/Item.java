@@ -10,8 +10,8 @@ import lombok.Data;
 @Data
 public class Item {
     String itemCode;//商品编码
-    String itemName;//货号
-    String goodsCode;
+    String itemName;
+    String goodsCode;//货号，即 物料编码
     String barCode;
     String stockUnit;
     int length;
@@ -32,10 +32,10 @@ public class Item {
     String createTime;
     String isValid;
 
-    public Item(String itemCode, String itemName, String barCode) {
+    public Item(String itemCode, String itemName,String goodsCode, String barCode) {
         this.itemCode = itemCode;
         this.itemName = itemName;
-        this.goodsCode = itemCode;
+        this.goodsCode = goodsCode;
         this.barCode = barCode;
         this.stockUnit = "双";
         this.length = 1;
