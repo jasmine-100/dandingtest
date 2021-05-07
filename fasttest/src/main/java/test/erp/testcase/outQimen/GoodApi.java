@@ -17,7 +17,7 @@ public class GoodApi extends Data {
         for (int i=1;i<=10;i++){
             String goodNo = "SKU" + str + i;
 //            Good good = new Good(goodNo,"牛奶"+str+i,goodNo,1,logicWarehouseCode,ownerCode);//开启效期
-            Good good = new Good(goodNo,"纸巾"+str+i,goodNo,2,logicWarehouseCode,ownerCode);//关闭效期
+            Good good = new Good(goodNo,"纸巾"+str+i,"PP"+goodNo,"QQ"+goodNo,2,logicWarehouseCode,ownerCode);//关闭效期
             Params params = new Params(goodNo,"3",good);
 
             ApiClient.doPostJson(urlQimen,null,null,params);
@@ -29,7 +29,7 @@ public class GoodApi extends Data {
         String str = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
         String goodNo = "SK" + str;
 //        String goodNo = "SK210222112519";
-        Good good = new Good(goodNo,"咖啡豆",str, 1,logicWarehouseCode,ownerCode);
+        Good good = new Good(goodNo,"咖啡豆","PP"+goodNo,"QQ"+goodNo, 1,logicWarehouseCode,ownerCode);
         Params params = new Params(goodNo,"3",good);
 
         ApiClient.doPostJson(urlQimen,null,null,params);

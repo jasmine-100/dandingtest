@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class Good {
     String sku;
+    String materialCode;//物料编码
     String goodsName;
     String barcode;
     int batchManagement;// 1开启效期；2关闭效期；奇门都是关闭效期的
@@ -21,8 +22,9 @@ public class Good {
     String ownerCode;
     String origSystem;
 
-    public Good(String sku,String goodsName, String barcode,int batchManagement,String warehouseCode, String ownerCode) {
+    public Good(String sku,String goodsName,String materialCode,String barcode,int batchManagement,String warehouseCode, String ownerCode) {
         this.sku = sku;
+        this.materialCode = materialCode;
         this.goodsName = goodsName;
         this.barcode = barcode;
         this.batchManagement = batchManagement;
