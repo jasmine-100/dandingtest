@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class Item {
-    String itemCode;
-    String itemName;
+    String itemCode;//商品编码
+    String itemName;//货号
     String goodsCode;
     String barCode;
     String stockUnit;
