@@ -17,10 +17,11 @@ import java.util.List;
  * @Date : Created in 2020/8/17 15:17
  */
 public class OrderCase {
-    String declareOrderNo = "JOS20210430151442228";
+    String declareOrderNo = "TORD1620290130973";
     String outOrderNo = declareOrderNo;
 //    String logiticsNo = "123"+new SimpleDateFormat("yyMMddHHmmss").format(new Date());
-    String logiticsNo = "sf"+declareOrderNo;
+//    String logiticsNo = "sf"+declareOrderNo;
+    String logiticsNo = "MOCK1620366388896";
     String invtNo = "QD"+declareOrderNo;
     String routeCode = "xiaohei2";//xiaohei1 支付单运单；xiaohei2 订单清单；xiaohei3 清单
 
