@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderLine {
-    String inventoryType;
+    String inventoryType;// zp正品 cp次品
     String itemCode;
     String itemId;
      int orderLineNo;
