@@ -25,9 +25,9 @@ public class SenderInfo {
         this.company = "旗舰店";
         this.name = "jasmine";
         this.mobile = "15522223333";
-        this.province = "浙江省";
-        this.city = "杭州市";
-        this.area = "江干区";
+        this.province = "浙江省4";
+        this.city = "杭州市4";
+        this.area = "江干区4";
         this.detailAddress = "理想大道101号A座5楼";
     }
 
