@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 退货入库单
  * @Date : Created in 2021/2/24 16:50
  */
 public class StockinReturnApi extends Data {

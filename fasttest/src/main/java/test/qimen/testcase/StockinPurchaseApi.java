@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @Author： jasmine
- * @Description :
+ * @Description : 采购入库单
  * @Date : Created in 2021/2/24 16:50
  */
 public class StockinPurchaseApi extends Data {
