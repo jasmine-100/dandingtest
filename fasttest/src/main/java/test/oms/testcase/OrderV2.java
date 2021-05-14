@@ -29,11 +29,12 @@ public class OrderV2 extends Data {
         items.add(new Item("SKU02011134","进口咖啡",100.23,1,0,0,0));
         // 订单
         OrderDTO order = new OrderDTO(orderNo,accessCode1,items);
+        System.out.println(order);
         //报文
         BizData orderBiz = new BizData(order, ApiV2ServiceName.ORDER_OUT_SET,partnerId,token);
         System.out.println(orderBiz);
 
-        ApiClient.doPostForm(V2Url,orderBiz,null,null);
+        ApiClient.doPostForm(V2Url,null,null,orderBiz);
     }
 
     @Test
