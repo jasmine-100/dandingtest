@@ -33,8 +33,8 @@ public class WmsStockinApi extends Data {
         List<SkuParam> skuParams = new ArrayList<>();
         String str = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
         String sku = "SKU210428103101";
-        skuParams.add(new SkuParam(sku,str+1,100,1,1,"2020-10-10","2022-10-10",false));
-        skuParams.add(new SkuParam(sku,str+2,200,2,1,"2020-10-10","2022-10-10",false));
+        skuParams.add(new SkuParam(sku,str+1,100,1,1,"2020-10-10","2022-10-10",0));
+        skuParams.add(new SkuParam(sku,str+2,200,2,1,"2020-10-10","2022-10-10",0));
 //        skuParams.add(new SkuParam(sku,str+2,100,2,2,"2020-10-10","2022-10-10",false));
 //        skuParams.add(new SkuParam(sku,str+3,200,1,3,null,null,false));
 //        skuParams.add(new SkuParam(sku,str+3,200,1,3,"2020-10-10","2022-10-10",false));
@@ -61,7 +61,7 @@ public class WmsStockinApi extends Data {
                 String expireDate = sheet.getCell(3,i).getContents();
                 int inventoryType = Integer.valueOf(sheet.getCell(4,i).getContents());
                 String bathcode = sheet.getCell(5,i).getContents();
-                SkuParam skuParam = new SkuParam(sku,bathcode,num,inventoryType,i,productDate,expireDate,false);
+                SkuParam skuParam = new SkuParam(sku,bathcode,num,inventoryType,i,productDate,expireDate,0);
                 skuParams.add(skuParam);
 //                System.out.println(skuParam);
             }

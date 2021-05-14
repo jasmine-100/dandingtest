@@ -17,9 +17,9 @@ public class SkuParam {
     int lineNo;
     String productionDate;// 生产日期
     String expireDate; // 失效日期
-    boolean exceeded;//理货报告是否超件: true, 默认false
+    int exceeded;//理货报告是否超件: 不超件0,超件1；默认0
 
-    public SkuParam(String sku, String batchCode, int actualQuantity, int inventoryType, int lineNo, String productionDate, String expireDate,boolean exceeded) {
+    public SkuParam(String sku, String batchCode, int actualQuantity, int inventoryType, int lineNo, String productionDate, String expireDate,int exceeded) {
         this.sku = sku;
         this.batchCode = batchCode;
         this.actualQuantity = actualQuantity;
@@ -30,7 +30,7 @@ public class SkuParam {
         this.exceeded = exceeded;
     }
 
-    public SkuParam(String goodsCode, String batchCode, int actualQuantity, int inventoryType, int lineNo, String productionDate, int days,boolean exceeded) {
+    public SkuParam(String goodsCode, String batchCode, int actualQuantity, int inventoryType, int lineNo, String productionDate, int days,int exceeded) {
         this.sku = goodsCode;
         this.batchCode = batchCode;
         this.actualQuantity = actualQuantity;
