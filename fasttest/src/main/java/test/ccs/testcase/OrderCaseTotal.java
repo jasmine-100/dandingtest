@@ -53,6 +53,6 @@ public class OrderCaseTotal {
         BackQingdanZongshu.backPass(declareOrderNo, Data.ebpCode, Data.ebcCode, Data.agentCode,invtNo,"20201110210000001");
 
         //税费回执
-        BackTax.backTaxrd(invtNo, Data.ebcCode,600.6,10,30,"20201110220000001");
+        BackTax.backTaxrd(invtNo, Data.ebcCode,200.26,10.1,20.2,30.3,"20201110220000001");
     }
 }

@@ -79,7 +79,7 @@ public class OrderCase {
     }
     @Test
     public void qingdanBackTax()  { // 税费
-        BackTax.backTaxrd(invtNo,Data.ebcCode,600.6,10,30,"20201120130000001");
+        BackTax.backTaxrd(invtNo,Data.ebcCode,600.6,10,10,30,"20201120130000001");
     }
     @Test
     public void qingdanErrorPayerId(){ //订购人身份证号码有误

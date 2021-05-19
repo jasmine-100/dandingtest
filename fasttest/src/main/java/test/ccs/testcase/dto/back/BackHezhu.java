@@ -36,6 +36,7 @@ public class BackHezhu {
         examineModel(etpsInnerInvtNo,invtPreentNo,bondInvtNo,0,2,3);
     }
 
+    //审核报文模板
     static void declareModel(String etpsPreentNo,String businessId){
         data = "<?xml version=\"1.0\" encoding=\"gb2312\"?>" +
                 "<Package xmlns=\"http://www.w3.org/2000/09/xmldsig#\">" +
