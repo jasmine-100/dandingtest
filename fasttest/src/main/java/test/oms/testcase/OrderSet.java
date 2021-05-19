@@ -30,12 +30,9 @@ public class OrderSet extends LoginErpUser {
         List<Item> items = new ArrayList<>();
 
         //渠道订单
-//        items.add(new Item("SKU04301754","外部保税商品","",100,10));
-//        items.add(new Item("SKU04301752","","",50,10));
-//        OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",Data.accessCode1,"浙江省","杭州市","滨江");
-
-        //奇门订单
-        items.add(new Item("sku101621402599347","","",50,1));
+//        items.add(new Item("SKU04301754","保税商品","",100,10));
+//        items.add(new Item("SKU04301752","完税商品","",50,10));
+        items.add(new Item("sku101621402599347","完税商品","",50,10));
         OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",Data.accessCode1,"STSf4ae0dyaceqimen","yaceqimen");
 
         ApiClient.doPostJson(Data.OrderUrl,null,null,order);
