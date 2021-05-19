@@ -22,13 +22,6 @@ import java.util.List;
 public class OrderSet extends LoginErpUser {
 
     @Test
-    public void orders(){
-        for (int i=0;i<5;i++){
-            order1();
-        }
-    }
-
-    @Test
     public void order1(){ // 哈哈科技有限公司，黑店
         String str = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 //        String orderNo = "JOS3213232";
@@ -36,11 +29,14 @@ public class OrderSet extends LoginErpUser {
         String expressNo = "SF"+str;
         List<Item> items = new ArrayList<>();
 
+        //渠道订单
 //        items.add(new Item("SKU04301754","外部保税商品","",100,10));
-        items.add(new Item("SKU04301752","外部完税商品","",50,10));
-//        items.add(new Item("JD04301453","京东小商品","",50,1));
-        OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",Data.accessCode1,"浙江省","杭州市","滨江");
-//        OrderDTO order = new OrderDTO(orderNo,items,"SF",saleChannel,null,"V2",accessCode1);
+//        items.add(new Item("SKU04301752","","",50,10));
+//        OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",Data.accessCode1,"浙江省","杭州市","滨江");
+
+        //奇门订单
+        items.add(new Item("sku101621402599347","","",50,1));
+        OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",Data.accessCode1,"STSf4ae0dyaceqimen","yaceqimen");
 
         ApiClient.doPostJson(Data.OrderUrl,null,null,order);
     }

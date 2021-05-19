@@ -16,7 +16,7 @@ public class StockinApi extends LoginErpUser {
 
     @Test
     public void orderExamine() {
-        SelectPage page = new SelectPage(10, "1");
+        SelectPage page = new SelectPage(100, "1");
         String response = GatewayHttpClient.send(client, "/ares-web/inOrder/queryList", accessToken, page);//查询已创建状态的入库单
         JSONArray datalist = JSONObject.parseObject(response).getJSONObject("data").getJSONArray("dataList");
         if (datalist.size() > 0){

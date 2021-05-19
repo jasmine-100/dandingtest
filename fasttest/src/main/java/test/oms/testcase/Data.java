@@ -17,7 +17,7 @@ public class Data {
     public static String V2Url = "http://supporttest.yang800.cn/api";
 
     // 店铺级别的密钥
-    public static String accessCode1 = "8ce310a0407cc30b0163d11b7628942a";// 哈哈科技的黑店
+    public static String accessCode1 = "359ffdbaa95cce0da207423f223488b2";//"8ce310a0407cc30b0163d11b7628942a";// 哈哈科技的黑店
     public static String accessCode2 = "4dc46908d6606c7f8571a8c9573c09c0";// 小花花的花店
     public static String partnerId = "V2"; // 应用级别的id
     public static String token = "V2"; // 应用级别的密钥

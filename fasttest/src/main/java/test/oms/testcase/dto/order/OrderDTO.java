@@ -64,8 +64,11 @@ public class OrderDTO {
     long payDeclareTime;
     long promiseTime;
     String customsCode;//口岸
+    String warehouseCode;//仓库编码
+    String shipperCode;//货主编码
 
-    public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode,String expressNo, String appCode, String outShopCode,String province,String city,String district) {
+    // 保税单据
+    public OrderDTO(String outOrderNo, List<Item> itemList, String expressCode,String expressNo, String appCode, String outShopCode,String warehouseCode,String shipperCode) {
         String str = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         this.outOrderNo = outOrderNo;
         this.declareOrderNo = outOrderNo;
@@ -92,17 +95,17 @@ public class OrderDTO {
         this.receiverName = "小秘密";
         this.receiverMobile = "15966663333";
         this.receiverCardId = "330110200012135502";
-        this.receiverProvince = province;
-        this.receiverCity = city;
-        this.receiverDistrict = district;
+        this.receiverProvince = "浙江省";
+        this.receiverCity = "杭州市";
+        this.receiverDistrict = "西湖区";
         this.receiverAddress = "九堡九和路科技城";
         //发货信息
-//        this.senderName = "齐吉吉";
-//        this.senderMobile = "15866660000";
-//        this.senderProvince = "河北省";
-//        this.senderCity = "石家庄市";
-//        this.senderDistrict = "长安区";
-//        this.senderAddress = "彩虹路100号";
+        this.senderName = "齐吉吉";
+        this.senderMobile = "15866660000";
+        this.senderProvince = "河北省";
+        this.senderCity = "石家庄市";
+        this.senderDistrict = "长安区";
+        this.senderAddress = "彩虹路100号";
         //支付人信息
         this.payerName = "jasmine";
         this.payerCardId = "330159666623012236";
@@ -114,6 +117,8 @@ public class OrderDTO {
         this.payTime = UtilsTime.getTime("20210102150000");
         this.payDeclareTime = UtilsTime.getTime("20210105160000");
         this.promiseTime = UtilsTime.getTime("20210103130000");
+        this.warehouseCode = warehouseCode;
+        this.shipperCode = shipperCode;
     }
 
 }
