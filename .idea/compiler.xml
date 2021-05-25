@@ -8,9 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="erp" />
+        <module name="autotest" />
         <module name="oldoms" />
         <module name="oldapi" />
-        <module name="fasttest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +19,7 @@
       <module name="api.qimen" target="1.8" />
       <module name="api.v3" target="1.8" />
       <module name="api.wms" target="1.8" />
+      <module name="fasttest" target="1.8" />
       <module name="java.ccs" target="1.8" />
       <module name="java.erp" target="1.8" />
       <module name="java.jxc" target="8" />

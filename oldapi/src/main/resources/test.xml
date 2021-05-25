@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<suite name="util" parallel="false">
-    <test name="util">
-        <classes>
-            <class name="qimen.api.jxc.TestStockin" />
-            <class name="qimen.api.jxc.TestStockout" />
-        </classes>
-    </test>
-</suite>
