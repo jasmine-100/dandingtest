@@ -29,8 +29,8 @@ public class OrderSet extends LoginErpUser {
         String expressNo = "SF"+str;
         List<Item> items = new ArrayList<>();
 
-        //渠道订单
-//        items.add(new Item("SKU04301754","保税商品","",100,10));
+        //渠道订单SKU04301754
+////        items.add(new Item("","保税商品","",100,10));
 //        items.add(new Item("SKU04301752","完税商品","",50,10));
         items.add(new Item("sku101621402599347","完税商品","",50,10));
         OrderDTO order = new OrderDTO(orderNo,items,"SF",expressNo,"V2",Data.accessCode1,"STSf4ae0dyaceqimen","yaceqimen");
