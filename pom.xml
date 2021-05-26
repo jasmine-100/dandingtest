@@ -11,6 +11,7 @@
     <modules>
         <module>fasttest</module>
         <module>autotest</module>
+        <module>autocase1</module>
     </modules>
 
     <dependencies>

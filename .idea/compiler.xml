@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="erp" />
         <module name="autotest" />
+        <module name="autocase1" />
         <module name="oldoms" />
         <module name="oldapi" />
       </profile>
